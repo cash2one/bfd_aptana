@@ -1,0 +1,28 @@
+.bus_legend {
+	width:100%;
+	font-size:1em;
+	border-top: 1px solid #eee;
+	border-left: 1px solid #eee;
+}
+.bus_legend .label_row{
+
+}
+.bus_legend .label_row td{
+	text-align: left;
+	padding:10px 15px;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	background:#f0f5f8;
+	font-weight: bold;
+	font-size:0.75em;
+}
+.bus_legend .value_row{
+	
+}
+.bus_legend .value_row td{
+	text-align: right;
+	padding:10px 15px;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	font-size:0.75em;
+}

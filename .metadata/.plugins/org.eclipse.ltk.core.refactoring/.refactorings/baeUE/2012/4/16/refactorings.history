@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;baeUE/static/resources/grid/baeGrid/js/cdsGrid&apos; to &apos;cdsGrid.js&apos;" description="Rename resource &apos;cdsGrid&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="static/resources/grid/baeGrid/js/cdsGrid" name="cdsGrid.js" stamp="1334891899402" updateReferences="true"/>
+</session>

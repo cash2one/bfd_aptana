@@ -1,0 +1,22 @@
+$(function(){
+	$("a:contains('安装插件')").click(function(){
+		$('#hiddenDom').val($(this).data('site'));
+		$('#form1').submit();
+	});
+	$("a:contains('网站信息')").click(function(){
+		$('#hiddenDom2').val($(this).data('site'));
+		$('#form2').submit();
+	});
+});
+function showViewSetting(id) {
+	
+	$("#hiddenDom3").val(id);
+	$.post("../../SiteManager/site/!setAddressOfSession",{'address':id},function(data){
+		if(data == "0") {
+			$("#form3").submit();
+		} else {
+			alert("出错啦");
+		}
+	});
+	
+}

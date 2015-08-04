@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="GBK"?>
+<chart
+ showLegend="1" PYAxisName="商品数量(个)" SYAxisName="价格(元)" canvasbasedepth="0"
+ palette="1"
+ bgcolor="FFFFFF"
+ showcanvasbg="0"
+ animation="1"
+ showValues="0"
+ formatNumberScale="0"
+ showColumnShadow="0" showlegend="0">
+    <categories>
+        <category label="b-el"/>
+        <category label="b-bi"/>
+        <category label="b-la"/>
+        <category label="b-bd"/>
+        <category label="b-cl"/>
+        <category label="b-shu"/>
+        <category label="b-loc"/>
+        <category label="b-bedi"/>
+        <category label="b-ki"/>
+        <category label="b-lo"/>
+        <category label="b-lz"/>
+        <category label="b-fs"/>
+        <category label="b-osh"/>
+        <category label="b-sn"/>
+        <category label="b-bn"/>
+        <category label="b-cd"/>
+        <category label="b-ko"/>
+        <category label="b-aus"/>
+        <category label="b-bcj"/>
+        <category label="b-opi"/>
+    </categories>
+    <dataset seriesName="在架商品种类数">
+        <set value="645"/>
+        <set value="501"/>
+        <set value="519"/>
+        <set value="525"/>
+        <set value="335"/>
+        <set value="176"/>
+        <set value="300"/>
+        <set value="161"/>
+        <set value="162"/>
+        <set value="96"/>
+        <set value="79"/>
+        <set value="219"/>
+        <set value="128"/>
+        <set value="53"/>
+        <set value="70"/>
+        <set value="108"/>
+        <set value="78"/>
+        <set value="34"/>
+        <set value="66"/>
+        <set value="18"/>
+    </dataset>
+    <dataset seriesName="下定商品种类数">
+        <set value="117"/>
+        <set value="112"/>
+        <set value="95"/>
+        <set value="91"/>
+        <set value="72"/>
+        <set value="33"/>
+        <set value="31"/>
+        <set value="30"/>
+        <set value="30"/>
+        <set value="19"/>
+        <set value="19"/>
+        <set value="17"/>
+        <set value="16"/>
+        <set value="15"/>
+        <set value="14"/>
+        <set value="14"/>
+        <set value="14"/>
+        <set value="13"/>
+        <set value="13"/>
+        <set value="12"/>
+    </dataset>
+    <dataset seriesName="平均价格" parentYAxis="S" lineThickness="4">
+        <set value="443.51"/>
+        <set value="558.09"/>
+        <set value="661.84"/>
+        <set value="420.26"/>
+        <set value="1083.22"/>
+        <set value="637.64"/>
+        <set value="571.97"/>
+        <set value="14.77"/>
+        <set value="669.23"/>
+        <set value="32.91"/>
+        <set value="54.07"/>
+        <set value="17.33"/>
+        <set value="40.94"/>
+        <set value="30.93"/>
+        <set value="119.53"/>
+        <set value="56.85"/>
+        <set value="48.51"/>
+        <set value="1481.31"/>
+        <set value="809.30"/>
+        <set value="16.61"/>
+    </dataset>
+</chart>

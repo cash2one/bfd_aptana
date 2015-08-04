@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		<link href="../resources/baifendianWidgetsCombo/models/grid/requires/baeGrid/theme/ifm/css/grid.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+		<script type="text/javascript" src="../resources/baifendianWidgetsCombo/models/grid/requires/baeGrid/js/baeGrid.js"></script>
+	   <script type="text/javascript" src="site_list.js"></script>
+	   <script type="text/javascript">
+	   	$(function(){
+			var gird = new Grid({
+				grid:{
+					renderTo:"#grid",
+					url:"test.json",
+					page:{
+						renderTo:"#page"
+					}
+				},
+				expand:{
+					colModel:{
+						  "colName": "操作",
+                          "name": "op",
+						  onRander:function(dom,data,isChild){
+						  	   var btn1=$('<button>操作测试1</button>')
+							   btn1.appendTo(dom)
+							   console.info(data)
+						  }
+					}
+				}
+			})
+		})
+	   </script>
+	</head>
+	<body>
+		<div id="grid"></div>
+		<div id="pager"></div>
+	</body>
+</html>

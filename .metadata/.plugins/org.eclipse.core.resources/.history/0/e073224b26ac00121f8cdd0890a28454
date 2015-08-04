@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>test</title>
+        <script src="./resources/jquery/jquery.js">
+        </script>
+        <script src="http://code.highcharts.com/highcharts.js">
+        </script>
+        <script src="http://code.highcharts.com/modules/exporting.js">
+        </script>
+        <script type="text/javascript">
+            $(function(){
+                var value = 1, array = [], xAxisLabel = []
+                for (var i = 0; i < 365; i++) {
+                    array.push(Math.pow(1.001, i + 1))
+                    xAxisLabel.push(i + 1)
+                }
+                function format(value){
+                    return value * 100 + '%'
+                }
+                new Highcharts.Chart({
+                    chart: {
+                        renderTo: 'container',
+                        type: 'line'
+                    },
+                    title: {
+                        text: null
+                    },
+                    xAxis: {
+                        categories: xAxisLabel
+                    },
+                    yAxis: {
+                        title: {
+                            text: null
+                        },
+                        labels: {                // formatter: function(){
+                            //    return format(this.value).replace(/\.\d+/g, '')
+                            //}
+                        }
+                    },
+                    tooltip: {
+                        formatter: function(){
+                            return '第' + this.x + '天,增长到' + format(this.value)
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    credits: {
+                        enabled: false
+                    },
+                    series: [{
+                        data: array
+                    }]
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <div id="container" style="width: 1000px; height: 400px; margin: 0 auto">
+        </div>
+    </body>
+</html>

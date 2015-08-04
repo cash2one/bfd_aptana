@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+			$(function(){
+				$(window.parent.document).find('iframe:eq(2)').height($("body").height())
+				$(window.parent.window).scroll(function(){
+					$('.chapter-labels').each(function(){
+						      var contentHeight=window.parent.document.documentElement.clientHeight-230//+131
+						      var contentWidth=window.parent.document.documentElement.clientWidth
+							  var leftMargin=(contentWidth-980)/2
+//							  leftMargin=leftMargin*2
+							  var scollHeigth=$(window.parent.window).scrollTop()+230
+							  var top=$(this).offset().top+230
+						  	  if(top>=scollHeigth&&top<=scollHeigth+contentHeight+131){
+							  	console.info((top-scollHeigth-contentHeight)/contentHeight)
+								var scale=1-((top-scollHeigth)/contentHeight)
+							  	 $(this).css('margin-right',leftMargin+430-((leftMargin+430+248)*scale)+'px')
+
+							  }
+				   })
+				})
+			})
+		</script>
+</head>
+<style type="text/css">
+	.con{
+		margin-top: 0px;
+	}
+	
+</style>
+<body>
+<div class="con">
+  <div class="allkj">
+  <div class="cp01">
+  <div class="chapter-labels" style="margin-right: -248px;">
+    <div class="labels">
+      <h1>关注历史</h1>
+      <h3>Concerned about the history</h3>
+    </div>
+  </div>
+    <ul>
+      <li>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="images/cp.jpg" width="160" height="160" /></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+          </tr>
+        </table>
+      </li>
+      <li>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="images/cp.jpg" width="160" height="160" /></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+          </tr>
+        </table>
+      </li>
+      <li>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="images/cp.jpg" width="160" height="160" /></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+          </tr>
+        </table>
+      </li>
+      <li>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="images/cp.jpg" width="160" height="160" /></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="images/cp.jpg" width="160" height="160" /></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+          </tr>
+        </table>
+      </li>
+      <li>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="images/cp.jpg" width="160" height="160" /></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+          </tr>
+        </table>
+      </li>
+      <li>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="images/cp.jpg" width="160" height="160" /></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+          </tr>
+        </table>
+      </li>
+      <li>
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><img src="images/cp.jpg" width="160" height="160" /></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+  </div>
+  <div style="clear:both"></div>
+  </div>
+  </div>
+  <div class="con">
+  <div class="allkj">
+  <div class="cp02"><div class="chapter-labels" style="margin-right: -248px;">
+    <div class="labels">
+      <h1>特征侧写</h1>
+      <h3>Characteristic profile</h3>
+    </div>
+  </div>
+  <div class="icoman">
+    <img src="images/icoman.jpg" width="190" height="190" /></div>
+  </div>
+  <div style="clear:both"></div>
+  </div></div>
+  <div class="con">
+  <div class="allkj">
+  <div class="cp02"><div class="chapter-labels04" style="margin-right: -248px;">
+    <div class="labels">
+      <h1>营销附件</h1>
+      <h3>Marketing attachments</h3>
+    </div>
+  </div>
+    <div> <span class="bfb">98%</span><span class="jdt" style=" width:800px"><em>首次登录</em><a href="#" class="mailico"></a></span></div>
+    <div style="clear:both; height:2px"></div>
+    <div> <span class="bfb">20%</span><span class="jdt" style=" width:200px"><em>可能流失</em></span> </div>
+    <div style="clear:both; height:2px"></div>
+    <div class="txt">
+    <h1>标题</h1>
+    <p>亲爱的XXX:</p>
+    <p>您曾关注XXX，系统啥啥XXX为你推荐：</p>
+    <div class="cp03">
+      <ul>
+        <li>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td><img src="images/cp.jpg" width="160" height="160" /></td>
+            </tr>
+            <tr>
+              <td>产品名称：</td>
+            </tr>
+            <tr>
+              <td>来源网站：HTTP://WWW.BAI</td>
+            </tr>
+            <tr>
+              <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+            </tr>
+          </table>
+        </li>
+        <li>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td><img src="images/cp.jpg" width="160" height="160" /></td>
+            </tr>
+            <tr>
+              <td>产品名称：</td>
+            </tr>
+            <tr>
+              <td>来源网站：HTTP://WWW.BAI</td>
+            </tr>
+            <tr>
+              <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+            </tr>
+          </table>
+        </li>
+        <li>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td><img src="images/cp.jpg" width="160" height="160" /></td>
+            </tr>
+            <tr>
+              <td>产品名称：</td>
+            </tr>
+            <tr>
+              <td>来源网站：HTTP://WWW.BAI</td>
+            </tr>
+            <tr>
+              <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+            </tr>
+          </table>
+        </li>
+        <li>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td><img src="images/cp.jpg" width="160" height="160" /></td>
+            </tr>
+            <tr>
+              <td>产品名称：</td>
+            </tr>
+            <tr>
+              <td>来源网站：HTTP://WWW.BAI</td>
+            </tr>
+            <tr>
+              <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div></div>
+    
+  </div>
+  </div></div>
+  <div class="footer">
+<p>Copyright©2012 Baifendian Corporation All Right Reserved.　京ICP备09109727号　京公网安备110108400769号</p>
+</div>
+</body>
+</html>

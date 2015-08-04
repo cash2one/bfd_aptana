@@ -1,0 +1,133 @@
+.grid {
+	clear: both;
+	margin-top: 2px;
+	text-align: right;
+}
+.grid * {
+    border: 0 none;
+    font-style: normal;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.grid td {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #E6E6E6;
+	font-weight: normal;
+	line-height: 20px;
+	white-space: nowrap;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 10px;
+	padding-right:10px;
+		overflow: hidden;
+	white-space: nowrap;
+	/*width: 300px;*/
+	text-align: right;
+}
+.grid th {
+	background-color: #F0F5F9;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #D8DFE9;
+	font-weight: normal;
+	color: #999;
+	line-height: 20px;
+	white-space: nowrap;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 10px;
+	padding-right:10px;
+	text-align: right;
+}
+.grid .no {
+	text-align:left;
+	width:30px;
+}
+.grid th.coloradd01 {
+	background-color: #ECF2F7;
+}
+.grid td.coloradd02 {
+	background-color: #F9F9F9;
+}
+
+.grid  td.tb_index,.grid  th.tb_index{
+ 	text-align:left;
+ }
+.grid .sortable{
+ 	cursor: pointer;
+ }
+.grid .sortable .tb_content {
+	cursor: pointer;
+	display: inline;
+	padding-right: 10px;
+	text-align: right;
+}
+.sortable.sort  {
+	background-image: url(../images/grid_sort_desc.gif);
+	background-repeat: no-repeat;
+	background-position: right 0px;
+}
+.sortable.sort0  {
+	background-image: url(../images/grid_sort_asc.gif);
+	background-repeat: no-repeat;
+	background-position: right 0px;
+}
+
+
+
+.pager {
+	height: 30px;
+	background-color: #F0F0F0;
+	line-height: 30px;
+	color: #999;
+	padding-right: 10px;
+}
+.pager * {
+    border: 0 none;
+    font-style: normal;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.pager ul{
+	float:right;
+	height:30px;
+}
+.pager ul li{
+	float:left;
+	 margin-left: 6px;
+	 display: inline;
+}
+.pager input,.pager select{
+	border:solid 1px #999;
+	margin-left: 6px;
+	_margin-top:5px;
+	_margin-bottom:5px;
+	vertical-align: middle;
+}
+.pager input{
+	width:30px;
+	text-align:right;
+}
+.pager .ico01 {
+	cursor:pointer;
+	display: block;
+	background-image: url(../images/pagesico.gif);
+	background-repeat: no-repeat;
+	height: 16px;
+	width: 15px;
+	margin: 7px;
+}
+.pager .ico02 {
+	cursor:pointer;
+	display: block;
+	background-image: url(../images/pagesico.gif);
+	background-repeat: no-repeat;
+	height: 16px;
+	width: 15px;
+	margin: 7px 0px 7px 0px;
+	background-position: 0px -16px;
+}
+

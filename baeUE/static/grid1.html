@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>grid</title>
+        <script type="text/javascript" src="js/jquery-1.7.2.js">
+        </script>
+        <script type="text/javascript" src="resources/grid/baeGrid/js/baeGrid.js">
+        </script>
+        <script type="text/javascript">
+            $(function(){
+                $.ajaxSettings.traditional = true
+                $.baeGrid({
+                    colModel: [{
+                        colName: '来源',
+                        name: 'source'
+                    }, {
+                        colName: '访次',
+                        name: 'pv'
+                    }, {
+                        colName: '访客',
+                        name: 'uv'
+                    }, {
+                        colName: '唯一访客',
+                        name: 'vistor'
+                    }],
+                   
+                    fixColModel: [{
+                        colName: '测试固定列',
+                        'name': 'test',
+                        render: function(dom){
+                            dom.html('test test')
+                        }
+                    }],
+                    url: '/grid/group/',
+                    data: {
+						 groupCol: 'source',
+                        tansact: 'dateRange'
+                    },
+                    renderTo: 'div:eq(0)',
+                    page: {
+                        renderTo: '#pager'
+                    }
+                })
+                
+                $('button:eq(0)').click(function(){
+                    $('div:eq(0)').testPushDate()
+                })
+                $('button').eq(1).click(function(){
+                    $('div:eq(0)').loadData([{
+                        name: '测试加载1',
+                        sex: '测试加载1'
+                    }, {
+                        name: '测试加载2',
+                        sex: '测试加载2'
+                    }])
+                })
+            })
+        var a=        {
+                "source": "http://www.sina.com.cn",
+                "group": [{
+					"dataRange":"2012-02-01 2012-03-01",
+                    "uv": 21,
+                    "pv": 20,
+                    "vistor": 12
+                }, {
+					"dataRange":"2012-03-01 2012-04-01",
+                    "uv": 21,
+                    "pv": 20,
+                    "vistor": 12
+                }]
+            }
+        </script>
+        <style type="text/css">
+            table {
+                width: 500px;
+                border-collapse: collapse;
+                border-spacing: 0;
+                border-left: 1px solid #888;
+                border-top: 1px solid #888;
+                background: #efefef;
+            }
+            
+            th, td {
+                border-right: 1px solid #888;
+                border-bottom: 1px solid #888;
+                padding: 5px 15px;
+            }
+            
+            th {
+                font-weight: bold;
+                background: #ccc;
+            }
+            
+            .pager {
+                width: 500px;
+                height: 30px;
+            }
+            
+            .pager ul {
+                list-style: none;
+                float: right;
+            }
+            
+            .pager li {
+                float: left;
+            }
+            
+            .pager li input {
+                width: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        </div>
+        <div id="pager" class="pager">
+        </div>
+        <button>
+            测试填加
+        </button>
+        <button>
+            测试加载数据
+        </button>
+    </body>
+</html>

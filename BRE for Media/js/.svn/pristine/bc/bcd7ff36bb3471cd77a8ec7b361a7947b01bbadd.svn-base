@@ -1,0 +1,125 @@
+/**
+ * @author Administrator
+ */
+$.ajaxSettings.traditional = true
+$(function(){
+    $('.choose > li').click(function(){
+        if (!$(this).hasClass('current')) {
+            document.title = '展示设置-' + $(this).find('a').html()
+            $(this).siblings().removeClass('current')
+            $(this).addClass('current')
+            $('.set-box').hide().eq($(this).index()).show()
+        }
+    })
+})
+$(function(){
+	$('.select_box3 input:text').click(function(){
+		$('.select_box3').find('ul').not($(this).parents('.select_box3').find('ul')).slideUp()
+		$(this).parents('.select_box3').find('ul').slideToggle()
+	})
+	$('.select_box3 ul li').click(function(){
+			$(this).parents('.select_box3').find('input:text').val($(this).html())
+			$(this).parents('.select_box3').find('ul li.active').removeClass('active')
+			$(this).addClass('active')
+			$(this).parents('.select_box3').find('ul').slideUp()
+			$(this).parents('.select_box3').find('input:hidden').val($(this).data('value'))
+	})
+	$('.select_box3 input:text').each(function(){
+		var value=$(this).val()
+		$(this).parents('.select_box3').find('li').each(function(){
+			if($(this).html()===value){
+				$(this).addClass('active')
+			}
+		})
+	})
+//	$('.top input:checkbox').change(function(){
+//		var p=$(this).parents('.set-box')
+//		if($(this).is(':checked')){
+//			p.find('.display').add(p.find('.sbox-left a.btn2')).add(p.find('.sbox-right')).show()
+//		}else{
+//			p.find('.display').add(p.find('.sbox-left a.btn2')).add(p.find('.sbox-right')).hide()
+//		}
+//	}).change()
+})
+//animate
+$(function(){
+	//1,4
+	$('.set-box:first').add('.set-box:last').find('input:radio').change(function(){
+		if($(this).parents('.display').find('input:radio:first').is(':checked')){
+			$(this).parents('.display').find('.item2').show()
+		}else{
+			$(this).parents('.display').find('.item2').hide()
+		}
+	})
+	//2
+	$('.set-box:eq(1)').find('input:radio').change(function(){
+		if($(this).parents('.display').find('input:radio:first').is(':checked')){
+			$(this).parents('.display').find('.item2').show()
+			$(this).parents('.display').find('.item3:eq(1)').hide()
+		}else{
+			$(this).parents('.display').find('.item3:eq(1)').show()
+			$(this).parents('.display').find('.item2').hide()
+		}
+	}).change()
+	$('.set-box:eq(2)').find('input:radio').change(function(){
+		if($(this).parents('.display').find('input:radio:eq(0)').is(':checked')){//图片模式
+			if($(this).parents('.display').find('input:radio:eq(2)').is(':checked')){//底部通栏
+				$(this).parents('.display').find('.item2').show()
+				$(this).parents('.display').find('.item3').hide()
+			}else{//右侧
+				$(this).parents('.display').find('.item2').hide()
+				$(this).parents('.display').find('.item3').show()
+				$(this).parents('.display').find('.item3:eq(0)').hide()
+			}
+		}else{//文字模式
+			if($(this).parents('.display').find('input:radio:eq(2)').is(':checked')){//底部通栏
+				$(this).parents('.display').find('.item2').hide()
+				$(this).parents('.display').find('.item3').show()
+				$(this).parents('.display').find('.item3:eq(0)').hide()
+			}else{//右侧
+				$(this).parents('.display').find('.item2').hide()
+				$(this).parents('.display').find('.item3').hide()
+				$(this).parents('.display').find('.item3:eq(0)').show()
+			}
+		}
+	}).change()
+	//开启
+	$('.set-box').find('input:checkbox').change(function(){
+		if($(this).is(':checked')){
+			$(this).parents('form').find('.display input').attr('disabled',false)
+		}else{
+			$(this).parents('form').find('ul').slideUp()
+			$(this).parents('form').find('.display input').attr('disabled',true)
+		}
+	}).change()
+})
+$(function(){
+	  $('a.btn2').click(function(){
+	  	    var d=$(this)
+	  	    if(d.parents('.set-box').find('input:checkbox').is(':checked')){
+				d.parents('form').submit()
+			}else{
+				var content=d.parents('.set-box').find('.top label').html()
+				 $.ifmWidget('alertFail',{title:content,'content':'请'+content,basePath:'../../resources/ifmWidget'})
+			}
+		})
+		$('.set-box').keyup(function(event){
+			if(event.keyCode===13){
+				   $(this).find('a.btn2').click();
+				}
+		})
+		$('#form0,#form1,#form2,#form3,#form4').validate({
+			submitHandler: function(form){
+				$(form).ajaxSubmit({
+					success:function(responseText, statusText, xhr, $form){
+						if(responseText=='4' ){
+						   $.ifmWidget('alertFail',{'title':'设置失败',content:'设置失败',basePath:'../../resources/ifmWidget'})
+						} else if(responseText == '0'){
+							 $.ifmWidget('alertSuccess',{'title':'设置成功',basePath:'../../resources/ifmWidget'})
+						} 
+					}
+				})
+				return false
+			}
+		})
+})

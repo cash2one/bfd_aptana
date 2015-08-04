@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>jquery tools test</title>
+		<script type="text/javascript" language="JavaScript" src="./resources/jquery/jquery.js"></script>
+	    <script type="text/javascript" language="JavaScript" src="./resources/jquery_tools/jquery.tools.min.js"></script>
+		<script type="text/javascript" language="JavaScript">
+			$(function(){
+				$('#test').scrollable()
+//				$('#test').scrollable('')
+				$('#test').seekTo(2)
+			})
+		</script>
+		<style type="text/css">
+			#test{
+				    background-color: transparent;
+				    clear: both;
+				    height: 100px;
+				    overflow: hidden;
+				    position:relative;
+					width:60px;
+			}
+			#items{
+				position:absolute;
+				width:2000em;
+			}
+			#items div{
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			<div id="items">
+				<div>111111111</div>
+				<div>22222222</div>
+				<div>33333333</div>
+			</div>
+		</div>
+	</body>
+</html>

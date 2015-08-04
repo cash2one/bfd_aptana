@@ -1,0 +1,226 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>流量交换-申请开通</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/exp.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+<script type="text/javascript" src="../../js/regulateSize.js"></script>
+<script type="text/javascript" src="../../js/changeSite.js"></script>
+<script type="text/javascript" src="../../js/messageTip.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.blockUI.js"></script>
+	<script type="text/javascript"  src="../../resources/commons/jquery.form.js">
+    </script>
+    <script type="text/javascript"  src="../../resources/commons/jquery.validate.min.js">
+    </script>
+    <script type="text/javascript" src="../../js/validateSession.js"></script>
+	 <script type="text/javascript"  src="../../js/SourceShare/source-applyfor.js">
+    </script>
+<link rel="shortcut icon" href="../../favicon.ico" >
+             </head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li>你好,<s:property value="#session.sessionUser.username" /></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="../../SiteManager/site/!index">站点管理</a></li>
+					<li><a href="../../Account/user/!showUpdatePassword">账号设置</a></li>
+					<li><a href="../../help.html" target="_blank">帮助中心</a></li>
+					<li class="no-bg"><a href="../../Account/user/!loginOut">退出</a></li>
+				</ul>
+			</div>
+			<a href="../../DataAnalysis/stat/!synthetical.action">
+                <div class="logo">
+                    <strong>media</strong>
+                </div>
+            </a>
+            
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="current">
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../Promo/profit/!showRecommendedBar">
+                    <em class="icon5">&nbsp;</em>
+                    <span>自盈利</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div id="content" class="content" style="min-height:570px;">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<div class="m-con pt17">
+				<p class="told">你可以向其他网站发起流量交换请求，对方通过后，通过文章相关性、公平性的原则，将在网站上的推荐栏中相互显示双方的相关文章，大大提高您网站的曝光度。</p>
+				<div class="area">
+					<span>
+                      <img src="../../images/flow01.jpg" alt="找到与您关注点最相似的站长" width="290" height="290">
+                    </span>
+					<span>
+                      <img src="../../images/flow02.jpg" alt="获得其他网站的访问流量" width="290" height="290">
+                    </span>
+					<span class="margin-right0">
+					  <img src="../../images/flow03.jpg" alt="详细的流量交换数据" width="290" height="290">
+					</span>
+				</div>
+				<a  class="openbtn">申请开通</a>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p><%@ include file="/foot.jsp"%></p>
+	</div>
+	<!-- footer  结束 -->
+    <!-- 站点设置 -->
+    <div class="site_setting_container">
+       <div class="site_setting_wrap">
+                <!-- site-ad  开始 -->
+                <div class="site-ad">
+                    <div class="click-btn"><s:property value="#session.sessionUser.address"/></div>
+                    <ul class="this">
+                        <s:iterator value="#session.sessionUser.sites"><li class="site"><a class="bg" href="../../SiteManager/site/!changeSiteOfSessionUser?siteId=<s:property value="id"/>"><s:property value="address"/></a></li></s:iterator>
+                        <li class="site admin">
+                            <span class="add-s"><a href="../../SiteManager/site/!showCheckingAddress">+添加站点</a></span>
+                            <span class="s-ad"><a href="../../SiteManager/site/!index">站点管理></a> </span>
+                        </li>
+                    </ul>
+                </div>
+             <!-- site-ad 结束 -->
+       </div>
+    </div>
+    <!-- 站点设置结束 -->
+	<div class="page-area" style="display:none;">
+			<div class="p-title">
+				<h1>完善网站信息</h1>
+				<a>&nbsp;</a>
+			</div>
+			<div class="p-content">
+				<form action="../../SiteManager/site/!update" id="form1">
+				<input type="hidden" name="siteId" value="<s:property value="site.id"/>" id="siteId">
+				<input type="hidden" name="site.id" value="<s:property value="site.id"/>">
+				<input type="hidden" name="site.flowExchangeState" value="1">
+				<input type="hidden" name="site.address" value="<s:property value="site.address"/>">
+				<div class="item1">
+					<label>网站地址：</label>
+					<span class="text"><s:property value="site.address"/></span>
+				</div>
+				<div class="item1">
+					<label class="mi">网站名称：</label>
+					<span class="input-box w270 site_info_inputouter">
+							    <label id="namelabel" style="left: 10px;  width: 147px;  color: rgb(186, 186, 186); position: absolute; overflow-x: hidden; font-size-adjust: none; font-stretch: normal;" >请输入文字...</label>
+							   	<input id="nameinput" type="text" value="<s:property value="site.name"/>" name="site.name"/>
+					</span>
+				</div>
+				<div class="item2">
+					<label class="mi">网站描述：</label>
+					<textarea class="w348" name="site.describe" ><s:property value="site.describe"/></textarea>
+				</div>
+				<div class="item3" style="z-index:100;">
+					<label class="mi">网站类型：</label>
+					<div class="select_box">
+					<s:if test="site.type.id > 0"><input id="sitetype" type="text" name="sitetype" readonly="readonly" value="<s:property value="site.type.name"/>"></s:if>
+					<s:else><input id="sitetype" type="text" name="sitetype" value="请选择" readonly="readonly"></s:else>
+					     <input type="hidden" id="site_type" name="site.type.id" value="<s:property value="site.type.id"/>"/>
+						<ul class="select_ul">
+							<s:iterator value="dataDictionarys">
+								<li data-value='<s:property value="id"/>'><s:property value="name"/></li>
+							</s:iterator>
+						</ul>
+					</div>
+				</div>
+				<div class="item1" style="z-index:90;">
+							<label>联系方式：</label>
+							<span class="text">								
+							 	QQ
+							</span>
+							<span  class="input-box w120 site_info_inputouter">
+								<label style="left: 10px; width: 147px; color: rgb(186, 186, 186); position: absolute; overflow-x: hidden; font-size-adjust: none; font-stretch: normal;" id="qqlabel">QQ号码</label>
+								<input type="text" value="<s:property value="site.qqNumber"/>" name="site.qqNumber" id="qq">
+							</span>
+				</div>
+				<div class="dot-line">&nbsp;</div>
+				<dl>
+					<dt class="mi">流量交换验证方式：</dt>
+								<dd>
+									<s:if test="site.trafficExchange.changeType == 1">
+									      <div class="traffic_type_lable">
+									         <input type="radio" id="t01" value="1" name="site.trafficExchange.changeType" checked="checked">
+									         <label for="t01" style="cursor:pointer;">手动审核</label>
+									      </div>
+									</s:if>
+									<s:elseif test="site.trafficExchange.changeType == 0">
+									      <div class="traffic_type_lable">
+									         <input type="radio" id="t01" value="1" name="site.trafficExchange.changeType">
+									         <label for="t01" style="cursor:pointer;">手动审核</label>
+									      </div>
+									</s:elseif>
+										<p>
+											<em>该选项用于控制流量交换网站的质量</em>
+										</p>
+									</dd>
+									<dd>
+									<s:if test="site.trafficExchange.changeType == 0">
+									         <div class="traffic_type_lable">
+									         	<input type="radio" id="t02" checked="checked" value="0" name="site.trafficExchange.changeType">
+									            <label for="t02" style="cursor:pointer;">自动通过</label>
+									         </div> 
+								    </s:if>
+						            <s:elseif test="site.trafficExchange.changeType == 1">
+						                     <div class="traffic_type_lable">
+									         	<input type="radio" id="t02" value="0" name="site.trafficExchange.changeType">
+									            <label for="t02" style="cursor:pointer;">自动通过</label>
+									         </div> 
+						             </s:elseif>
+										<p>
+											<!-- <span>自动通过</span> -->
+											<em>该选项用于提高交换效率</em>
+										</p>
+									</dd>
+				</dl>
+				<span class="submit-btn"><input type="button" id="sub" value="提 交"></span>
+		      </form>
+			</div>
+		</div>
+</body>
+</html>
+

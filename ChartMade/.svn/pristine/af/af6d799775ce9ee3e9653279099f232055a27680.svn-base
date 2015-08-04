@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>New Web Project</title>
+        <script src="./resources/jquery/jquery.js" type="text/javascript"></script>
+        <script src="./resources/highcharts/highcharts.js"type="text/javascript"></script>
+        <script type="text/javascript">
+    var chart;
+    $(document).ready(function() {
+        var colors = Highcharts.getOptions().colors;
+        var categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        var point = {
+                        cursor: 'pointer',
+                        events:{
+                            click:function(){
+                                console.log(this.drilldown)
+                                var drilldown = this.drilldown;
+                                    if (drilldown) { // drill down
+                                        setChart(drilldown.name, drilldown.categories, drilldown.data,point);
+                                    } else { // restore
+                                        setChart(name, categories, data,point);
+                                    }
+                            }
+                        }
+                    }
+        var data = [{
+                    y:49.9,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }
+                    },  {y:71.5,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }}, { y:106.4,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }}, { y:129.2,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }}, { y:144.0,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }}, { y:176.0,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }}, { y:135.6,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }}, {y: 148.5,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }}, { y:216.4,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }}, {y: 194.1,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }},  {y:95.6,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }},  {y:54.4,
+                    drilldown: {
+                        name: 'MSIE',
+                        categories: ['MSIE 6.0', 'MSIE 7.0', 'MSIE 8.0', 'MSIE 9.0'],
+                        data: [10.85, 7.35, 33.06, 2.81],
+                        color: colors[0]
+                        }}];
+        var name = 'Rainfall';
+        function setChart(name, categories, data,point) {
+            chart.xAxis[0].setCategories(categories);
+            chart.series[chart.series.length-1].remove();
+            chart.addSeries({
+                name: name,
+                data: data,
+                color: '#4572A7',
+                type: 'column',
+                point:point,
+                yAxis: 1
+            });
+        }
+        chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container',
+                zoomType: 'xy'
+            },
+            title: {
+                text: 'Average Monthly Weather Data for Tokyo'
+            },
+            subtitle: {
+                text: 'Source: WorldClimate.com'
+            },
+            xAxis: [{
+                categories:categories,
+                gridLineWidth: 1,
+                gridLineColor: '#F60',
+                tickColor: '#F60',
+                endOnTick:true,
+                startOnTick:true,
+            },{
+                categories: ['<span style="color:red;">Sun</span>', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', '<span style="color:red;">Sat</span>'],
+                opposite: true,
+                gridLineWidth: 1
+            }],
+            yAxis: [{ // Primary yAxis
+                labels: {
+                    formatter: function() {
+                        return this.value +'°C';
+                    },
+                    style: {
+                        color: '#89A54E'
+                    }
+                },
+                title: {
+                    text: 'Temperature',
+                    style: {
+                        color: '#89A54E'
+                    }
+                },
+                opposite: true
+    
+            }, { // Secondary yAxis
+                gridLineWidth: 0,
+                title: {
+                    text: 'Rainfall',
+                    style: {
+                        color: '#4572A7'
+                    }
+                },
+                tickPosition: 'outside',
+                labels: {
+                    formatter: function() {
+                        return this.value +' mm';
+                    },
+                    style: {
+                        color: '#4572A7'
+                    }
+                }
+    
+            }, { // Tertiary yAxis
+                gridLineWidth: 0,
+                title: {
+                    text: 'Sea-Level Pressure',
+                    style: {
+                        color: '#AA4643'
+                    }
+                },
+                tickPosition: 'outside',
+                labels: {
+                    formatter: function() {
+                        return this.value +' mb';
+                    },
+                    style: {
+                        color: '#AA4643'
+                    }
+                },
+                opposite: true
+            }],
+            plotOptions: {
+                column: {
+                    cursor: 'pointer'
+                }
+            },
+            tooltip: {
+                formatter: function() {
+                    var unit = {
+                        'Rainfall': 'mm',
+                        'Temperature': '°C',
+                        'Sea-Level Pressure': 'mb',
+                        'MSIE' : '%'
+                    }[this.series.name];
+    
+                    return ''+
+                        this.x +': '+ this.y +' '+ unit;
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                x: 120,
+                verticalAlign: 'top',
+                //y: 80,
+                floating: true,
+                backgroundColor: '#FFFFFF'
+            },
+
+            series: [{
+                name: 'Sea-Level Pressure',
+                type: 'spline',
+                color: '#AA4643',
+                yAxis: 2,
+                xAxis: 1,
+                data: [1016, 1016, 1015.9, 1015.5, 1012.3, 1009.5, 1009.6],
+                marker: {
+                    enabled: true
+                },
+                dashStyle: 'shortdot'
+    
+            }, {
+                name: 'Temperature',
+                color: '#89A54E',
+                type: 'spline',
+                xAxis: 1,
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2]
+            }, {
+                name: name,
+                color: '#4572A7',
+                type: 'column',
+                yAxis: 1,
+                data:data,
+                point:point
+            }]
+        });
+    });
+</script>
+    </head>
+    <body>
+        <div id="container" style="margin: auto;width:100%;height:600px;"></div>
+    </body>
+</html>

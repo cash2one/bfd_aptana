@@ -1,0 +1,11 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	function G(){//漏斗图
+		var self=this
+	}
+	function C(){//chart
+		
+	}
+})

@@ -1,0 +1,7 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	
+})
+

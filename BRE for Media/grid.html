@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>grid</title>
+		<link href="./resources/baifendianWidgetsCombo/models/grid/requires/baeGrid/theme/ifm/css/grid.css" rel="stylesheet" type="text/css" />
+        <link href="./resources/baifendianWidgetsCombo/commons/lib/jquery.pagination/css/pagination.css" rel="stylesheet" type="text/css" />
+	    <script type="text/javascript" src="./resources/baifendianWidgetsCombo/commons/jquery.js">
+        </script>
+        <script type="text/javascript" src="./resources/baifendianWidgetsCombo/models/grid/requires/baeGrid/js/baeGrid.js">
+        </script>
+		<script type="text/javascript" src="./resources/baifendianWidgetsCombo/commons/lib/jquery.pagination/jquery.pagination.js"></script>
+		<script type="text/javascript" src="./resources/baifendianWidgetsCombo/format.js"></script>
+		<script type="text/javascript" src="./resources/baifendianWidgetsCombo/models/grid/requires/Grid.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                var grid = new Grid({
+                    "container": "test",
+					url:'test.json',
+                    "cols": [{
+                        "colName": "引荐网站",
+                        "name": "GROUPNAME",
+                        "sortable": false
+                    }, {
+                        "colName": "页面浏览数",
+                        "name": "PV",
+                        "sortable": false
+                    }, {
+                        "colName": "下定订单数量",
+                        "name": "F8",
+                        "sortable": false
+                    }, {
+                        "colName": "下定订单转化率",
+                        "name": "F10",
+                        "sortable": false,
+                        "type": "rate"
+                    }],
+                    "option": {
+                        "seq": true,
+                        "hasPager": true,
+                        "agv_width": 0,
+						"page":{
+							"theme":"pagination"
+						}
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+    	<div id="test"></div>
+    </body>
+</html>

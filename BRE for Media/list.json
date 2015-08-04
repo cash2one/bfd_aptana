@@ -1,0 +1,78 @@
+[{
+    "title": "根目录",
+    "url": "null",
+    "children": [{
+        "title": "数据分析",
+        "icon": "./resources/menus/baeLeftBar/images/menulist_ico01.gif",
+        "children": [{
+            "title": "综合概况",
+            "url": "./function/chart/vistor_analytics.html"
+        }, {
+            "title": "文章分析",
+            "url": "./function/chart/uv_region.html"
+        }, {
+            "title": "文章推荐插件",
+            "url": "./function/chart/device_type.html"
+        }, {
+            "title": "流量交换",
+            "url": "./function/chart/mobile_type.html"
+        }]
+    }, {
+        "title": "文章管理",
+        "icon": "./resources/menus/baeLeftBar/images/menulist_ico06.gif",
+        "children": [{
+            "title": "统计收录",
+            "url": "/baeweb/function/chart/ref_all.html"
+        }, {
+            "title": "图片设置",
+            "url": "./function/chart/ref_source.html"
+        }]
+    }, {
+	   "title": "文章推荐插件",
+	   "url":"http://localhost",
+	    "_linkCss":{
+	   			 "text-indent":"9px"
+	   },
+	   "icon": "./resources/menus/baeLeftBar/images/menulist_ico04.gif",
+	    "children": []
+	},{
+        "title": "流量交换",
+        "icon": "./resources/menus/baeLeftBar/images/menulist_ico03.gif",
+        "children": [{
+            "title": "展示设置",
+            "url": "./function/chart/page_alltype.html"
+        }, {
+            "title": "网站列表",
+            "url": "./function/chart/landpage_type.html"
+        }]
+    }, {
+        "title": "站点管理",
+        "icon": "./resources/menus/baeLeftBar/images/menulist_ico04.gif",
+        "children": [{
+            "title": "站点列表",
+            "url": "./function/chart/product_all.html"
+        }, {
+            "title": "添加站点",
+            "url": "./function/chart/product_brand_fx.html"
+        }, {
+            "title": "插件代码-插件",
+            "url": "./function/chart/product_category_fx.html"
+        },{
+            "title": "插件代码-代码",
+            "url": "./function/chart/product_category_fx.html"
+        },{
+            "title": "网站信息",
+            "url": "./function/chart/product_category_fx.html"
+        }]
+    }, {
+        "title": "博主社区",
+        "icon": "./resources/menus/baeLeftBar/images/menulist_ico02.gif",
+        "children": [{
+            "title": "博主信息",
+            "url": "./function/chart/shopping_cart.html"
+        }, {
+            "title": "列表",
+            "url": "./function/chart/sales_order.html"
+        }]
+    }]
+ }]	

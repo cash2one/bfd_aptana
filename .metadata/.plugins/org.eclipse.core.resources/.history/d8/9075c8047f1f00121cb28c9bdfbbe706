@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>登录</title>
+        <link rel="stylesheet" href="./resources/jquery.mobile/jquery.mobile-1.2.0.min.css" />
+        <link type="text/css" href="./resources/jquery.mobile.simpledialog/css/jquery.mobile.simpledialog.css" rel="stylesheet" />
+        <script src="./resources/jquery/jquery-1.8.2.min.js">
+        </script>
+        <script src="./resources/jquery.mobile/jquery.mobile-1.2.0.js">
+        </script>
+        <script src="./resources/commons/jquery.validate.min.js">
+        </script>
+        <script src="./resources/commons/jquery.form.js">
+        </script>
+        <script src="./resources/jquery.mobile.simpledialog/js/jquery.mobile.simpledialog2.js">
+        </script>
+        <script type="text/javascript">
+            $(function(){
+                $('#cancel').click(function(){
+                    $('#username,#password').val('')
+                })
+                $('#submit').click(function(){
+                    $('#form1').submit()
+                })
+				 // 中文字两个字节       
+                $.validator.addMethod("byteRangeLength", function(value, element, param){
+	                    var length = value.length;
+	                    for (var i = 0; i < value.length; i++) {
+	                        if (value.charCodeAt(i) > 127) {
+	                            length++;
+	                        }
+	                    }
+	                    return this.optional(element) || (length >= param[0] && length <= param[1]);
+                }, "请确保输入的值在3-15个字节之间(一个中文字算2个字节)");
+                $('#form1').validate({
+                    submitHandler: function(form){
+                        $(form).ajaxSubmit({
+                            dataType: 'json',
+                            success: function(responseText, statusText, xhr, $form){
+                                if (responseText == 'success') {
+                                    window.document.location.href = "./main.html";
+                                }
+                                else {
+                                
+                                }
+                            },
+                            error: function(jqXHR, textStatus, errorThrown){
+                                var status = {
+                                    'timeout': "请求超时,请检查网络",
+                                    'error': '系统发生错误,请稍后再试',
+                                    'abort': '服务拒绝'
+                                }
+                                $('<div/>').simpledialog2({
+                                    mode: 'blank',
+                                    headerText: '提示',
+                                    themeHeader: 'b',
+                                    headerClose: true,
+                                    blankContent: '<div data-role="content" data-theme="b">' +
+                                    (status[textStatus] || "系统其他错误,请重试") +
+                                    '<a rel="close" data-role="button">Close</a></div>'
+                                })
+                                
+                            }
+                        })
+                    },
+                    rules: {
+                        username: {
+                            required: true
+                        },
+                        password: {
+                            required: true,
+                            byteRangeLength: [6, 18]
+                        }
+                    },
+                    messages: {
+                        username: {
+                            required: "用户名不能为空"
+                        },
+                        password: {
+                            required: "密码不能为空",
+                            byteRangeLength: "密码必须在6-18个字符之间"
+                        }
+                    },
+                    focusInvalid: true,
+                    onkeyup: false,
+                    wrapper: 'div',
+                    errorPlacement: function(error, element){
+                        error.appendTo(element.parent()).css('color','#red');
+                    }
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <!-- Home -->
+        <div data-role="page" data-theme="b" id="page1">
+            <div data-theme="b" data-role="header">
+                <h5>登录</h5>
+                <a data-role="button" data-theme="b" data-ajax="false" href="./register.html" data-icon="plus" data-iconpos="left" class="ui-btn-right">注册</a>
+            </div>
+            <div data-role="content" data-theme="b">
+                <form id="form1" action="/login.action" data-ajax="false">
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="username">
+                                用户名
+                            </label>
+                            <input name="username" id="username" placeholder="输入用户名" type="text" maxlength="20"/>
+                        </fieldset>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="password">
+                                密码
+                            </label>
+                            <input name="password" id="password" placeholder="输入密码" type="password" maxlength="12"/>
+                        </fieldset>
+                    </div>
+                </form>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="left" id="cancel">
+                            重置
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div data-role="button" data-theme="b" data-icon="arrow-r" data-iconpos="left" id="submit">
+                            提交
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-theme="b" data-role="footer" data-position="fixed">
+                <h3>Footer</h3>
+            </div>
+        </div>
+    </body>
+</html>

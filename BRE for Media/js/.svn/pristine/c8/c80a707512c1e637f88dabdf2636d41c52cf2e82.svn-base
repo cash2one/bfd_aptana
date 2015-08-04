@@ -1,0 +1,106 @@
+$(function(){
+	ZeroClipboard.setMoviePath('../../resources/ZeroClipboard/ZeroClipboard.swf')
+	var clip = new ZeroClipboard.Client();
+	clip.glue($('.copy:first')[0]);
+	clip.setText($.trim($('textarea:first').text()))
+	$(this).data('clip',clip)
+	clip.addEventListener('complete', function(client, text) {
+		                $('.right:last').hide()
+						$('.right:first').show()
+            });
+})/*
+$(function(){
+	ZeroClipboard.setMoviePath('../../resources/ZeroClipboard/ZeroClipboard.swf')
+	var clip = new ZeroClipboard.Client();
+	clip.glue($('.copy:last')[0]);
+	clip.setText($.trim($('textarea:last').text()))
+	$(this).data('clip',clip)
+	clip.addEventListener('complete', function(client, text) {
+		                $('.right:first').hide()
+		                $('.right:last').show()
+            });
+})*/
+$(function(){
+	
+	$('.btn1').click(function(){
+		
+		var urlre= /(((http|https):\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\u4e00-\u9fa5\-\.\/?\@\%\!\&=\+\~\:\#\;\,]*)?)/ig; 
+//		var urlre= /(((http|https):\/\/)?[\w\-]+(\/[\w\u4e00-\u9fa5\-\.\/?\@\%\!\&=\+\~\:\#\;\,]*)?)/ig; 
+		
+		var validateCodeUrl = $.trim($('#validateCodeUrl').val());
+		if(!urlre.test(validateCodeUrl)){
+			$.ifmWidget("alertFail",{
+	    		title:'操作失败',
+	    		content:'请填写正确的预览地址'
+	    	})
+	    	return;
+		}
+		$.ifmWidget('loading',{
+			basePath:'../../resources/ifmWidget',
+			title:'检测中',
+			content:'检测中...'
+		})
+	
+	$.post('../../SiteManager/site/!checkingCodeInstalled',
+			 {"validateCodeUrl":validateCodeUrl},
+			  function(data){
+				  if(data.result==0){
+					  var contentText
+					  if(data.title||data.date){
+						  contentText='恭喜您！您已经成功安装推豆儿个性化推荐工具。<br>验证地址文章标题：'+data.title+'<br\>验证地址文章日期:'+data.date+'<br\>标题与日期设置是否正确？'
+					  }else{
+						   contentText='恭喜您！您已经成功安装推豆儿个性化推荐工具。<br/>'+
+						  '<br/>温馨提示：<br/>'+
+						  '由于您没有安装步骤二，我们将通过机器学习到文章标题和发布日期。<br/><br/>'+
+						  '是否通过验证开启推豆儿？'
+					  }
+					  $.ifmWidget("confirmWin",{
+				    		title:'验证通过',
+				    		content:contentText,
+				    		yesCallBack:function(){
+				    			$.ifmWidget('loading',{
+										basePath:'../../resources/ifmWidget',
+										title:'检测中',
+										content:'检测中...'
+									})
+				    			$.post("../../SiteManager/site/!checkingJS2", {"validateCodeUrl":validateCodeUrl}, function(data) {
+				    				if(data===true){
+										var link='../../ContentManager/content/!showEmbodyStatistics'//成功后的url
+										$.ifmWidget('alertSuccessMuti',{
+											basePath:'../../resources/ifmWidget',
+											title:'安装成功',
+											content:'恭喜您，安装成功！',
+											dom:$('<p class="tip">3秒后，进入<a href="'+link+'" class="admin">管理后台</a></p>')
+										})
+										setTimeout(function(){
+											window.location.href=link
+										},3000)
+									}else{
+										$.ifmWidget('alertFail',{
+											basePath:'../../resources/ifmWidget',
+											title:'验证失败',
+											content:'在您的网站上没有检测到插件，请按照教程重新安装！',
+											callBack:function(){
+												//验证失败点击后的动作
+											}
+										})
+									}
+								});
+				    		}
+				    	})
+				  }
+				  else{
+					  $.ifmWidget("alertFail",{
+				    		title:'验证失败',
+				    		content:'对不起！您没有成功安装推豆儿个性化推荐工具。'
+					  })
+				  }
+			})
+	})
+})
+
+//$(function(){
+//	$("a:contains('修改建站平台')").click(function(){
+//		$('#form1').submit();
+//	});
+//});

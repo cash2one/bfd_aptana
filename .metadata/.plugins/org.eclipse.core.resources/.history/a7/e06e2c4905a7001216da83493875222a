@@ -1,0 +1,106 @@
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; 
+    background: rgba($color, $opacity);
+}
+.pre-promo-box{
+	border:1px #ccc solid;
+	padding:{
+		left:5px;
+		right:5px;
+	}
+	/*.promo-loading{
+		position:absolute;
+		left:0;
+		top:0;
+		width:560px;
+		height:220px;
+		 @include background-opacity(#333, 0.5);
+	}*/
+	.box-title{
+		height:30px;
+		line-height:30px;
+		display:block;
+		padding-left:5px;
+		font:{
+			size:14px;
+			weight:bold;
+		}
+		/*padding:{
+			left:15px;
+		}*/
+	}
+	ul{
+		list-style-type: none;
+		height:160px;
+		li{
+			float:left;
+			margin:{
+				//right:10px;
+			}
+			a{
+				/*width:120px;
+			    height:160px;*/
+				display:block;
+				cursor:pointer;
+				padding:{
+					left:5px;
+					right:5px;
+					top:5px;
+					bottom:5px;
+				}
+				&:hover{
+					background-color:#f0f0f0;
+				}
+			  /*  padding:10px;*/
+				img{
+						height:100px;
+						width:100px;
+					}
+				label{
+				       display:block;
+					   color:#3399ff;
+					   font-size:12px;
+					   word-wrap:break-word; 
+					   word-break:break-all;
+					   width:100px;
+					   cursor:pointer;
+				}	
+			}
+		}
+	}
+	.box-bottom{
+		/*width:100%;*/
+		display:block;
+		text-align:right;
+		/*float:right;*/
+		padding-right:10px;
+		height:30px;
+		line-height:30px;
+		font:{
+			size:14px;
+			weight:bold;
+		}
+	}
+}
+
+.setting-form{
+	.error{
+		    position: absolute;
+		    left:235px;
+		    font-size: 12px;
+		    word-break: keep-all;
+		    white-space:nowrap;
+		    padding-left:31px;
+			background:url(../images/wrong-bg2_01.gif) 0 0 no-repeat;
+			display: inline-block;
+		    line-height: 28px;
+			span{
+				color: #BB0000;
+				height:28px;
+				line-height: 28px;
+				padding:0 8px 0 5px;
+				background:url(../images/wrong-bg2_03.gif) right 0 no-repeat #ffe8e8;
+				display: inline-block;
+			}
+		}
+}

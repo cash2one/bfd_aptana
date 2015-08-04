@@ -1,0 +1,13 @@
+@charset "GBK";
+　
+div {
+  　　color: #1875e7; }
+
+.rounded {
+  　　　　border-left-radius: 5px; }
+
+div h1 {
+  border-color: #f7f7f7; }
+
+div p {
+  color: #1875e7; }

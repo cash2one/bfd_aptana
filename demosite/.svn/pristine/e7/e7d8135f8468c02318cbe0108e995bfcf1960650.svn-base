@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>首页</title>
+		<link href="./css/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<link href="./css/header.css" rel="stylesheet" type="text/css"/>
+		<link href="./css/upAndDown.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.tools.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.blockUI.js"></script>
+		<script type="text/javascript" src="./js/jquery.fancybox.pack.js"></script>
+		<script type="text/javascript" src="./js/commons.js"></script>
+		<script type="text/javascript" src="./js/subs.js"></script>
+		<script type="text/javascript" src="./js/upAndDown.js"></script>
+		<script type="text/javascript" src="./js/scroll.js"></script>
+		<script type="text/javascript">
+			function afterBuy() {
+				//load();
+			}
+			$(function() {
+				$.getJSON("http://scenario.baifendian.com:8008/Scenario.do?callback=?", {
+					sid : '13410339561515378019595518708',
+					random : new Date().valueOf()
+				}, function(data) {
+					parseData(data,'hown');
+					parseData(data,'edm');
+					parseData(data,'rec');
+					Edm(data);
+				});
+				$("#searchButton").click(function(){
+					var nameText = $("#searchContent").val();
+					if(nameText == ""||$.trim(nameText) == ""){
+						alert("请输入搜索内容！");
+						return;
+					}
+					
+				 	$.getJSON("http://192.168.11.53/javademo/search.jsp?callback=?", 
+					{
+			 			name:encodeURI(nameText,"utf-8")
+					},function(data){
+						GoToScroll('se');
+						var Obj = parseData(data,'ldp');
+						var next_top = Obj.offset().top;
+						var $controlUp = $("#control-up");
+						var $controlDown = $("#control-down");
+						$("html,body").animate({ scrollTop : next_top - 100 }, "slow");
+						$controlUp.fadeIn(500).fadeOut(1000);
+						$controlDown.fadeIn(500).fadeOut(1000);
+						$("#projrec .jdt:last").trigger("mouseover");
+	                });
+				});
+			});
+		</script>
+		<style type="text/css">
+			body {
+				overflow-x: hidden;
+			}
+
+			.scrollable {
+				/* required settings */
+				position: relative;
+				/*  overflow: hidden;*/
+			}
+
+			.scrollable .items {
+				/* this cannot be too large */
+				width: 20000em;
+				position: absolute;
+			}
+
+			.con {
+				float: left;
+			}
+		</style>
+	</head>
+	<body scroll="no">
+		<div class="header">
+			<div class="content" style="width: 940px;height: 40px;margin: 0 auto;position: relative;">
+				<ul id="floatButton"></ul>
+			</div>
+		</div>
+		<div class="allkj" style="position: relative;padding-top:0px;background: white;">
+			<div style="" class="titleimg"><img src="./images/background.jpg" style=""/>
+			</div>
+			<div class="arrow-down"></div>
+		</div>
+		<div class="allkj infocontent" id="infocontent" style="margin-top:100px;padding-top:0;">
+			<!-- <div style="margin-right: -248px;visibility: hidden;" class="chapter-labels">
+			<div class="labels">
+			<h1>
+
+			</h1>
+			<h3></h3>
+			</div>
+			</div> -->
+			<div class="txtcon00">
+				<div class="l">
+						<div class="tt">
+							<h2 class="cttl" style="display: inline;"> 百分点推荐引擎</h2><h2 style="display: inline;">&nbsp; Idea </h2>
+							<h3>国内最专业的个性化推荐技术整体解决方案平台</h3>
+						</div>				
+						<p class="edmText">
+							idea，是由百分点信息科技有限公司历时4年精雕细琢，
+							推出的个性化推荐技术整体解决方案平台。他的开发者们执着、富有激情、专注个性化推荐领域。
+							百分点的基因决定了idea今生唯一的评估标准data talks；
+							服务于客户KPI的产品理念注定idea从出生就包括了不同领域的个性化推荐技术整体解决方案；
+							平台化的设计充分考虑了灵活性和扩展性。idea不仅仅是我们的平台级产品，更像我们的孩子，
+							我们花了无数的心血和汗水来呵护他、培养他。此时此地，让我们为您展示idea令人为之着迷的点点滴滴... ...
+						</p>
+
+					<!-- <div class="limg"><img width="450" height="92" src="images/b010.jpg">
+					</div> -->
+
+				</div>
+				<div class="r"><img src="images/b010.jpg">
+				</div>
+				<div style="clear:both"></div>
+			</div>
+			<div class="txtcon00">
+				<div class="txt">
+					<div class="tt">
+						<h3> 开始我们的旅程 </h3>
+					</div>
+					<p class="edmText">
+						如果您正在Readme，那么非常荣幸您能给我们一个展示idea的机会。以下是快速开始的内容和简介，为了能够使用我们提供的demo功能，请键入邀请码。了解更多... ...
+					</p>
+				</div>
+				<div class="cp00">
+					<ul>
+						<li>
+							<a id="a_hown"> <img src="./images/nav/b002.jpg" alt="全网历史"/> <div class="scroll"></div> </a>
+						</li>
+						<li>
+							<a id="a_se"> <img src="./images/nav/b006.jpg" alt="场景引擎"/> <div class="scroll"></div> </a>
+						</li>
+						<li>
+							<a id="a_edm"> <img src="./images/nav/b021.jpg" alt="edm"/> <div class="scroll"></div> </a>
+						</li>
+						<li>
+							<a id="a_ldp"> <img src="./images/nav/b003.jpg" alt="着陆页"/> <div class="scroll"></div> </a>
+						</li>
+						<li>
+							<a id="a_exp"> <img src="./images/nav/b022.jpg" alt="实验室"/> <div class="scroll"></div> </a>
+						</li>
+					</ul>
+				</div>
+				<script type="text/javascript">
+					$(function() {
+						$(".cp00 > ul > li > a").each(function() {
+							$(this).click(function() {
+								GoToScroll($(this).attr("id").substring(2));
+							});
+						});
+					});
+				</script>
+			</div>
+		</div>
+		<div class="allkj" id="hown">
+			<div class="chapter-labels">
+				<div class="labels">
+					<h1 class="cttl">全网历史</h1>
+					<h3>The history of the whole network</h3>
+				</div>
+			</div>
+			<div class="txtcon00">
+				<div class="txt">
+					<div class="tt">
+						<h3>用户全网行为历史的采集</h3>
+					</div>
+					<p class="edmText" style="text-indent: 0px;">
+						百分点的数据采集探针，仅仅需要合作客户可以在目标页面上部署一行代码就可以实现。
+					</p>
+					<p class="edmText" style="text-indent: 0px;">
+						在idea中，实现了各种anti策略。其中基础的反作弊、数据去噪和数据清洗被嵌入到idea架构的所有关键路径上，客户还可以根据自身需求，指定不同的安全等级。
+					</p>
+				</div>
+			</div>
+			<div class="txtcon01">
+				<div class="cp01">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="allkj" id="se">
+			<div class="chapter-labels">
+				<div class="labels">
+					<h1 class="cttl">场景引擎</h1>
+					<h3>Scene Engine</h3>
+				</div>
+			</div>
+			<div class="txtcon00">
+				<div class="txt">
+					<div class="tt">
+						<h3>永不休止的场景引擎</h3>
+					</div>
+					<p class="edmText" style="text-indent: 0px;">
+						在idea的理念中，场景是与生俱来的，不会随着用户离开而中止也不会随着idea对场景的使用而变迁。作为整个idea的核心模块之一，场景引擎无时无刻不在对用户所处的场景进行推演计算。
+					</p>
+					<div class="tt">
+						<h3>场景的计算</h3>
+					</div>
+					<p class="edmText" style="text-indent: 0px;">
+						场景在时间纬度上可以分为实时场景和持续型场景。<br/>
+						实时场景由流处理平台Ashur和其背后的定制开发的GoStop算法、TagCF+等算法支撑。持续性型由批处理平台Marduk负责计算。
+					</p>
+				</div>
+			</div>
+			<div class="txtcon01">
+				<div class="cp02">
+					<div class="epro" id="projad">
+						<!-- <div>
+							<span class="bfb"><img src="./images/se/b034.jpg"/></span>
+							<span style="width: 450px; " class="jdt"> <em>我猜您只是来库巴随便逛逛的</em> <a style="display: none; " class="mailico"> </a> </span>
+						</div>
+						<div class="clear"></div> -->
+					</div>
+					<div class="epro" id="projedm">
+						
+					</div>
+					<div class="epro" id="projldp">
+						
+					</div>
+					<div class="epro" id="projrec">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="allkj" id="ldp">
+			<div class="chapter-labels">
+				<div class="labels">
+					<h1 class="cttl">个性化着陆页</h1>
+					<h3>Landing Page </h3>
+				</div>
+			</div>
+			<div style="height:150px;width:100%;"></div>
+			<div class="txtcon01">
+				<div class="cp01">
+					<form onsubmit="$('#searchButton').trigger('click');return false;">
+					<table cellspacing="0" cellpadding="0" border="0" class="search">
+						<tbody>
+							<tr>
+								<td>
+								<div class="sinput">
+									<input id="searchContent" type="text" name="">
+								</div></td>
+								<td>
+								<div class="sbutton">
+									<input id="searchButton" type="button" value="搜索" name="input2">
+								</div></td>
+							</tr>
+						</tbody>
+					</table>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="allkj" id="edm">
+			<div class="chapter-labels">
+				<div class="labels">
+					<h1 class="cttl">个性化EMAIL营销</h1>
+					<h3>EDM</h3>
+				</div>
+			</div>
+			<div class="txtcon04 edmText">
+				<div class="tt">
+							<h2>个性化推荐技术推动传统EDM变革</h2>
+							如果您关注这里，说明您曾经使用过传统的EDM，并对于其中的到箱率、打开率、点击率的问题感到失望或麻木。idea核心的四大引擎帮您设想并实现了一种全新的EDM形态，推动这个这场变革的就是个性化技术。
+				</div>
+				<div class="l">
+					<div class="txt">
+						<p>
+							<span class="textconet">
+								<span class='boldTop'>场景引擎</span>
+								帮助您精确识别用户意图，找到营销切入点。个性化EMal的标题、用户称谓、内容甚至发送时机、频度。
+							</span>
+						</p>
+						<p>
+							<span class="textconet">
+								<span class='boldTop'>规则引擎</span>
+								客户KPI驱动。依据您对EDM最终效果的预期，调整EDM投放策略、EMail展示形式、EMail内容。
+							</span>
+						</p>
+						<p>
+							<span class="textconet">
+								<span class='boldTop'>算法引擎</span>
+								依托算法引擎背后完善的数据平台，在客户KPI的指导下，完成投放群和投放资源的匹配。
+							</span>
+						</p>
+						<p>
+							<span class="textconet">
+								<span class='boldTop'>展示引擎</span>
+								提供多种邮件模板，配合投放人群偏好。亦可以根据edm活动订制相关内容。
+							</span>
+						</p>
+					</div>
+					<!-- <div class="limg"><img width="450" height="92" src="images/b010.jpg">
+					</div> -->
+
+				</div>
+				<div class="r edmImg"><img src="images/u60_normal.png"><img src="images/u62_normal.png">
+				</div>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+		
+		<div class="allkj" id="idea">
+			<div class="chapter-labels">
+				<div class="labels">
+					<h1 class="cttl">技术架构</h1>
+					<h3>Architecture</h3>
+				</div>
+			</div>
+			<div class="txtcon04 idea">
+				<div class="title">
+							<h2>idea</h2>
+							The value of an <span style="font-size:36px;">idea</span> lies in the using of it.    
+							<div style="text-align:center;">－Thomas Alva Edison</div>
+
+				</div>
+				<table class="ideaTable">
+					<tr>
+						<td><img src="images/u193_normal.jpg"></td>
+						<td>
+							<div><span class="ideatop">核心推荐框架</span><br /><p>idea核心推荐系统由四大引擎组成。场景引擎、规则引擎、算法引擎、展示引擎。其背后最大的支持是稳定高效的系统架构；完善安全的数据平台。</p></div>
+						</td>
+						<td><img src="images/u195_normal.jpg"></td>
+					</tr>
+					<tr>
+						<td><div><span class="ideatop">idea核心理念</span><br /><p>idea提供了个性化推荐的技术整体解决方案平台。以客户KPI为驱动，通过提供给满足用户意图的推荐服务，影响并引导用户达成客户KPI，从而达到双赢的效果。</p></div></td>
+						<td><img src="images/u189_normal.jpg"></td>
+						<td><div><span class="ideatop">数据平台</span><br /><p>数据平台提供了两组计算引擎，流处理引擎Ashur以及批处理引擎Marduk。Idea全部数据全部存储于此，数据服务也同样基于数据平台。</p></div></td>
+					</tr>
+					<tr>
+						<td><img src="images/u4_normal.jpg"></td>
+						<td><div><span class="ideatop">系统架构</span><br /><p>idea基于web2.0架构。该套架构经多年验证，无论理念和框架本身都处于互联网行业第一阵营。</p></div></td>
+						<td><img src="images/u199_normal.jpg"></td>
+					</tr>
+				</table>
+				<div style="height:150px;"></div>
+			</div>
+		</div>
+		
+		<div class="allkj" id="ideaData">
+			<div class="chapter-labels">
+				<div class="labels">
+					<h1 class="cttl">数据平台</h1>
+					<h3>DataPlatform</h3>
+				</div>
+			</div>
+			<div class="txtcon04 idea">
+				<div class="titleData">
+							<h2>数据！数据！</h2>
+							对于idea来说，数据就像流动的血液，重要、珍贵是一切之根本。我们对数据的渴求就像食物，对数据的重视可比生命，这丝毫不夸张。
+
+				</div>
+				<table class="ideaTable ideaDataTable">
+					<tr>
+						<td><div><span class="ideatop">数据安全性</span><br /><p>从技术上讲，整个数据集群全部物理隔离，数据的操作者通过kerberos认证并进行了严格的权限控制和实时操作监控，对于拟似异常操作用户采取即使无条件冻结策略。</p></div></td>
+						<td>
+							<div><span class="ideatop">核心数据简介</span><br /><p>核心数据定义为涉及用户隐私，客户商业机密，由百分点进行数据挖掘的中间以及最终结果，由百分点进行系统维护的全网分类数据。</p></div>
+						</td>
+					</tr>
+					<tr>
+						<td><div><span class="ideatop">数据可靠性</span><br /><p>由系统架构和数据平台保证，根据数据重要级别，分别有三至五份不同框架下的存储。并实现了绝对的数据读写分离。</p></div></td>
+						<td><div><span class="ideatop">核心数据资产</span><br /><p>改资产受合约及法律保护，是百分点公司的核心资产之一。作为第三方数据公司，承诺不进行任何形式的直接数据输出或数据交易。</p></div></td>
+					</tr>
+					<tr>
+						<td colspan="2"><div><img style="float:left;" src="images/u66_normal.png"><div class="rcon">点击开启数据demo ... ...<br/>※注：使用该demo必须提前3日向数据委员会申请获取授权码。并实施了数据展示条目数、次数、时间限制，采取关键字隐去策略。<br/>您的操作将被全程操作监控。</div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<p>
+				Copyright©2012 Baifendian Corporation All Right Reserved.　京ICP备09109727号　京公网安备110108400769号
+			</p>
+		</div>
+	</body>
+</html>

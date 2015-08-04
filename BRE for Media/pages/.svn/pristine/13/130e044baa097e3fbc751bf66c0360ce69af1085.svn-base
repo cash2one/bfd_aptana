@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>展示设置-关键词浮层</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/exp.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/ifmWidget/css/ifmWidget.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+<script type="text/javascript" src="../../js/regulateSize.js"></script>
+<script type="text/javascript" src="../../js/changeSite.js"></script>
+<script type="text/javascript" src="../../js/messageTip.js"></script>
+	<script type="text/javascript"  src="../../resources/commons/jquery.form.js">
+    </script>
+    <script type="text/javascript"  src="../../resources/commons/jquery.validate.min.js">
+    </script>
+	<script type="text/javascript" src="../../resources/commons/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="../../resources/ifmWidget/js/ifmWidget.js"></script>
+	<script type="text/javascript" src="../../resources/jquery_tools/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="../../js/validateSession.js"></script>
+<link rel="shortcut icon" href="../../favicon.ico" >
+             </head>
+	<body>
+    <!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li>你好,<s:property value="#session.sessionUser.username" /></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="../../SiteManager/site/!index">站点管理</a></li>
+					<li><a href="../../Account/user/!showUpdatePassword">账号设置</a></li>
+					<li><a href="../../help.html" target="_blank">帮助中心</a></li>
+					<li class="no-bg"><a href="../../Account/user/!loginOut">退出</a></li>
+				</ul>
+			</div>
+			<a href="../../DataAnalysis/stat/!synthetical.action">
+                <div class="logo">
+                    <strong>media</strong>
+                </div>
+            </a>
+            
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="current">
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->		
+	<!-- content   开始 -->
+	<div id="content" class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<ul class="nav2">
+				<li><a href="#">收益统计</a></li>
+				<li><a href="#">收益提现</a></li>
+				<li  class="current rbgno"><a href="#">样式设置</a></li>
+			</ul>
+			<div class="m-con">
+				 <div class="con-1">
+				 	  <div class="arrow3"></div>
+					  <div class="section">
+					  	  <div class="set-box">
+					  	  	   <div class="sbox-left" id="i4" style="width:400px;">
+								   <div class="top">
+										 <input type="checkbox" checked="checked" value="1" name="site.keySupernatant.isOpen" id="type0_c0" autocomplete="off">
+										<label for="type0_c0">开启悬挂式商品栏</label>
+									</div>
+							        <div class="display">
+									       	 <div class="item2">
+												<label>橱窗名称：</label>
+												<div class="textbox">
+													<div class="textbox-l">
+														<div class="textbox-r">
+															<input type="text" class="txt-width100" name="site.trafficExchange.pictureWide" />			
+														</div>
+													</div>
+												</div>
+												<em>（2-6个中文字符）</em>
+											</div>
+											<div class="item2">
+												<label>橱窗宽度：</label>
+												<div class="textbox">
+													<div class="textbox-l">
+														<div class="textbox-r">
+															<input type="text" class="txt-width100" name="site.trafficExchange.pictureWide" />			
+														</div>
+													</div>
+												</div>
+												<em>（宽度设置范围100-800）</em>
+											</div>
+											<div class="item2">
+												<label>橱窗高度：</label>
+												<div class="textbox">
+													<div class="textbox-l">
+														<div class="textbox-r">
+															<input type="text" class="txt-width100" name="site.trafficExchange.pictureWide" />			
+														</div>
+													</div>
+												</div>
+												<em>（高度设置范围150-800）</em>
+											</div>
+											<div class="item2">
+												<label>网站类型：</label>
+												<div class="textbox">
+													<div class="textbox-l">
+														<div class="textbox-r">
+															<input type="text" class="txt-width100" name="site.trafficExchange.pictureWide" />			
+														</div>
+													</div>
+												</div>
+												<em>（商品推荐内容是根据网站<br/>&nbsp;&nbsp;内容选择的结果进行推荐）</em>
+											</div>
+							       	</div>
+							   </div>
+						  <div class="set-right ">
+							<h4>预览：</h4>
+							<div class="preview" style="height:345px;">
+									<div class="v_items">
+										<img src="../../images/yulan0601.jpg" alt="" />
+										<img src="../../images/yulan0602.jpg" alt="" />
+									</div>	
+							</div>
+						</div>
+					  	  </div>	
+					  </div>	
+				 </div>	 
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p><%@ include file="/foot.jsp"%></p>
+	</div>
+	<!-- footer  结束 -->
+	</body>
+</html>

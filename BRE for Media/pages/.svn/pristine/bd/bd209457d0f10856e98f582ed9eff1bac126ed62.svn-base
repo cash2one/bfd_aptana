@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>流量交换-浮动层-完善网站信息</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	
+</head>
+<body>
+	<div class="overlay">
+		<div class="page-area">
+			<div class="p-title">
+				<h1>完善网站信息</h1>
+				<a href="#">&nbsp;</a>
+			</div>
+			<div class="p-content">
+				<div class="item1">
+					<label>网站地址：</label>
+					<span class="text">www.ceshi.com</span>
+				</div>
+				<div class="item1">
+					<label>网站名称：</label>
+					<span class="input-box w270"><input type="text" value="请输入文字..." /></span>
+				</div>
+				<div class="item2">
+					<label>网站描述：</label>
+					<textarea class="w348">&nbsp;</textarea>
+				</div>
+				<div class="item3">
+					<label>网站类型：</label>
+					<div class="select_box"><input id="myselect" type="text" value="请选择" readonly="readonly">
+						<ul class="select_ul">
+							<li>选项一</li>
+							<li>选项二</li>
+						</ul>
+					</div>
+				</div>
+				<div class="item1">
+					<label>联系方式：</label>
+					<input type="checkbox" class="cbox" />
+					<span class="text">私信</span>
+					<input type="checkbox" class="cbox" />
+					<span class="text">QQ</span>
+					<span class="input-box w120"><input type="text" value="请输入您的QQ号码" /></span>
+				</div>
+				<p class="pl66">(该信息仅用于流量交换页面)</p>
+				<dl>
+					<dt>流量交换验证方式：</dt>
+					<dd>
+						<input type="radio" checked="checked" name="1" value="手动审核"  />
+						<p>
+							<span>手动审核</span>
+							<em>该选项用于控制流量交换网站的质量</em>
+						</p>
+					</dd>
+					<dd>
+						<input type="radio" name="1" value="自动通过"  />
+						<p>
+							<span>自动通过</span>
+							<em>该选项用于提高交换效率</em>
+						</p>
+					</dd>
+				</dl>
+				<span class="submit-btn"><input type="submit" value="提 交" /></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

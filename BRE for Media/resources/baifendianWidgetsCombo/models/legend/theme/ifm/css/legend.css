@@ -1,0 +1,25 @@
+.statistics{width:100%;height: 112px;}
+.statistics li{float:left;padding-top:10px;}
+.statistics .item{padding:18px 0;height: 64px;border:1px #ededed solid;background:#fafafa;border-radius:5px;margin:0 10px 0 0;}
+.statistics li.current .item{border:1px #49bce1 solid;background:#7fd2ed;position:relative;}
+.statistics a{overflow:hidden;}
+.statistics .line{text-align:center;overflow:hidden;width:100%;margin:0 auto;}
+.statistics .line .text{padding-left:10px;font-size:12px;color:#999;}
+.statistics .line  em{ 
+					    display: inline-block;
+					    height: 13px;
+					    margin-left:5px;
+					    width: 13px;
+					    vertical-align:middle;
+					    line-height: 36px;
+					    background:url(../images/ask-img.png) 0 0 no-repeat;}
+.statistics .n{text-align:center;display:block;font-size:24px;color:#00A5DB;font-family:"微软雅黑";width:100%;margin:0 auto;}
+.statistics  .loading{
+	font-size: 20px;
+}
+.statistics .li-top{display:none;}
+.statistics li.current{}
+.statistics li.current .text{color:#fff;}
+.statistics li.current  em{background:url(../images/ask-img2.png) 0 0 no-repeat;}
+.statistics li.current .n{color:#fff;}
+.statistics li.current .li-top{display:block;width:13px;height:9px;background:url(../images/li-top.png) 0 0 no-repeat;position:absolute;top:-9px;left: 50%;}

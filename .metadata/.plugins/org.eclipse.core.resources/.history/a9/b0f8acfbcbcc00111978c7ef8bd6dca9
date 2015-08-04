@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>无标题文档</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="./js/jquery.min.js">
+</script>
+	    <script type="text/javascript" src="./js/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="./js/scroll.js"></script>
+		<script type="text/javascript" src="./js/commons.js"></script>
+		<script type="text/javascript">
+			$(function(){              
+                $.template('slider','<div>'+
+                        '<span class="bfb">${value}%</span>'+
+                        '<span style="width: 450px;" class="jdt"><em>${name}</em></span>'+
+                    '</div><div style="clear:both; height:2px"> </div>')
+				function afterBuy(){
+					load();
+				}
+				function parse(data){
+					$('.allkj:first > .txtcon01 > .cp01 > ul > li').each(function(i){
+						if(data['his']&&data['his'][i]){
+							var product=new Product(data['his'][i])
+							product.afterBuy=afterBuy
+							product.dom.appendTo($(this).empty())
+						}
+					})
+					$('.allkj:eq(1) > .txtcon01 > .cp02').empty()
+					$.each(data['scenario'],function(i,item){
+						$.tmpl('slider',item).appendTo('.allkj:eq(1) > .txtcon01 > .cp02')
+						var p=$('<div style="display:none;" class="cp03"><ul><li class="line"><img src="images/line.png"> </li><li class="cplogo">'+
+                                '<img width="80" height="31" src="'+item.logo_src+'">'+
+                            '</li></ul></div>')
+						$.each(item['products'],function(i1,item1){
+							var product=new Product(item1)
+						    product.afterBuy=afterBuy
+							product.dom.appendTo($('<li></li>').appendTo(p.find('ul')))
+						})	
+						p.appendTo('.allkj:eq(1) > .txtcon01 > .cp02')
+					})
+					$('.allkj:eq(1) > .txtcon01 > .cp02').css('height',(data['scenario'].length*92+285)+'px')
+				}
+				function loaded(){
+						$('.cp02 .jdt').each(function(){
+							$(this).data('width',$(this).css('width'))
+						})
+						var init=true
+						var current
+						var animating=false
+						$('.cp02 .jdt').each(function(){
+							$(this).hover(function(){
+								$(this).data('m_status','in')
+							},function(){
+								$(this).data('m_status','out')
+							})
+						})
+						$('.cp02').find('.jdt').each(function(i){
+							$(this).mouseover(function(){
+								setTimeout($.proxy(function(){
+								 if($(this).data('m_status')=='out'){
+								 	return 
+								 }
+								if($('.cp02 .cp03').eq(i).is(':visible')||animating){
+									return 
+								}
+								animating=true
+								if(init){
+									$(this).animate({'width':'800px'},function(){
+										$('.cp02 .cp03').eq(i).slideDown(function(){
+											animating=false
+										})
+									})
+		                           init=false
+								}else{
+									$(this).animate({'width':'800px'})
+									$('.cp02 .jdt').eq(current).animate({'width':$('.cp02 .jdt').eq(current).data('width')})
+									$('.cp02 .cp03').eq(current).slideUp(function(){
+											$('.cp02 .cp03').eq(i).slideDown(function(){
+												animating=false
+											})
+									})
+								}
+								 current=i
+								 },this),400)
+							})
+						})
+				}
+				function load(){
+				                  $.getJSON("http://scenario.baifendian.com:8008/Scenario.do?callback=?", 
+									{
+										sid:'13410339561515378019595518708',
+										random:new Date().valueOf() 
+									},
+									function(data){
+					                     parse(data)
+										 loaded()
+					                });
+				}
+				load();
+			})
+        </script>
+    </head>
+    <body>
+        <div class="allkj">
+            <div class="chapter-labels" style="margin-right: -248px;">
+                <div class="labels">
+                    <h1>全网历史</h1>
+                    <h3>The history of the whole network</h3>
+                </div>
+            </div>
+            <div class="txtcon01">
+                <div class="cp01">
+                    <ul>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                    </ul>
+                     <ul>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="allkj">
+            <div class="chapter-labels" style="margin-right: -248px;">
+                <div class="labels">
+                    <h1>场景识别</h1>
+                    <h3>Scene Recognition</h3>
+                </div>
+            </div>
+            <div class="txtcon01">
+                <div class="cp02">
+                </div>
+            </div>
+        </div>     
+		<div class="footer">
+<p>Copyright©2012 Baifendian Corporation All Right Reserved.　京ICP备09109727号　京公网安备110108400769号</p>
+</div>  
+    </body>
+</html>

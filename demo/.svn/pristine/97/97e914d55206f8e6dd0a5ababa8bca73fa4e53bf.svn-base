@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		 <link href="style.css" rel="stylesheet" type="text/css" />
+		 <script type="text/javascript" src="./js/jquery.min.js">
+        </script>
+		<script type="text/javascript" src="./js/scroll.js"></script>
+		<script type="text/javascript">
+			/*$(function(){
+				function getHeight(){
+				    if (typeof window.parent.window.innerHeight != 'undefined'){
+				      var viewportheight = window.parent.window.innerHeight;
+				    }
+				    else if (typeof window.parent.window.document.documentElement != 'undefined' && typeof window.parent.window.document.documentElement.clientHeight != 'undefined' && window.parent.window.document.documentElement.clientHeight != 0){
+				      var viewportheight = window.parent.window.document.documentElement.clientHeight;
+				    }
+				    else {
+				      var viewportheight = window.parent.window.document.getElementsByTagName('body')[0].clientHeight;
+				    }
+				    return viewportheight;
+				  }
+			$(window.parent.document).mousemove(function(e){
+				var h=getHeight()
+				var y = $(window.parent.window.document).scrollTop();
+		        var triggerArea = 150;
+		        var currentTop = y;
+		        var currentBottom = y + h;
+		        var mousePosY = e.pageY;
+		        var mousePosX = e.pageX;
+				// Up arrow
+//		        if(mousePosY >= currentTop + 40 && mousePosY <= currentTop + triggerArea && $(document).scrollTop() > h / 2){
+		        if(currentTop > 0 && mousePosY < currentTop+(h/2)+){
+				  console.info('up')
+				  $('#control-up').fadeIn(300);
+		          $('#control-up').css('top',mousePosY - y - 50).css('left',mousePosX);
+		        } else {
+		          $('#control-up').hide();
+		        }
+				// Down arrow
+//		        if(mousePosY <= currentBottom && mousePosY >= currentBottom - triggerArea && $(document).scrollTop() < $(document).height() - h && mousePosY > h){
+		        if(currentTop < $('body').height()-h && mousePosY > currentTop+(h/2)+160){
+					console.info('down')
+			      $('#control-down').fadeIn(300);
+		          $('#control-down').css('top',mousePosY - y - h - 50).css('left',mousePosX);
+		        } else {
+		          $('#control-down').hide();
+		        }
+			})
+			})*/
+		</script>
+		<style type="text/css">
+			
+            div.control {
+                width: 100%;
+                position: fixed;
+                z-index: 99;
+                height: 1px;
+            }
+            
+            div.control-up {
+                top: 0;
+            }
+            
+            div.control-down {
+                bottom: 0;
+            }
+            
+            div.control div.arrow {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                z-index: 1;
+                margin: 0 0 0 -40px;
+                display: none;
+                cursor: pointer;
+                -webkit-border-radius: 40px;
+                -moz-border-radius: 40px;
+                border-radius: 40px;
+            }
+            
+            div.control-down div.arrow {
+                top: -110px;
+                background: rgba(255, 255, 255, 0.2) url(http://archive.unity3d.com/download_unity/4/sprites-4.png) -248px -150px no-repeat;
+            }
+            
+            div.control-up div.arrow {
+                background: rgba(255, 255, 255, 0.2) url(http://archive.unity3d.com/download_unity/4/sprites-4.png) -248px -81px no-repeat;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="control control-up"><div id="control-up" class="arrow" data-direction="up" style="top: 100px; left: 1014px; display: none; "></div></div>
+		<div class="control control-down"><div id="control-down" class="arrow" data-direction="down" style="display: block; top: -181px; left: 913px; "></div></div>
+		<div class="allkj">
+                        <div class="chapter-labels" style="margin-right: -248px;">
+                            <div class="labels">
+                                <h1>推荐技术</h1>
+                                <h3>The recommended techniques</h3>
+                            </div>
+                        </div>
+                        <div class="txtcon01">
+                            <div class="l">
+                                <div class="txt">
+                                    <h2>附标题</h2>
+                                    <p>
+                                        文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                                    </p>
+                                </div>
+                                <div class="limg">
+                                    <img src="images/demo02.jpg" width="450" height="92" />
+                                </div>
+                            </div>
+                            <div class="r">
+                                <img src="images/demo.jpg" />
+                            </div>
+                            <div style="clear:both">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="allkj">
+                        <div class="chapter-labels" style="margin-right: 500px;">
+                            <div class="labels">
+                                <h1>推荐技术</h1>
+                                <h3>The recommended techniques</h3>
+                            </div>
+                        </div>
+                        <div class="txtcon01">
+                            <div class="l">
+                                <div class="txt">
+                                    <h2>附标题</h2>
+                                    <p>
+                                        文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                                    </p>
+                                </div>
+                                <div class="limg">
+                                    <img src="images/demo02.jpg" width="450" height="92" />
+                                </div>
+                            </div>
+                            <div class="r">
+                                <img src="images/demo.jpg" />
+                            </div>
+                            <div style="clear:both">
+                            </div>
+                        </div>
+                    </div>
+					                    <div class="allkj">
+                        <div class="chapter-labels" style="margin-right: 500px;">
+                            <div class="labels">
+                                <h1>推荐技术</h1>
+                                <h3>The recommended techniques</h3>
+                            </div>
+                        </div>
+                        <div class="txtcon01">
+                            <div class="l">
+                                <div class="txt">
+                                    <h2>附标题</h2>
+                                    <p>
+                                        文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+                                    </p>
+                                </div>
+                                <div class="limg">
+                                    <img src="images/demo02.jpg" width="450" height="92" />
+                                </div>
+                            </div>
+                            <div class="r">
+                                <img src="images/demo.jpg" />
+                            </div>
+                            <div style="clear:both">
+                            </div>
+                        </div>
+                    </div>
+<div class="footer">
+<p>Copyright©2012 Baifendian Corporation All Right Reserved.　京ICP备09109727号　京公网安备110108400769号</p>
+</div>					
+	</body>
+</html>

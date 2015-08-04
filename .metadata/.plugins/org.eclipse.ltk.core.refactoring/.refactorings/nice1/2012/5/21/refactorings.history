@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;nice1/page source&apos; to &apos;page_source&apos;" description="Rename resource &apos;page source&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="page source" name="page_source" stamp="1337926490333" updateReferences="true"/>
+</session>

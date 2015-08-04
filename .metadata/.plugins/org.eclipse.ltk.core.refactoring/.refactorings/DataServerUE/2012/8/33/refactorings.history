@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;DataServerUE/src/DataServerUE/chart/data1.json&apos; to &apos;line.json&apos;" description="Rename resource &apos;data1.json&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/DataServerUE/chart/data1.json" name="line.json" stamp="1345115443695" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;DataServerUE/src/DataServerUE/chart/data2.json&apos; to &apos;pie.json&apos;" description="Rename resource &apos;data2.json&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/DataServerUE/chart/data2.json" name="pie.json" stamp="1345115450303" updateReferences="true"/>
+</session>

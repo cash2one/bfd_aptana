@@ -1,0 +1,54 @@
+/**
+ * @author Administrator
+ */
+function Grid(setting, global){
+    Widget.call(this)
+    function buildDom(){
+        var dom = $('#' + setting.container)
+        if (setting.option.hasPager != false) {
+            self.gridDom = $('<div></div>').appendTo(dom)
+            self.pageDom = $('<div class="pager"></div>').appendTo(dom)
+        }
+        else {
+            self.gridDom = dom
+        }
+    }
+    self.flush = function(init){
+        if (init) {
+            setting.option.url = _baifendianDataURL
+            if (!setting.option.data) {
+                setting.option.data = {}
+            }
+            if (!$.isEmptyObject(setting.option.data)) {
+                var keys = []
+                var values = []
+                for (var k in setting.option.data) {
+                    keys.push(k)
+                    values.push(setting.option.data[k])
+                }
+                setting.option.data = {
+                    keys: keys,
+                    values: values
+                }
+            }
+            setting.option.data.type = 'grid'
+            setting.option.data.requestId = setting.id.split('_')[0]
+            setting.option.renderTo = self.gridDom
+            if (setting.option.hasPager != false) {
+                setting.option.page.renderTo = self.pageDom
+            }
+        }
+		
+        setting.option.data.start = global.dateRange.getStart()
+        setting.option.data.end = global.dateRange.getEnd()
+        $.baeGrid(setting.option)
+    }
+    self.init = function(){
+		buildDom()
+        self.flush(true)
+        global.dateRange.addEventListener(function(){
+            self.flush(false)
+        })
+    }
+    self.init()
+}

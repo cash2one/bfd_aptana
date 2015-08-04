@@ -1,0 +1,39 @@
+.page-area2{cursor:default;width:595px;background-color:#fff;border-radius:6px;padding:1px;border:3px #e5e5e5 solid; box-shadow: 0 1px 8px 0px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0,0,0,0.15);}
+.p-title{width:575px;height:38px;background:url(../images/p-title-bg2.png) 0 0 repeat-x;padding:0 10px 0 10px;overflow:hidden;}
+.p-title h2{float:left;height:38px;line-height:38px;font-size:12px;color:#333;}
+.p-title a{float:right;width:16px;height:38px;background:url(../images/x-bg3.png) 0 10px no-repeat;}
+.p-content{width:575px;padding:9px 10px 10px 10px;overflow:hidden;}
+.pa2-side{float:left;width:89px;margin-right:10px;}
+.pa2-side h3{height:28px;line-height:28px;margin-top:12px;font-size:12px;color:#999;}
+.pa2-side .pic{width:85px;height:85px;padding:1px;border:1px #e1e1e1 solid;}
+.pa2-main{overflow:hidden;}
+.pa2-main .choose2{height:33px;line-height:32px;position:relative;top:1px;}
+.pa2-main .choose2 li{float:left;height:32px;padding-left:14px;background:url(../images/choose2-li-bg1.png) 0 0 no-repeat;border-bottom:1px #e4e4e4 solid;margin-right:2px;}
+.pa2-main .choose2 li a{float:left;height:32px;padding-right:10px;font-size:12px;color:#666;background:url(../images/choose2-li-bg1.png) right 0 no-repeat;}
+.pa2-main .choose2 .p{float:left;padding-left:6px;background:url(../images/choose2-li-bg1.png) 0 0 no-repeat;}
+.pa2-main .choose2 .p a{float:left;padding-right:7px;background:url(../images/choose2-li-bg1.png) right 0 no-repeat;}
+.pa2-main .choose2 li.current{cursor:default;height:33px;background:url(../images/choose2-li-bg4.png) 0 0 no-repeat;border-bottom:none;}
+.pa2-main .choose2 li.current a{background:url(../images/choose2-li-bg4.png) right 0 no-repeat;font-weight:bold;color:#444;}
+.pa2-main .pic-box{width:458px;height:180px;border:1px #e4e4e4 solid;padding:19px 6px 0 10px;margin-bottom:10px;overflow-y:scroll; }
+.pa2-main .pic-box .img{float:left;width:78px;height:78px;background:#f8f8f8;border:1px #f0f0f0 solid;margin:0 10px 10px 0;}
+.pa2-main .pic-box .current{border:3px #d71345 solid;width:74px;height:74px;}
+.pa2-main .pic-box .img img{width:78px;height:78px;}
+.pa2-main .pic-box .current img{width:74px;height:74px;}
+.pa2-main .pic-box .mr0{margin-right:0;}
+.pa2-main .btn{height:29px;float:left;}
+.pa2-main .btn1{float:left;width:66px;height:29px;line-height:28px;text-align:center;margin-right:10px;background:url(../images/save-btn-bg.png) 0 0 no-repeat;}
+.pa2-main .btn1 span{font-size:12px;color:#fff;font-weight:bold;}
+.pa2-main .btn2{float:left;height:29px;line-height:28px;padding-left:19px;background:url(../images/grey-btn2.png) 0 0 no-repeat;}
+.pa2-main .btn2 span{float:left;font-size:12px;color:#666;padding-right:18px;background:url(../images/grey-btn2.png) right 0 no-repeat;}
+.pa2-main .note{float:right;font-size:12px;color:#999;}
+.pa2-main .h190{padding:0;height:190px;overflow:hidden;}
+.pa2-main .h190 .upload-btn{float:left;width:136px;height:29px;line-height:29px;margin:74px 0 0 158px;background:url(../images/upload-btn.png) 0 0 no-repeat;}
+.pa2-main .h190 .upload-btn span{float:left;width:136px;font-size:12px;color:#666;text-align:center;}
+.pa2-main .h190 .find{float:left;font-size:12px;color:#666;margin:78px 0 0 188px;display:inline;}
+div.uploadify{
+	position:relative;
+	left: 0;
+}
+.swfupload{
+	left:0;
+}

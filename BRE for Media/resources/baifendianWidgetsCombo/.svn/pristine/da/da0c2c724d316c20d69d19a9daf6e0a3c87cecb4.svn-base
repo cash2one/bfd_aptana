@@ -1,0 +1,16 @@
+.page{float:right;height:24px;overflow:hidden;margin:5px 0 0 0;}
+.page li {
+    list-style: none outside none;
+}
+.page li a {
+    cursor: pointer;
+    font-style: normal;
+    outline: medium none;
+    text-decoration: none;
+}
+.page li{float:left;height:24px;line-height:24px;margin-right:12px;padding-left:3px;}
+.page li a{float:left;height:24px;background:url(../images/page-li-bg.png) right 0 no-repeat;padding-right:3px;font-size:12px;font-weight:bold;color:#0099ff;font-family:Arial;}
+.page .number{padding-left:8px;background:url(../images/page-li-bg.png) 0 0 no-repeat;}
+.page .number a{padding-right:8px;color:#0099ff;}
+.page .current{background:url(../images/page-li-bg2.png) 0 0 no-repeat;}
+.page .current a{background:url(../images/page-li-bg2.png) right 0 no-repeat;color:#fff;}

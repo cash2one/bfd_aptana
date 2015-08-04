@@ -1,0 +1,44 @@
+var base = {
+    chart: {
+        renderTo: 'container', //指定生成图表的html元素
+        type:'line' //缺省选项，当series中定义type会将此选项覆盖
+    },
+    credits: {
+        enabled: false //禁止credited
+    },
+    title: {
+        text: null,//设置标题文字
+        //config
+        x: -20 //center
+    },
+    subtitle: {
+        text: null,
+        //config
+        x: -20 //center
+    },
+    tooltip: {
+        formatter: null//通过传入function生成提示的格式
+    },
+    legend: {//待修改部分
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -10,
+        y: 100,
+        borderWidth: 1
+    },
+    plotOptions: {//各个类型的图表项的格式
+        area: {},
+        areaspline: {},
+        bar: {},
+        column: {},
+        line: {},
+        pie: {},
+        series: [{}],
+        scatter: {},
+        spline: {}
+    },
+    xAxis: [],
+    yAxis: [],
+    series: []
+};

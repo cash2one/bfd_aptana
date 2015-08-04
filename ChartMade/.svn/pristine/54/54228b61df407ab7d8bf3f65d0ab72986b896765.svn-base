@@ -1,0 +1,90 @@
+/**
+ * @author Administrator
+ */
+function Grid(setting, global){
+    Widget.call(this)
+    function buildDom(){
+        var dom = $('#' + setting.container)
+        if (setting.option.hasPager != false) {
+            self.gridDom = $('<div></div>').appendTo(dom)
+            self.pageDom = $('<div class="pager"></div>').appendTo(dom)
+        }
+        else {
+            self.gridDom = dom
+        }
+    }
+    self.flush = function(init){
+        if (init) {
+            setting.option.url = _baifendianDataURL
+			setting.option.colModel=setting.cols
+            if (!setting.option.data) {
+                setting.option.data = {}
+            }
+            if (!$.isEmptyObject(setting.option.data)) {
+                var keys = []
+                var values = []
+                for (var k in setting.option.data) {
+                    keys.push(k)
+                    values.push(setting.option.data[k])
+                }
+                setting.option.data = {
+                    keys: keys,
+                    values: values
+                }
+            }
+            setting.option.data.type = 'grid'
+            setting.option.data.requestId = setting.id.split('_')[0]
+            setting.option.renderTo = self.gridDom
+            if (setting.option.hasPager != false) {
+                 setting.option.page?null:setting.option.page={}
+				 setting.option.page.renderTo = self.pageDom
+            }
+        }
+		if (global.dateRange.mode === 'compare' ) {
+               $.extend(true,setting.option.data,{keys:['dbStart','dbEnd','groupCol','tansact'],
+			              values:[global.dateRange.getDbStart(), 
+						              global.dateRange.getDbEnd(),
+									  setting.option.colModel[0].name,
+									   'dateRange'],
+							groupCol:setting.option.colModel[0].name		   
+						})
+        }else{
+			if(setting.option.data.groupCol){
+				delete setting.option.data.groupCol
+			}
+			if (setting.option.data.keys) {
+				var r=[]
+				$.each(setting.option.data.keys,function(i,item){
+					if($.inArray(item,['dbStart','dbEnd','groupCol','tansact'])>=0){
+						r.push(i)
+					}
+				})
+				if(r.length>0){
+					setting.option.data.keys=$.grep( setting.option.data.keys, function(n,i){
+						 if($.inArray(i,r)>=0){
+						 	return false
+						 }
+						 return true
+					});
+					setting.option.data.values=$.grep( setting.option.data.values, function(n,i){
+						 if($.inArray(i,r)>=0){
+						 	return false
+						 }
+						 return true
+					});
+				}
+			}
+		}
+        setting.option.data.start = global.dateRange.getStart()
+        setting.option.data.end = global.dateRange.getEnd()
+        $.baeGrid(setting.option)
+    }
+    self.init = function(){
+		buildDom()
+        self.flush(true)
+        global.dateRange.addEventListener(function(){
+            self.flush(false)
+        })
+    }
+    self.init()
+}

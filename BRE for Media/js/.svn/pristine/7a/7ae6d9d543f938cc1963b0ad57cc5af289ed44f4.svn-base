@@ -1,0 +1,164 @@
+$.ajaxSettings.traditional = true
+$(function(){
+  $('.section > div:gt(1)').hide();
+  $('.choose > li').click(function(){
+	  if(!$(this).hasClass('current')){
+		  $(this).siblings().removeClass('current')
+		  $(this).addClass('current')
+		  $('.blacklist').removeClass('current')
+		  $('.section > div:gt(0)').hide().eq($(this).index()).show()
+	  }
+  })
+  $('.blacklist').click(function(){
+	  if(!$(this).hasClass('current')){
+		  $('.choose > li').removeClass('current')
+		  $(this).addClass('current')
+		  $('.section > div:gt(0)').hide();
+		  $('#m2').show();
+	  }
+  })
+  $.template( 'sysMessage', '<li>'
+		    		+'<div class="dialog">'
+		    		+'<div>'
+		    		+'<input type="checkbox">'
+		    		+'</div>'
+		    		+'<p>${content} </p>'
+		    		+'<span class="date">${date}</span>'
+		    		+'<span class="time">${time}</span>'
+		    		+'</div>'
+		    		+'<span class="d-right">'
+		    		+'<a class="x" href="#">&nbsp;</a>'
+		    		+'</span>'
+		    		+'</li>');
+  $.template('letter','<li>'+
+					  '<span class="d-left">'+
+					  '<div>'+
+					  '<input type="checkbox">'+
+					  '<span class="name">${sitename}</span>'+
+					  '</div>'+
+					  '<p>${content}</p>'+
+					  '</span>'+
+					  '<span class="d-right">'+
+					  '<span class="date">${date}</span>'+
+			    	  '<span class="time">${time}</span>'+
+					  '<a href="#" class="x">&nbsp;</a>'+
+					  '</span>'+
+					  '</li>')					
+  var m0=new List({
+	  container:'#m0 > ul',
+	  url:'../../SiteManager/msg/!systemMsg',
+	  rowList:10,
+	  onLoad:function(data){
+		  $('#m0 > div.all-dialog').html('共有'+data.totalItem+'条系统通知')
+		  $('ul.choose > li:first > a').html('系统通知('+data.unreadNum+')')
+	  },
+//	  testData:{"totalItem":100,"stores": [{"content":'测试测试测试',"date":"2012/12/12","time":"23:12"},{"content":10},{"content":10}]},
+	  Model:function(i,item){
+		    var self=this
+		    var date=(item.time.year+1900)+'/'+(item.time.month+1)+'/'+item.time.date
+		    var time=item.time.hours+':'+item.time.minutes
+		    item.date=date
+		    item.time=time
+		    self.dom=$.tmpl('sysMessage',item)
+		    self.dom.data('item',item)
+		   i%2==0?null:self.dom.addClass('color') 		
+	  },
+	  page:{
+		  container:'#m0 > .click ul'
+	  }
+  })
+  var m1=new List({
+	  container:'#m1 > ul',
+	  url:'../../SiteManager/msg/!privateMsg',
+//	  testData:{"totalItem":100,"stores": [{"content":'测试测试测试'},{"content":10},{"content":10}]},
+	  Model:function(i,item){
+		    var self=this
+		    var date=(item.time.year+1900)+'/'+(item.time.month+1)+'/'+item.time.date
+		    var time=item.time.hours+':'+item.time.minutes
+		    item.date=date
+		    item.time=time
+		    item.sitename=item['site.name']
+		    self.dom=$.tmpl('letter',item)
+		    self.dom.data('item',item)
+		   i%2==0?null:self.dom.addClass('color') 		
+	  },
+	  page:{
+		  container:'#m1 > .click ul'
+	  }
+  })
+  $('#m0 >ul').delegate('a.x','click',function(){
+//	  var checkedboxes=$(this).parents('.ul').find('td :checkbox:checked')
+	  var pdom=$(this).parents('li')
+//	  if(pdom.find(':checkbox:first').is(':checked')){
+		  $.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+					//pdom.remove()
+				    $.post('../../SiteManager/msg/!delMsgs',{ids:pdom.data('item')['id']},function(){
+				    	m0.flush()
+				    })
+				    
+				},
+				title:"确认删除这条通知",
+				content:"确认删除这条通知吗?"
+			})
+//	  }
+  })
+  $('#m0 a.dele').click(function(){
+	  var checkedboxes=$('#m0 ul').find('li :checkbox:checked')
+	  if(checkedboxes.size()>0){
+			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    var ids=[]
+				    checkedboxes.each(function(){
+						ids.push($(this).parents('li').data('item')['id'])
+						//$(this).parents('li').remove()
+					})
+					$.post('../../SiteManager/msg/!delMsgs',{ids:ids},function(){
+						m0.flush()
+					})
+				},
+				title:"确认删除这些通知",
+				content:"确认删除这些通知?"
+			})
+		}
+  })
+    $('#m1 >ul').delegate('a.x','click',function(){
+//	  var checkedboxes=$(this).parents('.ul').find('td :checkbox:checked')
+	  var pdom=$(this).parents('li')
+//	  if(pdom.find(':checkbox:first').is(':checked')){
+		  $.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+					//pdom.remove()
+				    $.post('../../SiteManager/msg/!delMsgs',{ids:pdom.data('item')['site.id']},function(){
+				    	m0.flush()
+				    })
+				    
+				},
+				title:"确认删除这条对话",
+				content:"确认删除这条对话吗?"
+			})
+//	  }
+  })
+  $('#m1 a.dele').click(function(){
+	  var checkedboxes=$('#m0 ul').find('li :checkbox:checked')
+	  if(checkedboxes.size()>0){
+			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    var ids=[]
+				    checkedboxes.each(function(){
+						ids.push($(this).parents('li').data('item')['site.id'])
+						//$(this).parents('li').remove()
+					})
+					$.post('../../SiteManager/msg/!delMsgs',{ids:ids},function(){
+						m0.flush()
+					})
+				},
+				title:"确认删除这些对话",
+				content:"确认删除这些对话?"
+			})
+		}
+  })
+  $('a.check-all').click(function(){
+	  $(this).parents('.click').parent().find('li :checkbox').attr('checked',true)
+  })
+})

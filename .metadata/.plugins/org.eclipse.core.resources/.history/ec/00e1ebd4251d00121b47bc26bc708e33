@@ -1,0 +1,12 @@
+/**
+ * @author Administrator
+ */
+MQ.widgets.Checkbox=function(setting){
+	MQ.Question.call(this)
+	var self=this
+	self.init=function(){
+		self.page=self.renderPage(setting.commonData)
+	
+	}
+	self.init()
+}

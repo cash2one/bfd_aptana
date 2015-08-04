@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;love/static/resources/jquery.Comet.js&apos; to &apos;jquery.comet.js&apos;" description="Rename resource &apos;jquery.Comet.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="static/resources/jquery.Comet.js" name="jquery.comet.js" stamp="1336717156041" updateReferences="true"/>
+</session>

@@ -1,0 +1,133 @@
+/**
+ * @author Administrator
+ */
+
+(function(document, window) {
+	var _path = document.scripts;
+	_path = _path[_path.length - 1].src.substring(0, _path[_path.length - 1].src.lastIndexOf("/") + 1);
+	if ((_path.indexOf('http') != 0 && _path.indexOf('/') != 0) || _path.indexOf('./') == 0) {
+		_path = window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1) + _path
+	} /*加载LAB.js*/
+	// var script = document.createElement("script");
+	// script.type = "text/javascript";
+	// script.src = _path + 'commons/LAB.js';
+	// document.getElementsByTagName("head")[0].appendChild(script);
+	window.BaifendianWidgets = function(param) {
+		var self = this
+		var widgets = []
+
+		self.init = function() {
+			typeof(jQuery) == 'undefined' ? $LAB.script(_path + 'commons/jquery.js').wait(_jqLoad) : _jqLoad()
+
+			function _jqLoad() {
+				if(param instanceof Object){
+					$.each(param,function(k,v){
+						self[k] = v
+					})
+				}else{
+					self.pageId = param
+				}
+				self.getSetting().done(function(data) {
+					$.each(data, function(i, item) {
+						if(self.dateRange){
+							item.dateRange = self.dateRange
+						}
+						var bfdWidget = new BfdWidget(item);
+						widgets.push(bfdWidget);
+						self[item.type] ? self[item.type].push(bfdWidget) : self[item.type] = [bfdWidget];
+					})
+					$.each(widgets, function(n, bfdWidget) {
+						bfdWidget.load().generateUI(function() {
+							checkWidgetComplete('Init')
+						}).getData(function() {
+							checkWidgetComplete('Load')
+						})
+					})
+				})
+			}
+		}
+
+		self.get = function(index) {
+			return widgets[index]
+		}
+		self.getByType = function(type) {
+			return self[type]
+		}
+		self.getSetting = function() {
+			return $.ajax({
+				url: _baifendianWidgetsComboSettingURL,
+				data: {
+					pageID: self.pageId
+				},
+				dataType: 'json'
+			})
+		}
+		function checkWidgetComplete(str) {
+			var isAllLoaded = true
+			$.each(widgets, function(i, widget) {
+				if (!widget['is'+str]) {
+					isAllLoaded = false
+				}
+			})
+			if (isAllLoaded && self['on'+str]) {
+				self['on'+str]();
+			}
+		}
+		self.init()
+	}
+	window.BfdWidget = function(item) {
+		var self = this
+		var type = item.type
+
+		var requires = _baifendianWidgets[type]['requires'].slice(0);
+		var $l = $LAB.sandbox()
+		requires.push('models/' + type + '/parse.js')
+		self.item = item;
+		self.isInit = false;
+		self.isLoad = false;
+		self.load = function() {
+			$.each(requires, function(a, b) {
+				$l = $l.script(_path + b).wait()
+			})
+			return self;
+		}
+		self.generateUI = function(callback) {
+			$l.wait(function() {
+				self[type] = new self[type](self.item)
+				self[type].parseSetting()
+				self.isInit = true;
+				if(callback){
+					callback();
+				}
+			})
+			return self;
+		}
+		self.getData = function(callback) {
+			$l.wait(function() {
+				var param = self[type].mergeParam()
+				if(item.dateRange){
+					param.startDate = item.dateRange.startDate
+					param.endDate = item.dateRange.endDate
+				}
+				$.ajax({
+					url: _baifendianDataURL[param.id],
+					//_baifendianDataURL
+					data: param,
+					dataType: 'json'
+				}).done(function(d) {
+					self[type].parseData(d, true)
+					self.isLoad = true;
+					if(callback){
+						callback();
+					}
+				})
+			})
+			return self;
+		}
+		self.reload = function(item) {
+			$.extend(true, self.item, item);
+			self.generateUI().getData();
+			return self;
+		}
+	}
+})(document, window);

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>内容管理-全部</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/exp.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/baifendianWidgetsCombo/commons/lib/jquery.pagination/css/pagination.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/ifmAlbum/css/ifmAlbum.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/ifmWidget/css/ifmWidget.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+<script type="text/javascript" src="../../js/regulateSize.js"></script>
+<script type="text/javascript" src="../../js/changeSite.js"></script>
+<script type="text/javascript" src="../../js/messageTip.js"></script>
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/lib/jquery.pagination/jquery.pagination.js"></script>
+	<script type="text/javascript" src="../../resources/commons/list_tools.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="../../resources/ifmWidget/js/ifmWidget.js"></script>
+	<script type="text/javascript" src="../../resources/uploadify/jquery.uploadify.min.js"></script>
+	<script type="text/javascript" src="../../resources/ifmAlbum/js/ifmAlbum.js"></script>
+	<script type="text/javascript" src="../../js/ContentManager/media-内容管理-收录统计.js"></script>
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好,测试用户</a></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="current">
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<ul class="nav2">
+				<li class="current"><a href="#">收录统计</a></li>
+				<li class="rbgno "><a href="#">图片设置</a></li>
+			</ul>
+			<div class="m-con bg">
+				<div class="con-5">
+					<div class="arrow"></div>
+					<div class="reveal">
+						<span>
+							已收录<em class="orange">236</em>个页面，其中 无匹配图片页面<em class="blue">12</em>个。
+						</span>
+						<a href="#" class="x">&nbsp;</a>
+					</div>
+					<!--页签-->
+					<div class="choose-area border-bottom">
+							<ul class="choose">
+								<li class="width68 current"><a>全部</a></li>
+								<li class=""><a>无图片匹配文章</a></li>
+								<li class=""><a>已屏蔽文章</a></li>
+							</ul>
+						</div>
+					<!--页签end-->
+					<!--全部-->
+					<div class="section">
+						<div class="reset">
+							<span class="left-btn">
+								<a href="#" class="btn-1">重新采集</a>
+								<a href="#" class="btn-2">屏蔽</a>
+							</span>
+							<div class="search-box2">
+								<input type="text" class="" />
+								<a href="#" class="btn">搜索</a>
+							</div>
+						</div>
+						<table class="data-tab4" cellspacing="0" cellpadding="0" border="0">
+							<thead>
+							<tr class="bg">
+								<th class="w44"><input type="checkbox" class="" /></th>
+								<th class="w133">展示图片</th>
+								<th class="w433">文章</th>
+								<th class="brn w300">操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<ul class="page">
+						</ul>
+					</div>
+					<!--全部end-->
+					<!--无图片-->
+					<div class="section" style="display:none;">
+						<div class="reset">
+							<span class="left-btn">
+								<a href="#" class="btn-1">重新采集</a>
+								<a href="#" class="btn-2">屏蔽</a>
+							</span>
+							<div class="search-box2">
+								<input type="text" class="" />
+								<a href="#" class="btn">搜索</a>
+							</div>
+						</div>
+						<table class="data-tab4" cellspacing="0" cellpadding="0" border="0">
+							<thead>
+							<tr class="bg">
+								<th class="w44"><input type="checkbox" class="" /></th>
+								<th class="w133">展示图片</th>
+								<th class="w433">文章</th>
+								<th class="brn w300">操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<ul class="page">
+						</ul>
+					</div>
+					<!--无图片end-->
+					<!--已屏蔽-->
+					<div class="section" style="display:none;">
+						<div class="reset">
+							<span class="left-btn">
+								<a href="#" class="btn-1">取消屏蔽</a>
+							</span>
+							<div class="search-box2">
+								<input type="text" class="" />
+								<a href="#" class="btn">搜索</a>
+							</div>
+						</div>
+						<table class="data-tab4" cellspacing="0" cellpadding="0" border="0">
+							<thead>
+							<tr class="bg">
+								<th class="w44"><input type="checkbox" class="" /></th>
+								<th class="w133">展示图片</th>
+								<th class="w433">文章</th>
+								<th class="brn w300">操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<ul class="page">
+						</ul>
+					</div>
+					<!--已屏蔽end-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+</body>
+</html>

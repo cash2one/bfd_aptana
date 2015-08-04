@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;baeUE/nginx-jssc&apos; to &apos;nginx&apos;" description="Rename resource &apos;nginx-jssc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="nginx-jssc" name="nginx" stamp="1332139502512" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;baeUE/static/1.html&apos; to &apos;grid.html&apos;" description="Rename resource &apos;1.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="static/1.html" name="grid.html" stamp="1332139861512" updateReferences="true"/>
+</session>

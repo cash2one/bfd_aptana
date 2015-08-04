@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>test</title>
+		<link rel="stylesheet" type="text/css" href="./resources/ifmWidget/css/ifmWidget.css" />
+		<script type="text/javascript" src="./resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+		<script type="text/javascript" src="./resources/commons/jquery.blockUI.js"></script>
+		<script type="text/javascript" src="./resources/commons/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="./resources/ifmWidget/js/ifmWidget.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#test').click(function(){
+					$.ifmWidget('_alertSuccessMuti',{
+						basePath:'./resources/ifmWidget',
+						title:'测试标题',
+						content:'测试内容',
+						dom:$('')
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button id="test">测试</button>
+	</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BRE for Media/pages/replace_tools_tools2.py&apos; to &apos;replace_tools_title2.py&apos;" description="Rename resource &apos;replace_tools_tools2.py&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pages/replace_tools_tools2.py" name="replace_tools_title2.py" stamp="1363160251564" updateReferences="true"/>
+</session>

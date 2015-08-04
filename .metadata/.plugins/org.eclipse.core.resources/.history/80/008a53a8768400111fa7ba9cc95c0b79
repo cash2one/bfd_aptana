@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="./css/packed.css" rel="stylesheet" type="text/css" />
+<link href="./css/login.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="JavaScript" src="./resources/jquery/jquery.js"></script>
+<script type="text/javascript">
+	function register(){
+		$.post("/wbportal/user/register.action", {"user.inviteCode":$('#inviteCode').val(),"user.name":$('#name').val(),"user.password":$('#password').val(),"user.email":$('#email').val(),"user.phone":$('#phone').val()},
+				function(data){
+					if(data=='1'){
+						//alert('注册成功');
+						window.document.location.href = "./main.html";
+					}else if(data == '2'){
+						alert('用户名已存在');
+					}else if(data == '3'){
+						alert('邀请码不正确或已过期');
+					}
+				}
+			);
+	}
+</script>
+</head>
+
+<body>
+<div class="head">
+  <div class="index-head">
+    <div class="logo"><a href="#"></a></div>
+    <div class="logandreg"><a href="./login.html" class="log">登录</a><a href="#" class="regnow">注册</a></div>
+    <div class="menu"><a href="#">首页</a>|<a href="#">新闻</a>|<a href="#">产品</a>|<a href="#">商业</a>|<a href="#">演示</a></div>
+  </div>
+</div>
+<div class="content">
+  <div class="login-con">
+    <h1 class="noneline">创建您的 BAE 帐户：</h1>
+    <div class="point-d" style="margin-top:10px">创建一个您的BAE账户，通过它，您可以享受BAE的服务，如果您已经拥有了一个BAE账户请<a href="./login.html">点击这里</a>直接登录！ </div>
+    <table border="0" cellspacing="0" cellpadding="0" class="import">
+      <tr>
+        <th>邀&nbsp;&nbsp;请&nbsp;&nbsp;码：</th>
+        <td><label for="textfield"></label>
+          <input type="text" name="inviteCode" id="inviteCode"  class="inputbox"/></td>
+        <td><div class="operate"><a href="#">获取邀请码</a></div></td>
+      </tr>
+      <tr>
+        <th>用&nbsp;&nbsp;户&nbsp;&nbsp;名：</th>
+        <td><label for="textfield4"></label>
+          <input type="text" name="name" id="name"  class="inputbox"/></td>
+        <td><div class="point-b">请填写您常用的电子邮箱地址为用户名</div></td>
+      </tr>
+      <tr>
+        <th>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</th>
+        <td><label for="textfield5"></label>
+          <input type="password" name="password" id="password"  class="inputbox"/></td>
+        <td><div class="point-a">密码输入错误</div></td>
+      </tr>
+      <tr>
+        <th>确认密码：</th>
+        <td><label for="textfield6"></label>
+          <input type="password" name="repassword" id="repassword"  class="inputbox"/></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <th>联系邮箱：</th>
+        <td><label for="textfield7"></label>
+          <input type="text" name="email" id="email"  class="inputbox"/></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <th>联系电话：</th>
+        <td><label for="textfield8"></label>
+          <input type="text" name="phone" id="phone"  class="inputbox"/></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="2"><div class="rememberid">
+          <input type="checkbox" name="checkbox" id="checkbox"  class="check"/>
+          同意"<a href="#"></a><a href="#">百分点分析引擎使用许可协议</a>"</div></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><div><a href="javascript:void(0)" class="bluebut" onclick="javascript:register();">立即注册</a></div></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="footer">
+<div class="index-footer">
+  <div class="l"><a href="#">产品介绍</a> <a href="#">联系我们</a> <a href="#">公司简介</a></div>
+  <div class="r">京ICP备09109727号 Copyright © 2012 百分点信息科技有限公司. All Right Reserved.</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>登录</title> 
+	<link rel="stylesheet" href="./resources/jquery.mobile/jquery.mobile-1.2.0.min.css" />
+	<script src="./resources/jquery/jquery-1.8.2.min.js"></script>
+	<script src="./resources/jquery.mobile/jquery.mobile-1.2.0.js"></script>
+	<script src="./resources/commons/jquery.validate.min.js"></script>
+	<script src="./resources/commons/jquery.form.js"></script>
+	<script src="./resources/commons/jquery.mobile.simpledialog2.js"></script>
+	<script type="text/javascript">
+		 $(function(){
+                   $('#cancel').click(function(){
+				   	  $('#username,#password').val('')
+				   })
+				   $('#submit').click(function(){
+					$('#form1').submit()
+				  })
+				  $('#form1').validate({
+						  	submitHandler: function(form){
+								$(form).ajaxSubmit({
+									dataType:'json',
+									success:function(responseText, statusText, xhr, $form){
+										if(responseText=='success'){
+											window.document.location.href = "./main.html";
+										}else{
+											
+										}
+									},
+									error:function(jqXHR, textStatus, errorThrown){
+										var message="系统其他错误,请重试"
+										var status={
+											'timeout':"请求超时,请检查网络",
+											'error':'系统发生错误,请稍后再试',
+											'abort':'服务拒绝'
+										}
+										message=status[textStatus]||message
+										  $('#dialog').simpledialog2({
+																				    mode: 'blank',
+																				    headerText: 'Some Stuff',
+																				    headerClose: true,
+																				    blankContent : 
+																				      "<ul data-role='listview'><li>Some</li><li>List</li><li>Items</li></ul>"+
+																				      // NOTE: the use of rel="close" causes this button to close the dialog.
+																				      "<a rel='close' data-role='button' href='#'>Close</a>"
+																				  })
+
+									}
+								})
+							}
+				  })
+		 })
+	</script>
+</head> 
+<body> 
+<!-- Home -->
+<div data-role="page" data-theme="b" id="page1">
+    <div data-theme="b" data-role="header">
+        <h5>
+            登录
+        </h5>
+        <a data-role="button" data-theme="b" data-ajax="false" href="./register.html" data-icon="plus" data-iconpos="left"
+        class="ui-btn-right">
+            注册
+        </a>
+    </div>
+    <div data-role="content" data-theme="b">
+    	<form id="form1" action="/login.action" data-ajax="false">
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup">
+                    <label for="username">
+                        用户名
+                    </label>
+                    <input name="username" id="username" placeholder="输入用户名"  type="text" maxlength="20"/>
+                </fieldset>
+            </div>
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup">
+                    <label for="password">
+                        密码
+                    </label>
+                    <input name="password" id="password" placeholder="输入密码"  type="password" maxlength="12"/>
+                </fieldset>
+            </div>
+			</form>
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					  <div data-role="button" data-theme="b"  data-icon="arrow-r" data-iconpos="left" id="cancel">
+                        重置
+                    </div>
+	            </div>
+	            <div class="ui-block-b">
+	            	  <div data-role="button" data-theme="b"  data-icon="arrow-r" data-iconpos="left" id="submit">
+                        提交
+                    </div>
+	            </div>
+			</div>			
+    </div>
+    <div data-theme="b" data-role="footer"  data-position="fixed">
+        <h3>
+            Footer
+        </h3>
+    </div>
+</div>
+<div id="dialog"></div>
+</body>
+</html>

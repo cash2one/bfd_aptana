@@ -1,0 +1,77 @@
+@charset "utf-8";
+.head {
+	background-color: #267BB6;
+	background-image: url(images/head_bg.gif);
+	border-bottom: 1px solid #055999;
+	height: 49px;
+}
+.left .menulist ul li {
+	line-height: normal;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.right .datacontent .data01 .line {
+	width: 1px;
+	background-image: url(images/daydata_line.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	font-size: 1px;
+}
+.right .datacontent .data02 .data_select select {
+	font-size: 12px;
+}
+.right .datacontent .data01 .tittle .ico {
+	background-image: url(images/zhushi-ie6.gif);
+}
+.right .datacontent .data02 .tushi .tscolor01 {
+	line-height: 11px;
+}
+.right .datacontent .data04 .tushi .tscolor01 {
+	line-height: 11px;
+}
+
+.no01 {
+	width: 1em;
+}
+.no01 .tb_content {
+	text-align: right;
+	padding-right: 2px;
+	padding-left: 0px;
+}
+.right .datacontent .data03 .pages .txt {
+	padding-top: 5px;
+}
+/*.right .datacontent .data03 .ud_select {
+	padding: 8px;
+}
+.right .datacontent .data03 .ud_select ul li {
+	line-height: 6px;
+	margin-bottom: 6px;
+}*/
+.right .datacontent .data03 .ud_select ul li input {
+	margin: 0px;
+	padding: 0px;
+	font-size: 1px;
+	height: 12px;
+	width: 12px;
+}
+.right .datacontent .data03 .ud_select ul li span {
+	display: block;
+	float: left;
+	padding-top: 1px;
+}
+.import .bluebut {
+	height: 23px;
+	padding-top: 6px;
+}
+body {
+_background-image: url(about:blank);     /*用浏览器空白页面作为背景*/
+_background-attachment: fixed;             /* prevent screen flash in IE6 确保滚动条滚动时，元素不闪动*/
+}
+
+.misc {
+_position: absolute;                                       /*IE6 用absolute模拟fixed*/
+_top: expression(documentElement.scrollTop + 300 + "px"); /*IE6 动态设置top位置*/
+/* documentElement.scrollTop 设置浮动元素始终在浏览器最顶，可以加一个数值达到排版效果 */
+}

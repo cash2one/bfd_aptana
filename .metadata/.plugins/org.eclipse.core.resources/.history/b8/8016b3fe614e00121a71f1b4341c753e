@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>私信</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/baifendianWidgetsCombo/commons/lib/jquery.pagination/css/pagination.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/lib/jquery.pagination/jquery.pagination.js"></script>
+	<script type="text/javascript" src="../../resources/commons/list_tools.js"></script>
+	<script type="text/javascript" src="../../js/SiteManager/message.js"></script>
+	<script type="text/javascript">
+		function changeTab(a){
+			var lis = document.getElementById('nav').getElementsByTagName("li");
+			//alert("111");
+			for (var i=0;i<lis.length;i++) {
+				if(lis[i]==a){				
+
+					lis[i].className="current";
+				}else{
+					lis[i].className="";
+
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好,测试用户</a></li>
+					<li><a href="#">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			<ul class="nav" id="nav">
+				<li onclick="changeTab(this)">
+					<em class="icon1">&nbsp;</em>
+					<a href="#" class="">数据分析</a>
+					<strong>&nbsp;</strong>
+				</li>
+				<li class="" onclick="changeTab(this)">
+					<em class="icon3">&nbsp;</em>
+					<a href="#" class="">内容管理</a>
+					<strong class="position">&nbsp;</strong>
+				</li>
+				<li onclick="changeTab(this)">
+					<em class="icon2">&nbsp;</em>
+					<a href="#" class="">展示设置</a>
+					<strong>&nbsp;</strong>
+				</li>
+				<li onclick="changeTab(this)">
+					<em class="icon4">&nbsp;</em>
+					<a href="#" class="">流量交换</a>
+					<strong>&nbsp;</strong>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<div class="m-title">消息</div>
+			<div class="m-con border-top">
+				<div class="section">
+					<div class="choose-area margin-top0">
+						<ul class="choose">
+							<li class="current"><a href="#">系统通知(17)</a></li>
+							<li class=""><a href="#">私信(2)</a></li>
+						</ul>
+						<a href="#" class="blacklist">黑名单 >></a>
+					</div>
+				<div id="m0">
+					<div class="all-dialog">共有17条系统通知</div>
+						<ul class="dialog-box">
+						</ul>
+						<div class="click">
+							<div class="c-left">
+								<a href="#" class="check-all">全选</a>
+								<a href="#" class="dele">删除</a>
+							</div>
+						</div>
+				</div>
+				<div id="m1" style="display:none">
+					<div class="all-dialog">共有135个对话</div>
+					<ul class="dialog-box">
+						<li>
+							<span class="d-left">
+								<div>
+									<input type="checkbox" />
+									<span class="name">中国金融网（9）</span>
+								</div>
+								<p>京东11.11沙漠风暴收官之作 疯抢3天 关注邮件有惊喜！</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x">&nbsp;</a>
+							</span>
+						</li>
+						<li class="color">
+							<span class="d-left">
+								<div>
+									<input type="checkbox" />
+									<span class="name">月光博客（9）</span>
+								</div>
+								<p>我：你好，是够可交换流量？</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+						<li>
+							<span class="d-left">
+								<div>
+									<input type="checkbox" />
+									<span class="name">中国金融网（9）</span>
+								</div>
+								<p>京东11.11沙漠风暴收官之作 疯抢3天 关注邮件有惊喜！</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+						<li class="color">
+							<span class="d-left">
+								<div>
+									<input type="checkbox" />
+									<span class="name">月光博客（9）</span>
+								</div>
+								<p>我：你好，是够可交换流量？</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+						<li>
+							<span class="d-left">
+								<div>
+									<input type="checkbox" />
+									<span class="name">中国金融网（9）</span>
+								</div>
+								<p>京东11.11沙漠风暴收官之作 疯抢3天 关注邮件有惊喜！</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+						<li class="color">
+							<span class="d-left">
+								<div>
+									<input type="checkbox" />
+									<span class="name">月光博客（9）</span>
+								</div>
+								<p>我：你好，是够可交换流量？</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+						<li>
+							<span class="d-left">
+								<div>
+									<input type="checkbox" />
+									<span class="name">中国金融网（9）</span>
+								</div>
+								<p>京东11.11沙漠风暴收官之作 疯抢3天 关注邮件有惊喜！</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+						<li class="color">
+							<span class="d-left">
+								<div>
+									<input type="checkbox" />
+									<span class="name">月光博客（9）</span>
+								</div>
+								<p>我：你好，是够可交换流量？</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+					</ul>
+					 <div class="click">
+						<div class="c-left">
+							<a href="#" class="check-all">全选</a>
+							<a href="#" class="dele">删除</a>
+						</div>
+						<div class="c-right">
+							<ul class="page">
+								<li><a href="#">上一页</a></li>
+								<li class="number current"><a href="#">1</a></li>
+								<li class="number"><a href="#">2</a></li>
+								<li class="number"><a href="#">3</a></li>
+								<li class="number"><a href="#">4</a></li>
+								<li class="number"><a href="#">5</a></li>
+								<li class="number"><a href="#">6</a></li>
+								<li class="number"><a href="#">7</a></li>
+								<li class="number"><a href="#">8</a></li>
+								<li class="number"><a href="#">9</a></li>
+								<li class="number"><a href="#">10</a></li>
+								<li><a href="#">下一页</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="m2" style="display:none">
+                   <div class="all-dialog"><a href="#"> << 返回所有私信 </a></div>
+					<ul class="dialog-box padding-bottom39">
+						<li class="h266">
+							<div class="top">
+								<span class="send">发私信给：中国金融网</span>
+								<a href="#" class="join">加入黑名单</a>
+							</div>
+							<textarea class="">&nbsp;</textarea>
+							<div class="bottom">
+								<em>还可以输入300字</em>
+								<a href="#" class="send-btn">发 送</a>
+							</div>
+						</li>
+						<li>
+							<span class="d-left">
+								<div>
+									
+									<span class="name">中国金融网（9）</span>
+								</div>
+								<p>京东11.11沙漠风暴收官之作 疯抢3天 关注邮件有惊喜！</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+						<li class="color">
+							<span class="d-left">
+								<div>
+									
+									<span class="name">月光博客（9）</span>
+								</div>
+								<p>我：你好，是够可交换流量？</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+						<li>
+							<span class="d-left">
+								<div>
+									
+									<span class="name">中国金融网（9）</span>
+								</div>
+								<p>京东11.11沙漠风暴收官之作 疯抢3天 关注邮件有惊喜！</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+						<li class="color">
+							<span class="d-left">
+								<div>
+									
+									<span class="name">月光博客（9）</span>
+								</div>
+								<p>我：你好，是够可交换流量？</p>
+							</span>
+							<span class="d-right">
+								<span class="date">2012/10/13</span>
+								<span class="time">13:46</span>
+								<a href="#" class="x" style="visibility:hidden;">&nbsp;</a>
+							</span>
+						</li>
+						
+					</ul>
+				</div>
+				
+			</div>			
+			</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>Copyright © 2012 xxxx.com  All rights reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+</body>
+</html>

@@ -1,0 +1,58 @@
+$(function(){
+	    function bindClip(){
+			ZeroClipboard.setMoviePath('../../resources/ZeroClipboard/ZeroClipboard.swf')
+			var clip = new ZeroClipboard.Client();
+			clip.glue($('.copy:first')[0]);
+			clip.setText($.trim($('textarea').text()))
+			$(this).data('clip',clip)
+			clip.addEventListener('complete', function(client, text) {
+								$('.right').show()
+		            });
+		}
+		$('.section').scrollable({vertical: true,onSeek:function(){
+			bindClip()
+		}})
+		if($('.set-box:first').is(':hidden')){
+			bindClip()
+		}
+		var api=$('.section').data('scrollable')
+		$('.set-box:first').click(function(){
+//			$.post('url',{},function(data){
+//				if(data==""){
+					api.seekTo(1)
+//				}
+//			},'json')
+		});
+		function saveChange(){
+//			if($('#promo_type').val()=='defaults'){
+//				return
+//			}
+			 $.ifmWidget("loading",{
+		    		title:'正在操作',
+		    		content:'正在操作...'
+			})
+			$.post('url',{'参数名-是否开启':$('#isopenpromo').prop('checked')?'选中':'未选中','参数名-类型':$('#promo_type').val()},function(data){
+				if(data == '成功的状态'){
+					$.ifmWidget("tip",{'content':'操作成功'})
+				}else{
+					$.ifmWidget("alertFail",{
+			    		title:'操作失败',
+			    		content:'操作失败'
+			    	})
+				}
+			},'json')
+		}
+		$('#isopenpromo').change(function(){
+			 saveChange()
+		})
+		$('#promo_type').change(function(){
+			
+		})
+		if($('#promo_type').val()=='defaults'){
+			
+		}
+		$('.view-btn').click(function(){
+			var value=$(this).parent().find('input').val()
+			window.open('http://'+value)
+		})
+})

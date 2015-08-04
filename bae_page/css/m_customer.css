@@ -1,0 +1,30 @@
+@charset "utf-8";
+.m_cus_menu{width:830px; height:41px; background:url(../images/m_02.gif); overflow:hidden; margin:0px auto; padding:0px 25px;}
+ .m_cus_menu p{ margin-left:10px; float:left; display:block; width:60px; height:36px; margin-top:5px; line-height:36px; text-align:center; font-size:14px; font-weight:bold;}
+ .m_cus_menu p.on{ background:url(../images/m_01.gif); color:#007ba8;}
+ .m_cus_menu p.off{ color:#e4f8ff; cursor:pointer;}
+.m_box{width:800px; margin:0px auto; border-left:1px solid #e3e3e3; border-right:1px solid #e3e3e3; padding:30px 39px;}
+ .m_box .choice{ height:30px; clear:both;}
+ .m_box .choice ul{ float:left; display:block;height:30px; margin-right:20px;}
+ .m_box .choice ul li{float:left;display:block; margin-right:5px;}
+ .m_box .choice ul li input{*margin-top:-4px;}
+
+ .dis{display:block;}
+ .undis{display:none;}
+ .m_box table{ width:800px; background:#c2ccd0; margin-bottom:20px;}
+ .m_box table tr th{ height:40px; background:url(../images/m_03.gif) repeat-x; line-height:40px; font-weight:normal;}
+ .m_box table tr td{ background:#FFF; height:30px; line-height:30px; color:#515151; padding:0px 5px;}
+ .m_box table tr.tr1 td{ background:#fbfbfb;}
+ .m_box table tr td.userId{ font-weight:bold; color:#b85f00;}
+ .m_box table tr td.web a{ text-decoration:underline;}
+ .m_box table tr td.operat{ text-align:center;}
+ .m_box table tr td.operat a{ color:#0063c0;text-decoration:underline;}
+ 
+ .m_box .m_page{ padding:15px 100px 0px 180px; border-top:1px solid #CCC; height:20px;}
+ .m_box .m_page ul{ display:block; float:left; margin:0px 10px; line-height:20px; height:20px;}
+ .m_box .m_page ul a{ color:#06C; font-weight:bold; text-decoration:underline;}
+ .m_box .m_page ul font{color:#b90000; font-weight:bold; font-size:14px;}
+ .m_box .m_page ul li{ display:block; float:left; margin-right:5px;}
+ .m_box .m_page ul li .input{ width:30px; height:17px;border:1px solid #ccc; line-height:17px;}
+
+.m_cus_bottom{width:880px; height:29px; background:url(../images/m_02.gif) bottom; overflow:hidden; margin:0px auto;}

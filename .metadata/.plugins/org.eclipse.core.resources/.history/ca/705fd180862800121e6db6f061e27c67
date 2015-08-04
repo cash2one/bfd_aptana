@@ -1,0 +1,159 @@
+/**
+ * @author Administrator
+ */
+function cateCheckbox(json,rander,defaultData){
+	                var delimiter='->'
+					if(defaultData){
+						defaultData=$.map(defaultData,function(s){
+							return delimiter+s
+						})
+					}
+					var cateTree={}
+					function Categories(json,path,hide,dominit){
+						var self=this
+						self.alterbuild=[]
+						self.alterbuild2=[]
+	                    function buildDom(){
+	                        self.dom = $('<div class="area">' +
+	                        '<div class="choose-box">' +
+	                        '<ul></ul>' +
+	                        '</div>' +
+	                        '<div class="choose-btn">' +
+	                        '</div>' +
+	                        '</div>')
+							var first=true
+	                        $.each(json, function(k, v){
+	                            var l = $('<li></li>')
+	                            var c = $('<input type="checkbox" />').appendTo(l).data('path',path+delimiter+k)
+								if(defaultData){
+									$.each(defaultData,function(i,item){
+										if(item.indexOf(path+delimiter+k)==0){
+											c.attr('checked',true)
+											if(item.length>(path+delimiter+k).length){
+												self.alterbuild2.push(function(){
+													if(!cateTree[path+delimiter+k]){// && !(dominit||first)){
+														var cate=new Categories(v,path+delimiter+k,true,false)
+												   	    cateTree[path+delimiter+k]=cate
+													}
+												})
+											}
+										}
+									})
+								}
+	                            var s = $('<span></span>').html(k).appendTo(l)
+								if(first){
+									self.label=s
+								}
+								s.click(function(){
+									if(!$(this).parent().hasClass('selected')){
+										$(this).parent().siblings().removeClass('selected')
+										$(this).parent().parent().parent().parent().nextAll().find('li.selected').removeClass('selected')
+										$(this).parent().parent().parent().parent().nextAll().hide()
+										$(this).parent().addClass('selected')
+										if(!$.isEmptyObject(v)){
+												if(!cateTree[path+delimiter+k]){
+													var cate=new Categories(v,path+delimiter+k,false)
+													cateTree[path+delimiter+k]=cate
+												}else{
+													cateTree[path+delimiter+k].dom.show()
+												}
+									        	if(c.is(':checked')&&cateTree[path+delimiter+k].dom.find('li input:checkbox:checked').size()==0){
+														 cateTree[path+delimiter+k].dom.find('li input:checkbox').attr('checked',true)
+												}
+										}
+									}
+								})
+								c.change(function(){
+									if($(this).is(':checked')){
+										if(s.parent().hasClass('selected')){
+										    $(this).parent().parent().parent().parent().prevAll(':visible').find('li.selected input:checkbox').attr('checked',true)
+										}else{
+											s.parent().siblings('.selected').parent().parent().parent().prevAll(':visible').find('li.selected input:checkbox').attr('checked',true)
+										}
+										
+//									   if(cateTree[path+delimiter+k]&&cateTree[path+delimiter+k].dom.find('input:checkbox:checked').size()==0){
+									    if(cateTree[path+delimiter+k]){
+												cateTree[path+delimiter+k].dom.find('input:checkbox').attr('checked',true).change()				 	
+										}
+									}else{
+										if(cateTree[path+delimiter+k]){
+											cateTree[path+delimiter+k].dom.find('input:checkbox:checked').attr('checked',false).change()
+										}
+										if($(this).parent().parent().find('input:checkbox:checked').size()==0){
+											$(this).parents('.area').prevAll(':visible').not($(this).parents('.area')).first().find('li.selected input:checkbox').attr('checked',false).change()
+										}
+									}
+								})
+	                            l.appendTo(self.dom.find('ul'))
+								if(dominit&&first){
+									self.alterbuild.push(function(){
+													if(!$.isEmptyObject(v)){
+														 if(!cateTree[path+delimiter+k]){
+																  	var cate=new Categories(v,path+delimiter+k,false,true)
+																    cateTree[path+delimiter+k]=cate
+																  }
+													}
+												})
+								}
+								first=false
+	                        })
+							$('<a  class="all">全选</a>').appendTo(self.dom.find('.choose-btn')).click(function(){
+								$(this).parent().parent().find('input:checkbox').not(':checked').attr('checked',true).change()
+							})
+							$( '<a class="reverse">反选</a>').appendTo(self.dom.find('.choose-btn')).click(function(){
+								var checked=$(this).parent().parent().find('input:checkbox:checked')
+								var unchecked=$(this).parent().parent().find('input:checkbox').not(':checked')
+								checked.attr('checked',false).change()
+								unchecked.attr('checked',true).change()
+							})
+							if(hide){
+								self.dom.hide()
+							}
+	                        self.dom.appendTo(rander)
+							$.each(self.alterbuild,function(i,item){
+								item()
+							})
+							$.each(self.alterbuild2,function(i,item){
+								item()
+							})
+	                    }
+	                    self.init = function(){
+	                        buildDom()
+	                    }
+	                    self.init()
+	                }
+					var c=new Categories(json,'',false,true)
+					if($(rander).find('.area:visible ul').find('li:first input:checkbox:checked').size()!=0){
+						if($(rander).find('.area:visible ul').find('li:first input:checkbox:checked').last()
+						.parent().parent().parent().parent()
+						.nextAll(':visible').find('input:checkbox:checked').size()==0){
+							$(rander).find('.area:visible ul').find('li:first input:checkbox:checked').last()
+						.parent().parent().parent().parent()
+						.nextAll(':visible').find('input:checkbox').attr('checked',true)
+						}
+						
+					}
+					$(rander).find('.area:visible ul').find('li:first').addClass('selected')
+					return {
+						getSelectPath:function(){
+							var result=[]
+							$(rander).find('input:checkbox:checked').each(function(){
+								var path=$(this).data('path'),has=false
+								$.each($.extend([],result),function(i,item){
+									if(path.length>=item.length&&path.indexOf(item)==0){
+										result[i]=path
+										has=true
+									}else if(item.length>path.length&&item.indexOf(path)==0){
+										has=true
+									}
+								})
+								if(!has){
+									result.push($(this).data('path'))
+								}
+							})
+						   return $.map(result,function(s){
+								return s.substr(delimiter.length)
+							})
+						}
+					}
+				}

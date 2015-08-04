@@ -1,0 +1,134 @@
+/**
+ * @author Administrator
+ */
+$.ajaxSettings.traditional = true
+$(function(){
+    $('.choose2 > li').click(function(){
+        if (!$(this).hasClass('current')) {
+            document.title = '内容管理-' + $(this).find('a').html()
+            $(this).siblings().removeClass('current')
+            $(this).addClass('current')
+            $('.section').hide().eq($(this).index()).show()
+        }
+    })
+	$('.select_box input:text').click(function(){
+		$(this).parents('.select_box').find('ul').slideToggle()
+	})
+	$('.select_box ul li').click(function(){
+			$(this).parents('.select_box').find('input:text').val($(this).html())
+			$(this).parents('.select_box').find('ul li.active').removeClass('active')
+			$(this).addClass('active')
+			$(this).parents('.select_box').find('ul').slideUp()
+			$(this).parents('.select_box').find('input:hidden').val($(this).data('value'))
+	})
+	$('.select_box input:hidden').each(function(){
+			var value=$(this).val()
+			if(value!==''){
+				$(this).parents('.select_box').find('li').each(function(){
+					if ($(this).data('value') === value) {
+					     $(this).click()
+					}
+				})
+			}
+		})
+})
+$(function(){
+	   $.template('t1','<tr>'+
+								'<td style="text-align:center;"><span class="blue">${site_name}</span><span class="site">${site_address}</span></td>'+
+								'<td style="text-align:center;"><span>${type}</span></td>'+
+								'<td class="pl14"><span>${desc}</span></td>'+
+								'<td style="text-align:center;"><span>${sim_rate}</span></td>'+
+								'<td class="brn">{{html operate}}<!--<a href="#" class="apply">申请交换</a>--></td>'+
+								'</tr>')
+	   $.template('t2','<tr>'+
+								'<td style="text-align:center;"><span class="blue">${site_name}</span><span class="site">${site_address}</span></td>'+
+								'<td style="text-align:center;"><span>${type}</span></td>'+
+								'<td class="pl14"><span>${desc}</span></td>'+
+								'<td  class="brn" style="text-align:center;"><span>${sim_rate}</span></td>'+
+								'</tr>')				
+		function madeList(index,opts,template,operate){
+			var defaults={
+									container: '.section:eq('+index+') > table > tbody',
+									rowList:5,
+									getData:function(){
+										return {
+											q:$('.section:eq('+index+') input:text').val(),
+											type:$('.section:eq('+index+') input:hidden').val()
+										}
+									},
+									testData: {
+							            "totalItem": 100,
+							            "stores": [{
+											"id":'12312',
+							                "site_name": "测试网",
+							                "site_address": 'www.ceshi.com',
+											"type":"媒体",
+							                "desc": '过来人求职网是大学生求职第一门户，为应届毕业生提供校园招聘、全职、兼职、实习、宣讲会、招聘会、网申等最新信息,以及... ',
+											"sim_rate":"30%"
+							            }]
+							        },
+									Model: function(i, item){
+							            var self = this
+										item.operate=operate
+							            self.dom = $.tmpl(template, item)
+							            i % 2 == 0 ? null : self.dom.addClass('color')
+										self.dom.data('item',item)
+							        },
+									 page: {
+							            container: '.section:eq('+index+') > ul'
+							        }
+			}
+			var setting=$.extend(true,defaults,opts)
+			return new List(setting)
+		}
+		 var t0=madeList(0,{url:'',data:{}},'t1','<a class="apply">申请交换</a>')
+		 var t1=madeList(1,{url:'',data:{}},'t1','<a class="apply">申请交换</a>')
+		 var t2=madeList(2,{url:'',data:{}},'t1','<a class="pass" href="#">通过</a><a class="refuse" href="#">拒绝</a>');		
+		 var t3=madeList(3,{url:'',data:{}},'t2');	
+		 $('.section').delegate('td a:contains("申请交换")','click',function(){
+		 	var d=$(this).parent()
+   			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    $.post('posturl',{id:d.parent().data('item')['id']})
+					d.html('<span class="apply">已提交申请</span>')
+				},
+				title:"确认申请交换",
+				content:"确定要申请交换吗?"
+			})
+		 })	
+		  $('.section').delegate('td a:contains("通过")','click',function(){
+		 	var d=$(this).parent()
+   			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    $.post('posturl',{id:d.parent().data('item')['id']})
+					d.html('<span class="apply">已通过申请</span>')
+				},
+				title:"确认通过申请",
+				content:"确定要通过申请吗?"
+			})
+		 })	
+		  $('.section').delegate('td a:contains("拒绝")','click',function(){
+		 	var d=$(this).parent()
+   			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    $.post('posturl',{id:d.parent().data('item')['id']})
+					d.html('<span class="apply">已拒绝申请</span>')
+				},
+				title:"确认拒绝申请",
+				content:"确定要拒绝申请吗?"
+			})
+		 })											
+})
+
+$(function(){
+	$('.amend').click(function(){
+		$.blockUI({ message:$('.page-area'),
+			                    css:{ border: 'none',
+								         width: '544px',
+										 top:  ($(window).height() -577) /2 + 'px',
+										 left: ($(window).width() -544) /2 + 'px'
+										},
+								overlayCSS:{opacity: 0}		 
+							})
+	})
+})

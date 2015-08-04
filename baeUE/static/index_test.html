@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>index</title>
+        <link rel="stylesheet" type="text/css" href="./css/commons.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+        <script type="text/javascript" src="./js/jquery.js">
+        </script>
+        <script type="text/javascript" src="./js/baeLeftBar1.js">
+        </script>
+        <script type="text/javascript">
+                        $(function(){
+                            var n = [{
+			                                "title": "根目录",
+			                                "url": "null",
+			                                "children": [{
+			                                    "title": "分组",
+			                                    "children": [{
+			                                        "title": "基本分组",
+			                                        "url": "grid-group.html"
+			                                    }, {
+			                                        "title": "过滤分组",
+			                                        "url": "grid-group-Filter.html"
+			                                    }]
+			                                },{
+				                                    "title": "子项加载",
+				                                    "children": [{
+				                                        "title": "基本子项加载",
+				                                        "url": "grid-treeDeep.html"
+				                                    }, {
+				                                        "title": "过滤子项加载",
+				                                        "url": "grid-treeDeep-Filter.html"
+				                                    }]
+			                              },{
+										  	"title": "饼图模式",
+											 "url": "grid-pie.html"
+										  },{
+										  	"title": "地图",
+											 "url": "map1.html"
+										  }]
+                                     }]
+                            
+                            
+                            
+                            $('.sideBar').baeLeftBar({
+                                nodes: n[0]['children']
+                            })
+                        })
+                    
+        </script>
+    </head>
+    <body>
+        <div class="header">
+        </div>
+        <div>
+            <div class="sideBar">
+            </div>
+            <div class="main">
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+        <div class="footer">
+        </div>
+    </body>
+</html>

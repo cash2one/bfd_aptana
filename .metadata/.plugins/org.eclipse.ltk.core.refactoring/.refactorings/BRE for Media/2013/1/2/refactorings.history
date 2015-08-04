@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BRE for Media/pages/SourceShare/Copy of media-流量交换-列表.html&apos; to &apos;media-流量交换-列表.html&apos;" description="Rename resource &apos;Copy of media-流量交换-列表.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pages/SourceShare/Copy of media-流量交换-列表.html" name="media-流量交换-列表.html" stamp="1357527263703" updateReferences="true"/>
+</session>

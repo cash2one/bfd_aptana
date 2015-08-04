@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>search</title>
+		 <link href="style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/scroll.js"></script>
+		<script type="text/javascript" src="./js/search.js"></script>
+		<link href="./css/upAndDown.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="./js/upAndDown.js"></script>
+	    <script type="text/javascript" src="./js/jquery.tmpl.min.js"></script>
+		<style type="text/css">
+			#index{
+				text-align:center;
+				padding:10px 0 20px 0;	
+				font-size:14px;			
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$("body").upAndDown();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="allkj"  show="true" style="min-height:300px;">
+            <div style="margin-right: -209.453px;" class="chapter-labels">
+                <div class="labels">
+                    <h1>搜索引擎</h1>
+                    <h3>Search engine</h3>
+                </div>
+            </div>
+            <div class="txtcon01">
+                <div class="cp01">
+                	<table cellspacing="0" cellpadding="0" border="0" class="search">
+					          <tbody><tr>
+					    <td><div class="sinput"><input id="searchContent" type="text" name=""></div></td>
+					    <td><div class="sbutton"><input id="searchButton" type="button" value="搜索" name="input2"></div></td>
+					  </tr>
+					</tbody></table>
+				</div>
+            </div>
+        </div>
+		<div  id="con"  class="allkj" show="flase">
+            <div style="margin-right: -248px;" class="chapter-labels">
+                <div class="labels">
+                    <h1>个性化着陆</h1>
+                    <h3>Personalized landing</h3>
+                </div>
+            </div>
+			<div id="index"></div>
+            <div class="txtcon01">
+                <div  id="content" class="cp01"></div>
+            </div>
+        </div>
+		<div class="footer">
+		<p>Copyright&copy;2012 Baifendian Corporation All Right Reserved.&#12288;浜琁CP澶�9109727鍙�#12288;浜叕缃戝畨澶�10108400769鍙�/p>
+		</div>
+	</body>
+</html>

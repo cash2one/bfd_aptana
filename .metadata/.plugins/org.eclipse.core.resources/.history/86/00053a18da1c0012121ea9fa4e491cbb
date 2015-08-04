@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>date range</title>
+		<link rel="stylesheet" media="screen" type="text/css" href="./resources/DateRange/css/datepicker.css" />
+		 <script type="text/javascript" language="JavaScript" src="./resources/commons/jquery.js"></script>
+		  <script type="text/javascript" language="JavaScript" src="./resources/commons/jquery.cookie.js"></script>
+		  		  <script type="text/javascript" language="JavaScript" src="./resources/DateRange/js/jquery.maskedinput-1.3.min.js"></script>
+		  <script type="text/javascript" language="JavaScript" src="./resources/DateRange/js/date_tools.js"></script>
+		  <script type="text/javascript" language="JavaScript" src="./resources/DateRange/js/datepicker.js"></script>
+		  <script type="text/javascript" language="JavaScript" src="./resources/DateRange/js/baeDatePicker.js"></script>
+		  <script type="text/javascript" language="JavaScript" src="./resources/DateRange/js/DateRange_int.js"></script>
+		   <script type="text/javascript" language="JavaScript">
+		   	 $(function(){
+			 	DateRange.prototype.onSlideDown = function(dateRange) {
+	
+				};
+				
+			 	var dataRange=new DateRange(document.getElementById('test'))
+				dataRange.change=function(){
+					if(dataRange.mode=='single'){
+						alert('mode:'+dataRange.mode+'\n开始时间:'+dataRange.getStart()+'\n结束时间:'+dataRange.getEnd())
+					}else{
+						alert('mode:'+dataRange.mode+'\n开始时间:'+dataRange.getStart()+'\n结束时间:'+dataRange.getEnd()
+						+'\n对比开始时间:'+dataRange.getDbStart()+'\n对比结束时间:'+dataRange.getDbEnd())
+					}
+					
+				}
+				var dataRange1=new DateRange(document.getElementById('test1'),false,'right')
+			 })
+		   </script>
+	</head>
+	<body>
+		<div id="test"></div>
+		<div id="test1" style="float:right;"></div>
+	</body>
+</html>

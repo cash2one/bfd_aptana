@@ -1,0 +1,275 @@
+@charset "utf-8";
+.head {
+	-moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+	background-color: #267BB6;
+	background-image: url(../images/head_bg.gif);
+	border-bottom: 1px solid #055999;
+	min-height: 49px;
+	position: relative;
+	z-index: 4;
+}
+.index-head {
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 49px;
+}
+.index-footer {
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	height: 50px;
+}
+.logo {
+	float: left;
+	margin-left: 10px;
+	*margin-left: 6px;
+}
+.logo a {
+	background-image: url(../images/logo.gif);
+	height: 49px;
+	width: 141px;
+	display: block;
+}
+.head .menu {
+	float: right;
+	line-height: 49px;
+	color: #A7CCE9;
+	margin-right: 10px;
+}
+.head .menu a {
+	color: #FFF;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.head .menu em {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.content {
+	clear: both;
+	height: 652px;
+	margin-top: 15px;
+}
+.footer {
+	background-image: url(../images/footer_bg.gif);
+	background-repeat: repeat-x;
+	height: 50px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #F0F0F0;
+	padding-right: 10px;
+	padding-left: 10px;
+	line-height: 50px;
+	color: #999;
+}
+.footer .l {
+	float: left;
+}
+.footer .l a {
+	color: #999;
+	padding-right: 15px;
+}
+.footer .r {
+	float: right;
+}
+.logandreg {
+	float: right;
+	margin-top: 9px;
+}
+.logandreg .log {
+	background-image: url(../images/but_loginbig.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	display: block;
+	height: 30px;
+	width: 40px;
+	color: #FFF;
+	float: left;
+	line-height: 30px;
+	padding-left: 23px;
+}
+.logandreg .lognow {
+	background-image: url(../images/but_loginbig.gif);
+	background-repeat: no-repeat;
+	background-position: 0px -60px;
+	display: block;
+	height: 30px;
+	width: 40px;
+	color: #FFF;
+	float: left;
+	line-height: 30px;
+	padding-left: 23px;
+	color: #98CAEF;
+}
+
+.logandreg .reg {
+	background-image: url(../images/but_loginbig.gif);
+	background-repeat: no-repeat;
+	background-position: 0px -90px;
+	display: block;
+	height: 30px;
+	width: 45px;
+	color: #FFF;
+	float: left;
+	line-height: 30px;
+	padding-left: 18px;
+}
+.logandreg .regnow {
+	background-image: url(../images/but_loginbig.gif);
+	background-repeat: no-repeat;
+	background-position: 0px -30px;
+	color: #98CAEF;
+	display: block;
+	height: 30px;
+	width: 45px;
+	float: left;
+	line-height: 30px;
+	padding-left: 18px;
+}
+.login-con {
+	width: 660px;
+	border: 1px solid #EDEDED;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 20px 20px 50px 20px;
+}
+.login-con h1 {
+	font-size: 14px;
+	padding-bottom: 18px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #EBEBEB;
+}
+.login-con h1.noneline {
+	font-size: 14px;
+	padding-bottom: 18px;
+	border-bottom-width: 0px;
+	border-bottom-style: none;
+}
+.login-con #en {
+	-webkit-text-size-adjust:none;
+	font-size: 9px;
+	font-weight: normal;
+	color: #999;
+	padding-left: 5px;
+}
+.login-con .import {
+	margin-left: 160px;
+	margin-top: 30px;
+	color: #666;
+}
+
+.import td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.import th {
+	font-weight: normal;
+	text-align: right;
+	color: #666;
+	padding-right: 8px;
+}
+
+.import .inputbox {
+	border: 1px solid #ccc;
+	height: 21px;
+	line-height: 21px;
+	width: 170px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.import .check {
+	height: 14px;
+	width: 14px;
+	margin-right: 5px;
+}
+.import .vcode {
+	border: 1px solid #ccc;
+	height: 21px;
+	line-height: 21px;
+	width: 80px;
+	margin-right: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.import .operate {
+	margin-right: 10px;
+	margin-left: 10px;
+	line-height: 23px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.point-a {
+	background-color: #FFD8D9;
+	line-height: 23px;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+	color: #CA3200;
+}
+.point-b {
+	background-color: #EDF2F6;
+	line-height: 23px;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+	color: #81B2D0;
+}
+.point-d {
+	color: #B2A58C;
+	background-color: #FFFBE2;
+	border: 1px solid #FFF7CA;
+	padding: 10px 15px 10px 15px;
+}
+
+.import .rememberid {
+	color: #999999;
+}
+.import .bluebut {
+	background-image: url(../images/but_login.gif);
+	background-repeat: no-repeat;
+	text-align: center;
+	display: block;
+	height: 23px;
+	width: 103px;
+	font-size: 14px;
+	color: #FFF;
+	padding-top: 6px;
+	float: left;
+}
+.import .bluebut:hover {
+	text-decoration: none;
+}
+.import .forget {
+	display: block;
+	float: left;
+	margin-top: 9px;
+	margin-left: 10px;
+}
+.regwizard {
+	margin-top: 10px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #EBEBEB;
+	padding-left: 210px;
+	line-height: 24px;
+	padding-top: 10px;
+}
+.regwizard h2 {
+	font-size: 12px;
+	font-weight: normal;
+}
+.regwizard li {
+	padding-left: 12px;
+	color: #999;
+	background-image: url(../images/icon05.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+}
+.regwizard li a {
+	padding-right: 2px;
+	padding-left: 2px;
+}

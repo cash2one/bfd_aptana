@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>highcharts1</title>
+        <script type="text/javascript" src="./resources/jquery/jquery.js">
+        </script>
+        <script type="text/javascript" src="./resources/chart/highcharts/highcharts.js">
+        </script>
+        <script type="text/javascript">
+            $(function(){
+                var chart = new Highcharts.Chart({
+                    chart: {
+                        renderTo: 'container',
+						events:{
+							 redraw: function(){
+							 	console.info(chart.xAxis)
+							 }
+						}
+                    },
+                    xAxis: [{
+                        type: 'datetime',
+                        dateTimeLabelFormats: {
+                            day: '%Y-%m-%e'
+                        },
+						minRange: 24 * 3600 * 1000,
+						showLastLabel:true 
+                    },{
+                        type: 'datetime',
+                        dateTimeLabelFormats: {
+                            day: '%Y-%m-%e'
+                        },
+						minRange: 24 * 3600 * 1000,
+						showLastLabel:true 
+                    }],
+                    series: [{
+                        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6],
+// 						data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6],
+                        pointStart: Date.UTC(2010, 0, 1),
+                        pointInterval: 24 * 3600 * 1000 // one day
+                    },
+					{
+                        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6],
+// 						data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6],
+                        pointStart: Date.UTC(2012, 5, 1),
+                        pointInterval: 24 * 3600 * 1000,
+						xAxis:1
+                    }]
+                });
+				console.info(chart.xAxis)
+            });
+        </script>
+    </head>
+    <body>
+       <div id="container" style="height: 400px; width: 500px"></div>
+        <button>
+            测试
+        </button>
+    </body>
+</html>

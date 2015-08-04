@@ -1,0 +1,359 @@
+@charset "utf-8";
+/* CSS Document */
+
+.day_select {
+	font-size: 12px;
+	font-family: Tahoma,"微软雅黑";
+	height: 25px;
+	line-height: 25px;
+	*font-family: "宋体";
+	border:1px #e5e5e5 solid;
+
+}
+.day_select  * {
+    border: 0 none;
+    font-style: normal;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.day_select a{
+	color: #909090;
+}
+ .day_select .left {
+	float: left;
+	width: 4px;
+	background-color: #fff;
+	-moz-border-radius: 4px 0px 0px 4px;
+	border-right-width: 0px;
+	border-right-style: none;
+	height: 25px;
+}
+ .day_select .daydata {
+	float: left;
+	height: 25px;
+	background-color: #fff;
+	position:relative;
+	z-index: 1;
+}
+ .day_select .daydata a {
+	text-decoration: none;
+	cursor:pointer;
+	text-align:center;
+}
+ .day_select .daydata a span{}
+
+
+
+.day_select .daydata .ico01 {
+    background-image: url("../images/icon04.gif");
+    background-repeat: no-repeat;
+    float: left;
+    height: 16px;
+    margin-top: 5px;
+    width: 16px;
+}
+.day_select .daydata .ico02 {
+    background-image: url("../images/icon04.gif");
+    background-position: -16px 50%;
+    background-repeat: no-repeat;
+    float: left;
+    height: 16px;
+    margin-top: 5px;
+    width: 16px;
+}
+ .day_select .daydata .data {
+	float: left;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-top: 6px;
+	line-height: normal;
+}
+ .day_select .daydata .day_range{
+	width:536px;
+	position:absolute;
+	border:1px solid #C7DAE9;
+	top:25px;
+	/*left:-4px;*/
+	background:#ffffff;
+	font-size:12px;
+	line-height: normal;	/*display:none;*/
+	 z-index: 1000;
+ }
+ .day_select .daydata .day_range .baeRangeLable{
+	background-color: #eefbff;
+	line-height: 30px;
+ }
+ .day_select .daydata .day_range .baeRangeLable input{
+	height: 18px;
+	width: 100px;
+	font-size:12px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #B3CBE1;
+	border-right-color: #FFF;
+	border-bottom-color: #FFF;
+	border-left-color: #9BBBD9;
+	text-indent: 5px;
+	text-align: center;
+ }
+ .day_select .daydata .day_range .baeRangeLable01{
+	color:#1A74B0;
+	padding-left: 15px;
+ }
+ .day_select .daydata .day_range .baeRangeLable02{
+ 	margin-left:15px;
+	margin-right:15px;
+ }
+ .day_select .daydata .day_range .baeRangeLable03{
+	margin-left:30px;
+	margin-right:15px;
+	color:#1A74B0;
+	text-decoration:none;
+	cursor:pointer;
+ }
+  .day_select .daydata .day_range .baeRangeLable04{
+	margin-left:15px;
+	color:#1A74B0;
+	text-decoration:none;
+	cursor:pointer;
+ }
+ .day_select .daydata p{
+	float:right;
+	padding-right:10px;
+	line-height: 25px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+  }
+.day_select .daydata p label {
+	padding-right: 5px;
+	padding-left: 5px;
+	cursor:pointer;
+}
+.day_select .daydata p label input{
+	vertical-align:middle;
+}
+.day_select .daydata p button{
+	cursor:pointer;
+	background-image: url(../images/but-04.gif);
+	background-repeat: no-repeat;
+	height: 27px;
+	width: 56px;
+	color:#FFF;
+  }
+  .day_select .daydata p .button2{
+	cursor:pointer;
+	background-image: url(../images/but-05.gif);
+	background-repeat: no-repeat;
+	height: 27px;
+	width: 56px;
+	color:#666;
+
+
+
+  }
+/*组件里的*/
+div.datepicker {
+	cursor: default;
+	display: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 140px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 196px;
+	background-color: #F9FBFD;
+}
+.datepickerContainer {
+	left: 10px;
+	position: absolute;
+	top: 10px;
+	background-color: #F9FBFD;
+}
+.datepickerBorderT {
+    height: 10px;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+.datepickerBorderB {
+    bottom: 0;
+    height: 10px;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+}
+.datepickerBorderL {
+    bottom: 10px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 10px;
+}
+.datepickerBorderR {
+    bottom: 10px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 10px;
+}
+.datepickerBorderTL {
+    height: 10px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 10px;
+}
+.datepickerBorderTR {
+    height: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+}
+.datepickerBorderBL {
+    bottom: 0;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    width: 10px;
+}
+.datepickerBorderBR {
+    bottom: 0;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    width: 10px;
+}
+.datepickerHidden {
+    display: none;
+}
+/*div.datepicker table {
+    border-collapse: collapse;
+}*/
+div.datepicker a {
+    color: #000000;
+    cursor: default;
+    outline: medium none;
+    text-decoration: none;
+}
+div.datepicker table td {
+	margin: 0;
+	text-align: right;
+	padding-top: 0;
+	padding-right: 1px;
+	padding-bottom: 0;
+	padding-left: 0;
+}
+div.datepicker th {
+    color: #999999;
+    font-weight: normal;
+    text-align: center;
+}
+div.datepicker tbody th {
+    text-align: left;
+}
+div.datepicker tbody a {
+    display: block;
+}
+.datepickerDays a {
+	height: 18px;
+	line-height: 18px;
+	padding-right: 1px;
+	width: 16px;
+}
+.datepickerYears a, .datepickerMonths a {
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    width: 44px;
+}
+td.datepickerNotInMonth a {
+	color: #DBDBDB;
+}
+th.datepickerWeek a {
+    color: #999999;
+}
+tbody.datepickerDays td.datepickerSelected {
+	background-color: #7fd2ed;
+}
+tbody.datepickerDays td.datepickerNotInRange {
+	cursor:default;
+}
+tbody.datepickerDays td.datepickerNotInRange a span {
+	display:block;
+	cursor:default;
+}
+tbody.datepickerDays td.datepickerSelected a {
+	color: #FFF;
+}
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
+	background-attachment: scroll;
+	background-color: #FFF0AA;
+	background-image: none;
+	background-repeat: repeat;
+	background-position: 0 0;
+}
+tbody.datepickerYears td.datepickerSelected, tbody.datepickerMonths td.datepickerSelected {
+    background: none repeat scroll 0 0 #17384D;
+}
+div.datepicker a:hover, div.datepicker a:hover {
+    color: #88C5EB;
+}
+div.datepicker td.datepickerNotInMonth a:hover {
+    color: #999999;
+}
+div.datepicker tbody th {
+    text-align: right;
+}
+.datepickerSpace div {
+    width: 20px;
+}
+.datepickerGoNext a, .datepickerGoPrev a, .datepickerMonth a {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.datepickerGoNext a {
+    float: right;
+    width: 20px;
+}
+.datepickerGoPrev a {
+    float: left;
+    width: 20px;
+}
+table.datepickerViewDays td,table.datepickerViewDays th{
+	cursor:pointer;
+}
+tr.datepickerDoW th{
+	cursor:default;
+}
+table.datepickerViewDays tbody.datepickerMonths, table.datepickerViewDays tbody.datepickerYears {
+    display: none;
+}
+table.datepickerViewMonths tbody.datepickerDays, table.datepickerViewMonths tbody.datepickerYears, table.datepickerViewMonths tr.datepickerDoW {
+    display: none;
+}
+table.datepickerViewYears tbody.datepickerDays, table.datepickerViewYears tbody.datepickerMonths, table.datepickerViewYears tr.datepickerDoW {
+    display: none;
+}
+td.datepickerDisabled a, td.datepickerDisabled.datepickerNotInMonth a {
+    color: #333333;
+}
+td.datepickerDisabled a:hover {
+    color: #333333;
+}
+td.datepickerSpecial a {
+    background: none repeat scroll 0 0 #770000;
+}
+td.datepickerSpecial.datepickerSelected a {
+    background: none repeat scroll 0 0 #AA0000;
+}

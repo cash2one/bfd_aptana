@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>字面量&调用&参数&返回&给类似增加方法</title>
+		<script type="text/javascript" src="../../commons/common.js"></script>
+		<script type="text/javascript">
+			//字面量
+		/*
+			//调用&&参数
+			var result=add(1,1)
+			console.info(result)
+			//每个函数会有两个附加参数arguments和this
+			//arguments结构类似于数组,但没有数组的方法
+			function fun1(){
+				console.info(arguments)
+			}
+			fun1(20,'test',[1,2]);
+			*/
+			//下面介绍this
+			//this有四种调用模式 方法调用模式,函数调用模式,构造器调用模式和apply调用模式
+			//方法调用模式
+			/*
+			myObject.increment();
+			document.writeln(myObject.value);
+			myObject.increment(2);
+			document.writeln(myObject.value);
+			*/
+				var add = function(a,b){
+				return a+b
+			}
+			var myObject={
+				value:0,
+				increment:function(inc){
+					this.value += typeof inc === 'number' ? inc:1;
+				}
+			};
+			//函数调用模式 在此模式中,this被绑定到全局对象上而不是上一级的this,解决方法如下
+		/*	myObject.double = function(){
+				var that=this;
+				var helper=function(){
+					that.value=add(that.value,that.value);
+				}
+				helper();
+			};
+			myObject.double();
+			document.writeln(myObject.value)
+			*/
+			
+			//构造器调用模式 
+	
+			var Quo=function(string){
+				this.status=string
+			} 
+			Quo.prototype.get_status=function(){
+				return this.status
+			}
+			var myQuo=new Quo('confused')
+			 
+			//apply模式
+			var sum=add.apply(null,[3,4])
+			document.writeln(sum)
+			document.writeln('<br/>')
+			var s1=myQuo.get_status.apply({status:'s1 status'})
+			var s2=Quo.prototype.get_status.apply({status:'s2 status'})
+			document.writeln(s1)
+			document.writeln(s2)
+			document.writeln('<br/>')
+			//给类型增加方法
+			String.method('trim',function(){
+				return this.replace(/^\s+|\s+$/g,'')
+			})
+			var ss = '      11111     '
+			document.writeln('ss.trim():"'+ss.trim()+'"')
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

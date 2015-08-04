@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>展示设置-关键词浮层</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/exp.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/ifmWidget/css/ifmWidget.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+                                                            <script type="text/javascript" src="../../js/commons.js"></script>
+	<script type="text/javascript"  src="../../resources/commons/jquery.form.js">
+    </script>
+    <script type="text/javascript"  src="../../resources/commons/jquery.validate.min.js">
+    </script>
+	<script type="text/javascript" src="../../resources/commons/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="../../resources/ifmWidget/js/ifmWidget.js"></script>
+	<script type="text/javascript" src="../../resources/jquery_tools/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="../../js/ViewSetting/media-展示设置-列表.js"></script>
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好,测试用户</a></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="">
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="current">
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div id="content" class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<div class="m-title">展示设置</div>
+			<div class="m-con border-top">
+				<div class="con-5">
+					<div class="section">
+						<div class="choose-area margin-top0">
+							<ul class="choose">
+								<li class="current"><a>关键词浮层</a></li>
+								<li><a>嵌入式</a></li>
+								<li><a>浮窗式</a></li>
+								<li><a>标签云</a></li>
+								<li><a>个性化热文榜</a></li>
+							</ul>
+						</div>
+						<div class="set-box">
+							<div class="sbox-left">
+							   <form id="form0" action="url0">
+								<div class="top">
+									<input id="type0_c0" type="checkbox"/>
+									<label for="type0_c0">开启关键词浮层</label>
+								</div>
+								<div class="display">
+									<div class="item1">
+										<label>显示模式：</label>
+										<span>
+											<input id="type0_r0" type="radio" checked="checked" name="mode" value="图片模式" />
+										    <label for="type0_r0" style="cursor:pointer;">图片模式</label>
+										</span>
+										<span>
+											<input id="type0_r1" type="radio"  name="mode" value="文字模式" />
+										    <label for="type0_r1" style="cursor:pointer;">文字模式</label>
+										</span>
+										
+									</div>
+									<div class="item3">
+										<label>显示条数：</label>
+										<div class="select_box3"><input id="myselect" type="text" value="5" readonly="readonly">
+											<ul class="select_ul3">
+												<li>5</li>
+												<li>4</li>
+												<li>3</li>
+												<li>2</li>
+												<li>1</li>
+											</ul>
+										</div>
+										<span>条</span>
+										<em>（1-20条）</em>
+									</div>
+									<div class="item2">
+										<label>图片宽度：</label>
+										<div class="textbox">
+											<div class="textbox-l">
+												<div class="textbox-r">
+													<input type="text" class="txt-width60" value="" name="form_email" />		
+												</div>
+											</div>
+										</div>
+										<span>px</span>
+										<em>（60px - 120px）</em>
+											<span class="error">
+												error message
+											</span>
+									</div>
+								</div>
+								<a href="#" class="btn2">保 存</a>
+								</form>
+							</div>
+							<div class="sbox-right">
+								<h4>预览</h4>
+								<div class="preview">
+									<div class="v_items">
+										<img src="../../images/pic-21.jpg" alt="" />
+										<img src="../../images/pic-21.jpg" alt="" />
+									</div>	
+								</div>
+							</div>
+						</div>
+						<div class="set-box" style="display:none;">
+							<div class="sbox-left">
+								<form id="form1" action="url1">
+								<div class="top">
+									<input id="type1_c0" type="checkbox" />
+									<label for="type1_c0">开启嵌入式</label>
+								</div>
+								<div class="display">
+									<div class="item1">
+										<label>显示模式：</label>
+										<span>
+											<input id="type1_r0" type="radio" checked="checked" name="mode" value="图片模式" />
+										    <label for="type1_r0" style="cursor:pointer;">图片模式</label>
+										</span>
+										<span>
+											<input id="type1_r1" type="radio"  name="mode" value="文字模式" />
+										    <label for="type1_r1" style="cursor:pointer;">文字模式</label>
+										</span>
+										
+									</div>
+									<div class="item3">
+										<label>显示条数：</label>
+										<div class="select_box3"><input id="myselect" type="text" value="3" readonly="readonly">
+											<ul class="select_ul3">
+												<li>5</li>
+												<li>4</li>
+												<li>3</li>
+												<li>2</li>
+												<li>1</li>
+											</ul>
+										</div>
+										<span>条</span>
+										<em>（1-20条）</em>
+									</div>
+									<div class="item3">
+										<label>显示列数：</label>
+										<div class="select_box3"><input id="myselect" type="text" value="2" readonly="readonly">
+											<ul class="select_ul3">
+												<li>5</li>
+												<li>4</li>
+												<li>3</li>
+												<li>2</li>
+												<li>1</li>
+											</ul>
+										</div>
+										<span>列</span>
+									</div>
+									<div class="item2">
+										<label>图片宽度：</label>
+										<div class="textbox">
+											<div class="textbox-l">
+												<div class="textbox-r">
+													<input type="text" class="txt-width60" value="" name="form_email" />		
+												</div>
+											</div>
+										</div>
+										<span>px</span>
+										<em>（60px - 120px）</em>
+									</div>
+								</div>
+								<a href="#" class="btn2">保 存</a>
+								</form>
+							</div>
+							<div class="sbox-right">
+								<h4>预览</h4>
+								<div class="preview">
+									<img src="../../images/pic-22.jpg" alt="" />
+								</div>
+							</div>
+						</div>
+						<div class="set-box" style="display:none;">
+							<div class="sbox-left">
+								<form id="form2" action="url2">
+								<div class="top">
+									<input id="type2_c0" type="checkbox" />
+									<label for="type2_c0">开启浮窗式</label>
+								</div>
+								<div class="display">
+									<div class="item1">
+										<label>显示模式：</label>
+										<span>
+											<input id="type2_r0" type="radio" checked="checked" name="mode" value="图片模式" />
+										    <label for="type2_r0" style="cursor:pointer;">图片模式</label>
+										</span>
+										<span>
+											<input id="type2_r1" type="radio"  name="mode" value="文字模式" />
+										    <label for="type2_r1" style="cursor:pointer;">文字模式</label>
+										</span>
+										
+									</div>
+									<div class="item1">
+										<label>显示位置：</label>
+										<input type="radio" checked="checked" name="position" value="底部通栏"  />
+										<span>底部通栏</span>
+										<input type="radio"  name="position" value="右侧" />
+										<span>右侧</span>
+									</div>
+									<div class="item3">
+										<label>显示条数：</label>
+										<div class="select_box3"><input id="myselect" type="text" value="2" readonly="readonly">
+											<ul class="select_ul3">
+												<li>5</li>
+												<li>4</li>
+												<li>3</li>
+												<li>2</li>
+												<li>1</li>
+											</ul>
+										</div>
+										<span>条</span>
+										<em>（1-20条）</em>
+									</div>
+									<!--行数-->
+									<div class="item3">
+										<label>显示行数：</label>
+										<div class="select_box3"><input id="myselect" type="text" value="5" readonly="readonly">
+											<ul class="select_ul3">
+												<li>5</li>
+												<li>4</li>
+												<li>3</li>
+												<li>2</li>
+												<li>1</li>
+											</ul>
+										</div>
+										<span>行</span>
+										<em>（1-20条）</em>
+									</div>
+									<!--列数-->
+									<div class="item3">
+										<label>显示列数：</label>
+										<div class="select_box3"><input id="myselect" type="text" value="5" readonly="readonly">
+											<ul class="select_ul3">
+												<li>5</li>
+												<li>4</li>
+												<li>3</li>
+												<li>2</li>
+												<li>1</li>
+											</ul>
+										</div>
+										<span>列</span>
+										<em>（1-20条）</em>
+									</div>
+									<div class="item2">
+										<label>图片宽度：</label>
+										<div class="textbox">
+											<div class="textbox-l">
+												<div class="textbox-r">
+													<input type="text" class="txt-width60" value="" name="form_email" />		
+												</div>
+											</div>
+										</div>
+										<span>px</span>
+										<em>（60px - 120px）</em>
+									</div>
+								</div>
+								<a href="#" class="btn2">保 存</a>
+								</form>
+							</div>
+							<div class="sbox-right">
+								<h4>预览</h4>
+								<div class="preview">
+									<div class="l_items">
+										<img src="../../images/pic-21.jpg" alt="" />
+										<img src="../../images/pic-21.jpg" alt="" />
+										<img src="../../images/pic-21.jpg" alt="" />
+										<img src="../../images/pic-21.jpg" alt="" />
+									</div>	
+								</div>
+							</div>
+						</div>
+						<div class="set-box" style="display:none;">
+							<div class="sbox-left">
+								<form id="form3" action="url3">
+								<div class="top">
+									<input id="type3_c0" type="checkbox" />
+									<label for="type3_c0">开启标签云</label>
+								</div>
+								<div class="display">
+									<div class="item3">
+										<label>显示条数：</label>
+										<div class="select_box3"><input id="myselect" type="text" value="5" readonly="readonly">
+											<ul class="select_ul3">
+												<li>5</li>
+												<li>4</li>
+												<li>3</li>
+												<li>2</li>
+												<li>1</li>
+											</ul>
+										</div>
+										<span>条</span>
+										<em>（1-20条）</em>
+									</div>
+								</div>
+								<a href="#" class="btn2">保 存</a>
+								</form>
+							</div>
+							<div class="sbox-right">
+								<h4>预览</h4>
+								<div class="preview">
+									<img src="../../images/pic-20.jpg" alt="" />
+								</div>
+							</div>
+						</div>
+						<div class="set-box" style="display:none;">
+							<div class="sbox-left">
+								<form id="form4" action="url4">
+								<div class="top">
+									<input id="type4_c0" type="checkbox" />
+									<label for="type4_c0">开启个性化热文榜</label>
+								</div>
+								<div class="display">
+									<div class="item1">
+										<label>显示模式：</label>
+										<span>
+											<input id="type3_r0" type="radio" checked="checked" name="mode" value="图片模式" />
+										    <label for="type3_r0" style="cursor:pointer;">图片模式</label>
+										</span>
+										<span>
+											<input id="type3_r1" type="radio"  name="mode" value="文字模式" />
+										    <label for="type3_r1" style="cursor:pointer;">文字模式</label>
+										</span>
+										
+									</div>
+									<div class="item3">
+										<label>显示条数：</label>
+										<div class="select_box3"><input id="myselect" type="text" value="5" readonly="readonly">
+											<ul class="select_ul3">
+												<li>5</li>
+												<li>4</li>
+												<li>3</li>
+												<li>2</li>
+												<li>1</li>
+											</ul>
+										</div>
+										<span>条</span>
+										<em>（1-20条）</em>
+									</div>
+									<div class="item2">
+										<label>图片宽度：</label>
+										<div class="textbox">
+											<div class="textbox-l">
+												<div class="textbox-r">
+													<input type="text" class="txt-width60" value="" name="form_email" />		
+												</div>
+											</div>
+										</div>
+										<span>px</span>
+										<em>（60px - 120px）</em>
+									</div>
+								</div>
+								<a href="#" class="btn2">保 存</a>
+								</form>
+							</div>
+							<div class="sbox-right">
+								<h4>预览</h4>
+								<div class="preview">
+									<img src="../../images/pic-24.jpg" alt="" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+</body>
+</html>

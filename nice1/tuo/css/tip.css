@@ -1,0 +1,131 @@
+body {
+	word-wrap:normal;
+}
+.exp-tip-wrong{
+	        padding-left:27px;
+			background:url(../images/exp-wrong-bg_01.png) 0 0 no-repeat;
+			display: inline-block;
+            line-height: 30px;
+			word-break: keep-all;
+    		white-space:nowrap;
+			font-size: 12px;
+			color: #bb0000;
+}
+.exp-tip-wrong span{
+	        height:30px;
+			padding:0 8px 0 5px;
+			background:url(../images/exp-wrong-bg_03.png) right 0 no-repeat #ffe8e8;
+			display: inline-block;
+}
+.exp-tip-wrong2{
+	        padding-left:32px;
+			background:url(../images/exp-wrong-bg2_01.png) 0 0 no-repeat;
+			display: inline-block;
+            line-height: 28px;
+			word-break: keep-all;
+    		white-space:nowrap;
+			font-size: 12px;
+			color: #bb0000;
+}
+.exp-tip-wrong2 span{
+	        height:28px;
+			padding:0 8px 0 5px;
+			background:url(../images/exp-wrong-bg2_03.png) right 0 no-repeat #ffe8e8;
+			display: inline-block;
+}
+.exp-tip-warn{
+	        padding-left:27px;
+			background:url(../images/exp-warn-bg_01.png) 0 0 no-repeat;
+			display: inline-block;
+            line-height: 30px;
+			word-break: keep-all;
+    		white-space:nowrap;
+			font-size: 12px;
+			color: #0096bb;
+}
+.exp-tip-warn span{
+	        height:30px;
+			padding:0 8px 0 5px;
+			background:url(../images/exp-warn-bg_03.png) right 0 no-repeat #d9f4ff;
+			display: inline-block;
+}
+.exp-tip-warn2{
+	        padding-left:32px;
+			background:url(../images/exp-warn-bg2_01.png) 0 0 no-repeat;
+			display: inline-block;
+            line-height: 28px;
+			word-break: keep-all;
+    		white-space:nowrap;
+			font-size: 12px;
+			color: #0096bb;
+}
+.exp-tip-warn2 span{
+	        height:28px;
+			padding:0 8px 0 5px;
+			background:url(../images/exp-warn-bg2_03.png) right 0 no-repeat #d9f4ff;
+			display: inline-block;
+}
+.exp-tip-normal{
+	        padding-left:27px;
+			background:url(../images/exp-normal-bg_01.png) 0 0 no-repeat;
+			display: inline-block;
+            line-height: 30px;
+			word-break: keep-all;
+    		white-space:nowrap;
+			font-size: 12px;
+			color: #999999;
+}
+.exp-tip-normal span{
+	        height:30px;
+			padding:0 8px 0 5px;
+			background:url(../images/exp-normal-bg_03.png) right 0 no-repeat #f4f4f4;
+			display: inline-block;
+}
+.exp-tip-normal2{
+	        padding-left: 10px;
+			background:url(../images/exp-normal-bg2_01.png) 0 0 no-repeat;
+			display: inline-block;
+            line-height: 28px;
+			word-break: keep-all;
+    		white-space:nowrap;
+			font-size: 12px;
+			color: #999999;
+}
+.exp-tip-normal2 span{
+	        height:28px;
+			padding:0 8px 0 5px;
+			background:url(../images/exp-normal-bg2_03.png) right 0 no-repeat #f4f4f4;
+			display: inline-block;
+}
+.exp-tip-right{
+	        padding-left:27px;
+			background:url(../images/exp-right-bg_01.png) 0 0 no-repeat;
+			display: inline-block;
+            line-height: 30px;
+			word-break: keep-all;
+    		white-space:nowrap;
+			font-size: 12px;
+			color: #7bbb00;
+}
+.exp-tip-right span{
+	        height:30px;
+			padding:0 8px 0 5px;
+			background:url(../images/exp-right-bg_03.png) right 0 no-repeat #f1fed0;
+			display: inline-block;
+}
+.exp-tip-right2{
+	        padding-left:32px;
+			background:url(../images/exp-right-bg2_01.png) 0 0 no-repeat;
+			display: inline-block;
+            line-height: 28px;
+			word-break: keep-all;
+    		white-space:nowrap;
+			font-size: 12px;
+			color: #7bbb00;
+}
+.exp-tip-right2 span{
+	        height:28px;
+			padding:0 8px 0 5px;
+			background:url(../images/exp-right-bg2_03.png) right 0 no-repeat #f1fed0;
+			display: inline-block;
+}

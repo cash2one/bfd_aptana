@@ -1,0 +1,21 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	                $(window.parent.window).scroll(function(){
+                    $('.chapter-labels').each(function(){
+                        var contentHeight = window.parent.document.documentElement.clientHeight - 160//+99
+                        var contentWidth = window.parent.document.documentElement.clientWidth
+                        var leftMargin = (contentWidth - 980) / 2
+                        //							  leftMargin=leftMargin*2
+                        var scollHeigth = $(window.parent.window).scrollTop() + 160
+                        var top = $(this).offset().top + 160
+                        if (top >= scollHeigth && top <= scollHeigth + contentHeight + 99) {
+//                            console.info((top - scollHeigth - contentHeight) / contentHeight)
+                            var scale = 1 - ((top - scollHeigth) / contentHeight)
+                            $(this).css('margin-right', leftMargin + 430 - ((leftMargin + 430 + 248) * scale) + 'px')
+                            
+                        }
+                    })
+                })
+})

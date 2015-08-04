@@ -1,0 +1,13 @@
+/**
+ * @author Administrator
+ */
+function Chart(setting){
+	var self=this
+	self.init=function(){}
+	self.setData=function(){}
+	self.init()
+}
+_baifendianWidgets.chart.parse=function(item){//设置中返回的项
+   var c=new Chart(item)
+   return c
+}

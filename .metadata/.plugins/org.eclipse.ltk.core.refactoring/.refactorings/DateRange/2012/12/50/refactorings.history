@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;DateRange/resources/DateRange/js/datarange.all1.js&apos; to &apos;datarange.all2.js&apos;" description="Rename resource &apos;datarange.all1.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="resources/DateRange/js/datarange.all1.js" name="datarange.all2.js" stamp="1355219837088" updateReferences="true"/>
+</session>

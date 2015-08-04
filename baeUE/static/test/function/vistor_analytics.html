@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>访客行为</title>
+        <link href="../../css/packed.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/function.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" media="screen" type="text/css" href="../../resources/datepicker/css/datepicker.css" />
+        <!--[if IE]>
+            <link href="../../css/ie.css" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <!--[if IE 6]>
+            <link href="../../css/ie6.css" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <script type="text/javascript" language="JavaScript" src="../../resources/jquery/jquery.js">
+        </script>
+        <script type="text/javascript" src="../../resources/datepicker/js/datepicker.js">
+        </script>
+        <script type="text/javascript" src="../../resources/commons/jquery.maskedinput-1.3.min.js">
+        </script>
+        <script type="text/javascript" src="../../resources/commons/date_tools.js">
+        </script>
+        <script type="text/javascript" src="../../resources/commons/jquery.cookie.js">
+        </script>
+        <script type="text/javascript" src="../../resources/datepicker/js/baeDatePicker.js">
+        </script>
+        <script type="text/javascript" language="JavaScript" src="../../resources/animate/jquery.animate.NumberScroll.js">
+        </script>
+        <script type="text/javascript" language="JavaScript">
+            $(function(){
+                function DateRange(){
+                    function alignDateRange(d1, d2){
+                        d1 = [parseDate(d1[0], 'Y-m-d').valueOf(), parseDate(d1[1], 'Y-m-d').valueOf()]
+                        d2 = [parseDate(d2[0], 'Y-m-d').valueOf(), parseDate(d2[1], 'Y-m-d').valueOf()]
+                        if ((d1[1] - d1[0]) > (d2[1] - d2[0])) {
+                            d1 = align_oprate(d1, d2[1] - d2[0])
+                        }
+                        else {
+                            d2 = align_oprate(d2, d1[1] - d1[0])
+                        }
+                        function align_oprate(d, range){
+                            return [d[1] - range, d[1]]
+                        }
+                        return [[formatDate(new Date(d1[0]), 'Y-m-d'), formatDate(new Date(d1[1]), 'Y-m-d')], [formatDate(new Date(d2[0]), 'Y-m-d'), formatDate(new Date(d2[1]), 'Y-m-d')]]
+                    }
+                    function getDateRange(d1, d2){
+                        var d1 = parseDate(d1, 'Y-m-d').valueOf()
+                        var d2 = parseDate(d2, 'Y-m-d').valueOf()
+                        if (d1 === d2) {
+                            return 0
+                        }
+                        else {
+                            return (d2 - d1) / (1000 * 60 * 60 * 24)
+                        }
+                    }
+                    if ($.cookie('bae_date_range_begin') && $.cookie('bae_date_range_end')) {
+                        this.begin = $.cookie('bae_date_range_begin');
+                        this.end = $.cookie('bae_date_range_end');
+                    }
+                    else {
+                        var l = new Date()
+                        l.setDate(l.getDate() - 7)
+                        var e = new Date()
+                        e.setDate(e.getDate() - 1)
+                        this.begin = formatDate(l, 'Y-m-d')
+                        this.end = formatDate(e, 'Y-m-d')
+                    }
+                    var r = getDateRange(this.begin, this.end)
+                    this.dbBegin = parseDate(this.begin, 'Y-m-d')
+                    this.dbBegin.setDate(this.dbBegin.getDate() - r - 1)
+                    this.dbBegin = formatDate(this.dbBegin, 'Y-m-d')
+                    this.dbEnd = parseDate(this.end, 'Y-m-d')
+                    this.dbEnd.setDate(this.dbEnd.getDate() - r - 1)
+                    this.dbEnd = formatDate(this.dbEnd, 'Y-m-d')
+                    this.mode = 'single'
+                    $('.daydata .data').html(this.begin + "  至  " + this.end)
+                    $('.tushi0:eq(0) span').html('当前时间段（' + this.begin.replace('-', '.') + '-' + this.end.replace('-', '.') + '）')
+                    $('.day_range > p > input:checkbox').attr('checked', false)
+                    $('.day_range > div:eq(0)').baeDatePicker({
+                        date: [this.begin, this.end],
+                        lable: '选择当前时间:&nbsp;&nbsp;'
+                    })
+                    $('.day_range > div:eq(1)').baeDatePicker({
+                        date: [this.dbBegin, this.dbEnd],
+                        lable: '选择对比时间:&nbsp;&nbsp;'
+                    })
+                    $('.day_range > div:eq(1)').hide()
+                    $('.day_range').hide()
+                    
+                    $('.daydata > a').toggle(function(){
+                        $('.day_range').slideDown()
+                    }, function(){
+                        $('.day_range').slideUp()
+                    })
+                    $('.day_range > p > input:checkbox').change($.proxy(function(){
+                        if ($('.day_range > p > input:checkbox').is(':checked')) {
+                            var d = $('.day_range > div:eq(0)').baeDatePicker('getDate')
+                            d[0] = parseDate(d[0], 'Y-m-d')
+                            d[1] = parseDate(d[1], 'Y-m-d')
+                            var r = getDateRange(d[0], d[1])
+                            d[0].setDate(d[0].getDate() - r - 1)
+                            d[1].setDate(d[1].getDate() - r - 1)
+                            $('.day_range > div:eq(1)').baeDatePicker('setDate', formatDate(d[0], 'Y-m-d'), formatDate(d[1], 'Y-m-d'))
+                            $('.day_range > div:eq(1)').slideDown()
+                        }
+                        else {
+                            $('.day_range > div:eq(1)').slideUp()
+                        }
+                    }, this))
+                    $('.day_range > p > button:eq(1)').click(function(){
+                        $('.daydata > a').click()
+                    })
+                    $('.day_range > p > button:eq(0)').click($.proxy(function(){
+                        if ($('.day_range > p > input:checkbox').is(':checked')) {
+                            this.mode = 'compare'
+                        }
+                        else {
+                            this.mode = 'single'
+                        }
+                        this.begin = $('.day_range > div:eq(0)').baeDatePicker('getDate')[0]
+                        this.end = $('.day_range > div:eq(0)').baeDatePicker('getDate')[1]
+                        this.dbBegin = $('.day_range > div:eq(1)').baeDatePicker('getDate')[0]
+                        this.dbEnd = $('.day_range > div:eq(1)').baeDatePicker('getDate')[1]
+                        if (this.mode === 'compare') {
+                            var alignRange = alignDateRange([this.begin, this.end], [this.dbBegin, this.dbEnd])
+                            if (this.begin != alignRange[0][0] || this.end != alignRange[0][1]) {
+                                this.begin = alignRange[0][0]
+                                this.end = alignRange[0][1]
+                                $('.day_range > div:eq(0)').baeDatePicker('setDate', this.begin, this.end)
+                            }
+                            if (this.dbBegin != alignRange[1][0] || this.dbEnd != alignRange[1][1]) {
+                                this.dbBegin = alignRange[1][0]
+                                this.dbEnd = alignRange[1][1]
+                                $('.day_range > div:eq(1)').baeDatePicker('setDate', this.dbBegin, this.dbEnd)
+                            }
+                        }
+                        
+                        $.cookie('bae_date_range_begin', this.begin, {
+                            path: '/'
+                        })
+                        $.cookie('bae_date_range_end', this.end, {
+                            path: '/'
+                        })
+                        if (this.mode === 'single') {
+                            $('.contrastpic').hide()
+                            $('.daydata .data').html(this.begin + "  至  " + this.end)
+                        }
+                        else {
+                            $('.contrastpic').show()
+                            $('.tushi0:eq(0) span').html('当前时间段（' + this.begin.replace('-', '.') + '-' + this.end.replace('-', '.') + '）')
+                            $('.tushi0:eq(1) span').html('对比时间段（' + this.dbBegin.replace('-', '.') + '-' + this.dbEnd.replace('-', '.') + '）')
+                            $('.daydata .data').html(this.begin + " 至 " + this.end + "  VS  " + this.dbBegin + " 至 " + this.dbEnd)
+                        }
+                        $('.daydata > a').click()
+                        this.change([this.begin, this.end], [this.dbBegin, this.dbEnd])
+                    }, this))
+                }
+                Number.prototype.fixMoney = function(){
+                    return this.toString().replace(/(\d{1,3})(?=(\d{3})+(?:$|\.))/g, "$1,")
+                }
+                function getData(){
+                    $('.funnel_box div > ul >li').find('span:first').find('strong').each(function(){
+                        $(this).numberScroll({
+                            random: function(){
+                                return parseInt((Math.random() * 1000000000)).fixMoney()
+                            }
+                        })
+                    })
+                    $('.funnel_box div > ul >li').find('span:last').find('strong:not(#landPageEv)').each(function(){
+                        $(this).numberScroll({
+                            random: function(){
+                                return parseInt(Math.random() * 100) + '%'
+                            }
+                        })
+                    })
+                    $.ajax({
+                        type: "GET",
+                        url: "url",
+                        data: {
+                            'key': $('.data_select select').val(),
+                            begin: dateRange.begin,
+                            end: dateRange.end
+                        },
+                        dataType: "json",
+                        success: function(data){
+                            $('.funnel_box div > ul >li').find('span:first').find('strong').each(function(){
+                                $(this).numberScroll('stop')
+                            })
+		                    $('.funnel_box div > ul >li').find('span:last').find('strong:not(#landPageEv)').each(function(){
+		                        $(this).numberScroll('stop')
+		                    })
+                            for (var k in data) {
+                                $('#' + k).html(data[k])
+                            }
+                        }
+                    });
+                }
+                var dateRange = new DateRange()
+                dateRange.change = function(d1, d2){
+                    getData()
+                }
+                $('.data_select select').change(getData)
+                getData()
+            })
+        </script>
+    </head>
+    <body>
+        <div class="visitors">
+            <div class="r_tittle">
+                <h1><span class="txt">访客行为</span>
+                    <div class="day_select">
+                        <div class="left">
+                            &nbsp;
+                        </div>
+                        <div class="daydata">
+                            <a href="#">
+                                <div class="ico01">
+                                </div>
+                                <div class="data">
+                                </div>
+                                <div class="ico02">
+                                </div>
+                            </a>
+                            <div class="day_range">
+                                <div>
+                                </div>
+                                <div>
+                                </div>
+                                <p>
+                                    <input type="checkbox" style="display:none;"/>
+                                    <label style="display:none;">
+                                        与其他时间对比
+                                    </label>
+                                    <button>
+                                        确定
+                                    </button>
+                                    <button>
+                                        取消
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right">
+                            &nbsp;
+                        </div>
+                    </div>
+                </h1>
+            </div>
+            <div class="menu">
+                <a href="#" class="bb_down">报表导出</a>
+            </div>
+            <div class="datacontent">
+                <div class="data02">
+                    <div class="top">
+                        <div class="smtittle">
+                            流量来源
+                        </div>
+                        <div class="data_select">
+                            <select name="">
+                                <option>全部来源</option>
+                                <option>直接访问</option>
+                                <option>搜索引擎</option>
+                                <option>网站引荐</option>
+                                <option>自定义来源</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="funnel_box">
+                        <div class="data_funnel_left">
+                            <ul>
+                                <li>
+                                    <span class="red">访次<strong id="landPageEv">192,798,001</strong></span>
+                                </li>
+                                <li>
+                                    <span class="yellow">访次 <strong id="visitPageEv">192,798,001</strong></span>
+                                    <span class="yellow">商品详情页到达率 <strong id="visitPageRate">10%</strong></span>
+                                </li>
+                                <li>
+                                    <span class="green">访次 <strong id="shopCartEv">192,798,001</strong></span>
+                                    <span class="green">购物车到达率 <strong id="shopCartRate">10%</strong></span>
+                                </li>
+                                <li>
+                                    <span class="blue">下定订单数量 <strong id="orderEv">92,798,001</strong></span>
+                                    <span class="blue">订单转化率 <strong id="orderRate">10%</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="data_funnel_right">
+                            <ul>
+                                <li>
+                                    <span class="red">流失访次 <strong id="landPageLsEv">81,980,138,909</strong></span>
+                                    <span class="red">跳出率 <strong id="bounceRate">10%</strong></span>
+                                </li>
+                                <li>
+                                    <span class="yellow">流失访次 <strong id="visitPageLsEv">81,980,138,909</strong></span>
+                                    <span class="yellow">流失率 <strong id="visitPageLsRate">10%</strong></span>
+                                </li>
+                                <li>
+                                    <span class="green">流失访次 <strong id="shopCartLsEv">81,980,138,909</strong></span>
+                                    <span class="green">购物车流失率 <strong id="shopCartLsRate">10%</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="funnel">
+                            <div class="funnel_info">
+                                <span class="white">进入访次：29347957234</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

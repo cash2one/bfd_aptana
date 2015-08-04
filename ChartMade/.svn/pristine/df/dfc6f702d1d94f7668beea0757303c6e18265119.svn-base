@@ -1,0 +1,110 @@
+[{
+	"id":1,
+	"type": "chart",
+	"container":"container",
+	"option": {
+		"chart": {
+			"type": "line",
+			"width": 1000,
+			"height":600,
+			"alignTicks":false
+		},
+		"credits": {
+			"enabled": false
+		},
+		"title": {
+			"text": "Average Monthly Weather Data for Tokyo"
+		},
+		"subtitle": {
+			"text": "Source: WorldClimate.com"
+		},
+		"xAxis": [{
+			"gridLineWidth": 1,
+			"endOnTick": true,
+			"startOnTick": true
+		}, {
+			"opposite": true,
+			"gridLineWidth": 0
+		}],
+		"yAxis": [{
+			"labels": {
+				"style": {
+					"color": "#89A54E"
+				}
+			},
+			"title": {
+				"text": "Temperature",
+				"style": {
+					"color": "#89A54E"
+				}
+			},
+			"lineWidth": 1,
+			"tickPosition": "outside",
+			"tickWidth": 1,
+			"opposite": true
+		}, {
+			"lineWidth": 1,
+			"gridLineWidth": 0,
+			"title": {
+				"text": "Rainfall",
+				"style": {
+					"color": "#4572A7"
+				}
+			},
+			"tickPosition": "outside",
+			"tickWidth": 1,
+			"labels": {
+				"style": {
+					"color": "#4572A7"
+				}
+			}
+		}, {
+			"lineWidth": 1,
+			"gridLineWidth": 0,
+			"title": {
+				"text": "Sea-Level Pressure",
+				"style": {
+					"color": "#AA4643"
+				}
+			},
+			"tickPosition": "outside",
+			"tickWidth": 1,
+			"labels": {
+				"style": {
+					"color": "#AA4643"
+				}
+			},
+			"opposite": true
+		}],
+		"tooltip": {
+
+		},
+		"legend": {
+			"layout": "vertical",
+			"align": "left",
+			"x": 120,
+			"verticalAlign": "top",
+			"floating": true,
+			"backgroundColor": "#FFFFFF"
+		}
+
+	}
+}, {
+	"id":2,
+	"type": "chart",
+	"container":"pie",
+	"option": {
+		"chart": {
+			"plotBackgroundColor": null,
+			"plotBorderWidth": null,
+			"plotShadow": false
+		},
+		"title": {
+			"text": "Browser market shares at a specific website, 2010"
+		},
+		"tooltip": {
+			"formatter": null
+		}
+
+	}
+}]

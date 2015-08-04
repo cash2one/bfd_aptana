@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>test</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+        </script>
+        <script type="text/javascript">
+            $(function(){
+                $.getJSON("http://192.168.32.227:9080/cache/k2json?jsoncallback=?", 
+				{
+					cid:'Ctuniu',
+					iid:'route_380336'
+				},
+				function(data){
+                   alert(data)
+                });
+//$.ajax({
+//    url: "http://192.168.32.227:9080/cache/k2json",
+//    dataType: "jsonp",
+//	data:{
+//		cid:'Ctuniu',
+//		iid:'route_380336'
+//	},
+//    jsonpCallback:function(){var fnc='cb'+$.now();this.url+=fnc;return fnc;},
+//    jsonp:false,
+//    success: function(data) {
+//      alert(data)
+//    }
+//  });
+            })
+        </script>
+    </head>
+    <body>
+        <div id="images">
+        </div>
+    </body>
+</html>

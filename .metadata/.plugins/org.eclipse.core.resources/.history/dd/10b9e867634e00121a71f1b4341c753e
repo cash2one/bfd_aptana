@@ -1,0 +1,36 @@
+$(function(){
+  $('.choose > li').click(function(){
+	  if(!$(this).hasClass('current')){
+		  $(this).siblings().removeClass('current')
+		  $(this).addClass('current')
+		  $('.section > div:gt(0)').hide().eq($(this).index()).show()
+	  }
+  })
+  $.template( 'sysMessage', '<li>'
+		    		+'<div class="dialog">'
+		    		+'<div>'
+		    		+'<input type="checkbox">'
+		    		+'</div>'
+		    		+'<p> </p>'
+		    		+'<span class="date">2012/10/13</span>'
+		    		+'<span class="time">13:46</span>'
+		    		+'</div>'
+		    		+'<span class="d-right">'
+		    		+'<a class="x" href="#">&nbsp;</a>'
+		    		+'</span>'
+		    		+'</li>');
+					
+  var m0=new List({
+	  container:'#m0 > ul',
+	  url:'m0.json',
+	  testData:{"totalItem":100,"stores": [{"content":10},{"content":10},{"content":10}]},
+	  Model:function(i,item){
+		    var self=this
+		    self.dom=$.tmpl('sysMessage',item)
+		   i%2==0?null:self.dom.addClass('color') 		
+	  },
+	  page:{
+		  container:'#m0 > .click ul'
+	  }
+  })
+})

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>添加站点</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/exp.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+	<script type="text/javascript"  src="../../resources/commons/jquery.form.js">
+    </script>
+    <script type="text/javascript"  src="../../resources/commons/jquery.validate.min.js">
+    </script>
+	<script type="text/javascript" src="../../js/SiteManager/site.add.js"></script>
+	<script type="text/javascript">
+		function changeTab(a){
+			var lis = document.getElementById('nav').getElementsByTagName("li");
+			//alert("111");
+			for (var i=0;i<lis.length;i++) {
+				if(lis[i]==a){				
+
+					lis[i].className="current";
+				}else{
+					lis[i].className="";
+
+				}
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好,测试用户</a></li>
+					<li><a href="#">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			<ul class="nav" id="nav">
+				<li onclick="changeTab(this)">
+					<em class="icon1">&nbsp;</em>
+					<a href="#" class="">数据分析</a>
+					<strong>&nbsp;</strong>
+				</li>
+				<li class="" onclick="changeTab(this)">
+					<em class="icon3">&nbsp;</em>
+					<a href="#" class="">内容管理</a>
+					<strong class="position">&nbsp;</strong>
+				</li>
+				<li onclick="changeTab(this)">
+					<em class="icon2">&nbsp;</em>
+					<a href="#" class="">展示设置</a>
+					<strong>&nbsp;</strong>
+				</li>
+				<li onclick="changeTab(this)">
+					<em class="icon4">&nbsp;</em>
+					<a href="#" class="">流量交换</a>
+					<strong>&nbsp;</strong>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<div class="m-title">添加站点</div>
+			<div class="m-con border-top">
+				<div class="con-5">
+					<div class="add-site-tit">
+						<a href="#" class="set-btn1">验证网站</a>
+						<a href="#" class="set-btn2">安装插件，完成</a>
+					</div>
+					<div class="add-site-c">
+						<form id="form1" action="/ifm/Account/user/!login" method="post">
+						<div class="item">
+							<label>网站地址：</label>
+							<span class="input-box"><input type="text" class=""/></span>
+						</div>
+						<a href="javascript:void(0)" class="next">确定</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>Copyright © 2012 xxxx.com  All rights reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+</body>
+</html>

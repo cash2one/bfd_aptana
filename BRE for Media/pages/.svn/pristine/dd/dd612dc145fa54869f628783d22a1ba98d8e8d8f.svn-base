@@ -1,0 +1,148 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>安装插件-2</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+	<script type="text/javascript" src="../../js/validateSession.js"></script>
+	<script type="text/javascript">
+		function changeTab(a){
+			var lis = document.getElementById('nav').getElementsByTagName("li");
+			//alert("111");
+			for (var i=0;i<lis.length;i++) {
+				if(lis[i]==a){				
+
+					lis[i].className="current";
+				}else{
+					lis[i].className="";
+
+				}
+			}
+		}
+	</script>
+	<script>
+		 window.onload = changeMainSize; 
+		 window.onresize = changeMainSize; 
+		 function changeMainSize(){ 
+		 var mainDiv = document.getElementById("content"); 
+		 mainDiv.style.height =  window.innerHeight-17-78+ "px"; 
+		}
+	</script>
+<link rel="shortcut icon" href="../../favicon.ico" >
+             </head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li>你好,<s:property value="#session.sessionUser.username" /></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="../../SiteManager/site/!index">站点管理</a></li>
+					<li><a href="../../Account/user/!showUpdatePassword">账号设置</a></li>
+					<li><a href="../../help.html" target="_blank">帮助中心</a></li>
+					<li class="no-bg"><a href="../../Account/user/!loginOut">退出</a></li>
+				</ul>
+			</div>
+			<a href="../../DataAnalysis/stat/!synthetical.action">
+                <div class="logo">
+                    <strong>media</strong>
+                </div>
+            </a>
+            
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="">
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div id="content" class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<div class="m-title">添加站点</div>
+			<div class="m-con border-top">
+				<div class="con-5">
+					<div class="add-site-tit2">
+						<a href="#" class="set-btn1">基本设置</a>
+						<a href="#" class="set-btn2">安装插件，完成</a>
+					</div>
+					<div class="add-site-c">
+						<h3>代码安装教程</h3>
+						<div class="explain">
+							<h4>使用说明</h4>
+							<ul>
+								<li>此段代码仅适用于www.baifendian.com；</li>
+								<li>复制并粘贴下面的JS代码,放到想显示推荐栏的位置。如果您的网站使用的模板，您也可以复制代码到您的模板，推荐工具将在所有网页自
+								动出现</li>
+							</ul>
+						</div>
+						<img src="../../images/pic-17.jpg" alt="" />
+						<div class="btn padding0">
+							<a href="#" class="over">完成，进入管理后台</a>
+							<a href="#" class="before">上一步</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p><%@ include file="/foot.html"%></p>
+	</div>
+	<!-- footer  结束 -->
+    <!-- 站点设置 -->
+    <div class="site_setting_container">
+       <div class="site_setting_wrap">
+                <!-- site-ad  开始 -->
+                <div class="site-ad">
+                    <div class="click-btn"><s:property value="#session.sessionUser.address"/></div>
+                    <ul class="this">
+                        <s:iterator value="#session.sessionUser.sites"><li class="site"><a class="bg" href="../../SiteManager/site/!changeSiteOfSessionUser?siteId=<s:property value="id"/>"><s:property value="address"/></a></li></s:iterator>
+                        <li class="site admin">
+                            <span class="add-s"><a href="../../SiteManager/site/!showCheckingAddress">+添加站点</a></span>
+                            <span class="s-ad"><a href="../../SiteManager/site/!index">站点管理></a> </span>
+                        </li>
+                    </ul>
+                </div>
+             <!-- site-ad 结束 -->
+       </div>
+    </div>
+    <!-- 站点设置结束 -->
+</body>
+</html>

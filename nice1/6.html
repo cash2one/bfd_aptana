@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>select tree</title>
+		<script type="text/javascript" src="resources/jquery/jquery.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var json=[
+				     {
+					 	name:"选项1",
+						id:'idddddddd'
+					 },
+					 {
+					 	name:"选项2",
+						id:'idddddddd2'
+					 }
+				]
+				$.each(json,function(i,item){
+					$('<option>',{
+						html:item.name,
+						value:item.id
+					}).appendTo('select')
+				})
+				$('select').val('aaaaaaaa')
+				alert($('select').val())
+//				document.parentNode.style.display='none'
+			})
+		</script>
+	</head>
+	<body>
+		<span>
+             <select>
+             	<option>ddddddddd</option>
+             </select>
+		</span>
+	</body>
+</html>

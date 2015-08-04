@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>浮窗-添加图片</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/plugin.css" />
+
+</head>
+<body>
+	<div class="overlay">
+		<div class="page-area2">
+			<div class="p-title">
+				<h2>更换图片</h2>
+				<a href="#">&nbsp;</a>
+			</div>
+			<div class="p-content">
+				<div class="pa2-side">
+					<h3>预览</h3>
+					<div class="pic"><img src="../../images/pic-52.jpg" / ></div>
+				</div>
+				<div class="pa2-main">
+					<ul class="choose2">
+						<li class="p current"><a href="#" class="">该文章内图片</a></li>
+						<li class=""><a href="#" class="">网络图片</a></li>
+						<li class=""><a href="#" class="">本地上传</a></li>
+					</ul>
+					<div class="pic-box">
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img mr0">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img mr0">&nbsp;</span>
+					</div>
+					<div class="btn">
+						<a class="btn1"><span>保 存</span></a>
+						<a class="btn2"><span>取 消</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-area2">
+			<div class="p-title">
+				<h2>更换图片</h2>
+				<a href="#">&nbsp;</a>
+			</div>
+			<div class="p-content">
+				<div class="pa2-side">
+					<h3>预览</h3>
+					<div class="pic"><img src="../../images/pic-52.jpg" / ></div>
+				</div>
+				<div class="pa2-main">
+					<ul class="choose2">
+						<li class="p "><a href="#" class="">该文章内图片</a></li>
+						<li class="current"><a href="#" class="">网络图片</a></li>
+						<li class=""><a href="#" class="">本地上传</a></li>
+					</ul>
+					<div class="pic-box">
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img mr0">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img">&nbsp;</span>
+						<span class="img mr0">&nbsp;</span>
+					</div>
+					<div class="btn">
+						<a class="btn1"><span>保 存</span></a>
+						<a class="btn2"><span>取 消</span></a>
+					</div>
+					<p class="note">以上图片来自互联网，版权归原网站所有</p>
+				</div>
+			</div>
+		</div>
+		<div class="page-area2">
+			<div class="p-title">
+				<h2>更换图片</h2>
+				<a href="#">&nbsp;</a>
+			</div>
+			<div class="p-content">
+				<div class="pa2-side">
+					<h3>预览</h3>
+					<div class="pic"><img src="../../images/pic-52.jpg" / ></div>
+				</div>
+				<div class="pa2-main">
+					<ul class="choose2">
+						<li class="p "><a href="#" class="">该文章内图片</a></li>
+						<li class=""><a href="#" class="">网络图片</a></li>
+						<li class="current"><a href="#" class="">本地上传</a></li>
+					</ul>
+					<div class="pic-box h190">
+						<a class="upload-btn"><span>上传本地图片</span></a>
+					</div>
+					<div class="btn">
+						<a class="btn1"><span>保 存</span></a>
+						<a class="btn2"><span>取 消</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="page-area2">
+			<div class="p-title">
+				<h2>更换图片</h2>
+				<a href="#">&nbsp;</a>
+			</div>
+			<div class="p-content">
+				<div class="pa2-side">
+					<h3>预览</h3>
+					<div class="pic"><img src="../../images/pic-52.jpg" / ></div>
+				</div>
+				<div class="pa2-main">
+					<ul class="choose2">
+						<li class="p "><a href="#" class="">该文章内图片</a></li>
+						<li class=""><a href="#" class="">网络图片</a></li>
+						<li class="current"><a href="#" class="">本地上传</a></li>
+					</ul>
+					<div class="pic-box h190">
+						<p class="find">未找到图片...</p>
+					</div>
+					<div class="btn">
+						<a class="btn1"><span>保 存</span></a>
+						<a class="btn2"><span>取 消</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

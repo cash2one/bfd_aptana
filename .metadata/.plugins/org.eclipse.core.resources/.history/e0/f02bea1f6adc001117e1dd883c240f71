@@ -1,0 +1,13 @@
+/**
+ * @author Administrator
+ */
+function GridChart(type){
+	var self=this
+	self.setData=function(){
+		
+	}
+	self.init=function(){
+		self.chart=new 
+	}
+	self.init()
+}

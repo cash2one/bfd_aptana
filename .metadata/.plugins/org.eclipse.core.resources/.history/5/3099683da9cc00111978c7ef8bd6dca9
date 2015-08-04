@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="./js/jquery.min.js">
+</script>
+<script type="text/javascript" src="./js/scroll.js"></script>
+ <script type="text/javascript" src="./js/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="./js/commons.js"></script>
+<script type="text/javascript">
+			$(function(){
+                $.template('slider','<div>'+
+                        '<span class="bfb">${value}%</span>'+
+                        '<span style="width: 450px;" class="jdt"><em>${name}</em><a style="display:none;" class="mailico"></a></span>'+
+                    '</div><div style="clear:both; height:2px"> </div>')
+				function afterBuy(){
+					load();
+					window.parent.$.unblockUI()
+				}
+				function parse(data){
+					$('.allkj:first > .txtcon01 > .cp01 > ul > li').each(function(i){
+						if(data['his']&&data['his'][i]){
+							var product=new Product(data['his'][i])
+							product.afterBuy=afterBuy
+							product.dom.appendTo($(this).empty())
+						}
+					})
+					$('.allkj:eq(2) > .txtcon01 > .cp02').empty()
+					$.each(data['scenario'],function(i,item){
+						$.tmpl('slider',item).appendTo('.allkj:eq(2) > .txtcon01 > .cp02')
+						var p=$('<div style="display:none;" class="edm_txt"><div class="close"><a>关闭&nbsp;X</a></div>'+
+											    '<h1>标题：用户F0A6EFF3-BBB4-E3BD您好，根据你的以往偏好，百分点为您推荐</h1>'+
+											    '<p>亲爱的F0A6EFF3-BBB4-E3BD:</p>'+
+											    '<p>根据你以往的关注历史和您个人的偏好与兴趣，百分点为您推荐：</p>'+
+											    '<div class="cp03">'+
+											     '<ul>'       +
+											      '</ul>'+
+											    '</div></div>')
+						$.each(item['products'],function(i1,item1){
+								var product=new Product(item1)
+							    product.afterBuy=afterBuy
+								product.dom.appendTo($('<li></li>').appendTo(p.find('ul')))					
+							})	
+						p.appendTo('.allkj:eq(2) > .txtcon01 > .cp02')
+					})
+				}	
+					
+				function loaded(){
+						$('.cp02 .jdt').each(function(){
+						$(this).data('width',$(this).css('width'))
+						})
+						var init=true
+						var current
+						$('.cp02 .jdt').each(function(){
+							$(this).hover(function(){
+								$(this).data('m_status','in')
+							},function(){
+								$(this).data('m_status','out')
+							})
+						})
+						var blocked=false
+						$('.cp02 .jdt').each(function(i){
+							$(this).mouseover(function(){
+								 setTimeout($.proxy(function(){
+								 	if($(this).data('m_status')=='out'){
+									 	return 
+									 }
+									 if(blocked){
+									 	return 
+									 }
+									 blocked=true
+									$(this).find('a').show()
+									$(this).animate({'width':'800px'},function(){
+										  window.parent.$.blockUI({
+										  	message:$('.edm_txt').eq(i),
+											 fadeIn: 700, 
+		           							 fadeOut: 7, 
+											 css:{
+											 	border: 'none',
+											 	'-webkit-border-radius': '10px', 
+		           								 '-moz-border-radius': '10px', 
+											 	top:  ($(window.parent.window).height() - 470) /2 + 'px', 
+		               							 left: ($(window.parent.window).width() - 920) /2 + 'px', 
+											 	width:'920px'
+											 }
+										  })
+									})
+								 },this),400)
+							})
+						})
+						$('.edm_txt .close').each(function(i){
+							$(this).click(function(){
+								window.parent.$.unblockUI()
+								blocked=false
+								$('.cp02 .jdt').each(function(){
+									if($(this).width()==800){
+										$(this).animate({'width':$(this).data('width')},function(){
+											$(this).find('a').hide()
+										})
+									}
+								})
+							})
+						})
+				}
+				function load(){
+				                  $.getJSON("http://scenario.baifendian.com:8008/Scenario.do?callback=?", 
+									{
+										sid:'13410339561515378019595518708',
+										random:new Date().valueOf() 
+									},
+									function(data){
+					                     parse(data)
+										 loaded()
+					                });
+				}
+				load();
+			})
+		</script>
+</head>
+<body>
+	<div class="allkj">
+		<div class="chapter-labels" style="margin-right: -248px;">
+	        <div class="labels">
+	            <h1>关注历史</h1>
+      			<h3>Concerned about the history</h3>
+	        </div>
+	    </div>
+		<div class="txtcon01">
+			<div class="cp01">
+     <ul>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                    </ul>
+                     <ul>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                    </ul>
+  </div>
+		</div>	
+	</div>	
+	<div class="allkj">
+		<div class="chapter-labels" style="margin-right: -248px;">
+	        <div class="labels">
+	           <h1>特征侧写</h1>
+              <h3>Characteristic profile</h3>
+	        </div>
+	    </div>
+		<div class="txtcon01">
+			<div class="cp02">
+  <div class="icoman">
+    <img width="190" height="190" src="images/icoman.jpg"></div>
+  </div>
+		</div>	
+	</div>	
+	<div class="allkj">
+			<div class="chapter-labels" style="margin-right: -248px;">
+		        <div class="labels">
+		           <h1>营销附件</h1>
+	               <h3>Marketing attachments</h3>
+		        </div>
+		    </div>
+			<div class="txtcon01">
+				<div class="cp02">
+					     <!--测试-->
+						 <!--
+						 <div><span class="bfb">0%</span><span style="width: 450px; " class="jdt"><em>我猜您只是来库巴随便逛逛的</em><a style="display: none; " class="mailico"></a></span></div>
+						 <div style="clear:both; height:2px"> </div>
+						 <div style="display: none; " class="edm_txt"><div class="close"><a>关闭&nbsp;X</a></div><h1>标题</h1><p>亲爱的XXX:</p><p>您曾关注XXX，系统啥啥XXX为你推荐：</p><div class="cp03"><ul><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/20（黑色）||P173715</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li></ul></div></div>
+						 -->
+						 <!--测试-->
+						  <!--测试-->
+						   <!--
+						 <div><span class="bfb">0%</span><span style="width: 450px; " class="jdt"><em>我猜您只是来库巴随便逛逛的</em><a style="display: none; " class="mailico"></a></span></div>
+						 <div style="clear:both; height:2px"> </div>
+						 <div style="display: none; " class="edm_txt"><div class="close"><a>关闭&nbsp;X</a></div><h1>标题</h1><p>亲爱的XXX:</p><p>您曾关注XXX，系统啥啥XXX为你推荐：</p><div class="cp03"><ul><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/20（黑色）||P173715</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li></ul></div></div>
+						 -->
+						 <!--测试-->
+	  				</div>
+	       </div>
+		</div>	
+	</div>	
+<div class="footer">
+<p>Copyright©2012 Baifendian Corporation All Right Reserved.　京ICP备09109727号　京公网安备110108400769号</p>
+</div>  
+</body>
+</html>

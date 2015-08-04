@@ -1,0 +1,63 @@
+$(function(){
+	$('#sub').click(function(){
+		$('#form1').submit()
+	})
+	$('body').keyup(function(event){
+		if(event.keyCode===13){
+			$('#form1').submit();
+			}
+	})
+	var validater = $('#form1').validate({
+		submitHandler: function(form){
+			$(form).ajaxSubmit({
+				success:function(responseText, statusText, xhr, $form){
+					if(responseText=='0' ){
+					  window.document.location.href = "!showFindPassword4";
+					} else if(responseText == '2'){
+						validater.showErrors({'user.password':'请输入密码'});
+					} else if(responseText == '1'){
+						validater.showErrors({'user.password':'密码格式错误，请重新输入'});
+					} else if(responseText == '3'){
+						validater.showErrors({'user.password':'请从新申请密码重置'});
+					} else if(responseText == '5'){
+						validater.showErrors({'user.password':'密码格式错误，请重新输入'});
+					} else if(responseText == '4' || responseText == '6'){
+						validater.showErrors({'user.password':'服务器出现异常'});
+					} else {
+						validater.showErrors({'user.password':'出错了'});
+					}
+				}
+			})
+			return false;
+		},
+        rules: {
+        	 'user.password':{
+             	 required: true,
+             	 minlength: 6,
+            	 maxlength: 18
+             },
+             repassword: {
+             	required: true,
+                 equalTo: "#password"
+             }
+         },
+         messages: {
+        	 'user.password':{
+              	required: "密码不能为空",
+              	minlength:"密码最少6位",
+             	maxlength:"密码最多18位"
+              },
+              repassword:{
+             	 required:"请重复确认密码",
+              	  equalTo:'两次输入密码不一致' 
+              }
+         },
+         focusInvalid:true,
+         onkeyup: false,
+         wrapper:null,
+         errorElement:'span',
+         errorPlacement: function(error, element){
+             error.appendTo(element.parent());
+         }
+     })
+})

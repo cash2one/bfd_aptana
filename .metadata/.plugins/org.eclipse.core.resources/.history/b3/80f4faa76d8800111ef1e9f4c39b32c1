@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>用户登录</title>
+        <link href="./css/packed.css" rel="stylesheet" type="text/css" />
+        <link href="./css/login.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" language="JavaScript" src="./resources/jquery/jquery.js">
+        </script>
+		<script type="text/javascript" language="JavaScript" src="./resources/commons/jquery.form.js">
+        </script>
+        <script type="text/javascript" language="JavaScript" src="./resources/commons/jquery.validate.min.js">
+        </script>
+        <script type="text/javascript">
+            $(function(){
+				var verCodeUrl=$('#verCode').attr('src')
+				$('#verCode:parent,.operate a').click(function(){
+					$('#verCode').attr('src',verCodeUrl+"?"+(+new Date))
+				})
+				
+				$('.bluebut').click(function(){
+					$('#form1').submit()
+				})
+				
+                /* 设置默认属性 */
+                $.validator.setDefaults({
+                    submitHandler: function(form){
+						$(form).ajaxSubmit({
+							success:function(responseText, statusText, xhr, $form){
+								console.info(responseText)
+							}
+						})
+						return false
+                    }
+                });
+                // 中文字两个字节       
+                $.validator.addMethod("byteRangeLength", function(value, element, param){
+	                    var length = value.length;
+	                    for (var i = 0; i < value.length; i++) {
+	                        if (value.charCodeAt(i) > 127) {
+	                            length++;
+	                        }
+	                    }
+	                    return this.optional(element) || (length >= param[0] && length <= param[1]);
+                }, "请确保输入的值在3-15个字节之间(一个中文字算2个字节)");
+                
+                $('#form1').validate({
+					debug:true,
+                    rules: {
+                        username: {
+                            required: true,
+                            byteRangeLength: [3, 15]
+                        }
+                    },
+                    messages: {
+                        username: {
+                            required: "请填写用户名",
+                            byteRangeLength: "(重定义)用户名必须在3-15个字符之间(一个中文字算2个字符)"
+                        }
+                    },
+                    focusInvalid: true,
+                    keyup: false,
+                    errorPlacement: function(error, element){
+                        error.appendTo(element.parent().next().find('div:first'));
+                    }
+                })
+				$.cookie('login_user_name',$('#username').val(),{path:'/',})
+				if($.cookie('login_user_name')){
+					$('#username').val($.cookie('login_user_name'))
+					$('.rememberid input:checkbox').attr('checked', true)
+				}
+				$(document).click(function(){
+					if($('.rememberid input:checkbox').attr('checked')){
+						alert(true)
+					}else{
+						alert(false)
+					}
+				})
+            })
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <div class="index-head">
+                <div class="logo">
+                    <a href="#"></a>
+                </div>
+                <div class="logandreg">
+                    <a href="#" class="lognow">登录</a>
+                    <a href="./register.html" class="reg">注册</a>
+                </div>
+                <div class="menu">
+                    <a href="#">首页</a>|<a href="#">新闻</a>|<a href="#">产品</a>|<a href="#">商业</a>|<a href="#">演示</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="login-con">
+                <h1>用户登录<em id="en">User Login</em></h1>
+                <form id="form1" action="/wbportal/user/login.action" method="post">
+                    <table border="0" cellspacing="0" cellpadding="0" class="import">
+                        <tr>
+                            <th>
+                                用户名：
+                            </th>
+                            <td>
+                                <label for="textfield">
+                                </label>
+                                <input type="text" name="username" id="username" class="inputbox"/>
+                            </td>
+                            <td>
+                                <div class="point-a">
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                密&nbsp;&nbsp;&nbsp;&nbsp;码：
+                            </th>
+                            <td>
+                                <input type="password" name="password" id="password" class="inputbox"/>
+                            </td>
+                            <td>
+                                <div class="point-b">
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                验证码：
+                            </th>
+                            <td>
+                                <input id="randcode" name="randcode" type="text" class="vcode"/><a href="#"><img id="verCode" style="width: 60px; height: 20px; border: 1px solid #9bc6e8; color: #000000; font-size: 12px; line-height: 27px;" alt="code" src="/wbportal/images/image.jsp" id="randImage"/></a>
+                            </td>
+                            <td>
+                                <div class="operate">
+                                    <a href="#">刷新验证码</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <div class="rememberid">
+                                    <input type="checkbox" name="checkbox" id="checkbox" class="check"/>记住用户名
+                                </div>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td>
+                                <div>
+                                    <a href="javascript:void(0);" class="bluebut">登&nbsp;录</a>
+                                    <a href="./function/user/findPass.html" class="forget">忘记密码？</a>
+                                </div>
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <div class="regwizard">
+                    <h2>您还没有帐号？</h2>
+                    <ul>
+                        <li>
+                            使用邮箱<a href="./register.html">注册BAE帐号</a>或获得更多的<a href="#">帮助信息</a>
+                        </li>
+                        <li>
+                            观看BAE产品演示视频，<a href="#">点击观看</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="index-footer">
+                <div class="l">
+                    <a href="#">产品介绍</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">公司简介</a>
+                </div>
+                <div class="r">
+                    京ICP备09109727号 Copyright © 2012 百分点信息科技有限公司. All Right Reserved.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

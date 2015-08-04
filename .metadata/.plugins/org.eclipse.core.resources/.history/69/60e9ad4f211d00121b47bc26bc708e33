@@ -1,0 +1,29 @@
+/**
+ * @author Administrator
+ */
+$.template('page','<div data-role="page">'+
+'<div data-role="header">'+
+'<a href="index.html" data-icon="delete">Cancel</a>'+
+'<h1>Edit Contact</h1>'+
+'<a href="index.html" data-icon="check">Save</a>'+
+'</div><!-- /header -->'+
+'<div data-role="content">	'+
+'<p data-role="button" style="text-align:left;">你幸福吗</p>'+
+'<fieldset data-role="controlgroup">'+
+'<input type="radio" name="radio" id="radio-1a" class="custom" />'+
+'<label for="radio-1a">什么是幸福</label>'+
+'<input type="radio" name="radio" id="radio-2a" class="custom" />'+
+'<label for="radio-2a">我姓宁</label>'+
+'<input type="radio" name="radio" id="radio-3a" class="custom" />'+
+'<label for="radio-3a">你猜</label>'+
+'<input type="radio" name="radio" id="radio-4a" class="custom" />'+
+'<label for="radio-4a">元芳，你怎么看</label>'+
+'</fieldset>'+
+'</div><!-- /content -->'+
+'<div data-role="footer"> '+
+'<h4>底部</h4> '+
+'</div> '+
+'</div><!-- /page -->')
+function Question(){
+	
+}

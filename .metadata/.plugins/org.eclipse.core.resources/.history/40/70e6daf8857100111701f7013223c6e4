@@ -1,0 +1,168 @@
+/**
+ * @author Administrator
+ */
+(function($){
+    $.fn.extend({
+        baeGrid: function(opts, callback){
+            var defaults = {'visable':true,
+			                        pager:{
+										          currentItem:1,
+												  rowList:[20,30,50]
+									         }
+									}  
+            var setting = $.extend(true,{}, defaults, opts)   
+			var dom=$('<table></table>')
+			
+			var colIndex=[]
+			
+			function Title(){
+				this.dom=$('<tr></tr>')
+				$.each(setting['colModel'],$.proxy(function(i,item){
+					var th=$('<th></th>')
+					item['attr']?th.attr(item['attr']):null
+					th.html(item.colName).data('id',item.name).appendTo(this.dom)
+				    colIndex.push(item.name)
+				},this))
+			}
+			this.title=new Title()
+			this.title.dom.appendTo(dom)
+		   
+		   function LoadData(){
+		   	   this.load=function(rows){
+				 $.each(rows,function(i,row){
+				 	$.each(colIndex,function(j,cl){
+						if(row[cl]){
+							var td=dom.find('tr').eq(i+1).find('td').eq(j)
+							if($.isPlainObject(row[cl])){
+								row[cl]['attr']?td.attr(row[cl]['attr']):null
+								td.html(row[cl]['content'])
+								row[cl]['afterDraw']?row[cl]['afterDraw'](td):null
+							}else{
+								td.html(row[cl])
+							}
+						}
+					})
+				 })
+				 dom.find('tr:gt('+rows.length+')').remove()
+			   }
+			   this.ajaxLoad=function(){
+			   	 
+			   }
+			   
+			   this.ajaxInit=function(){
+			   	
+			   }
+			   
+			   this.__ajaxTools=function(){
+					   $.ajax({
+							   type: "GET",
+							   url: "url",
+							   data: {},
+							   dataType: "json",
+							   success: function(rows){
+							     alert( "Data Saved: " + msg );
+							   }
+							});
+			   }
+		   }
+           
+		   var loader=new LoadData();
+		   this.data('loader',loader.load)
+		   
+		   
+	       function Body(){
+				   	this.addRows=function(rows){
+						   	  $.each(rows,function(i,row){
+									var tr=$('<tr></tr>')
+									$.each(colIndex,function(j,cl){
+										if(row[cl]){
+											var td=$('<td></td>')
+											if($.isPlainObject(row[cl])){
+												row[cl]['attr']?td.attr(row[cl]['attr']):null
+												td.html(row[cl]['content']).appendTo(tr)
+												row[cl]['afterDraw']?row[cl]['afterDraw'](td):null
+											}else{
+												td.html(row[cl]).appendTo(tr)
+											}
+										}
+									})
+							    	tr.appendTo(dom)
+								})
+					}
+		   }
+		   var body=new Body()
+		   body.addRows(setting['stores'])
+
+			this.data('addRows',body.addRows)
+			
+			
+			
+			
+			function Page(){
+				this.pageDom=$("<ul></ul>")
+			    
+				//显示的条数
+				var rowListDom=$('<li></li>');
+				rowListDom.html('显示条数')
+				this.rowListSelect=$('<select></select>')
+				$.each(setting['pager']['rowList'],$.proxy(function(i,item){
+					$('<option></option>').html(item).appendTo(this.rowListSelect)
+				},this))
+//				this.rowListSelect=rowListNumSelect
+				
+				this.rowListSelect.appendTo(rowListDom)
+				
+				this.pageDom.append(rowListDom)
+				
+				
+				//content
+				var content=$('<li>第<input type="text" value=""/>项 第<span></span>项，共<span></span>项</li>')
+			    this.currentItem=content.find('input:eq(0)')//当前项
+				this.currentItemRange=content.find('span:eq(0)')//项区间
+				this.totalItem=content.find('span:eq(1)')//总共项
+				
+				this.pageDom.append(content)
+				
+				var pages=$('<li>第一页</li><li>上一页</li><li>下一页</li><li>最后页</li>')
+				var firstPage=pages.find('li:eq(0)')
+				var prefPage=pages.find('li:eq(1)')
+				var nextPage=pages.find('li:eq(2)')
+				var lastPage=pages.find('li:eq(3)')
+				
+				this.pageDom.append(pages)
+				
+//				function PageValue(pager){
+					this.currentItem.val(setting['pager'].currentItem)
+					this.rowListSelect.val(setting['pager'].currentRowmList?setting['pager'].currentRowmList:setting['pager']['rowList'][0])
+					this.totalItem.html(setting['pager'].totalItem)
+					this.currentItemRange.html(setting['pager'].currentItem+'-'+setting['stores'].length)
+//				}
+
+                
+				
+				
+				this.renderTo=function(renderDom){
+					renderDom.append(this.pageDom)
+				}
+			}
+			var pager= new Page()
+			
+			
+			
+			dom.appendTo($(this))
+			pager.renderTo($(setting['pager']['renderTo']))
+			
+        },
+		
+		testPushDate:function(){
+			this.addRows([{name:'im',sex:'binbin'},{name:'im',sex:'binbin'}])
+		},
+		addRows:function(rows){
+			this.data('addRows')(rows)
+		},
+		loadData:function(rows){
+			 this.data('loader')(rows)
+		}
+	
+    })
+})(jQuery);

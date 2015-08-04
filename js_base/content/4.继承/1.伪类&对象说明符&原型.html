@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>伪类&对象说明符&原型</title>
+		<script type="text/javascript" src="../../commons/common.js"></script>
+		<script type="text/javascript">
+			//伪类示例
+			/*var  Animal=function(name){//定义基类
+				this.name=name
+			}
+			Animal.prototype.get_name=function(){
+				return this.name
+			}
+			Animal.prototype.says=function(){
+				return this.saying||''
+			}
+			//基类实例
+			var animal=new Animal('动物1')
+			var name=animal.get_name()//动物1
+			
+			var Cat=function(name){//定义伪类
+				this.name=name
+				this.saying='meow'
+			}
+			Cat.prototype=new Animal()//继承
+			Cat.prototype.purr=function(n){//扩充
+				var i,s=''
+				for(i=0;i<n;i++){
+					if(s){
+						s+='-'
+					}
+					s+='r'
+				}
+				return s
+			}
+			Cat.prototype.get_name=function(){
+				return this.says()+' '+this.name+' '+this.says()
+			}
+			var cat=new Cat('Hello')
+			var says=cat.says()
+			var purr=cat.purr(10)
+			Animal.prototype.newM=function(){
+				return 'tttttttttttttttttt'
+			}
+			var name=animal.get_name()
+			
+			console.info(says)
+			console.info(purr)
+			console.info(name)
+			console.info(cat.newM())
+			*/
+			
+			//简化以上过程
+//			Function.method('inherits',function(Parent){
+//				this.prototype=new Parent()
+//				return this
+//			})
+//			var Cat = function(name){
+//				this.name=name
+//				this.saying='meow'
+//			}.inherits(Animal).method('purr',function(n){
+//				var i,s=''
+//				for(i=0;i<n;i++){
+//					if(s){
+//						s+='-'
+//					}
+//					s+='r'
+//				}
+//				return s
+//			}).method('get_name',function(){
+//				return this.says()+' '+this.name+' '+this.says()
+//			})
+			
+		    //其他,由于function又可以是函数又可以是类,通常约定在用作类是首字母大写
+			
+			//对象说明符
+			
+//			var obj=maker(a,b,c,d)//这样定义参数严格要求顺序
+//			//推荐的作法
+//			var obj=maker({
+//			   key1:a,
+//			   key2:b,
+//			   key3:c,
+//			   key4:d
+//			})
+			
+			
+			//原型 纯原型继承,对象从对象继承,完全摒弃类
+			var animal1={
+				name:'animal1',
+				get_name:function(){
+					return this.name
+				},
+				says:function(){
+					return this.saying||''
+				}
+			}
+			var cat1=Object.beget(animal1)
+			cat1.name='cat cat'
+			cat1.saying='meow'
+			cat1.purr=function(n){
+				var i,s=''
+				for(i=0;i<n;i++){
+					if(s){
+						s+='-'
+					}
+					s+='r'
+				}
+				return s
+			}
+			cat1.get_name=function(){
+				return this.says()+' '+this.name+' '+this.says()
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

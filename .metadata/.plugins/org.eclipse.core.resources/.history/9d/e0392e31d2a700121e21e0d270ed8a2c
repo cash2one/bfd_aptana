@@ -1,0 +1,38 @@
+$(function(){
+	ZeroClipboard.setMoviePath('../../resources/ZeroClipboard/ZeroClipboard.swf')
+	var clip = new ZeroClipboard.Client();
+	clip.glue($('.copy:first')[0]);
+	clip.setText($.trim($('textarea').text()))
+	$(this).data('clip',clip)
+	clip.addEventListener('complete', function(client, text) {
+						$('.right').show()
+            });
+})
+$(function(){
+		$('.section').scrollable({vertical: true})
+		var api=$('.section').data('scrollable')
+		$('.set-box:first').click(function(){
+//			$.post('url',{},function(data){
+//				if(data==""){
+					api.seekTo(1)
+//				}
+//			},'json')
+		});
+		$('#isopenpromo').change(function(){
+			var dom=$(this)
+			 $.ifmWidget("loading",{
+		    		title:'正在操作',
+		    		content:'正在操作...'
+			})
+			$.post('url',{'参数名':dom.prop('checked')?'选中':'未选中'},function(data){
+				if(data == '成功的状态'){
+					$.ifmWidget("tip",{'content':'操作成功'})
+				}else{
+					$.ifmWidget("alertFail",{
+			    		title:'操作失败',
+			    		content:'操作失败'
+			    	})
+				}
+			},'json')
+		})
+})

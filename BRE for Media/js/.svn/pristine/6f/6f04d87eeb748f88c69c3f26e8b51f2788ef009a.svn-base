@@ -1,0 +1,5 @@
+$(function(){
+	setTimeout(function(){
+		alert('还不确定跳到哪')
+	},3000)
+})

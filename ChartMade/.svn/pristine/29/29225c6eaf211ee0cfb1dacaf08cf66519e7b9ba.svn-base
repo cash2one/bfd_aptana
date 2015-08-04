@@ -1,0 +1,80 @@
+/**
+ * @author Administrator
+ */
+(function(document, window) {
+	var _path = document.scripts;
+	_path = _path[_path.length - 1].src.substring(0, _path[_path.length - 1].src.lastIndexOf("/") + 1);
+	if ((_path.indexOf('http') != 0 && _path.indexOf('/') != 0) || _path.indexOf('./') == 0) {
+		_path = window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1) + _path
+	}
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src = _path + 'commons/LAB.js';
+	document.getElementsByTagName("head")[0].appendChild(script);
+
+	window.BaifendianWidgets = function(id) {
+		var self = this
+		self.init = function() {
+				if (typeof jQuery == 'undefined') {
+					$LAB.script(_path + 'commons/jquery.js').wait(_jqLoad)
+				} else {
+					_jqLoad()
+				}
+
+				function _jqLoad() {
+					self.getSetting(function(data) {
+						$.each(data, function(i, item) {
+							_baifendianWidgets[item.type]['requires'].push('models/' + item.type + '/parse.js')
+							var $l
+							$.each(_baifendianWidgets[item.type]['requires'], function(a, b) {
+								if (a == 0) {
+									$l = $LAB.script(_path + b).wait()
+								} else {
+									$l.script(_path + b).wait()
+								}
+							})
+							$l.wait(function() {
+								var c = _baifendianWidgets[item.type].parse(item)
+								self.widgets ? self.widgets.push(c) : self.widgets = [c]
+								self[item.type] ? self[item.type].push(c) : self[item.type] = [c]
+								self.getData({
+									id: item.id
+								}, function(d) {
+									c.setData(d)
+								})
+							})
+						})
+					})
+				}
+			}
+		self.get = function(index) {
+			return self.widgets[i]
+		}
+		self.getByType = function(type) {
+			return self[type]
+		}
+		self.getSetting = function(fun) {
+			$.ajax({
+				url: _baifendianWidgetsComboSettingURL,
+				data: {
+					pageID: id
+				},
+				dataType: 'json',
+				success: function(data) {
+					fun(data)
+				}
+			})
+		}
+		self.getData = function(param, fun) {
+			$.ajax({
+				url: _baifendianDataURL,
+				data: param,
+				dataType: 'json',
+				success: function(d) {
+					fun(d)
+				}
+			})
+		}
+		self.init()
+	}
+})(document, window);

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>登录</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/plugin.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/exp.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+<script type="text/javascript" src="../../js/regulateSize.js"></script>
+<script type="text/javascript" src="../../js/changeSite.js"></script>
+<script type="text/javascript" src="../../js/messageTip.js"></script>
+	<script type="text/javascript" language="JavaScript" src="../../resources/commons/jquery.form.js">
+    </script>
+    <script type="text/javascript" language="JavaScript" src="../../resources/commons/jquery.validate.min.js">
+    </script>
+    <script type="text/javascript" language="JavaScript" src="../../js/Account/login.js">
+    </script>
+</head>
+<body style="background:url(../../images/bodybg.png) 0 0;position:relative;">
+	<div class="page">
+		<div id="login-area">
+			<div class="la-logo"></div>
+			<div class="la-box">
+				<h2>用户登录</h2>
+				<div class="main">
+					<form id="form1" action="/ifm/Account/user/!login" method="post">
+						<div class="item">
+							<label>邮箱地址</label>
+							<span class="input-box"><input type="text" name="user.username"/></span>
+						</div>
+						<div class="item mb10">
+							<label>密码</label>
+							<span class="input-box"><input type="password" name="user.password"/></span>
+						</div>
+						<a class="tip" href="/ifm/pages/Account/resetpassword.html">忘记密码了？</a>
+						<div class="actions">
+							<span class="btn"><input id="sub" class="button" type="button" value="登录"/></span>
+							<span class="text">还没有账户？</span>
+							<span class="text">请<a href="/ifm/pages/Account/register.html">注册</a></span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+		</div>
+	</div>
+</body>
+</html>

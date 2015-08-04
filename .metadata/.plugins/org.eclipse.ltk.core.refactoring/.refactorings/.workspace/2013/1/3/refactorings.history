@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;BRE for Media/pages/ContentManager/list.json&apos;" deleteContents="false" description="Delete resource &apos;BRE for Media/pages/ContentManager/list.json&apos;" element1="/BRE for Media/pages/ContentManager/list.json" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1358065169248"/>
+</session>

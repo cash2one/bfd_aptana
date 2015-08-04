@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>获取密码</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好,测试用户</a></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<div class="m-title">添加站点</div>
+			<div class="m-con border-top">
+				<div class="con-5">
+					<div class="add-site-tit3">
+						<a href="#" class="set-btn1">验证网站</a>
+						<a href="#" class="set-btn2">安装插件</a>
+					</div>
+					<div class="add-site-c p-left55">
+						<div class="tit">
+							<h3>代码安装教程</h3>
+							<span>[修改建站平台]</span>
+						</div>
+						<div class="use">
+							<h4>使用说明：</h4>
+							<ul>
+								<li>此段代码仅适用于<em>www.ceshi.com</em>；</li>
+								<li>复制并粘贴下面的JS代码,放到想显示推荐栏的位置。如果您的网站使用的模板，您也可以复制代码到您的模板，推荐工具将在所有网页自动出现</li>
+							</ul>
+							<img src="../../images/pic-17.jpg" />
+							<div class="copy-btn">
+								<a class="copy">复制代码</a>
+								<span class="right">复制成功</span>
+							</div>
+							<p>插件安装成功后，才能使用管理后台哦~</p>
+						</div>
+						<div class="btn">
+							<a class="btn1"><span>检测是否安装成功</span></a>
+							<a class="btn2"><span>上一步</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+</body>
+</html>

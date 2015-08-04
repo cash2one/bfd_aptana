@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ChartMade/resources/baifendianWidgetsCombo/models/filtergrid/js/FilterGridPie_new.js&apos; to &apos;FilterGridPie.js&apos;" description="Rename resource &apos;FilterGridPie_new.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="resources/baifendianWidgetsCombo/models/filtergrid/js/FilterGridPie_new.js" name="FilterGridPie.js" stamp="1348560323410" updateReferences="true"/>
+</session>

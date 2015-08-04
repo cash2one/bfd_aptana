@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;py_test/src/cds/replace.bat&apos;" deleteContents="false" description="Delete resource &apos;py_test/src/cds/replace.bat&apos;" element1="/py_test/src/cds/replace.bat" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1348024303911"/>
+</session>

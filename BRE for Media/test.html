@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>test</title>
+		<script type="text/javascript" src="./resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+		<script type="text/javascript" src="./resources/commons/jquery.blockUI.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/*$.blockUI({ message:'敬请期待',
+			                    css:{ border: 'none',
+								         opacity: .5, 
+										 padding: '50px',
+                                         color: '#fff' ,
+										 'font-size':'100px',
+							            '-webkit-border-radius': '100px', 
+							            '-moz-border-radius': '100px', 
+										},
+								overlayCSS:{opacity: .5, backgroundColor:	'#000'}		 
+							})*/
+							$.blockUI({    message:$('<div>敬请期待!</div>').click($.unblockUI ),
+								                   css: { 
+											            border: 'none', 
+											            padding: '25px', 
+														'font-size':'80px',
+											            backgroundColor: '#000', 
+											            '-moz-border-radius': '15px',
+														'-khtml-border-radius': '15px',
+														'-webkit-border-radius': '15px',
+														'border-radius': '15px',
+											             opacity: .25, 
+											             color: '#fff',
+														 top:  ($(window).height() - 143) /2 + 'px', 
+                										 left: ($(window).width() - 460) /2 + 'px',  
+														 'cursor':'default'
+											        },
+													overlayCSS:{opacity: .5, backgroundColor:'#000','cursor':'default'},
+													onOverlayClick: $.unblockUI 
+													 }
+												); 
+			})
+		</script>
+		<script type="text/javascript">
+			$(function(){
+				var obj={a:12,b:21,e:12,d:'12'}
+				var a1=$.map(obj,function(v,k){
+					return k
+				})
+				console.info(a1)
+				console.info(obj)
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

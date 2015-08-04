@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>流量交换-详情页</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/ifmWidget/css/ifmWidget.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/plugin.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+<script type="text/javascript" src="../../js/regulateSize.js"></script>
+<script type="text/javascript" src="../../js/changeSite.js"></script>
+<script type="text/javascript" src="../../js/messageTip.js"></script>
+	 <script type="text/javascript" src="../../resources/animate/jquery.highlightFade.js">
+   </script>
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/lib/highcharts.js"></script>
+	<script type="text/javascript" src="../../resources/commons/list_tools.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="../../resources/ifmWidget/js/ifmWidget.js"></script>
+	<script type="text/javascript" src="../../resources/jquery_tools/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="../../js/SourceShare/media-流量交换-详情页.js"></script>
+	<style type="text/css">
+			.hightscroll{
+				overflow-y:scroll;
+				height:200px;
+			}
+	</style>
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好，测试用户</a></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="current">
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<ul class="nav2">
+				<li class="current"><a href="#">网站列表</a></li>
+				<li class="rbgno"><a href="#">设置</a></li>
+			</ul>
+			<div class="m-con padding-bottom16">
+				<div class="con-4">
+					<div class="arrow2"></div>
+					<div class="summary" style="width:910px;">
+						<div class="s-left">
+							<a href="#" class="return"> <<&nbsp;返回</a> 
+							<div class="s-title">
+								<h2>中国金融新闻网</h2>
+								<a href="#" class="btn">申请交换</a>
+							</div>
+							<span class="site">www.jinrong.com</span>
+							<div class="s-main">
+								<div class="line">
+									<span class="name">网站类型：</span>
+									<p>新闻</p>
+								</div>
+								<div class="line">
+									<span class="name">网站描述：</span>
+									<p>专注于电脑技术、网站架设互联网、搜索引擎行业、Google Earth、Web 2.0等的原创IT科技博客。</p>
+								</div>
+								<div class="line">
+									<span class="name">联系方式：</span>
+										<p>
+									      <em class="m" id="sendMessage">&nbsp;</em>
+									      <!--<em class="qq">&nbsp;</em>-->
+									      <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=421099982&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:421099982:41" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="s-right" >
+							<div>与您文章内容相似度：</div>
+									<div id="chart" style="margin: 10px 0 0 80px;width:172px;height:172px; position: relative;">
+									</div>
+						</div>
+					</div>
+					<div class="nav3">
+						<ul class="">
+							<li class="br-no"><a  class="curr">热门文章</a></li>
+							<li class="ml24 br-no">猜你感兴趣：</li>
+							<li class="br-no"><a  class="">微软</a></li>
+							<li><a  class="">苹果</a></li>
+							<li><a  class="">微软</a></li>
+							<li><a  class="">苹果苹果</a></li>
+							<li><a  class="">微软</a></li>
+							<li><a  class="">苹果</a></li>
+							<li><a  class="">微软</a></li>
+							<li><a  class="">苹果</a></li>
+							<li><a  class="">微软</a></li>
+							<li class="br-no"><a  class="">苹果</a></li>
+						</ul>
+					</div>
+					<div id="list" style="overflow-x:hidden;overflow-y:visible;position: relative;width:873px;min-height:201px;">
+						<div style="width: 90000000em;position: absolute;">
+									   <!--
+									   <div style="float:left;">
+										   	<div class="article-list">
+													<div class="con">
+														<span class="article-list-img">
+															<a href="#"><img src="../../images/pic-1.jpg" alt="小米" /></a>
+														</span>
+														<div class="article-list-content">
+															<h3><a href="#">小米便宜是因为卖期货？你们醒醒吧！</a></h3>
+															<p class="summary2">小米2发布之后，超性价比，引发了手机及互联网行业广泛的讨论。我们只看到小米的价格低，性价比高，有人分析是卖期货，"小米模式＝前期亏损少卖挣人气，中期大卖挣利润，后期甩卖清库存"，我不否认有这方面的意义。但，我相信这不是他们的初衷和重点。作为传统制造行业的一员，我认为智能手机主要作为一种硬件设备接近传统制造行业的产品，小米的运营模式，却给传统行业制造上了一堂很大的课。</p>
+														</div>
+													</div>
+												</div>
+									   </div>
+									   <div style="float:left;">
+										   	<div class="article-list">
+													<div class="con">
+														<span class="article-list-img">
+															<a href="#"><img src="../../images/pic-1.jpg" alt="小米" /></a>
+														</span>
+														<div class="article-list-content">
+															<h3><a href="#">小米便宜是因为卖期货？你们醒醒吧！</a></h3>
+															<p class="summary2">小米2发布之后，超性价比，引发了手机及互联网行业广泛的讨论。我们只看到小米的价格低，性价比高，有人分析是卖期货，"小米模式＝前期亏损少卖挣人气，中期大卖挣利润，后期甩卖清库存"，我不否认有这方面的意义。但，我相信这不是他们的初衷和重点。作为传统制造行业的一员，我认为智能手机主要作为一种硬件设备接近传统制造行业的产品，小米的运营模式，却给传统行业制造上了一堂很大的课。</p>
+														</div>
+													</div>
+												</div>
+									   </div>
+									   -->
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+		<div class="float-layer w372" id="sendMessageDialog" style="display:none;">
+			<div class="fl-title">
+				<h4>写信</h4>
+				<a>&nbsp;</a>
+			</div>
+			<div class="fl-content3">
+				<div class="item">
+					<label>发给：</label>
+					<span class="text">中国金融网</span>
+				</div>
+				<div class="item2">
+					<label>内容：</label>
+					<textarea class=""></textarea>
+				</div>
+				<div class="fot">
+					<span class="tex">还可以输入300字</span>
+					<div class="fr">
+						<em>取消</em>
+						<a class="blue-btn1">
+							<span>发 送</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

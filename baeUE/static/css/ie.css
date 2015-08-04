@@ -1,0 +1,73 @@
+@charset "utf-8";
+.left .menulist ul li {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.r_tittle .menu {
+	color: #999;
+}
+.r_tittle .menu .now {
+	background-color: #FFF;
+	background-image: url(../images/menu_bg.gif);
+	background-repeat: no-repeat;
+	width: 75px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.r_tittle .menu .bb_down {
+	height: 19px;
+	padding-top: 6px;
+}
+.r_tittle h1 .day_select .left {
+	background:url(../images/daydata_bg.gif) no-repeat left top;
+}
+.r_tittle h1 .day_select {
+	background: url(../images/daydata_bg.gif) no-repeat right top;
+}
+.datacontent .data01 .datagroup .data th {
+	background-position: right 0px;
+}
+.datacontent .data01 .tittle .ico {
+	height: 14px;
+	width: 14px;
+}
+.datacontent .data03 .b_pic {
+	height: 19px;
+	padding-top: 6px;
+}
+.datacontent .data03 .userdata {
+	height: 19px;
+	padding-top: 6px;
+}
+.datacontent .data03 .data_bb {
+	height: 19px;
+	padding-top: 6px;
+}
+.datacontent .data03 .ud_select ul li {
+	font-family: "宋体";
+}
+
+.operatebutton .button03 {
+	height: 19px;
+	padding-top: 6px;
+}
+.operatebutton .button04 {
+	height: 19px;
+	padding-top: 6px;
+}
+.import .bluebut {
+	height: 22px;
+	padding-top: 7px;
+}
+
+/*系统设置样式*/
+.datacontent .tittle .button01 {
+	height: 19px;
+	padding-top: 6px;
+}

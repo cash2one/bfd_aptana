@@ -1,0 +1,48 @@
+@charset "utf-8";
+.right .r_tittle .menu {
+	line-height: 28px;
+	color: #999;
+}
+.right .r_tittle .menu .now {
+	background-color: #FFF;
+	background-image: url(images/menu_bg.gif);
+	background-repeat: no-repeat;
+	width: 75px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.right .r_tittle .menu .bb_down {
+	height: 19px;
+	padding-top: 6px;
+}
+.right .r_tittle h1 .day_select .left {
+	background-image: url(images/daydata_bg.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+}
+.right .r_tittle h1 .day_select .right {
+	background-image: url(images/daydata_bg.gif);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.right .datacontent .data01 .datagroup .data th {
+	background-position: right 0px;
+}
+.right .datacontent .data01 .tittle .ico {
+	height: 14px;
+	width: 14px;
+}
+.right .datacontent .data03 .b_pic {
+	height: 19px;
+	padding-top: 6px;
+}
+.right .datacontent .data03 .userdata {
+	height: 19px;
+	padding-top: 6px;
+}

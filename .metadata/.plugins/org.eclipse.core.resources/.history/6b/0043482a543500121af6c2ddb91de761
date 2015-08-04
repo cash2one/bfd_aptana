@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>概述</title>
+		<link type="text/css" rel="stylesheet" href="./resources/bootstrap/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="./resources/bootstrap/css/bootstrap-responsive.min.css">
+		<link type="text/css" rel="stylesheet" href="./css/doc.css">
+		<link type="text/css" rel="stylesheet" href="./resources/google-code-prettify/prettify.css">
+		<script type="text/javascript" src="./resources/jquery/jquery.js"></script>
+		<script type="text/javascript" src="./resources/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./resources/google-code-prettify/prettify.js"></script>
+		<script type="text/javascript">
+        $(function(){
+			// make code pretty
+	        window.prettyPrint;
+	        prettyPrint()
+		
+            var $win = $(window)
+		      , $nav = $('.subnav')
+		      , navTop = $('.subnav').length && $('.subnav').offset().top - 40
+		      , isFixed = 0
+		    processScroll()
+		    $win.on('scroll', processScroll)
+		    function processScroll() {
+		      var i, scrollTop = $win.scrollTop()
+		      if (scrollTop >= navTop && !isFixed) {
+		        isFixed = 1
+		        $nav.addClass('subnav-fixed')
+		      } else if (scrollTop <= navTop && isFixed) {
+		        isFixed = 0
+		        $nav.removeClass('subnav-fixed')
+		      }
+		    }
+        })
+		</script>
+	</head>
+	<body>
+		<div class="navbar navbar-fixed-top">
+		      <div class="navbar-inner">
+		        <div class="container">	         
+		          <div class="nav-collapse">
+		            <ul class="nav">
+		              <li>
+		                <a href="./index.html">概述</a>
+		              </li>
+		              <li class="active">
+		                <a href="./scaffolding.html">设计</a>
+		              </li>
+		              <li class="">
+		                <a href="./base-css.html">数据格式</a>
+		              </li>
+		            </ul>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+			<div class="container">
+				<header class="jumbotron subhead">
+					<div class="subnav">
+					   <ul class="nav nav-pills">
+							<li class="active">
+							     <a href="#global">主要流程</a>
+							</li>
+							<li>
+							     <a href="">依赖机制</a>
+							</li>	
+							<li class="">
+							     <a href="">渲染机制</a>
+							</li>	
+							<li class="">
+							     <a href="">事件机制</a>
+							</li>							
+					  </ul>
+					</div>
+				</header>
+				<section id="global">
+					<div class="page-header">
+					    <h1>主要流程</h1>
+					  </div>
+					  <div class="masthead">
+						  	<p>
+						  		<img src="./img/flow.jpg"/>
+							<p>
+					  </div>
+				</section>	
+				<section>
+					<div class="page-header">
+						<h1>依赖机制</h1>
+					</div>
+					<div class="container">
+						<p>
+							load会在加载全局配置后分析出有哪些组件,并加载组件的依赖,加载机制如下
+						</p>
+							<pre class="prettyprint linenums">
+//假设从配置中读出有两个组件，它们的依赖如下
+var widget1Script = ['a1.js', 'a2.js']
+var widget2Script = ['b1.js', 'a1.js']
+
+//重复的js容器
+var repeatScript = {}
+
+//经计算,容器的值为
+repeatScript = {
+    'a1.js': '未加载'
+}
+//------以上过程计算出了依赖重复-----
+
+//定义组件依赖加载函数
+function loadScript(widgetScript, $l){//widgetScript-依赖链为空, $l-加载链
+    //加载widget的依赖
+    $.each(widgetScript, function(i, item){
+        if (repeatScript[item] !== undefined) {//判断需要加载的文件是否在依赖重复中
+            if (repeatScript[item] === '未加载') {
+                repeatScript[item] = '加载中'//改状态
+                $l.script(item).wait(function(){//加载文件
+                    //加载完回调
+                    repeatScript[item] = '已加载'
+                })
+            }
+            else 
+                if (repeatScript[item] === '加载中') {
+                    var interval = setInterval(function(){//每5毫秒查询一下状态
+                        if (repeatScript[item] === '已加载') {
+                            clearInterval(interval)//清理定时器
+                            loadScript(widgetScript.slice(i + 1), $l)//递归,把加载链切分当参数
+                        }
+                    }, 5)
+                    return false
+                }
+                else 
+                    if (repeatScript[item] === '已加载') {
+                       //执行回调,这段伪代码里没有定义
+                    }
+        }
+        else {//不在依赖重复中
+            //加载文件
+            $l.script(item)
+        }
+    })
+    
+}
+
+							</pre>	
+					</div>
+				</section>
+				<section>
+					<div class="page-header">
+						<h1>渲染机制</h1>
+					</div>
+					<div class="masthead">
+						  	<p>
+						  		<img src="./img/渲染机制.jpg"/>
+							<p>
+					  </div>
+				</section>
+				<section>
+					<div class="page-header">
+						<h1>事件机制</h1>
+					</div>
+					<div class="container">
+						<p>
+							以下演示如何定义组件间事件
+						</p>
+							<pre class="prettyprint linenums">
+BfdWidget['组件名'] = function(setting, global){//定义一个组件
+      Widget.call(this)//必须继承Widget
+      var self=this
+	  self.addEvent('事件名', function() {//定义一个可以事件,可以通知其他组件
+	  	//事件自带可执行事件,一般什么都不写,用来写调试信息
+	  })
+	  self.dom.click(function(){
+	  	 self.fireEvent('事件名',自定义参数列表...)
+	  })
+}
+							</pre>	
+					</div>
+				</section>
+				<footer class="footer">
+			        <p class="pull-right"><a href="#">回到顶端</a></p>
+			        <p>我们倾注世间之爱于设计与创作 <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>，由<a href="http://weibo.com/tvlikedev">Tvlike.me/TV来客开发者</a>翻译</p>
+			        <p>开源依照 <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a> 发布。 文档依照 <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> 发布。</p>
+			        <p>Icons取自 <a href="http://glyphicons.com">Glyphicons Free</a>，授权依照 <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>。</p>
+			      </footer>
+			</div>
+	</body>
+</html>

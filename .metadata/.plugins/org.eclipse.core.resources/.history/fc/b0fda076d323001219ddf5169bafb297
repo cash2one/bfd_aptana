@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>语句</title>
+		<script type="text/javascript">
+			//var 定义在函数内部时，定义函数的私有变量 关于作用域的问题后面说
+			//switch,while,do,for允许有一个前置label配合break使用
+			n1:for(var i=0;i<10;i++){
+				for(var j=0;j<10;j++){
+					console.info('i:'+i+' j:'+j)
+					if(i===2&&j===2){
+						break n1;
+					}
+				}
+			}
+			//if语句同其他语言,假值有false,null,undefined,'',0,NaN
+			if(false || null || undefined || '' || 0 || NaN){
+				console.info(true)
+			}else{
+				console.info(false)
+			}
+			//for语句的另一种(foreach) 可枚举对象
+			var o={
+				n1:123,
+				n2:456
+			}
+			for(var k in o){
+				console.info('k:'+k+' v:'+o[k])
+			}
+			//throw可抛出一个异常,try catch中可捕获,如
+			function testException(){
+				throw {
+					name:'测试异常',
+					message:'测试异常信息'
+				}
+			}
+			try{
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

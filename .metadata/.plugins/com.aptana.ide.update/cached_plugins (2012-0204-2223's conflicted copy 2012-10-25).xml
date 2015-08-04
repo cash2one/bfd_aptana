@@ -1,0 +1,163 @@
+<plugins>
+	<installer>
+		<id>installer.featured</id>
+		<category>Featured Plugins</category>
+		<sortweight>0</sortweight>
+	</installer>
+	<installer>
+		<id>installer.platforms</id>
+		<category>Web Application Platforms</category>
+		<sortweight>1</sortweight>
+	</installer>
+	<installer>
+		<id>installer.jslib</id>
+		<category>JavaScript Libraries</category>
+		<sortweight>2</sortweight>
+		<collapse>true</collapse>
+	</installer>
+	<installer>
+		<id>installer.desktop</id>
+		<category>Desktop Application Platforms</category>
+		<sortweight>3</sortweight>
+		<collapse>true</collapse>
+	</installer>
+	<installer>
+		<id>installer.mobile</id>
+		<category>Mobile Application Platforms</category>
+		<sortweight>4</sortweight>
+		<collapse>true</collapse>
+	</installer>
+	<installer>
+		<id>installer.database</id>
+		<category>Database Utilities</category>
+		<sortweight>5</sortweight>
+		<collapse>true</collapse>
+	</installer>
+	<installer>
+		<id>installer.others</id>
+		<category>Other</category>
+		<sortweight>6</sortweight>
+		<collapse>true</collapse>
+	</installer>
+	<installer>
+		<id>installer.others.source</id>
+		<category>Source Control</category>
+		<parent>installer.others</parent>
+		<sortweight>0</sortweight>
+	</installer>
+	<plugin>
+		<id>com.aptana.ide.feature.xul</id>
+		<name>Embedded Firefox Browser</name>
+		<category>Utilities</category> 
+		<description>Adds embedded Firefox support (XUL-based)</description>
+		<url>http://download.aptana.org/tools/studio/plugin/install/xul/</url>
+        <more>http://www.aptana.org/</more>
+		<sortweight>0</sortweight>
+		<release>
+		  <version>2.0.0</version>
+		</release>
+		<installer_id>installer.others</installer_id>
+	</plugin>
+	<plugin>
+		<id>org.eclipse.team.svn</id>
+		<name>Subversive (SVN)</name>
+		<category>Utilities</category> 
+		<description>Subversion revision control integration</description>
+		<url>http://download.eclipse.org/technology/subversive/0.7/update-site/</url>
+        <more>http://www.eclipse.org/subversive/</more>
+		<sortweight>0</sortweight>
+		<release>
+		  <version>0.7.9.I20101203-1700</version>
+		  <year>2010</year>
+		  <month>12</month>
+		  <day>3</day>
+		</release>
+		<installer_id>installer.others.source</installer_id>
+	</plugin>
+	<plugin>
+		<id>org.tigris.subversion.subclipse</id>
+		<name>Subclipse (SVN)</name>
+		<category>Utilities</category> 
+		<description>Subversion revision control integration</description>
+		<url>http://subclipse.tigris.org/update_1.6.x/</url>
+        <more>http://subclipse.tigris.org/</more>
+		<sortweight>1</sortweight>
+		<release>
+		  <version>1.6.16</version>
+		  <year>2010</year>
+		  <month>11</month>
+		  <day>29</day>
+		</release>
+		<installer_id>installer.others.source</installer_id>
+	</plugin>
+	<plugin>
+		<id>com.perforce.p4wsad</id>
+		<name>P4WSAD (Perforce)</name>
+		<category>Utilities</category> 
+		<description>Perforce configuration management integration</description>
+		<url>http://www.perforce.com/downloads/http/p4-eclipse/install/3.5</url>
+        <more>http://www.perforce.com/perforce/products/p4eclipse.html</more>
+		<sortweight>3</sortweight>
+		<release>
+		  <version>2010.1.275861</version>
+		  <year>2010</year>
+		  <month>1</month>
+		  <day>27</day>
+		</release>
+		<installer_id>installer.others.source</installer_id>
+	</plugin>
+    <plugin>
+        <id>org.radrails.rails_feature</id>
+        <name>Aptana RadRails</name>
+        <category>Platforms</category> 
+        <description>Ruby on Rails support</description>
+        <url>http://download.aptana.com/tools/radrails/plugin/install/radrails-studio/</url>
+        <more>http://www.aptana.com/radrails</more>
+        <sortweight>1</sortweight>
+        <release>
+          <version>2.0.0</version>
+          <year>2009</year>
+          <month>10</month>
+          <day>28</day>
+        </release>
+		<icon>http://ide.aptana.com/content_ide/images/feature_radrails.png</icon>
+		<installer_id>installer.platforms</installer_id>
+    </plugin>
+    <plugin>
+        <id>org.python.pydev.feature</id>
+        <name>Aptana PyDev</name>
+        <category>Platforms</category> 
+        <description>Python support</description>
+        <url>http://www.pydev.org/updates/</url>
+        <more>http://www.pydev.org/</more>
+        <sortweight>2</sortweight>
+        <release>
+          <version>1.6.4</version>
+          <year>2011</year>
+          <month>1</month>
+          <day>1</day>
+        </release>
+		<icon>http://ide.aptana.com/content_ide/images/feature_pydev.png</icon>
+		<installer_id>installer.platforms</installer_id>
+    </plugin>
+    <plugin>
+        <id>com.aptana.ide.feature.framework.air</id>
+        <name>Adobe AIR 1.5</name>
+        <category>Featured</category>
+        <description>Tools for creating desktop Ajax apps with Adobe AIR</description>
+        <url>http://update.aptana.com/install/air/</url>
+        <more>http://www.aptana.com/air</more>
+        <sortweight>2</sortweight>
+        <release>
+            <version>1.5.0</version>
+            <year>2009</year>
+            <month>7</month>
+            <day>8</day>
+        </release>
+                <icon>http://ide.aptana.com/content_ide/images/feature_air.png</icon>
+                <installer_id>installer.desktop</installer_id>
+    </plugin>   
+    <plugin>
+        <id>com.nokia.wrt.feature</id>
+        <name>Nokia Web Runtime (WRT)</name>
+        <category>Feature

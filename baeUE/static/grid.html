@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>grid</title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="/resources/grid/baeGrid/js/baeGrid.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.baeGrid({colModel:[{colName:'姓名',name:'name'},{colName:'性别',name:'sex'}],
+				                  url:'/grid/',
+								    renderTo: 'div:eq(0)',
+								 page: {
+						                        renderTo: '#pager'
+						                    }
+								  })
+								  
+				$('button:eq(0)').click(function(){
+					$('div:eq(0)').addRows([{name:'im',sex:'binbin'},{name:'im',sex:'binbin'}])
+					$('div:eq(0)').testPushDate()
+				})
+				$('button').eq(1).click(function(){
+					$('div:eq(0)').loadData([{name:'测试加载1',sex:'测试加载1'},{name:'测试加载2',sex:'测试加载2'}])
+				})
+			})
+		</script>
+		<style type="text/css">
+			.pager ul{
+				list-style:none;
+			}
+			.pager li{float:left;}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div id="pager" class="pager">
+		</div> 
+		
+		<button>测试填加</button>
+		<button>测试加载数据</button>
+	</body>
+</html>

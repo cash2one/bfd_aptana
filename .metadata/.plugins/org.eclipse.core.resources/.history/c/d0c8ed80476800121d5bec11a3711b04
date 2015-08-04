@@ -1,0 +1,15 @@
+#coding=utf-8
+import os
+
+if __name__ == '__main__':
+    for root, dirs, files in os.walk(os.getcwd()):  
+          for name in files:
+                file = os.path.join(root, name)
+                print file
+                if file.endswith('html') or file.endswith('jsp'):
+                     content= open(file, 'r').read()
+                     content=content.replace("""<a href="#">消息</a>""",
+                                                            """<a href="#">消息</a>""")
+                     open(file, 'w').write(content)
+             
+ 

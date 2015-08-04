@@ -1,0 +1,302 @@
+$.ajaxSettings.traditional = true
+$(function(){
+  $('.section > div:gt(1)').hide();
+  $('.choose > li').click(function(){
+	  if(!$(this).hasClass('current')){
+		  $(this).siblings().removeClass('current')
+		  $(this).addClass('current')
+		  $('.blacklist').removeClass('current')
+		  $('.section > div:gt(0)').hide().eq($(this).index()).show()
+	  }
+  })
+//  $('.blacklist').click(function(){
+//	  if(!$(this).hasClass('current')){
+//		  $('.choose > li').removeClass('current')
+//		  $(this).addClass('current')
+//		  $('.section > div:gt(0)').hide();
+//		  $('#m2').show();
+//	  }
+//  })
+  $.template( 'sysMessage', '<li>'
+		    		+'<div class="dialog">'
+		    		+'<div>'
+		    		+'<input type="checkbox">'
+		    		+'</div>'
+		    		+'<p>${content} </p>'
+		    		+'<span class="date">${date}</span>'
+		    		+'<span class="time">${time}</span>'
+		    		+'</div>'
+		    		+'<span class="d-right">'
+		    		+'<a class="x" style="display:none;">&nbsp;</a>'
+		    		+'</span>'
+		    		+'</li>');
+  $.template('letter','<li>'+
+					  '<span class="d-left">'+
+					  '<div>'+
+					  '<input type="checkbox">'+
+					  '<span class="name">${sitename}(${msgNum})</span>'+
+					  '</div>'+
+					  '<p>${content}</p>'+
+					  '</span>'+
+					  '<span class="d-right">'+
+					  '<span class="date">${date}</span>'+
+			    	  '<span class="time">${time}</span>'+
+					  '<a style="display:none;" class="x">&nbsp;</a>'+
+					  '</span>'+
+					  '</li>')
+  $.template('letter_sent','<div style="display: block;">'+
+				  '<div class="all-dialog"><a> &lt;&lt; 返回所有私信 </a></div>'+
+				  '<ul class="dialog-box padding-bottom39">'+
+				  '<li class="h266">'+
+				  '<div style="display:none;">'+
+				  '<div class="top">'+
+				  '<span class="send">发私信给：${sitename}</span>'+
+				  '<a class="join">加入黑名单</a>'+
+				  '</div>'+
+				  '<textarea class="">&nbsp;</textarea>'+
+				  '<div class="bottom">'+
+				  '<em>还可以输入300字</em>'+
+				  '<a class="send-btn">发 送</a>'+
+				  '</div>'+
+				  '</div>'+
+				  '<div  style="display:none;">'+
+				  '<span class="d-tip">提示：已将对方加入黑名单[<a  class="link">解除</a>]'+
+				  '</span>'+
+				  '</div>'+
+				  '<div  style="display:none;">'+
+				  '<span class="d-tip">提示：抱歉，根据对方设置，你暂时不能给对方发送私信哦~'+
+				  '</span>'+
+				  '</div>'+
+				  '<div  style="display:none;">'+
+				  '<span class="d-tip">提示1：抱歉，根据对方设置，你暂时不能给对方发送私信哦~&nbsp;&nbsp;&nbsp;&nbsp;提示2：已将对方加入黑名单[<a  class="link">解除</a>]'+
+				  '</span>'+
+				  '</div>'+
+				  '</li>'+
+				//  '<li>loading</li>'+
+				  '</ul>'+
+				  '<div class="show-more">显示更早记录 ↓</div>'+
+				  '</div>')						  
+  $.template('letter_detail','<li>'+
+							  '<span class="d-left">'+
+							  '<div>'+
+							  '<span class="name">${sendername}</span>'+
+							  '</div>'+
+							  '<p>${content}</p>'+
+							  '</span>'+
+							  '<span class="d-right">'+
+							  '<span class="date">${date}</span>'+
+							  '<span class="time">${time}</span>'+
+							 // '<a style="visibility:hidden;" class="x" style="display:none;">&nbsp;</a>'+
+							  '</span>'+
+							  '</li>')
+  function buildSendDom(item){
+	  var oprateString=[]
+	  var dom = $.tmpl('letter_sent',item)
+	  dom.find('li.h266 > div').eq(item.blackStatu).show()
+	  var ctime
+	  function getDetail(url){
+		  var loadingDom=$('<li>loading</li>')
+		  dom.find('ul').append(loadingDom)
+		  $.get(url||'../../SiteManager/msg/!getMsgDetail',{'siteid':item['site.id'],timeline:ctime}).done(function(data){
+			  loadingDom.remove()
+			  $.each(data.stores,function(i,item){
+				  var date=(item.time.year+1900)+'/'+(item.time.month+1)+'/'+item.time.date
+				    var time=item.time.hours+':'+item.time.minutes
+				    item.date=date
+				    item.time=time
+				  item.senderid=item['sender.id']
+				  item.sendername=item.fromMe?'我':item['sender.name']
+				  if(i==data.stores.length){
+					  ctime=date+' '+time
+				  }
+			  })
+			  if(data.stores.length<20){
+				  dom.find('.show-more').unbind().html('没有更早的记录了')
+			  }
+			  if(data.stores.length>0){
+				  $.tmpl('letter_detail',data.stores).appendTo(dom.find('ul'))
+				  dom.find('ul').find('li:gt(0):odd').addClass('color')
+			  }
+		  })
+	  }
+	  getDetail()
+	  dom.find('.show-more').click(function(){
+		  getDetail('../../SiteManager/msg/!getMoreMsg')
+	  })
+	  return dom
+  }							  
+  var m0=new List({
+	  container:'#m0 > ul',
+	  url:'../../SiteManager/msg/!systemMsg',
+	  rowList:10,
+	  onLoad:function(data){
+		  $('#m0 > div.all-dialog').html('共有'+data.totalItem+'条系统通知')
+		  $('ul.choose > li:first > a').html('系统通知('+data.unreadNum+')')
+	  },
+	  Model:function(i,item){
+		    var self=this
+		    var date=(item.time.year+1900)+'/'+(item.time.month+1)+'/'+item.time.date
+		    var time=item.time.hours+':'+item.time.minutes
+		    item.date=date
+		    item.time=time
+		    self.dom=$.tmpl('sysMessage',item)
+		    self.dom.data('item',item)
+		   i%2==0?null:self.dom.addClass('color')
+		   if(item.state===0){
+			   self.dom.addClass('unread')
+		   }		   
+	  },
+	  page:{
+		  container:'#m0 > .click ul'
+	  }
+  })
+  var m1=new List({
+	  container:'#m1 > ul',
+	  url:'../../SiteManager/msg/!privateMsg',
+	  onLoad:function(data){
+		  $('#m1 > div.all-dialog').html('共有'+data.totalItem+'个对话')
+		  $('ul.choose > li:last > a').html('私信('+data.unreadNum+')')
+	  },
+//	  testData:{"totalItem":100,"stores": [{"content":'测试测试测试'},{"content":10},{"content":10}]},
+	  Model:function(i,item){
+		    var self=this
+		    var date=(item.time.year+1900)+'/'+(item.time.month+1)+'/'+item.time.date
+		    var time=item.time.hours+':'+item.time.minutes
+		    item.date=date
+		    item.time=time
+		    item.sitename=item['site.name']
+		    self.dom=$.tmpl('letter',item)
+		    self.dom.data('item',item)
+		   i%2==0?null:self.dom.addClass('color') 
+		    if(item.unreadNum){
+		    	self.dom.addClass('unread')
+		    }
+	  },
+	  page:{
+		  container:'#m1 > .click ul'
+	  }
+  })
+  $('#m0 >ul').delegate('a.x','click',function(){
+//	  var checkedboxes=$(this).parents('.ul').find('td :checkbox:checked')
+	  var pdom=$(this).parents('li')
+//	  if(pdom.find(':checkbox:first').is(':checked')){
+		  $.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+					//pdom.remove()
+				    $.post('../../SiteManager/msg/!delMsgs',{ids:pdom.data('item')['id']},function(){
+				    	m0.flush()
+				    })
+				    
+				},
+				title:"确认删除这条通知",
+				content:"确认删除这条通知吗?"
+			})
+//	  }
+  })
+  $('#m0 a.dele').click(function(){
+	  var checkedboxes=$('#m0 ul').find('li :checkbox:checked')
+	  if(checkedboxes.size()>0){
+			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    var ids=[]
+				    checkedboxes.each(function(){
+						ids.push($(this).parents('li').data('item')['id'])
+						//$(this).parents('li').remove()
+					})
+					$.post('../../SiteManager/msg/!delMsgs',{ids:ids},function(){
+						m0.flush()
+					})
+				},
+				title:"确认删除这些通知",
+				content:"确认删除这些通知?"
+			})
+		}
+  })
+    $('#m1 >ul').delegate('a.x','click',function(){
+//	  var checkedboxes=$(this).parents('.ul').find('td :checkbox:checked')
+	  var pdom=$(this).parents('li')
+//	  if(pdom.find(':checkbox:first').is(':checked')){
+		  $.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+					//pdom.remove()
+				    $.post('../../SiteManager/msg/!delPrivateMsgs',{ids:pdom.data('item')['site.id']},function(){
+				    	m0.flush()
+				    })
+				    
+				},
+				title:"确认删除这条对话",
+				content:"确认删除这条对话吗?"
+			})
+//	  }
+  })
+  $('#m1 a.dele').click(function(){
+	  var checkedboxes=$('#m1 ul').find('li :checkbox:checked')
+	  if(checkedboxes.size()>0){
+			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    var ids=[]
+				    checkedboxes.each(function(){
+						ids.push($(this).parents('li').data('item')['site.id'])
+						//$(this).parents('li').remove()
+					})
+					$.post('../../SiteManager/msg/!delPrivateMsgs',{ids:ids},function(){
+						m0.flush()
+					})
+				},
+				title:"确认删除这些对话",
+				content:"确认删除这些对话?"
+			})
+		}
+  })
+  $('a.check-all').click(function(){
+	  $(this).parents('.click').parent().find('li :checkbox').attr('checked',true)
+  })
+  $('.section').delegate('.all-dialog > a:contains("返回所有私信")','click',function(event){
+	  $('.section > div:gt(0)').hide();
+	  $('#m1').show();
+  })
+  $('#m1').delegate('li','click',function(event){
+	  if(!$(event.target).is('input:checkbox,span.name,a.x')){
+		  $('.section > div:gt(0)').hide();
+		  if(!$(this).data('sendDom')){
+			  $(this).data('sendDom',buildSendDom($(this).data('item')).appendTo('.section'))
+			  if($(this).hasClass('unread')){
+				  $(this).removeClass('unread')
+				  var str=$('ul.choose > li:last > a').html().replace('私信(','').replace(')','')
+				  $('ul.choose > li:last > a').html('私信('+(parseInt(str)-1)+')')
+			  }
+		  }
+		  $(this).data('sendDom').show()
+//		  if($(this).hasClass('unread')){
+//			  var dom=$(this)
+//			  $.get('../../SiteManager/msg/',{siteid:$(this).data('item')['site.id']}).done(function(){
+//				  dom.removeClass('unread')
+//			  })
+//		  }
+	  }
+  })
+  $('#m0').delegate('li','hover',function(event){
+	  if( event.type === 'mouseenter' ){
+		  $(this).data('m_status','in')
+		  setTimeout($.proxy(function(){
+				if($(this).hasClass('unread')&&$(this).data('m_status')=='in'){
+					var dom=$(this)
+					$.get('../../SiteManager/msg/!readSystemMsg',{siteid:$(this).data('item')['id']}).done(function(){
+						  dom.removeClass('unread')
+						  var str=$('ul.choose > li:first > a').html().replace('系统通知(','').replace(')','')
+						  $('ul.choose > li:first > a').html('系统通知('+(parseInt(str)-1)+')')
+					  })
+				}
+		},this),1000)
+	  }else{
+		  $(this).data('m_status','out')
+	  } 
+  })
+  $('.main').delegate('li','hover',function(event){
+	  if( event.type === 'mouseenter' ){
+		  $(this).find('a.x').show()
+	  }else{
+		  $(this).find('a.x').hide()
+	  }
+  })
+})

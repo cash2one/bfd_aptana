@@ -1,0 +1,15 @@
+MODULES_MANAGER_V2
+DataServerUE.__init__|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\__init__.py
+DataServerUE.chart.__init__|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\chart\__init__.py
+DataServerUE.chart.models|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\chart\models.py
+DataServerUE.chart.tests|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\chart\tests.py
+DataServerUE.chart.urls|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\chart\urls.py
+DataServerUE.chart.views|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\chart\views.py
+DataServerUE.commons.__init__|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\commons\__init__.py
+DataServerUE.commons.models|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\commons\models.py
+DataServerUE.commons.tests|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\commons\tests.py
+DataServerUE.commons.urls|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\commons\urls.py
+DataServerUE.commons.views|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\commons\views.py
+DataServerUE.manage|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\manage.py
+DataServerUE.settings|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\settings.py
+DataServerUE.urls|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\urls.py

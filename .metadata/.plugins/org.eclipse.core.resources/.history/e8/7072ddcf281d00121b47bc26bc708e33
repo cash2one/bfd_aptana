@@ -1,0 +1,28 @@
+/**
+ * @author Administrator
+ */
+var MQ={widgets:{}}
+MQ.Question=function(){
+	this.renderPage=function(data,onRander){
+		   var r=$.tmpl('<div data-role="page">'+
+								'<div data-role="header">'+
+								'<a href="index.html" data-icon="delete">Cancel</a>'+
+								'<h1>Edit Contact</h1>'+
+								'<a href="index.html" data-icon="check">Save</a>'+
+								'</div><!-- /header -->'+
+								'<div data-role="content">	'+
+								'<p data-role="button" style="text-align:left;">你幸福吗</p>'+
+								'<fieldset data-role="controlgroup">'+
+								
+								'</fieldset>'+
+								'</div><!-- /content -->'+
+								'<div data-role="footer"> '+
+								'<h4>底部</h4> '+
+								'</div> '+
+								'</div><!-- /page -->', data)
+		if(onRander){
+			onRander(r)
+		}
+		return r
+	}
+}

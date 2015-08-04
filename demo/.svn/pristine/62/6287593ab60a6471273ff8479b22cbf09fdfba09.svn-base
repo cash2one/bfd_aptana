@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="allkj">
+	<div class="chapter-labels" style="margin-right: -248px;">
+                <div class="labels">
+                    <h1>全网历史</h1>
+                    <h3>The history of the whole network</h3>
+                </div>
+     </div>
+	 <div class="txtcon01">
+	 </div>	
+</div>	
+<div class="allkj">
+	<div class="chapter-labels" style="margin-right: -248px;">
+                <div class="labels">
+                    <h1>场景识别</h1>
+                    <h3>Scene Recognition</h3>
+                </div>
+     </div>
+	 <div class="txtcon01">
+	 </div>	
+</div>	
+<div class="allkj">
+	<div class="chapter-labels" style="margin-right: -248px;">
+                <div class="labels">
+                   <h1>推荐结果</h1>
+                  <h3>Were recommended</h3>
+                </div>
+     </div>
+	 <div class="txtcon01">
+	 </div>	
+</div>		
+</body>
+</html>

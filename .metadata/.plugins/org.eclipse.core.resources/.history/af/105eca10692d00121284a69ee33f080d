@@ -1,0 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			var a=131223
+			/^\d+(\.\d{3,})?$/.test(this.y)?this.y.toFixed(2):this.y
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

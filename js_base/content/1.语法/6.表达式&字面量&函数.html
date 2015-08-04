@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>表达式</title>
+		<script type="text/javascript">
+			//运算符和优先级见图
+			//下面是一些表达式惯用法
+			//赋值处理 
+			a= [b, b=a][0];//交换值  
+			
+			var a = b && 1;   
+			//相当于  
+			if (b) {  
+			  a = 1  
+			}  
+			  
+			var a = b || 1; //适合用法方法参数的默认值  
+			//相当于  
+			if (b) {  
+			  a = b;  
+			} else {  
+			  a = 1;  
+			}  
+			//字面量
+			var a1='11111',a2=22222222
+			//函数
+			var test1=function(){
+				
+			}
+			function test2(){
+				
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,279 @@
+/**
+ * @author Administrator
+ */
+BfdWidget.line = function(setting, global) {
+	Widget.call(this)
+	var self = this
+	self.setting=setting
+	var default_option = setting.option;
+	self.colors = setting.rule.colors||[['#51a6f2', '#f2a851'],['#bbe1ff', '#ffe8bb']]
+	self.x_maxrange = setting.rule.x_maxrange || 12
+	var db_flag = 'db_'
+	var data_param = function() {
+		var param = {
+			requestId: setting.id.split("_")[0],
+			type: setting.type,
+			cols: $.map(setting.cols, function(i) {
+				return i.key
+			}),
+			start: global.dateRange.getStart(),
+			end: global.dateRange.getEnd(),
+			keys: [],
+			values: []
+		}
+		if(setting.dataParam) {
+			$.each(setting.dataParam, function(k, v) {
+				param.keys.push(k)
+				param.values.push(v)
+			})
+		}
+		if(global.param) {
+			$.each(global.param, function(k, v) {
+				param.keys.push(k)
+				param.values.push(v)
+			})
+		}
+		if(global.dateRange.mode == 'compare') {
+			param.keys.push('dbStart', 'dbEnd')
+			param.values.push(global.dateRange.getDbStart(), global.dateRange.getDbEnd())
+		}
+		param = $.extend(true,{},global.param,param);
+		return param
+	};
+	var getData = function(param) {
+		return {
+			done:function(fun){
+				$.ajax({
+					url: setting.url||_baifendianDataURL,
+					data: param,
+					dataType: "json",
+					error: function(){
+						if(self.chart) {
+							self.chart.showLoading("数据加载错误")
+						}
+					}
+				}).done(function(data){
+					if(setting.onDataLoad){
+						setting.onDataLoad(data)
+					}
+					fun(data)
+				})
+			}
+		}
+	}
+	var parseData = function(json) {
+		var allData = eachStores(json.stores, false);
+		if(json.db_stores) {
+			allData = addData(eachStores(json.db_stores, true), allData)
+			$.each(allData.xAxis,function(n,i){
+				i.title = {
+					align:'low',
+					text:new RegExp("^"+db_flag).test(i.id)?'对比时间段':'当前时间段'
+				}
+			})
+		}
+		function eachStores(stores, isdb) {
+			var data = {
+				xAxis: [],
+				yAxis: [],
+				series: []
+			}
+			if(setting.rule.sort) {
+				var orderby = setting.groupBy[setting.rule.sort.index]
+				var sortFunction = {
+					time:function(s1,s2,orderby){
+						return s1[orderby] - s2[orderby]
+					}
+				}
+				stores.sort(function(s1,s2){
+					return sortFunction[setting.rule.sort.type](s1,s2,orderby)
+				});
+				if(setting.rule.sort.mode != 'asc') {
+					stores.reverse();
+				}
+			}
+			if(setting.rule.needfill) {
+				$.each(self.fullDate({
+					start: isdb ? global.dateRange.getDbStart() : global.dateRange.getStart(),
+					end: isdb ? global.dateRange.getDbEnd() : global.dateRange.getEnd()
+				}), function(n, i) {
+					$.each(setting.groupBy, function(m, j) {
+						if(!stores[n] || i !== stores[n][j]) {
+							var store = {}
+							store[j] = i
+							$.each(setting.cols, function(k, col) {
+								store[col.key] = 0;
+							});
+							stores.splice(n, 0, store);
+						}
+					})
+				})
+			}
+			if(setting.rule.spacedatetime){
+				$.each(setting.groupBy, function(m, j) {
+					$.each(stores,function(n,i){
+						i[j] = i[j].substring(0,8)+' '+i[j].substring(8)
+					})
+				})
+			}
+			$.each(stores, function(n, store) {
+				$.each(setting.groupBy, function(m, j) {
+					if(store[j] != undefined) {
+						if(!data.xAxis[m]) {
+							data.xAxis[m] = {
+								categories: [],
+								id: !isdb ? j : db_flag + j
+							}
+						}
+						data.xAxis[m].categories.push(store[j])
+					}
+				})
+				$.each(setting.cols, function(m, j) {
+					if(!data.series[m]) {
+						data.series[m] = {
+							data: [],
+							name: j.title,
+							key: j.key,
+							yAxisId: j.key,
+							xAxisId: data.xAxis[j.groupBy ? j.groupBy : 0].id
+						}
+					}
+					data.series[m].data.push({
+						y: store[j.key] ? store[j.key] : 0
+					})
+				})
+			})
+			if(setting.rule.hourformat){
+				data.xAxis[setting.rule.hourformat.index].categories = $.map(data.xAxis[setting.rule.hourformat.index].categories,function(i,n){
+					return i+'-'+(i+1);
+				});
+			}
+			if(self.format_xAxis){
+				$.each(data.xAxis,function(i,item){
+					item.categories=$.map(item.categories,function(i,n){
+						return self.format_xAxis(i)
+					})
+				})
+			}
+			return data
+		}
+		return allData;
+	}
+	var flushData = function(data, option) {
+		option.xAxis = data.xAxis;
+		option.yAxis = data.yAxis;
+		option.series = data.series;
+		return option
+	}
+	var addData = function(data, option) {
+		$.merge(option.xAxis, data.xAxis);
+		$.merge(option.yAxis, data.yAxis);
+		$.merge(option.series, data.series);
+		return option
+	}
+	this.init = function() {
+		default_option.chart.renderTo = setting.container;
+		default_option.chart.width = $("#" + setting.container).width() * 0.95
+		default_option.chart.style = {
+			margin: 'auto'
+		}
+		default_option.chart.type = 'line';
+		self.chart = new Highcharts.Chart(default_option);
+		self.chart.showLoading("正在载入……")
+		var param = data_param()
+		param.cols = param.cols.concat(setting.groupBy)
+		getData(param).done(function(json) {
+			var data = parseData(json)
+			self.creatChart(flushData(data, default_option))
+		});
+	}
+	this.init();
+	var flush = function() {
+		self.chart.showLoading("正在载入……")
+		var param = data_param()
+		param.cols = param.cols.concat(setting.groupBy)
+		getData(param).done(function(json) {
+			var data = parseData(json)
+			self.creatChart(flushData(data, default_option))
+		})
+	}
+	this.legendflush = function(legend) {
+		setting.cols = [legend.current]
+		flush();
+	}
+	this.dateTypeflush = function(value) {
+		if(setting.dataParam) {
+			setting.dataParam.dateType = value
+			if(setting.dataParam.dateType!='day'&&setting.dataParam.timeType=='hour'){
+				setting.rule.spacedatetime = true
+			}else{
+				setting.rule.spacedatetime = false
+			}
+		}
+		flush();
+	}
+	this.selectflush = function(sbox) {
+		setting.cols = [sbox.selected]
+		flush();
+	}
+	this.timeTypeflush = function(value) {
+		if(setting.dataParam) {
+			setting.dataParam.timeType = value
+			if(setting.dataParam.dateType!='day'&&setting.dataParam.timeType=='hour'){
+				setting.rule.spacedatetime = true
+			}else{
+				setting.rule.spacedatetime = false
+			}
+		}
+		flush();
+	}
+	this.compare = function(sbox) {
+		if(sbox.current) {
+			setting.cols = $.grep(setting.cols, function(n, t) {
+				return n.key == sbox.current.key
+			})
+		}
+		if(sbox.selected) {
+			setting.cols.push(sbox.selected)
+		}
+		var param = data_param()
+		param.cols = param.cols.concat(setting.groupBy)
+		self.chart.showLoading("正在载入……")
+		getData(param).done(function(json) {
+			var data = parseData(json)
+			self.creatChart(flushData(data, default_option));
+		})
+	}
+	global.dateRange.addEventListener(function(dateRange) {
+		var param = data_param()
+		param.cols = param.cols.concat(setting.groupBy)
+		self.chart.showLoading("正在载入……")
+		getData(param).done(function(json) {
+			var data = parseData(json)
+			self.creatChart(flushData(data, default_option))
+		});
+	})
+}
+if(!BfdWidget.line.prototype.fullDate){
+	BfdWidget.line.prototype.fullDate = function(dateRange) {
+		var dates = []
+		var start = dateRange.start + '';
+		var end = dateRange.end + '';
+		function formatDate(str) {
+			return str.substr(4, 2) + '/' + str.substr(6, 2) + '/' + str.substr(0, 4)
+		}
+		if(start.length == 8 && end.length == 8) {
+			var startdate = new Date(Date.parse(formatDate(start)));
+			var enddate = new Date(Date.parse(formatDate(end)));
+			var i = startdate.getTime()
+			var day = 24 * 60 * 60 * 1000
+			while(i <= enddate.getTime()) {
+				var d = new Date(i)
+				var num = d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate()
+				dates.push(num)
+				i += day;
+			}
+		}
+		return dates
+	}
+}

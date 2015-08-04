@@ -1,0 +1,41 @@
+$(function(){
+	$.template('t0','<tr>'+
+					'<td><span class="color">blog.baidu.com</span></td>'+
+					'<td style="text-align:center;"><span class="green">√正常</span></td>'+
+					'<td class="padding-left14">'+
+					'<span class="operate-btn"><a href="#">管理后台</a></span>'+
+					'<span class="operate-btn"><a href="#">安装插件</a></span>'+
+					'<span class="operate-btn margin0"><a href="#">网站信息</a></span>'+
+					'</td>'+
+					'</tr>')
+	$.template('t1','<tr>'+
+					'<td><span class="color">blog.baidu.com</span></td>'+
+					'<td style="text-align:center;"><span class="red">×未安装</span><img src="../../images/az-bg.png" class="az" /></td>'+
+					'<td class="padding-left14">'+
+					'<span class="operate-btn margin0"><a href="#">安装插件</a></span>'+
+					'</td>'+
+					'</tr>')
+	$.template('t2','<tr>'+
+					'<td><span class="color">blog.baidu.com</span><span class="fr">网站异常<em>&nbsp;</em></span></td>'+
+					'<td  style="text-align:center;"><img src="../../images/jc-bg.png" class="jc" /><span class="">检测中</span></td>'+
+					'<td class="padding-left14">'+
+					'<span class="operate-btn margin0"><a href="#">安装插件</a></span>'+
+					'</td>'+
+					'</tr>')				
+	new List({
+		container:'.data-tab2 tbody',
+		url:'url',
+		data:{'key':'value'},
+		testData:[{status:0},{status:1},{status:2}],
+		Model:function(i,item){
+			    var self=this
+			    if(item.status===0){
+			    	self.dom=$.tmpl('t0',item)
+			    }else if(item.status===1){
+			    	self.dom=$.tmpl('t1',item)
+			    }else if(item.status===2){
+			    	self.dom=$.tmpl('t2',item)
+			    }	
+		  }
+	})
+})

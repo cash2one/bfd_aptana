@@ -1,0 +1,237 @@
+$.ajaxSettings.traditional = true
+$(function(){
+    $('.choose > li').click(function(){
+        if (!$(this).hasClass('current')) {
+            document.title = '内容管理-' + $(this).find('a').html()
+            $(this).siblings().removeClass('current')
+            $(this).addClass('current')
+            $('.section').hide().eq($(this).index()).show()
+        }
+    })
+})
+$(function(){
+	var saveImgUrl=''//保存图片修改url
+	var getImgsUrl=''//获取文章内图片url
+	var uploadImgUrl=''//上传图片url
+	var reAcUrl=''//重新采集url
+	var shieldUrl=''//屏蔽url
+	var unshieldUrl=''//取消屏蔽url
+    $.template('t0', '<tr>' +
+    '<td class="center"><input type="checkbox" class="" /></td>' +
+    '<td><span class="border"><img src="${img_url}" alt="" /></span></td>' +
+    '<td>' +
+    '<a href="${url}" class="topic">' +
+    '<p class="info">${title}</p>' +
+    '<p class="link">${uri}</p>' +
+    '</a>' +
+    '</td>' +
+    '<td class="brn">' +
+    '<a href="#" class="btn1">更换图片</a>' +
+    '<a href="#" class="btn2">重新采集</a>' +
+    '<a href="#" class="btn3">屏蔽</a>' +
+    '</td>' +
+    '</tr>')
+	$.template('t1', '<tr>' +
+    '<td class="center"><input type="checkbox" class="" /></td>' +
+    '<td><span class="border"><img src="${img_url}" alt="" /></span></td>' +
+    '<td>' +
+    '<a href="${url}" class="topic">' +
+    '<p class="info">${title}</p>' +
+    '<p class="link">${uri}</p>' +
+    '</a>' +
+    '</td>' +
+    '<td class="brn">' +
+    '<a href="#" class="btn1">更换图片</a>' +
+    '<a href="#" class="btn2">重新采集</a>' +
+    '<a href="#" class="btn3">屏蔽</a>' +
+    '</td>' +
+    '</tr>')
+	$.template('t2', '<tr>' +
+    '<td class="center"><input type="checkbox" class="" /></td>' +
+    '<td><span class="border"><img src="${img_url}" alt="" /></span></td>' +
+    '<td>' +
+    '<a href="${url}" class="topic">' +
+    '<p class="info">${title}</p>' +
+    '<p class="link">${uri}</p>' +
+    '</a>' +
+    '</td>' +
+    '<td class="brn">' +
+    '<a class="btn4">取消屏蔽</a>' +
+    '</td>' +
+    '</tr>')
+	function madeList(index,opts){
+		var setting={
+							        container: '.section:eq('+index+') > table > tbody',
+									rowList:5,
+									getData:function(){
+										return {
+											q:$('.section:eq('+index+') input:text').val()
+										}
+									},
+							        testData: {
+							            "totalItem": 100,
+							            "stores": [{
+							                "img_url": "../../images/pic-6.jpg",
+							                "title": '足球',
+							                "url": 'http://www.sina.com.cn/manage/2012/0814/269058.shtml',
+											"id":"1234"
+							            },{
+							                "img_url": "../../images/pic-6.jpg",
+							                "title": '测试测试测试',
+							                "url": 'http://www.sina.com.cn/manage/2012/0814/269058.shtml',
+											"id":"5678"
+							            }]
+							        },
+							        Model: function(i, item){
+							            var self = this
+							            var url = item.url
+							            item.uri = (url.indexOf("?") > 0 && url.indexOf("?") < url.indexOf("/", 7)) ? url.substring(url.indexOf("?") + 1, url.length) : url.substring(url.indexOf("/", 7), url.length)
+							            self.dom = $.tmpl('t'+index, item)
+							            i % 2 == 0 ? null : self.dom.addClass('color')
+										self.dom.data('item',item)
+							        },
+							        page: {
+							            container: '.section:eq('+index+') > ul'
+							        },
+									onPage:function(){
+										$('.section:eq('+index+') > table  th:eq(0) :checkbox').attr('checked',false)
+									}
+							    }
+		return new List($.extend(setting,opts))
+	}
+    var t0=madeList(0,{url:'',data:{}})
+	var t1=madeList(1,{url:'',data:{}})
+	var t2=madeList(2,{url:'',data:{}});
+	(function(){
+		var q=$.trim($('.section:eq(0) input:text').val())
+		$('.section:eq(0) input:text').click(function(){
+			  if(q!=$.trim($(this).val())){
+			  	  t0.load(true)
+			  }
+		})
+	}());
+	(function(){
+		var q=$.trim($('.section:eq(1) input:text').val())
+		$('.section:eq(1) input:text').click(function(){
+			  if(q!=$.trim($(this).val())){
+			  	  t1.load(true)
+			  }
+		})
+	}());
+	(function(){
+		var q=$.trim($('.section:eq(2) input:text').val())
+		$('.section:eq(2) input:text').click(function(){
+			  if(q!=$.trim($(this).val())){
+			  	  t2.load(true)
+			  }
+		})
+	}());
+    $('.section > .reset > .left-btn > a:contains("重新采集")').click(function(){
+		var checkedboxes=$(this).parents('.section').find('td :checkbox:checked')
+		if(checkedboxes.size()>0){
+			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    var ids=[]
+				    checkedboxes.each(function(){
+						ids.push($(this).parent().parent().data('item')['id'])
+						$(this).parent().siblings(':last').html('正在重新采集...')
+					})
+					$.post(reAcUrl,{ids:ids})
+				},
+				title:"确认重新采集",
+				content:"确定要重新采集这些篇文章吗?"
+			})
+		}
+	})
+    $('.section > .reset > .left-btn > a:contains("屏蔽"):not(a:contains("取消屏蔽"))').click(function(){
+		var checkedboxes=$(this).parents('.section').find('td :checkbox:checked')
+		if(checkedboxes.size()>0){
+			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    var ids=[]
+				    checkedboxes.each(function(){
+						ids.push($(this).parent().parent().data('item')['id'])
+						$(this).parent().siblings(':last').html('<a class="btn4">取消屏蔽</a>')
+					})
+					$.post(shieldUrl,{ids:ids})
+				},
+				title:"确认屏蔽",
+				content:"确定要屏蔽这些篇文章吗?"
+			})
+		}
+	})
+   $('.section > .reset > .left-btn > a:contains("取消屏蔽")').click(function(){
+		var checkedboxes=$(this).parents('.section').find('td :checkbox:checked')
+		if(checkedboxes.size()>0){
+			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    var ids=[]
+				    checkedboxes.each(function(){
+						ids.push($(this).parent().parent().data('item')['id'])
+						$(this).parent().siblings(':last').html('<a class="btn1">更换图片</a><a class="btn2">重新采集</a><a class="btn3">屏蔽</a>')
+					})
+					$.post(unshieldUrl,{ids:ids})
+				},
+				title:"取消屏蔽",
+				content:"确定要取消屏蔽这些篇文章吗?"
+			})
+		}
+	})
+	$('.section').delegate('td a:contains("取消屏蔽")','click',function(){
+   			var item=$(this).parent().parent().data('item')
+			 var d=$(this).parent()
+   			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    $.post(unshieldUrl,{ids:d.parent().data('item')['id']})
+					d.html('<a class="btn1">更换图片</a><a class="btn2">重新采集</a><a class="btn3">屏蔽</a>')
+				},
+				title:"确认取消屏蔽",
+				content:"确定要取消屏蔽这篇文章吗?"
+			})
+   })
+	$('.section').delegate('td a:contains("更换图片")','click',function(){
+   			var item=$(this).parent().parent().data('item')
+			var d=$(this).parent()
+            $.ifmAlbum({
+                data: {id:item.id},
+                q: item.title,
+                defaultImage: item.img_url,
+				onSave:function(imgurl){
+					item.img_url=imgurl
+					d.parent().find('>td >span.border > img').attr('src',imgurl)
+				}
+            })
+   })
+   $('.section').delegate('td a:contains("屏蔽"):not(a:contains("取消屏蔽"))','click',function(){
+   	        var d=$(this).parent()
+   			$.ifmWidget("confirmNormal",{
+				yesCallBack:function(){
+				    $.post(shieldUrl,{ids:d.parent().data('item')['id']})
+					d.html('<a class="btn4">取消屏蔽</a>')
+				},
+				title:"确认屏蔽",
+				content:"确定要屏蔽这篇文章吗?"
+			})
+   })
+   $('.section').delegate('td a:contains("重新采集")','click',function(){
+			$.post(reAcUrl,{ids:$(this).parent().parent().data('item')['id']})
+   			$(this).parent().html('正在重新采集...')
+   })
+   $('.section').delegate('th :checkbox','change',function(){
+   	      if($(this).is(':checked')){
+		  		$(this).parents('table').find('td :checkbox').attr('checked',true)
+		 }else{
+				$(this).parents('table').find('td :checkbox').attr('checked',false)
+		}
+   })
+    $('.section').delegate('td :checkbox','change',function(){
+   	      if($(this).is(':checked')){
+		  		if($(this).parents('table').find('td :checkbox').not(':checked').size()==0){
+					$(this).parents('table').find('th :checkbox').attr('checked',true)
+				}
+		 }else{
+				$(this).parents('table').find('th :checkbox').attr('checked',false)
+		}
+   })
+   
+})

@@ -1,0 +1,115 @@
+@import "compass/css3";
+.w380{
+	width:380px;
+}
+.ifmDialogBox{
+	cursor: default;
+	@include border-radius(3px);
+	@include box-shadow(0 0 6px 3px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0,0,0,0.1));
+	/*@include inline-block;*/
+	display:inline-block;
+	min-width:300px;
+	border: 1px solid #E1E1E1;
+	.ifmDialogTitle{
+		height:36px;
+		line-height:36px;
+		background:#f4f4f4;
+		border-bottom:1px #e1e1e1 solid;
+		padding:{
+			left:10px;
+			right:10px;
+		}
+		h4{
+			color: #333333;
+		    font-size: 12px;
+			margin:0;
+			float:left;
+		}
+		a{
+		    background: url("../images/x-bg3.png") no-repeat scroll 0 50% transparent;
+		    float: right;
+		    height: 36px;
+		    width: 16px;
+		}
+	}
+	.ifmDialogContent{
+		padding:{
+			left:39px;
+			top:35px;
+			right:25px;
+			bottom:20px;
+		}
+		min-height:58px;
+		_height:58px;
+		.ifmDialogIcon{
+			width:22px;
+			height:22px;
+			padding:{
+				left:10px;
+				right:10px;
+			};
+			float:left;
+		}
+		.ifmDialogIcon-doubt{
+			 background:url("../images/doubt.png") no-repeat scroll 0 0 transparent;
+		}
+		.ifmDialogIcon-win{
+			 background:url("../images/win-2.png") no-repeat scroll 0 0 transparent;
+		}
+		.ifmDialogContent-text{
+			margin-left:42px;
+			font-size:12px;
+			line-height: 20px;
+			text-align: left;
+		}
+	}
+	.ifmDialogOperate{
+		padding-bottom:20px;
+		height:30px;
+		text-align: center;
+		 clear: both;
+		 font-size:12px;
+		 .ifmDialog-btn{
+		 	@include inline-block;
+			cursor:pointer;
+			height:29px;
+			line-height:29px;
+			padding-left:3px;
+			span{
+				display: inline-block;
+				font-weight: bold;
+				height:29px;
+				padding-right:3px;
+				font-size:12px;
+				text-align:center;
+			}
+		 }
+		 .ifmDialog-btn-w60{
+		 	width:63px;
+			span{
+				width:60px;
+			}
+		 }
+		 .ifmDialog-btn-blue{
+		 	background:url(../images/blue-btn1.png) 0 0 no-repeat;
+			span{
+				background:url(../images/blue-btn1.png) right 0 no-repeat;
+				color:#fff;
+			}
+		 }
+		 .ifmDialog-btn-red{
+		 	background:url(../images/red-btn1.png) 0 0 no-repeat;
+			span{
+				background:url(../images/red-btn1.png) right 0 no-repeat;
+				color:#fff;
+			}
+		 }
+		 .ifmDialog-btn-grey{
+		 	background:url(../images/grey-btn1.png) 0 0 no-repeat;
+			span{
+				background:url(../images/grey-btn1.png) right 0 no-repeat;
+				color: #666666;
+			}
+		 }
+	}
+}

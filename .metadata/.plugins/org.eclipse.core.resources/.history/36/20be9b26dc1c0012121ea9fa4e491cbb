@@ -1,0 +1,21 @@
+#coding=utf-8
+import os
+
+if __name__ == '__main__':
+    for file in os.listdir(os.getcwd()):
+         if file.endswith('html'):
+             content= open(file, 'r').read()
+             content=content.replace("""new Report(data.global.dateRange)""",
+                                                    """new Report(data.global.dateRange);
+                                                        if($.browser.msie&&parseInt($.browser.version,10)==6){
+                                                                 DateRange.prototype.onSlideDown = function(dateRange) {
+                                                                        $('.compareselect .selectbox_container').hide()
+                                                                };
+                                                                DateRange.prototype.onSlideUp = function(dateRange) {
+                                                                        $('.compareselect .selectbox_container').show()
+                                                                };
+                                                         }
+                                                    """)
+             open(file, 'w').write(content)
+             
+ 

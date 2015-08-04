@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="con">
+  <div class="chapter-labels" style="margin-right: -248px;">
+    <div class="labels">
+      <h1>全网历史</h1>
+      <h3>The history of the whole network</h3>
+    </div>
+  </div>
+  <div class="cp01">
+  <ul>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  </ul>
+  <ul>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  </ul>
+  </div>
+  <div style="clear:both"></div>
+  <div class="chapter-labels02" style="margin-right: -248px;">
+    <div class="labels">
+      <h1>场景识别</h1>
+      <h3>Scene Recognition</h3>
+    </div>
+  </div>
+  <div class="cp02">
+  <div>
+  <span class="bfb">98%</span><span class="jdt" style=" width:300px">挑选手机</span>
+  </div>
+  <div style="clear:both; height:2px"></div>
+  <div>
+  <span class="bfb">20%</span><span class="jdt" style=" width:200px">选择促销</span>
+  </div>
+  <div style="clear:both; height:2px"></div>
+  <div>
+  <span class="bfb">100%</span><span class="jdt" style=" width:600px">采购大宗</span>
+  </div>
+  <div style="clear:both; height:2px"></div>
+  <div class="cp03">
+  <ul>
+  <li class="line"><img src="images/line.png" /></li>
+  <li class="cplogo"><img src="images/logo.jpg" width="80" height="31" /></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  </ul>
+  </div>
+  </div>
+  <div style="clear:both"></div>
+  <div class="chapter-labels03" style="margin-right: -248px;">
+    <div class="labels">
+      <h1>推荐结果</h1>
+      <h3>Were recommended</h3>
+    </div>
+  </div>
+  <div class="cp01">
+  <ul>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  </ul>
+  <ul>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  <li><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/cp.jpg" /></td>
+  </tr>
+  <tr>
+    <td>产品名称：</td>
+  </tr>
+  <tr>
+    <td>来源网站：HTTP://WWW.BAI</td>
+  </tr>
+  <tr>
+    <td>操作：<a href="#"><img src="images/buy.png" align="absmiddle" /></a></td>
+  </tr>
+  </table></li>
+  </ul>
+  </div>
+
+</div>
+</body>
+</html>

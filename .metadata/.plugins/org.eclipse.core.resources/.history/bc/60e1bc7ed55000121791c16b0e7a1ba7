@@ -1,0 +1,75 @@
+#login-area .input-box{
+	position: relative;
+}
+#login-area .input-box span.error{
+	background: url("../images/wrong-bg2.png") no-repeat scroll 0 0 transparent;
+    color: #BB0000;
+    float: left;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: 22px;
+    padding-left: 40px;
+    width: 108px;
+    position: absolute;
+    left: 235px;
+}
+
+#login-area .agree{
+	position: relative;
+	overflow: visible;
+}
+#login-area .agree span.error{
+	background: url("../images/wrong-bg2.png") no-repeat scroll 0 0 transparent;
+    color: #BB0000;
+    float: left;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: 22px;
+    padding-left: 40px;
+    width: 108px;
+    position: absolute;
+    left: 216px;
+    top: -5px;
+}
+.con-7 .item3 strong {
+    color: #444444;
+    float: left;
+    font-size: 12px;
+    font-weight: lighter;
+    margin-left: 10px;
+}
+/**日期控件**/
+#dateRange{
+	float:right;
+}
+
+#legend{
+	margin:20px 0px 20px 0px;
+}
+
+.item input{
+	margin: 0 0 0 0;
+}
+
+.data-tab2{
+	border:none;
+	border-left:1px solid #E1E1E1;
+	border-top:1px solid #E1E1E1;
+}
+/*
+.data-tab2 td.bbn{
+	border-bottom:1px solid #E1E1E1;
+}
+.data-tab2 td.brn,.data-tab2 th.brn{
+	border-right:1px solid #E1E1E1;
+} 
+*/
+.data-tab2 th.brn{
+	border-right:1px solid #E1E1E1;
+}
+
+.add-site-c{
+	overflow:visible;
+}

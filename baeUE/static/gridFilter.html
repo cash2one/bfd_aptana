@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>gridfilter</title>
+		<script type="text/javascript" src="/js/jquery.js"></script>
+		<script type="text/javascript" src="/js/baeGrid1.js"></script>
+		<script type="text/javascript" src="/js/baeFilterGrid.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.baeFilterGrid({
+					colModel:[{colName:'来源',name:'source',fixed:true},{colName:'姓名',name:'name',checked:true},{colName:'性别',name:'sex'},{colName:'测试1',name:'test1'}],
+					fixColModel:[{colName:'饼图',name:'pie',sortable:false,beforeFillRow:function(opts){
+						if(opts.position.x===0){
+							opts.data['pie']={
+								content:'测试',
+								attr:{rowspan:'all'}
+							}
+						}
+					},alterFillCol:function(opts){
+						if(opts.position.x===0){
+						    opts.dom.html('覆盖掉测试')
+						}
+					}}],
+					filterRenderTo:'div:eq(0)',
+					gridRendTo:'div:eq(1)',
+					url:'/grid/',
+//					seq:false,
+					pager:{
+								  	renderTo:'#pager',
+									rowList:[20,30,50,60],
+									currentRowmList:20
+								  },
+				    afterFillRow:[function(opt){
+						 opt.dom.toggle(function(){
+						 	  if(!opt.dom.data('children')){
+								  	 opt.loader.ajaxLoad({url:'/grid/groupitem/',seq:false},function(c){
+									  	   opt.dom.after(c.dom)
+										   opt.dom.data('children',c.dom)
+								   })
+							  }else{
+							  	opt.dom.data('children').show()
+							  }
+						 },function(){
+						 	opt.dom.data('children').hide()
+						 })
+					}]	
+				})
+			})
+		</script>
+		<style type="text/css">
+			table{width:500px;border-collapse:collapse;border-spacing:0;border-left:1px solid #888;border-top:1px solid #888;background:#efefef;}
+		    th,td{border-right:1px solid #888;border-bottom:1px solid #888;padding:5px 15px;}
+th{font-weight:bold;background:#ccc;}
+            .pager{
+            	width:500px;
+				height:30px;
+            }
+			.pager ul{
+				list-style:none;
+				float:right;
+			}
+			.pager li{
+				float:left;
+			}
+			.pager li input{
+				width:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div id="pager" class="pager">
+	</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户注册</title>
+<link href="./css/packed.css" rel="stylesheet" type="text/css" />
+<link href="./css/login.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="JavaScript" src="./resources/jquery/jquery.js"></script>
+<script type="text/javascript" language="JavaScript" src="./resources/commons/jquery.form.js"></script>
+<script type="text/javascript" language="JavaScript" src="./resources/commons/jquery.validate.min.js"></script>
+<script type="text/javascript">
+            $(function(){
+				
+				$('.bluebut02').click(function(){
+					$('#form1').submit()
+				})
+				$('body').keyup(function(event){
+					if(event.keyCode===13){
+						$('#form1').submit();
+						}
+					})
+				
+                /* 设置默认属性 */
+                $.validator.setDefaults({
+                    submitHandler: function(form){
+						$(form).ajaxSubmit({
+							success:function(responseText, statusText, xhr, $form){
+								if(responseText=='1'){
+									//alert('注册成功');
+									window.document.location.href = "./sites.html";
+								}else if(responseText == '2'){
+									validater.showErrors({'user.name':'该用户名已被注册'})
+								}else if(responseText == '3'){
+									validater.showErrors({'user.inviteCode':'邀请码不正确或已过期   <span class="operate"><a href="#">获取邀请码</a></span>'})
+								}
+							}
+						})
+						return false
+                    }
+                });
+                // 中文字两个字节       
+                $.validator.addMethod("byteRangeLength", function(value, element, param){
+	                    var length = value.length;
+	                    for (var i = 0; i < value.length; i++) {
+	                        if (value.charCodeAt(i) > 127) {
+	                            length++;
+	                        }
+	                    }
+	                    return this.optional(element) || (length >= param[0] && length <= param[1]);
+                }, "请确保输入的值在3-15个字节之间(一个中文字算2个字节)");
+                $.validator.addMethod("isPhone", function(value,element) {   
+                	      var length = value.length;   
+                	      var mobile = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/;   
+                	      var tel = /^\d{3,4}-?\d{7,9}$/;   
+                	      return this.optional(element) || (tel.test(value) || mobile.test(value));   
+
+                	  }, "请输入正确的电话号码");  
+                	                
+                
+                var validater = $('#form1').validate({
+                    rules: {
+                        'user.name': {
+                            required: true,
+                            email:true
+                        },
+                        'user.password':{
+                        	 required: true,
+                        	 minlength: 6,
+                        	 maxlength: 18
+                             //byteRangeLength: [6, 18]
+                        },
+                        'user.inviteCode':{
+                        	required: true
+                        },
+                        'user.email':{
+                        	required: true,
+                        	email:true
+                        },
+                        'user.phone':{
+                        	isPhone:true
+                        },
+                        repassword: {
+                        	required: true,
+                            equalTo: "#password"
+                        }
+                        
+                    },
+                    messages: {
+                        'user.name': {
+                            required: "用户名为必填项",
+                            email:"请输入正确的邮箱地址"
+                        },
+                        'user.password':{
+                        	required: "密码为必填项",
+                        	minlength:"密码太短了，最少6位",
+                        	maxlength:"密码太长了，最多18位"
+                            //byteRangeLength: "用户名必须在6-18个字符之间"
+                        },
+                        'user.inviteCode':{
+                        	required: '邀请码为必填项  <span class="operate"><a href="#">获取邀请码</a></span>'
+                        },
+                        'user.email':{
+                        	required: "联系邮箱为必填项",
+                        	email:"请输入正确的邮箱地址"
+                        },
+                        'user.phone':{
+                        	isPhone: "请输入正确的电话号码"
+                        },
+                        'repassword':{
+                        	required:"请重复确认密码",
+                        	equalTo:'两次输入密码不一致，请您确认'
+                        }
+                    },
+                    focusInvalid: true,
+                    onkeyup: false,
+                    wrapper:'div',
+                    errorPlacement: function(error, element){
+                        element.parent().next().empty()
+                        error.appendTo(element.parent().next()).addClass('point-a');
+                    }
+                })
+            })
+    
+    //用户名和邮箱联动     
+	function check(){
+		if($('#name').val()!=$('#email').val()){
+			$('#email').val($('#name').val());
+	 	}
+	}
+</script>
+</head>
+
+<body>
+<div class="head">
+  <div class="index-head">
+    <div class="logo"><a href="#"></a></div>
+    <div class="logandreg"><a href="./login.html" class="log">登录</a><a href="#" class="regnow">注册</a></div>
+    <div class="menu"><a href="#">首页</a>|<a href="#">新闻</a>|<a href="#">产品</a>|<a href="#">商业</a>|<a href="#">演示</a></div>
+  </div>
+</div>
+<div class="content">
+  <div class="login-con">
+    <h1 class="noneline">创建您的 BAE 帐户：</h1>
+    <div class="point-d" style="margin-top:10px">创建一个您的BAE账户，通过它，您可以享受BAE的服务，如果您已经拥有了一个BAE账户请<a href="./login.html">点击这里</a>直接登录！ </div>
+    <form id="form1" action="/wbportal/user/register.action" method="post">
+    <table border="0" cellspacing="0" cellpadding="0" class="import">
+      <tr>
+        <th>邀&nbsp;&nbsp;请&nbsp;&nbsp;码：</th>
+        <td><label for="textfield"></label>
+          <input type="text" name="user.inviteCode" id="inviteCode"  class="inputbox"/></td>
+        <td><div class="operate"><a href="#">获取邀请码</a></div></td>
+      </tr>
+      <tr>
+        <th>用&nbsp;&nbsp;户&nbsp;&nbsp;名：</th>
+        <td><label for="textfield4"></label>
+          <input type="text" name="user.name" id="name"  class="inputbox" onkeyup="check();"/></td>
+        <td><div class="point-b">填写常用电子邮箱地址</div></td>
+      </tr>
+      <tr>
+        <th>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</th>
+        <td><label for="textfield5"></label>
+          <input type="password" name="user.password" id="password"  class="inputbox"/></td>
+        <td><div class="point-b">6-18位字母和数字组成</div></td>
+      </tr>
+      <tr>
+        <th>确认密码：</th>
+        <td><label for="textfield6"></label>
+          <input type="password" name="repassword" id="repassword"  class="inputbox"/></td>
+        <td><div class="point-b">确保两次输入的密码一致</div></td>
+      </tr>
+      <tr>
+        <th>联系邮箱：</th>
+        <td><label for="textfield7"></label>
+          <input type="text" name="user.email" id="email"  class="inputbox"/></td>
+        <td><div class="point-b">用于接收百分点发出的各类系统邮件</div></td>
+      </tr>
+      <tr>
+        <th>联系电话：</th>
+        <td><label for="textfield8"></label>
+          <input type="text" name="user.phone" id="phone"  class="inputbox"/></td>
+        <td><div class="point-b">仅在百分点官方与用户联系时使用</div></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="2"><div class="rememberid">
+         "<a href="#">百分点分析引擎使用许可协议</a>"</div></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><div><a href="javascript:void(0)" class="bluebut02">同意上述协议，立即注册</a></div></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    </form>
+  </div>
+</div>
+<div class="footer">
+<div class="index-footer">
+  <div class="l"><a href="#">产品介绍</a> <a href="#">联系我们</a> <a href="#">公司简介</a></div>
+  <div class="r">京ICP备09109727号 Copyright © 2012 百分点信息科技有限公司. All Right Reserved.</div>
+  </div>
+</div>
+</body>
+</html>

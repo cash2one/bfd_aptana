@@ -1,0 +1,32 @@
+.float-layer{width:298px;height:;border:1px #e1e1e1 solid;border-radius:3px; box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0,0,0,0.1);overflow:hidden;}
+.fl-title{width:278px;height:37px;background:#f4f4f4;border-bottom:1px #e1e1e1 solid;padding:0 10px 0 10px;overflow:hidden;}
+.fl-title h4{float:left;height:37px;line-height:37px;font-size:12px;color:#333;}
+.fl-title a{float:right;width:16px;height:37px;background:url(../images/x-bg3.png) 0 10px no-repeat;}
+.fl-content{width:298px;height:114px;text-align:center;padding:50px 0 0 0;}
+.fl-content p{font-size:14px;color:#444444;margin-bottom:50px;}
+.fl-content .btn{width:298px;height:29px;overflow:hidden;}
+.fl-content .blue-btn1{margin-left:79px;width:63px;}
+.fl-content .blue-btn1 span{width:60px;font-weight:bold;}
+.fl-content .grey-btn1{width:63px;}
+.fl-content .grey-btn1 span{width:60px;}
+.fl-content2{width:298px;height:129px;text-align:center;padding:35px 0 0 0;}
+.fl-content2 p{line-height:23px;font-size:14px;color:#444444;}
+.fl-content2 strong{display:block;font-size:14px;color:#bb0000;font-weight:lighter;margin-bottom:35px;}
+.fl-content2 .btn{width:298px;height:29px;overflow:hidden;}
+.fl-content2 .red-btn1{margin:0 10px 0 79px;float:left;width:63px;height:29px;line-height:29px;padding-left:3px;background:url(../images/red-btn1.png) 0 0 no-repeat;}
+.fl-content2 .red-btn1 span{float:left;width:60px;height:29px;font-weight:bold;font-size:12px;color:#fff;padding-right:3px;background:url(../images/red-btn1.png) right 0 no-repeat;}
+.fl-content2 .grey-btn1{width:63px;}
+.fl-content2 .grey-btn1 span{width:60px;}
+
+.fl-content2 .win{line-height:22px;font-size:14px;color:#7bbb00;margin-bottom:18px;overflow:hidden;}
+.fl-content2 .win .win-pic{position:relative;top:5px;left:-13px;}
+.fl-content2 .tip{line-height:24px;font-size:12px;color:#999;}
+.fl-content2 .tip .admin{color:#0099ff;text-decoration:underline;}
+
+.fl-content2 .doubt{_float:left;_width:200px;text-align:left;line-height:22px;font-size:14px;color:#666;margin-bottom:18px;overflow:hidden;}
+.fl-content2 .doubt-pic{float:left;margin:0 10px;}
+.plr39{width:234px;padding:35px 25px 0 39px;}
+.plr39 .btn-2{width:170px;overflow:hidden;padding:20px 0 0 73px;_padding:0 0 20px 73px;}
+.fl-content2 .jc{_padding-top:20px;line-height:62px;font-size:14px;font-weight:bold;color:#666;overflow:hidden;}
+.fl-content2 .jc .jc-pic{position:relative;top:3px;left:-10px;}
+

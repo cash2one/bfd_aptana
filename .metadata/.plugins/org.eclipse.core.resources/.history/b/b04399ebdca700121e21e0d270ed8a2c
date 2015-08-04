@@ -1,0 +1,47 @@
+$(function(){
+	$('#btn1').click(function(event){
+		$('#form1').submit()
+		return false
+	})
+	$('#form1').keyup(function(event){
+		if(event.keyCode===13){
+			$('#form1').submit();
+			}
+	})
+	 $.validator.addMethod("valueNotEquals", function(value, element, arg){
+	    return arg != value;
+	 }, "请选择开户银行");
+	 var validater = $('#form1').validate({
+		submitHandler:function(form){
+//			$(form).ajaxSubmit({
+//				success:function(responseText, statusText, xhr, $form){
+//					
+//				}
+//			})
+			return false
+		},
+		rules: {
+        	'label': {
+            	 required: true,
+				 titleType:true
+             },
+             'selectBox':{
+             	 selectBox: true
+             }
+             
+         },
+         messages: {
+        	 'label': {
+                 required: "请输入商品推荐栏名称，2-6个中文"
+             }
+         },
+         focusInvalid:true,
+         onkeyup: false,
+         wrapper:'span',
+         errorElement:'span',
+         errorClass:'_undefineClass',
+         errorPlacement: function(error, element){
+		 	
+         }
+	})
+})

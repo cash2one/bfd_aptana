@@ -1,0 +1,29 @@
+@charset "utf-8";
+.content .con_right{ float:left; width:807px; margin-left:8px; background:url(../images/right_02.gif) repeat-y;}
+ .content .con_right .right_top{ width:807px; height:5px; background:url(../images/right_01.gif) no-repeat;}
+ .content .con_right .right_bottom{ width:807px; height:18px; background:url(../images/right_03.gif) no-repeat bottom;}
+ 
+ .content .con_right .title{ height:36px; line-height:36px; padding:10px 15px;}
+ .content .con_right .title dl{ float:right; width:280px; height:36px; font-size:14px;}
+ .content .con_right .title dl dt{ float:left; width:75px;}
+ .content .con_right .title dl dd{ background:url(../images/right_04.gif) no-repeat 0px 2px; width:183px; height:34px; float:left; padding:0px 10px;}
+ .content .con_right .title dl dd span{ padding:0px 3px;}
+ .content .con_right .title h1{ font-family:"微软雅黑"; font-size:24px; font-weight:normal;}
+ 
+ .content .con_right .pic{ padding:17px;}
+ .content .con_right .pic b{ display:block; height:30px; line-height:30px; text-align:center;}
+ .content .con_right .pic p{ width:772px; overflow:hidden;}
+ 
+ .datatab{width:780px; clear:both; line-height:33px;padding:10px 13px; color:#333;}
+ .datatab b{ display:block; height:30px; line-height:30px; text-align:center;}
+ .datatab ul{ width:780px; border:1px solid #c0c0c0; border-right:0; height:33px; background:#fffff;}
+ .datatab ul li{ width:100px; float:left; border-right:1px solid #c0c0c0; height:33px; text-align:center;}
+ .datatab ul li.namewith{ width:173px;}
+ .datatab dl{ width:780px; float:left;}
+ .datatab dl dt{ display:block;border:1px solid #c0c0c0; border-right:0; border-top:0;width:780px;height:33px; float:left; cursor:pointer;}
+ .datatab dl dd{border:1px solid #c0c0c0; border-right:0; border-top:0;width:780px;background:#FFF; clear:both; float:left; color:#666;}
+ .datatab dl dd p{ height:33px; clear:both; width:780px;}
+ .datatab dl span{ width:90px; float:left; border-right:1px solid #c0c0c0; height:33px; text-align:right; display:block; padding:0px 5px;}
+ .datatab dl span.time{ width:143px; text-align:left; padding-left:25px;}
+ .datatab dl span.name{ width:163px; text-align:left; color:#1580db;}
+ .datatab dl span.name a{ color:#1580db;}

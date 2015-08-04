@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>递归&作用域</title>
+		<script type="text/javascript">
+			//递归
+			var hanoi = function(index,first,second,third){
+				if(index>0){
+					hanoi(index-1,first,third,second)
+					document.writeln('移动盘子 '+ index +' 从 '+first+'到'+third+'<br/>')
+					hanoi(index-1,second,first,third)
+				}
+			}
+			hanoi(3,'第一个柱子','第二个柱子','第三个柱子')
+			//作用域
+		var foo=function(){
+				var a=3,b=5
+				var bar=function(){
+                      var b=7,c=11//a为3 b为7 c为11
+                      a+=b+c//a为21 b为7 c为11
+                      console.info(this.b)
+				}
+				//此时a为3,b为5,c不存在
+				
+				bar()
+				//a为21,b为5
+			}
+			foo()
+			//其它,作用域并非块级
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>原型&反射&枚举&删除&全局变量</title>
+		<script type="text/javascript" src="../../commons/common.js"></script>
+		<script type="text/javascript">
+			//第个对象都链接到一个原型对象上，并从中继承属性
+			var stooge={
+				'first-name':'stooge first name',
+				'last-name':'stooge last name',
+				fun:function(){
+					
+				}
+			}
+			var another_stooge=Object.beget(stooge)
+			console.info(another_stooge['first-name'])
+			/*
+			another_stooge['first-name']='otherstooge first name'
+			console.info(another_stooge['first-name'])
+			console.info(stooge['first-name'])
+			
+			stooge['test']=1111111
+			console.info(another_stooge['test'])
+			
+			//反射 typeof
+			console.info(typeof true)
+			console.info(typeof stooge)
+			console.info(typeof stooge.test)
+			console.info(typeof stooge.ttt)
+			console.info(typeof stooge['first-name'])
+			console.info(typeof stooge.fun)
+			
+			//检查属性
+			console.info('+++++++++++++++++++++++++++++++++++++')
+			console.info(stooge.hasOwnProperty('test'))
+			console.info(another_stooge.hasOwnProperty('test'))
+			
+			//枚举
+			for(var k in another_stooge){
+				console.info(k)
+			}
+			//删除
+			console.info(another_stooge['first-name'])
+			delete another_stooge['first-name']
+			console.info(another_stooge['first-name'])//删除可能使原型链中的属性浮现
+			//全局变量,尽量减少全局变量,推荐只有唯一一个全局变量,让它变成容器
+			var APP={
+				data:{
+					
+				},
+				setting:{
+					url:''
+				}
+			}
+			*/
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

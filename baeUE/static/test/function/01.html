@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Untitled Document</title>
+        <link href="../../css/packed.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/system.css" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+            <link href="../../css/ie.css" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <!--[if IE 6]>
+            <link href="../../css/ie6.css" rel="stylesheet" type="text/css" />
+        <![endif]-->
+		 <script type="text/javascript" language="JavaScript" src="../../resources/jquery/jquery.js">
+        </script>
+		<script type="text/javascript" language="JavaScript">
+			$(function(){
+				$('.allsp').click(function(event){
+					if($(event.target).is('a')){
+						$(event.target).parent().remove()
+						$('.custom > table  tr:eq(5) > td:eq(0)').html('已添加'+$('.allsp input:hidden').size()+'款商品')
+					}
+				})
+				 var re= /(((http|ftp|https|file):\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\u4e00-\u9fa5\-\.\/?\@\%\!\&=\+\~\:\#\;\,]*)?)/ig; 
+				$('#textfield2').blur(function(){
+					var url=$.trim($(this).val())
+					if(url===''){
+						$(this).parent().next().find('div').html('请输入商品详情页URL').show()
+					}else if(!re.test(url)){
+						$(this).parent().next().find('div').html('请输入正确的URL').show()
+					}else{
+						$(this).parent().next().find('div').hide()
+					}
+				})
+				$('#button').click(function(){
+					var url=$.trim($('#textfield2').val())
+					if(re.test(url)){
+						if(($('.allsp input:hidden[value="'+url+'"]').size()===0)){
+							 $(' <div class="allsp_list"><span>'+url+'<input type="hidden" value="'+url+'"/></span><a>删除</a></div>').appendTo('.allsp')
+						      $('#textfield2').val('')
+							  $('.custom > table  tr:eq(5) > td:eq(0)').html('已添加'+$('.allsp input:hidden').size()+'款商品')
+						}else{
+							$(this).parent().next().find('div').html('该商品已存在').show()
+						}
+					}
+				})
+			})
+		</script>
+    </head>
+    <body>
+    	<div class="r_tittle">
+          <h1><span class="txt">创建自定义商品组</span></h1>
+        </div>
+        <div class="datacontent">
+          <div class="custom">
+            <table border="0" cellpadding="0" cellspacing="0">
+              <tbody><tr>
+                <th>自定义商品组名称：</th>
+                <td><input name="textfield" id="textfield" class="inputbox" type="text"></td>
+                <td><div class="point-a">错误提示</div></td>
+              </tr>
+              <tr>
+                <th valign="top">备注：</th>
+                <td><textarea name="textarea" id="textarea" cols="45" rows="5" class="inputbox02"></textarea> </td>
+                <td><div class="point-a">错误提示</div></td>
+              </tr>
+              <tr>
+                <th>添加商品：</th>
+                <td><input name="textfield2" id="textfield2" class="inputbox03" type="text">
+                <input name="button" id="button" value="添加" class="button05" type="submit"></td>
+                <td><div class="point-a" style="display:none;">错误提示</div></td>
+              </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <td>输入商品详情页URL，每次添加1条数据，最多添加100款商品<br></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <th valign="top">已添加商品：</th>
+                <td>
+                <div class="allsp">
+                	<!--
+                <div class="allsp_list"><span>GARMIN1375T GPS导航仪</span><a>删除</a></div>
+                <div class="allsp_list"><span>GARMIN1375T GPS导航仪</span><a>删除</a></div>
+                <div class="allsp_list"><span>GARMIN1375T GPS导航仪</span><a>删除</a></div>
+				-->
+                </div>
+                </td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <td>已添加11款商品</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <th>&nbsp;</th>
+                <td><a href="#" class="button">保存</a></td>
+                <td>&nbsp;</td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+    </body>
+</html>

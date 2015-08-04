@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+.div1{
+	height:300px;
+	background-color:red;
+	float:left;
+}
+.div2{
+	width:200px;
+	height:200px;
+	background-color:green;
+	float:right;
+}
+</style>
+<script>
+
+function scrollWidth(obj){
+	var oW = document.body.clientWidth || document.documentElement.clientWidth ;
+	var oDivW = oW-210;
+	var oDiv = document.getElementById(obj);
+	oDiv.style.width = oDivW + "px";
+//	//alert(oW);
+}
+window.onload = function(){scrollWidth('div1');}
+window.onresize = function(){ scrollWidth('div1');}
+</script>
+
+</head>
+
+<body style="min-width:980px;">
+<div id="div1" class="div1">
+	<div style=" height:20px; background-color:#F60;"></div>
+    <div></div>
+</div>
+<div class="div2"></div>
+</body>
+</html>

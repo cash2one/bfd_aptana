@@ -1,0 +1,16 @@
+@charset "utf-8";
+*{border:0;list-style:none;font-style:normal;margin:0;padding:0;}
+a{text-decoration:none;color:#1A74B0;}
+a:hover{
+	text-decoration:underline;
+}
+body,font{
+	font-size:12px;
+	font-family:Arial,"宋体";
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	min-width: 1000px;
+}
+select{vertical-align:middle;margin-right:5px;}

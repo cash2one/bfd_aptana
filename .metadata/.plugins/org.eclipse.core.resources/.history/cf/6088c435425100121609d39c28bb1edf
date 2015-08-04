@@ -1,0 +1,91 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	if($('#nameinput').val()!==''){
+		$('#namelabel').hide()
+	}
+	$('#nameinput').focus(function(){
+		$('#namelabel').hide()
+	}).blur(function(){
+		if($(this).val()==''){
+			$('#namelabel').show()
+		}
+	})
+	$('#namelabel').click(function(){
+		$(this).hide()
+		$('#nameinput').focus()
+	})
+})
+$(function(){
+		$('#sub').click(function(){
+			$('#form1').submit()
+		})
+		$('body').keyup(function(event){
+			if(event.keyCode===13){
+				$('#form1').submit();
+				}
+		})
+		$('.cbox:eq(1)').change(function(){
+			if($(this).is(':checked')){
+				$('#qq').parent().show()
+			}else{
+				$('#qq').parent().hide()
+			}
+		})
+	    $.validator.addMethod("checkboxchecked", function(value,element) { 
+	          return $('.cbox:checked').size()>0;   
+	 	 }, "请选择联系方式");
+		 $.validator.addMethod("qqrequire", function(value,element) { 
+	          if($('.cbox:eq(1)').is(':checked')&&$('qq').val()===''){
+			  	   return false
+			  }
+			  return true
+	 	 }, "请输入qq号码");
+		 $.validator.addMethod("qqchecked", function(value,element) { 
+	         if($('.cbox:eq(1)').is(':checked')&&!/^[1-9]\d{4,11}$/.test($('qq').val())){
+			  	   return false
+			  }
+			  return true
+	 	 }, "请输入正确的qq号码");
+		var validater = $('#form1').validate({
+		submitHandler: function(form){
+			$(form).ajaxSubmit({
+				success:function(responseText, statusText, xhr, $form){
+					if(responseText=='4' ){
+					  window.document.location.href = "url";
+					} else if(responseText == '0'){
+						validater.showErrors({'url':'错误信息'})
+					} 
+				}
+			})
+			return false
+			//form.submit()
+		},
+        rules: {
+        	'letter': {
+            	 checkboxchecked: true
+             },
+			 'qqcheckbox':{
+			 	
+			 }
+         },
+         messages: {
+        	 'letter': {
+                 checkboxchecked: "请选择联系方式"
+             }
+         },
+         focusInvalid:true,
+         onkeyup: false,
+         wrapper:null,
+         errorElement:'span',
+		 errorClass:'site_info_error',
+         errorPlacement: function(error, element){
+		 	 if(element.is('textarea')){
+			 	 error.appendTo(element.parent());
+			 }else{
+			 	 error.appendTo(element.parent().parent());
+			 }
+         }
+     })
+})

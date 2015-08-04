@@ -1,0 +1,118 @@
+$(function(){
+	var siteId = $("#siteId").val();
+    $.template('t','<div class="article-list">'+
+							'<div class="con">'+
+							'<span class="article-list-img">'+
+							'<a href="#"><img  src="${img_url}"></a>'+
+							'</span>'+
+							'<div class="article-list-content">'+
+							'<h3><a href="${url}">${title}</a></h3>'+
+							'<p class="summary2">${content}</p>'+
+							'</div>'+
+							'</div>'+
+							'</div>')
+	var url='';						
+	$('.nav3 > ul > li:not(.ml24)').each(function(){
+		$('#list > div').append('<div style="float:left;width:873px;"></div>')
+	})
+	$('#list').scrollable()
+	var api=$('#list').data('scrollable')
+	function madeList(opts){
+		var setting={
+				 	  url:"../../SourceShare/source/!getArticleListByTag?siteId="+siteId,
+					  beforeLoad:function(){
+										$.ifmWidget("loading",{
+								    		title:'加载中',
+								    		content:'加载中...'
+										})
+									},
+					  afterLoad:function(self){ 
+										$.ifmWidget("unloading")
+										$('#list').css('height',self.container.children().size()*201+'px')
+									},
+					  Model: function(i, item){
+					  	                var self = this
+							            self.dom = $.tmpl('t', item)
+					  }				
+		}
+		result= new List($.extend(setting,opts))
+		return result
+	}
+	 $('.nav3 > ul > li:not(.ml24)').click(function(){
+		if(!$(this).find('a').hasClass('curr')){
+			 $('.nav3 > ul > li:not(.ml24)').find('a').removeClass('curr')
+			 $(this).find('a').addClass('curr')
+		}
+	})
+   $('.nav3 > ul > li:not(.ml24)').each(function(i){
+   	  $(this).click(function(){
+				api.seekTo(i)
+				$('#list').css('height',$('#list > div >div').eq(i).children().size()*201+'px')
+	  })
+	  if(i!==0){
+		  	$(this).one('click',function(){
+		  	     madeList({ container:$('#list > div > div').eq(i),data:{q:$(this).find('a').html()}})
+		   })
+	  }
+   })
+   madeList({ container:$('#list > div > div').eq(0),data:{q:'热门文章'}})
+   /*//wyx
+   $('.s-title').delegate('a.contains("申请交换")','click',function(){
+
+	   
+	 })	*/
+   
+})
+
+$(function(){
+    function renderArc(rander, value){
+        var v=(-0.5+2*value)*Math.PI
+        var renderer = new Highcharts.Renderer(rander[0], 172, 172);
+        renderer.arc(86, 86, 86, 54, -Math.PI / 2, Math.PI * 1.5).attr({
+            fill: '#ECECEC',
+            stroke: 'black',
+            'stroke-width': 0
+        }).add();
+        renderer.arc(86, 86, 86, 54, -Math.PI / 2, v).attr({
+            fill: '#03A4DA',
+            stroke: 'black',
+            'stroke-width': 0
+        }).add();
+        renderer.text(parseInt(value*100,10)+'%', 60, 96).css({
+            'font-size': '30px'
+        }).attr({
+            'font-size': '30px'
+        }).add()
+    }
+   renderArc($('#chart'),parseFloat($('#chart').data('value')))
+})
+
+/*var siteId = $("#siteId").val();
+function applyExchangeFlow(a) {
+	
+	$.post("../../SourceShare/source/!applyExchangeFlow", {"beApplicationId":siteId}, function(data) {
+		alert(data);
+	})
+}
+
+function cancleExchangeFlow(a) {
+	
+	//$.post("../../SourceShare/source/!applyExchangeFlow", {"beApplicationId":siteId}, function(data) {
+		alert("dd");
+	//})
+}*/
+
+$(function(){
+	$('#sendMessage').click(function(){
+		$.blockUI({
+			message:$('#sendMessageDialog'),
+			css:{
+				width:'374px',
+				border: 'none',
+			    top:  ($(window).height() - 234) /2 + 'px'
+			},
+			overlayCSS:{opacity: 0}	
+		})
+	})
+})
+

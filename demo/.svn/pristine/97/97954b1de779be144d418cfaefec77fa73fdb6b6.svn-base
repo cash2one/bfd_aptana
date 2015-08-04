@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>search</title>
+		 <link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="./js/jquery.min.js">
+</script>
+		<script type="text/javascript" src="./js/scroll.js"></script>
+	    <script type="text/javascript" src="./js/jquery.tmpl.min.js"></script>
+	</head>
+	<body>
+		<div class="allkj">
+            <div style="margin-right: -209.453px;" class="chapter-labels">
+                <div class="labels">
+                    <h1>搜索引擎</h1>
+                    <h3>Search engine</h3>
+                </div>
+            </div>
+            <div class="txtcon01">
+                <div class="cp01">
+                	<table cellspacing="0" cellpadding="0" border="0" class="search">
+					          <tbody><tr>
+					    <td><div class="sinput"><input type="text" name=""></div></td>
+					    <td><div class="sbutton"><input type="button" value="搜索" name="input2"></div></td>
+					  </tr>
+					</tbody></table>
+				</div>
+            </div>
+        </div>
+		<div class="allkj">
+            <div style="margin-right: -248px;" class="chapter-labels">
+                <div class="labels">
+                    <h1>个性化着陆</h1>
+                    <h3>Personalized landing</h3>
+                </div>
+            </div>
+            <div class="txtcon01">
+                <div class="cp01">
+                    <ul>
+                        <li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <div class="ls"><img src=""> <div class="lsico">看过</div></div></td></tr><tr><td>产品名称:</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li>
+                        <li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <div class="ls"><img src=""> <div class="lsico">看过</div></div></td></tr><tr><td>产品名称:</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li>
+                        <li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <div class="ls"><img src=""> <div class="lsico">看过</div></div></td></tr><tr><td>产品名称:</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li>
+                        <li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <div class="ls"><img src=""> <div class="lsico">看过</div></div></td></tr><tr><td>产品名称:</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li>
+                    </ul>
+                    <ul>
+                        <li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <div class="ls"><img src=""> <div class="lsico">看过</div></div></td></tr><tr><td>产品名称:</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li>
+                        <li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <div class="ls"><img src=""> <div class="lsico">看过</div></div></td></tr><tr><td>产品名称:</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li>
+                        <li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <div class="ls"><img src=""> <div class="lsico">看过</div></div></td></tr><tr><td>产品名称:</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li>
+                        <li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <div class="ls"><img src=""> <div class="lsico">看过</div></div></td></tr><tr><td>产品名称:</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<div class="footer">
+		<p>Copyright&copy;2012 Baifendian Corporation All Right Reserved.&#12288;京ICP备09109727号&#12288;京公网安备110108400769号</p>
+		</div>
+	</body>
+</html>

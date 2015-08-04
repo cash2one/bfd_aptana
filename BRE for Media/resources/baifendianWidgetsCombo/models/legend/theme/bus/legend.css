@@ -1,0 +1,28 @@
+table.legend { 
+	background: #fff; border-top: 1px #dddddd solid; width: 100%; 
+}
+table.legend tr.color { background: #f9f9f9; }
+table.legend th {
+	background: #f0f5f8;
+	border-bottom: 1px #dddddd solid;
+	border-right: 1px #cccccc solid;
+	color: #555;
+	font-size: 12px;
+	font-weight: bold;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	padding: 0 5px;
+}
+table.legend td {
+	border-bottom: 1px #dddddd solid;
+	border-right: 1px #dddddd solid;
+	color: #555;
+	font-size: 12px;
+	line-height: 40px;
+	text-align: center;
+}
+table.legend th.brn { border-right: none; }
+table.legend td.bbn { border-bottom: none; }
+table.legend td.brn { border-right: none; }
+

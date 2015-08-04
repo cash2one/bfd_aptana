@@ -1,0 +1,56 @@
+.newListSelected {
+	width:200px;
+	color:#000;
+	height:30px;
+	/*padding:7px 0 0 6px;*/
+	float:left;
+	/*background:url(./select-bg2.png) no-repeat;*/
+	line-height:18px;
+	display:inline-block;
+	*display:inline;
+	font-size:13px;
+}
+.selectbg_l {
+	float: left;
+	background:url(./select-l.png) no-repeat;
+	width: 1px;
+	height: 30px;
+	display:inline-block;
+	*display:inline;
+}
+
+.selectedTxt {
+	/*width:176px;*/
+	overflow:hidden;
+	height:23px;
+	padding:7px 0 0 6px;
+}
+.selectbg_m {
+	float: left;
+	background:url(./select-m.png) repeat-x;
+	display:inline-block;
+	*display:inline;
+}
+.selectbg_r {
+	float: right;
+	background:url(./select-r.png) no-repeat;
+	height: 30px;
+	width: 31px;
+	display:inline-block;
+	*display:inline;
+}
+
+.selectedTxt .placeholder {
+	color: #ccc;
+}
+
+.SSContainerDivWrapper {width:200px;position:absolute;top:22px;left:0;z-index:2;}
+.SSContainerDivWrapper .newList {color:#000;background:#fff;border:1px solid #ccc;overflow:auto;zoom:1;}
+.SSContainerDivWrapper .newList li{}
+.SSContainerDivWrapper .newList a {color: #000;text-decoration:none;display:block;padding:3px 8px;height:18px;}
+
+.SSContainerDivWrapper .newList a.newListItemDisabled {
+	color: #ccc;
+}
+
+.newListHover {background:#ccc!important;color:#000!important;cursor:default;}

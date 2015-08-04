@@ -1,0 +1,135 @@
+body,div,h1,h2,h3,h4,h5,a,img,b,strong,span,var,em,ol,ul,dt,dd,dl,li,p,table,tr,th,td,button,input {margin:0px;padding:0px;}
+a {text-decoration:none;cursor:pointer;font-style:normal;outline:none;}
+ol,ul {list-style-type:none;}
+ul,li{list-style:none;}
+a img {border:none;}
+em,var{font-style:normal;}
+.clear {clear:both;height:0px;overflow:hidden;}
+body{font-family:Arial,"宋体","微软雅黑";}
+/*--------------ty-top  ty-bottom  ty2-bottom-------------------*/
+.ty-top{height:47px;line-height:47px;background:url(../images/ty-top-01.png) 0 0 repeat-x;_overflow:hidden;}
+.ty-top-left{height:47px;background:url(../images/ty-top-01.png) left -47px no-repeat;}
+.ty-top-right{height:47px;background:url(../images/ty-top-01.png) right -94px no-repeat;padding:0 10px 0 20px;}
+.ty-con{width:100%;background:#fff;border-left:1px #ccc solid;border-right:1px #ccc solid;}
+.ty-bottom{height:50px;background:url(../images/ty-bottom.png) 0 0 repeat-x;overflow:hidden;}
+.ty-bottom-left{height:50px;background:url(../images/ty-bottom.png) left -50px no-repeat;}
+.ty-bottom-right{height:50px;background:url(../images/ty-bottom.png) right -100px no-repeat;}
+.ty2-bottom{height:6px;background:url(../images/ty2-bottom.png) 0 0 repeat-x;overflow:hidden;position:relative;top:-1px;z-index:1;}
+.ty2-bottom-left{height:6px;background:url(../images/ty2-bottom.png) left -6px no-repeat;}
+.ty2-bottom-right{height:6px;background:url(../images/ty2-bottom.png) right -12px no-repeat;}
+/*--------------edit-top       edit-bottom-------------------*/
+.edit{margin-bottom:20px;overflow:hidden;}
+.preview{overflow:hidden;}
+.edit-top{height:45px;background:url(../images/edit-top.png) 0 0 repeat-x;overflow:hidden;}
+.edit-top-left{height:45px;background:url(../images/edit-top.png) 0 -45px no-repeat;overflow:hidden;}
+.edit-top-right{height:45px;background:url(../images/edit-top.png) right -90px no-repeat;overflow:hidden;}
+.edit-bottom{height:3px;background:url(../images/edit-bottom.png) 0 0 repeat-x;overflow:hidden;}
+.edit-bottom-left{height:3px;background:url(../images/edit-bottom.png) 0 -3px no-repeat;overflow:hidden;}
+.edit-bottom-right{height:3px;background:url(../images/edit-bottom.png) right -6px no-repeat;overflow:hidden;}
+/*--------------公共 模块-------------------*/
+.view{float:right;font-size:12px;color:#3399cc;}
+.grid{position:relative;z-index:10;width:100%;background:#fff;border-left:1px #cccccc solid;border-right:1px #cccccc solid;border-top:1px #fff solid;}
+.grid tr.color{background:#fdfdfd;}
+.grid th{background:#f0f5f8;height:41px;line-height:41px;border-bottom:1px #cccccc solid;border-right:1px #cccccc solid;font-size:12px;font-weight:bold;color:#555;padding:0 5px;overflow:hidden;}
+.grid td{line-height:40px;text-align:center;font-size:12px;color:#555;border-bottom:1px #cccccc solid;border-right:1px #cccccc solid;}
+.grid th.brn{border-right:none;}
+.grid td.bbn{border-bottom:none;}
+.grid td.brn{border-right:none;}
+.pic1{height:300px;position:relative;z-index:10;overflow:hidden;}
+.pic2{height:390px;position:relative;z-index:10;overflow:hidden;}
+/*--------------公共按钮-------------------*/
+.s-greenbtn01{float:left;height:31px;line-height:31px;background:url(../images/s-greenbtn.png) left 0 no-repeat;}
+.s-greenbtn01 span{float:left;height:31px;background:url(../images/s-greenbtn.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#fff;}
+.s-redbtn01{float:left;height:31px;line-height:31px;background:url(../images/s-redbtn.png) left 0 no-repeat;}
+.s-redbtn01 span{float:left;height:31px;background:url(../images/s-redbtn.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#fff;}
+.s-bluebtn01{float:left;height:31px;line-height:31px;background:url(../images/s-bluebtn.png) left 0 no-repeat;}
+.s-bluebtn01 span{float:left;height:31px;background:url(../images/s-bluebtn.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#fff;}
+.s-resetbtn01{float:left;height:31px;line-height:31px;background:url(../images/s-resetbtn.png) left 0 no-repeat;}
+.s-resetbtn01 span{float:left;height:31px;background:url(../images/s-resetbtn.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#333;}
+.s-blackbtn01{float:left;height:31px;line-height:31px;background:url(../images/s-blackbtn.png) left 0 no-repeat;}
+.s-blackbtn01 span{float:left;height:31px;background:url(../images/s-blackbtn.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#fff;}
+.s-orangebtn01{float:left;height:31px;line-height:31px;background:url(../images/s-orangebtn.png) left 0 no-repeat;}
+.s-orangebtn01 span{float:left;height:31px;background:url(../images/s-orangebtn.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#fff;}
+.s-graybtn01{float:left;height:31px;line-height:31px;background:url(../images/s-graybtn.png) left 0 no-repeat;}
+.s-graybtn01 span{float:left;height:31px;background:url(../images/s-graybtn.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#333;}
+.s-greenbtn02{float:left;height:31px;line-height:31px;background:url(../images/s-greenbtn02.png) left 0 no-repeat;}
+.s-greenbtn02 span{float:left;height:31px;background:url(../images/s-greenbtn02.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#fff;}
+.s-redbtn02{float:left;height:31px;line-height:31px;background:url(../images/s-redbtn02.png) left 0 no-repeat;}
+.s-redbtn02 span{float:left;height:31px;background:url(../images/s-redbtn02.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#fff;}
+.s-bluebtn02{float:left;height:31px;line-height:31px;background:url(../images/s-bluebtn02.png) left 0 no-repeat;}
+.s-bluebtn02 span{float:left;height:31px;background:url(../images/s-bluebtn02.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#fff;}
+.s-resetbtn02{float:left;height:31px;line-height:31px;background:url(../images/s-resetbtn02.png) left 0 no-repeat;}
+.s-resetbtn02 span{float:left;height:31px;background:url(../images/s-resetbtn02.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#333;}
+.s-blackbtn02{float:left;height:31px;line-height:31px;background:url(../images/s-blackbtn02.png) left 0 no-repeat;}
+.s-blackbtn02 span{float:left;height:31px;background:url(../images/s-blackbtn02.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#fff;}
+.s-orangebtn02{float:left;height:31px;line-height:31px;background:url(../images/s-orangebtn02.png) left 0 no-repeat;}
+.s-orangebtn02 span{float:left;height:31px;background:url(../images/s-orangebtn02.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#fff;}
+.s-graybtn02{float:left;height:31px;line-height:31px;background:url(../images/s-graybtn02.png) left 0 no-repeat;}
+.s-graybtn02 span{float:left;height:31px;background:url(../images/s-graybtn02.png) right 0 no-repeat;font-size:12px;font-weight:bold;color:#333;}
+.b-greenbtn01{float:left;height:39px;line-height:39px;background:url(../images/b-greenbtn.png) left 0 no-repeat;}
+.b-greenbtn01 span{float:left;height:39px;background:url(../images/b-greenbtn.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#fff;}
+.b-redbtn01{float:left;height:39px;line-height:39px;background:url(../images/b-redbtn.png) left 0 no-repeat;}
+.b-redbtn01 span{float:left;height:39px;background:url(../images/b-redbtn.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#fff;}
+.b-bluebtn01{float:left;height:39px;line-height:39px;background:url(../images/b-bluebtn.png) left 0 no-repeat;}
+.b-bluebtn01 span{float:left;height:39px;background:url(../images/b-bluebtn.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#fff;}
+.b-resetbtn01{float:left;height:39px;line-height:39px;background:url(../images/b-resetbtn.png) left 0 no-repeat;}
+.b-resetbtn01 span{float:left;height:39px;background:url(../images/b-resetbtn.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#333;}
+.b-blackbtn01{float:left;height:39px;line-height:39px;background:url(../images/b-blackbtn.png) left 0 no-repeat;}
+.b-blackbtn01 span{float:left;height:39px;background:url(../images/b-blackbtn.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#fff;}
+.b-orangebtn01{float:left;height:39px;line-height:39px;background:url(../images/b-orangebtn.png) left 0 no-repeat;}
+.b-orangebtn01 span{float:left;height:39px;background:url(../images/b-orangebtn.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#fff;}
+.b-graybtn01{float:left;height:39px;line-height:39px;background:url(../images/b-graybtn.png) left 0 no-repeat;}
+.b-graybtn01 span{float:left;height:39px;background:url(../images/b-graybtn.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#333;}
+.b-greenbtn02{float:left;height:39px;line-height:39px;background:url(../images/b-greenbtn02.png) left 0 no-repeat;}
+.b-greenbtn02 span{float:left;height:39px;background:url(../images/b-greenbtn02.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#fff;}
+.b-redbtn02{float:left;height:39px;line-height:39px;background:url(../images/b-redbtn02.png) left 0 no-repeat;}
+.b-redbtn02 span{float:left;height:39px;background:url(../images/b-redbtn02.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#fff;}
+.b-bluebtn02{float:left;height:39px;line-height:39px;background:url(../images/b-bluebtn02.png) left 0 no-repeat;}
+.b-bluebtn02 span{float:left;height:39px;background:url(../images/b-bluebtn02.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#fff;}
+.b-resetbtn02{float:left;height:39px;line-height:39px;background:url(../images/b-resetbtn02.png) left 0 no-repeat;}
+.b-resetbtn02 span{float:left;height:39px;background:url(../images/b-resetbtn02.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#333;}
+.b-blackbtn02{float:left;height:39px;line-height:39px;background:url(../images/b-blackbtn02.png) left 0 no-repeat;}
+.b-blackbtn02 span{float:left;height:39px;background:url(../images/b-blackbtn02.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#fff;}
+.b-orangebtn02{float:left;height:39px;line-height:39px;background:url(../images/b-orangebtn02.png) left 0 no-repeat;}
+.b-orangebtn02 span{float:left;height:39px;background:url(../images/b-orangebtn02.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#fff;}
+.b-graybtn02{float:left;height:39px;line-height:39px;background:url(../images/b-graybtn02.png) left 0 no-repeat;}
+.b-graybtn02 span{float:left;height:39px;background:url(../images/b-graybtn02.png) right 0 no-repeat;font-size:14px;font-weight:bold;color:#333;}
+.blue-button01{float:left;height:31px;line-height:31px;background:url(../images/blue-button.png) left 0 no-repeat;padding-left:11px;margin-right:5px;}
+.blue-button01-r{float:left;height:31px;background:url(../images/blue-button.png) right 0 no-repeat;padding-right:11px;}
+.blue-button01 .blue-button01-r .blue-sel{float:left;background:url(../images/blue-sel-bg.png) right 14px no-repeat;padding-right:16px;font-size:12px;font-weight:bold;color:#fff;}
+.blue-button01 .blue-button01-r span{float:left;font-size:12px;font-weight:bold;color:#fff;}
+.grey-button01{float:left;height:31px;line-height:31px;background:url(../images/grey-button.png) left 0 no-repeat;padding-left:11px;margin-right:5px;}
+.grey-button01-r{float:left;height:31px;background:url(../images/grey-button.png) right 0 no-repeat;padding-right:11px;}
+.grey-button01 .grey-button01-r .grey-sel{float:left;background:url(../images/grey-sel-bg.png) right 14px no-repeat;padding-right:16px;font-size:12px;font-weight:bold;color:#333;}
+.grey-button01 .grey-button01-r span{float:left;font-size:12px;font-weight:bold;color:#333;}
+.blue-button02{float:left;height:31px;line-height:31px;background:url(../images/blue-button02.png) left 0 no-repeat;padding-left:11px;margin-right:5px;}
+.blue-button02-r{float:left;height:31px;background:url(../images/blue-button02.png) right 0 no-repeat;padding-right:11px;}
+.blue-button02 .blue-button02-r .blue-sel{float:left;background:url(../images/blue-sel-bg.png) right 14px no-repeat;padding-right:16px;font-size:12px;font-weight:bold;color:#fff;}
+.blue-button02 .blue-button02-r span{float:left;font-size:12px;font-weight:bold;color:#fff;}
+.grey-button02{float:left;height:31px;line-height:31px;background:url(../images/grey-button02.png) left 0 no-repeat;padding-left:11px;margin-right:5px;}
+.grey-button02-r{float:left;height:31px;background:url(../images/grey-button02.png) right 0 no-repeat;padding-right:11px;}
+.grey-button02 .grey-button02-r .grey-sel{float:left;background:url(../images/grey-sel-bg.png) right 14px no-repeat;padding-right:16px;font-size:12px;font-weight:bold;color:#333;}
+.grey-button02 .grey-button02-r span{float:left;font-size:12px;font-weight:bold;color:#333;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

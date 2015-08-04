@@ -1,0 +1,48 @@
+-- VERSION_3
+-- START DISKCACHE
+E:\Dropbox\aptana_work\.metadata\.plugins\org.eclipse.core.resources\.projects\py_django_test\com.python.pydev.analysis\v1_indexcache
+.v1_indexcache
+py_django_test.refer_test.__init__|0|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\refer_test\__init__.py
+py_django_test.urls|0|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\urls.py
+py_django_test.refer_test.views|0|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\refer_test\views.py
+py_django_test.manage|0|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\manage.py
+py_django_test.refer_test.tests|0|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\refer_test\tests.py
+py_django_test.settings|0|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\settings.py
+py_django_test.refer_test.models|0|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\refer_test\models.py
+py_django_test.__init__|0|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+5
+4=py_django_test.urls
+2=py_django_test.refer_test.views
+3=py_django_test.refer_test.tests
+1=py_django_test.settings
+5=SimpleTest
+-- END DICTIONARY
+-- START TREE 1
+20
+adm|2|ADMIN_MEDIA_PREFIX!11@ADMINS!11@
+dat|1|DATABASES!11@
+deb|1|DEBUG!11@
+ins|1|INSTALLED_APPS!11@
+lan|1|LANGUAGE_CODE!11@
+log|1|LOGGING!11@
+man|1|MANAGERS!11@
+med|2|MEDIA_URL!11@MEDIA_ROOT!11@
+mid|1|MIDDLEWARE_CLASSES!11@
+ref|1|refer!18@
+res|1|response!19@
+roo|1|ROOT_URLCONF!11@
+sec|1|SECRET_KEY!11@
+sim|1|SimpleTest!25@
+sit|1|SITE_ID!11@
+sta|4|STATIC_ROOT!11@STATIC_URL!11@STATICFILES_DIRS!11@STATICFILES_FINDERS!11@
+tem|3|TEMPLATE_DIRS!11@TEMPLATE_LOADERS!11@TEMPLATE_DEBUG!11@
+tim|1|TIME_ZONE!11@
+url|1|urlpatterns!35@
+use|2|USE_I18N!11@USE_L10N!11@
+-- END TREE
+-- START TREE 2
+1
+tes|1|test_basic_addition!5&26@
+-- END TREE

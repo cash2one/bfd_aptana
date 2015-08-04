@@ -1,0 +1,26 @@
+//需要修改的地方是第8行和第9行
+$(function(){
+	$('#open').click(function(){
+		$.ifmWidget("loading",{
+    		title:'加载中',
+    		content:'加载中...'
+		})
+		$.post('../../SourceShare/source/!restartFlowExchange4User').done(function(data){//需要修改url
+			if(data=='0'){//需要修改返回值判定
+				$.ifmWidget('alertSuccessMuti',{
+					title:'开通成功',
+					content:'恭喜您，开通成功！',
+					dom:$('<p class="tip">3秒后，进入<a href="../../SourceShare/source/!showSoureShare" class="admin">流量交换</a></p>')	
+				})
+				setTimeout(function(){
+					window.location.href='../../SourceShare/source/!showSoureShare'
+				},3000)
+			}else{
+				$.ifmWidget('alertFail',{
+					title:'开通失败',
+					content:'开通失败，请稍后重试！'
+				})
+			}
+		})
+	})
+})

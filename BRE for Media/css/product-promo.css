@@ -1,0 +1,21 @@
+.pre-promo-box { border: 1px #cccccc solid; padding-left: 5px; padding-right: 5px; /*.promo-loading{
+	position:absolute;
+	left:0;
+	top:0;
+	width:560px;
+	height:220px;
+	 @include background-opacity(#333, 0.5);
+}*/ }
+.pre-promo-box .box-title { height: 30px; line-height: 30px; display: block; padding-left: 5px; font-size: 14px; font-weight: bold; /*padding:{
+	left:15px;
+}*/ }
+.pre-promo-box ul { list-style-type: none; height: 160px; }
+.pre-promo-box ul li { float: left; }
+.pre-promo-box ul li a { 	/*width:120px; height:160px;*/ display: block; cursor: pointer; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; /*  padding:10px;*/ }
+.pre-promo-box ul li a:hover { background-color: #f0f0f0; }
+.pre-promo-box ul li a img { height: 100px; width: 100px; }
+.pre-promo-box ul li a label { display: block; color: #3399ff; font-size: 12px; word-wrap: break-word; word-break: break-all; width: 100px; cursor: pointer; height: 45px; overflow: hidden; }
+.pre-promo-box .box-bottom { /*width:100%;*/ display: block; text-align: right; /*float:right;*/ padding-right: 10px; height: 30px; line-height: 30px; font-size: 14px; font-weight: bold; }
+
+.setting-form .error { position: absolute; left: 235px; font-size: 12px; word-break: keep-all; white-space: nowrap; padding-left: 31px; background: url(../images/wrong-bg2_01.gif) 0 0 no-repeat; display: inline-block; line-height: 28px; }
+.setting-form .error span { color: #BB0000; height: 28px; line-height: 28px; padding: 0 8px 0 5px; background: url(../images/wrong-bg2_03.gif) right 0 no-repeat #ffe8e8; display: inline-block; }

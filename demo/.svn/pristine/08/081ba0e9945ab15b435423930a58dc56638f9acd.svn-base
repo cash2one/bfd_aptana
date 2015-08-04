@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="./resource/jquery-ui/css/cupertino/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="./js/jquery.min.js">
+</script>
+<script type="text/javascript" src="./js/scroll.js"></script>
+  <script type="text/javascript" src="./js/jquery.tmpl.min.js"></script>
+ <script type="text/javascript" src="./resource/jquery-ui/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="./js/scroll.js"></script>
+<script type="text/javascript" src="./js/commons.js"></script>
+<script type="text/javascript">
+			$(function(){
+				$('.allkj:eq(1) > .txtcon01 > .cp02 > p >span').slider()
+				$('.allkj:eq(1) > .txtcon01 > .cp02 > p >span').slider('option','change',function(){
+					load()
+				})
+				function afterBuy(){
+					load();
+				}
+				var init=true
+				function parse(data){
+					if(init){
+						init=false
+						$('.allkj:first > .txtcon01 > .cp01 > ul > li').each(function(i){
+							if(data['scenario'][0]['products']&&data['scenario'][0]['products'][i]){
+								var product=new Product(data['scenario'][0]['products'][i])
+								product.afterBuy=afterBuy
+								product.dom.appendTo($(this).empty())
+							}
+						})
+					}
+					$('.allkj:last > .txtcon01 > .cp01 > ul > li').each(function(i){
+						if(data['scenario'][0]['products']&&data['scenario'][0]['products'][i]){
+							var product=new Product(data['scenario'][0]['products'][i])
+							product.afterBuy=afterBuy
+							product.dom.appendTo($(this).empty())
+						}
+					})
+				}
+				function load(){
+				                  $.getJSON("http://scenario.baifendian.com:8008/Scenario.do?callback=?", 
+									{
+										sid:'13410339561515378019595518708',
+										random:new Date().valueOf(),
+										p: $('.allkj:eq(1) > .txtcon01 > .cp02 > p >span:eq(0)').slider('value'),
+										q: $('.allkj:eq(1) > .txtcon01 > .cp02 > p >span:eq(1)').slider('value')
+									},
+									function(data){
+					                     parse(data)
+					                });
+				}
+				load()
+			})
+		</script>
+		<style type="text/css">
+						#exp p{
+				height:30px;
+			}
+			#exp p label{
+	float: left;
+	font-size: 16px;
+	height: 20px;
+	line-height: 20px;
+			}
+			#exp p span{
+	display: block;
+	float: left;
+	height: 20px;
+	margin-left: 20px;
+	width: 600px;
+			}
+		</style>
+</head>
+<body>
+	<div class="allkj">
+		<div class="chapter-labels" style="margin-right: -248px;">
+	        <div class="labels">
+	            <h1>原始推荐</h1>
+      			<h3>Concerned about the history</h3>
+	        </div>
+	    </div>
+		<div class="txtcon01">
+			<div class="cp01">
+    <ul>
+      <li>
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tbody><tr>
+            <td><img width="160" height="160" src="images/cp.jpg"></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td>
+          </tr>
+        </tbody></table>
+      </li>
+      <li>
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tbody><tr>
+            <td><img width="160" height="160" src="images/cp.jpg"></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td>
+          </tr>
+        </tbody></table>
+      </li>
+      <li>
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tbody><tr>
+            <td><img width="160" height="160" src="images/cp.jpg"></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td>
+          </tr>
+        </tbody></table>
+      </li>
+      <li>
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tbody><tr>
+            <td><img width="160" height="160" src="images/cp.jpg"></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td>
+          </tr>
+        </tbody></table>
+      </li>
+    </ul>
+  </div>
+		</div>	
+	</div>	
+	<div class="allkj">
+		<div class="chapter-labels" style="margin-right: -248px;">
+	        <div class="labels">
+	           <h1>实验面板</h1>
+              <h3>Characteristic profile</h3>
+	        </div>
+	    </div>
+		<div class="txtcon01">
+			<div class="cp02" id="exp">
+			  <!--
+				  <div class="icoman">
+				    <img width="190" height="190" src="images/icoman.jpg"></div>
+				  </div>
+			-->
+			<p>
+				<label>客单价:</label><span></span>
+			</p>	  
+			<p>
+				<label>敏感度:</label><span></span>
+			</p>	 
+		</div>	
+	</div>	
+	</div>
+	<div class="allkj">
+			<div class="chapter-labels" style="margin-right: -248px;">
+		        <div class="labels">
+		           <h1>调整后推荐</h1>
+	               <h3>Marketing attachments</h3>
+		        </div>
+		    </div>
+			<div class="txtcon01">
+				<div class="cp01">
+					    <ul>
+      <li>
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tbody><tr>
+            <td><img width="160" height="160" src="images/cp.jpg"></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td>
+          </tr>
+        </tbody></table>
+      </li>
+      <li>
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tbody><tr>
+            <td><img width="160" height="160" src="images/cp.jpg"></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td>
+          </tr>
+        </tbody></table>
+      </li>
+      <li>
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tbody><tr>
+            <td><img width="160" height="160" src="images/cp.jpg"></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td>
+          </tr>
+        </tbody></table>
+      </li>
+      <li>
+        <table cellspacing="0" cellpadding="0" border="0">
+          <tbody><tr>
+            <td><img width="160" height="160" src="images/cp.jpg"></td>
+          </tr>
+          <tr>
+            <td>产品名称：</td>
+          </tr>
+          <tr>
+            <td>来源网站：HTTP://WWW.BAI</td>
+          </tr>
+          <tr>
+            <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td>
+          </tr>
+        </tbody></table>
+      </li>	   
+    </ul>
+					     <!--测试-->
+						 <!--
+						 <div><span class="bfb">0%</span><span style="width: 450px; " class="jdt"><em>我猜您只是来库巴随便逛逛的</em><a style="display: none; " class="mailico"></a></span></div>
+						 <div style="clear:both; height:2px"> </div>
+						 <div style="display: none; " class="edm_txt"><div class="close"><a>关闭&nbsp;X</a></div><h1>标题</h1><p>亲爱的XXX:</p><p>您曾关注XXX，系统啥啥XXX为你推荐：</p><div class="cp03"><ul><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/20（黑色）||P173715</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li></ul></div></div>
+						 -->
+						 <!--测试-->
+						  <!--测试-->
+						   <!--
+						 <div><span class="bfb">0%</span><span style="width: 450px; " class="jdt"><em>我猜您只是来库巴随便逛逛的</em><a style="display: none; " class="mailico"></a></span></div>
+						 <div style="clear:both; height:2px"> </div>
+						 <div style="display: none; " class="edm_txt"><div class="close"><a>关闭&nbsp;X</a></div><h1>标题</h1><p>亲爱的XXX:</p><p>您曾关注XXX，系统啥啥XXX为你推荐：</p><div class="cp03"><ul><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/20（黑色）||P173715</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li><li><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td> <img src="" alt="产品图片"></td></tr><tr><td>产品名称:飞利浦（PHILIPS）空气炸锅HD9220/50（白色）||P173714</td></tr><tr><td>来源网站： </td></tr><tr> <td>操作：<a href="#"><img align="absmiddle" src="images/buy.png"></a></td></tr></tbody></table></li></ul></div></div>
+						 -->
+						 <!--测试-->
+	  				</div>
+	       </div>
+		</div>	
+	</div>	
+	<div class="footer">
+<p>Copyright©2012 Baifendian Corporation All Right Reserved.　京ICP备09109727号　京公网安备110108400769号</p>
+</div>  
+</body>
+</html>

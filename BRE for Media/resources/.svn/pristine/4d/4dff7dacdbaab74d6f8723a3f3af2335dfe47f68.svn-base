@@ -1,0 +1,212 @@
+/**
+ * @author Administrator
+ */
+(function( $ ){
+  var str='<div class="page-area2">'+
+				'<div class="p-title">'+
+				'<h2>更换图片</h2>'+
+				'<a href="#">&nbsp;</a>'+
+				'</div>'+
+				'<div class="p-content">'+
+				'<div class="pa2-side">'+
+				'<h3>预览</h3>'+
+				'<div class="pic"><img width="85" height="85" src="../../images/pic-52.jpg" / ></div>'+
+				'</div>'+
+				'<div class="pa2-main">'+
+				'<ul class="choose2">'+
+				'<li class="p current"><a href="#" class="">该文章内图片</a></li>'+
+				'<li class=""><a href="#" class="">网络图片</a></li>'+
+				'<li class=""><a href="#" class="">本地上传</a></li>'+
+				'</ul>'+
+				'<div class="pic-box">'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img mr0">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img mr0">&nbsp;</span>'+
+				'</div>'+
+				'<div class="pic-box" style="display:none;">'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img mr0">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img">&nbsp;</span>'+
+//				'<span class="img mr0">&nbsp;</span>'+
+				'</div>'+
+				'<div class="pic-box h190" style="display:none;">'+
+				'<a class="upload-btn"><span id="upload">上传本地图片</span></a>'+
+				'</div>'+
+				'<div class="btn">'+
+				'<a class="btn1"><span>保 存</span></a>'+
+				'<a class="btn2"><span>取 消</span></a>'+
+				'</div>'+
+				'<p class="note" style="display:none;">以上图片来自互联网，版权归原网站所有</p>'+
+				'</div>'+
+				'</div>'+
+				'</div>'																																															
+  var methods = {
+                init:function(options){
+                	if(!this.data('ifmAlumDom')){
+                	
+					var defaults={swf:'../../resources/uploadify/uploadify.swf',listImageUrl:false}
+					var setting = $.extend(true, defaults, options)
+					var imageurl=setting.defaultImage
+					var dom =$(str)
+					
+					dom.find('div.pic img').attr('src',imageurl)
+					dom.find('.btn2').add(dom.find('.p-title a')).click($.unblockUI)
+					
+					dom.find('.btn1').click(function(){
+						if(setting.onSave){
+							setting.onSave(imageurl)
+						}
+						$.post(setting.saveUrl,$.extend(setting.data,{imageurl:imageurl}))
+						$.unblockUI()
+					})
+					dom.find('.choose2 > li').click(function(){
+						if(!$(this).hasClass('current')){
+								$(this).parent().find('li.current').removeClass('current')
+								$(this).addClass('current')
+								dom.find('.pic-box').hide()
+								dom.find('.pic-box').eq($(this).index()).show()
+								if($(this).index()===1){
+									dom.find('p.note').show()
+								}else{
+									dom.find('p.note').hide()
+								}
+							}
+					})
+					dom.find('.pic-box').click(function(event){
+						if(($(event.target).is('img')&&$(event.target).parent().is('span.img'))||$(event.target).is('span.img')){
+							 var span=$(event.target).is('img')?$(event.target).parent():$(event.target)
+							  dom.find('span.current').removeClass('current')
+							 span.addClass('current')
+							 dom.find('div.pic img').attr('src',span.data('image-src'))
+							 imageurl=span.data('image-src')
+						}
+					});
+					(function(){
+						if(setting.defaultImages){
+//								$.get(setting.listImageUrl,setting.data,function(data){
+									$.each(setting.defaultImages, function(i,item){
+										$('<span class="img"> </span>').addClass(function(){
+											if((i+1)%5==0){
+												return 'mr0'
+											}
+										}).append( $("<img/>")
+										.attr({"src":item}))
+										.data('image-src',item)
+										.appendTo(dom.find('.pic-box:eq(0)'))
+									  });
+//								},'json')
+						}else{
+//							dom.find('.choose2 >li:first').hide()
+//							dom.find('.choose2 >li:eq(1)').addClass('p').addClass('current')
+//							dom.find('.pic-box:first').hide()
+//							dom.find('.pic-box:eq(1)').show()
+						}
+					}());
+				    (function(){
+						function pendGoogleImage(start){
+								$.getJSON("https://ajax.googleapis.com/ajax/services/search/images?v=1.0&callback=?",
+								                     {q:setting.q,rsz:5,start:start},
+													 function(data){
+													 	  if(data){
+															  	$.each(data.responseData.results, function(i,item){
+																	$('<span class="img"> </span>').addClass(function(){
+																		if(i==4){
+																			return 'mr0'
+																		}
+																	}).append( $("<img/>")
+																	.attr({"src":item.unescapedUrl}))
+																	.data('image-src',item.unescapedUrl)
+																	.appendTo(dom.find('.pic-box:eq(1)'))
+																  });
+														  }
+													});
+						}
+//						if(setting.defaultImages){
+							dom.find('.choose2 > li:eq(1)').one('click',function(){
+								pendGoogleImage(0)
+								pendGoogleImage(5)
+								pendGoogleImage(10)
+								dom.find('.pic-box:eq(1)').scrollTop(0)
+							});
+//						}else{
+//							pendGoogleImage(0)
+//							pendGoogleImage(5)
+//							pendGoogleImage(10)
+//							dom.find('.pic-box:eq(1)').scrollTop(0)
+//						}
+						var one=true
+						var two=true
+						dom.find('.pic-box:eq(1)').scroll('scroll',function(){
+							if($(this).scrollTop()>80&&one){
+								one=false
+								pendGoogleImage(15)
+							    pendGoogleImage(20)
+							}
+							if($(this).scrollTop()>260&&two){
+								two=false
+		        				pendGoogleImage(25)
+								pendGoogleImage(30)
+								pendGoogleImage(35)
+							}
+						})
+					}());
+					(function(){
+						dom.find('.choose2 > li:eq(2)').one('click',function(){
+							    dom.find('.pic-box:eq(2)').show()
+								dom.find('.pic-box:eq(2) span:contains("上传本地图片")').attr('id',+new Date).uploadify({
+							        swf           : setting.swf,
+							        uploader      : setting.uploadUrl||'/uploadify/uploadify.php',
+									buttonText:'上传本地图片',
+									'fileObjName' : 'file',
+									'fileTypeExts' : '*.gif; *.jpg; *.png',
+									'fileSizeLimit' : '4MB',
+							        height        : 29,
+							        width         : 136,
+							        multi:false,
+									formData:setting.data,
+									onUploadSuccess:function(file, data, response){
+										 dom.find('span.current').removeClass('current')
+										 dom.find('div.pic img').attr('src',data)
+										 imageurl=data
+									}
+							   });	
+						})
+					}());
+					this.data('ifmAlumDom',dom)
+                	}
+					$.blockUI({ message:this.data('ifmAlumDom'),
+			                    css:{ border: 'none',
+								         width: '603px',
+										 top:  ($(window).height() -338) /2 + 'px',
+										 left: ($(window).width() -603) /2 + 'px'
+										},
+								overlayCSS:{opacity: 0}		 
+							})
+							
+				}
+  };
+
+  $.fn.ifmAlbum = function( method ) {
+    // Method calling logic
+    if ( methods[method] ) {
+      return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+    } else if ( typeof method === 'object' || ! method ) {
+      return methods.init.apply( this, arguments );
+    } else {
+      $.error( 'Method ' +  method + ' does not exist on jQuery.ifmAlbum' );
+    }    
+  };
+})( jQuery );

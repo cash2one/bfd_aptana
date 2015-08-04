@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>展示设置-关键词浮层</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/exp.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/temp.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/ifmWidget/css/ifmWidget.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+<script type="text/javascript" src="../../js/regulateSize.js"></script>
+<script type="text/javascript" src="../../js/changeSite.js"></script>
+<script type="text/javascript" src="../../js/messageTip.js"></script>
+	<script type="text/javascript"  src="../../resources/commons/jquery.form.js">
+    </script>
+    <script type="text/javascript"  src="../../resources/commons/jquery.validate.min.js">
+    </script>
+	<script type="text/javascript" src="../../resources/commons/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="../../resources/ifmWidget/js/ifmWidget.js"></script>
+	<script type="text/javascript" src="../../resources/jquery_tools/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="../../resources/jquery_tools/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="../../js/validateSession.js"></script>
+	<script type="text/javascript" src="../../js/Promo/商品推荐栏.js"></script>
+<link rel="shortcut icon" href="../../favicon.ico" >
+             </head>
+	<body>
+    <!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li>你好,<s:property value="#session.sessionUser.username" /></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="../../SiteManager/site/!index">站点管理</a></li>
+					<li><a href="../../Account/user/!showUpdatePassword">账号设置</a></li>
+					<li><a href="../../help.html" target="_blank">帮助中心</a></li>
+					<li class="no-bg"><a href="../../Account/user/!loginOut">退出</a></li>
+				</ul>
+			</div>
+			<a href="../../DataAnalysis/stat/!synthetical.action">
+                <div class="logo">
+                    <strong>media</strong>
+                </div>
+            </a>
+            
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="current">
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->		
+	<!-- content   开始 -->
+	<div id="content" class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<ul class="nav2">
+				<li><a href="#">收益统计</a></li>
+				<li><a href="#">收益提现</a></li>
+				<li  class="current"><a href="#">商品推荐栏</a></li>
+				<li class="rbgno"><a href="#">电商频道</a></li>
+			</ul>
+			<div class="m-con">
+				 <div class="con-1">
+				 	  <div class="arrow3"></div>
+					  <div class="section" style="position:relative;overflow:hidden;height:390px;">
+					  	       
+							   <div style="height: 20000em;position: absolute;">
+							   
+					  	      <div class="set-box promo-product-ad" style="height:390px;">
+							         <div class="product-ad">
+							         	 <p class="product-ad-top">开启商品推荐栏给您带来：</p>
+										 <ul>
+										 	<li>丰富网站内容，增加商品推荐</li>
+											<li>增加站长流量变现的渠道，快速变现</li>
+											<li>智能推荐网站内容相关商品，增加转化率</li>
+										 </ul>
+							         </div>
+					  	      </div>	
+							  
+						  	  <div class="set-box" style="height:390px">
+						  	  	   <div class="sbox-left" id="i4" style="width:800px;">
+								     <form id="form1" action="#" class="setting-form">
+									   <div class="top">
+											 <input type="checkbox" checked="checked" value="1" name="site.keySupernatant.isOpen" id="type0_c0" autocomplete="off">
+											<label for="type0_c0">开启商品推荐栏</label><em>完成设置后您网站就可以具有个性化推荐商品功能</em>
+										</div>
+								        <div class="display" style="margin-left:98px;*margin-left:115px;">
+										       	 <div class="item2">
+													<label>商品推荐栏名称：</label>
+													<div class="textbox">
+														<div class="textbox-l">
+															<div class="textbox-r">
+																<input type="text" style="text-align: left;" class="txt-width100" name="label" id="promo_label" autocomplete="off"/>			
+															</div>
+														</div>
+													</div>
+													<em>商品推荐标题，2-6个中文。</em>
+												</div>
+												<div class="item3">
+													<label>商品推荐栏行数：</label>
+													<div class="select_box3 select_box3_l1"><input type="text" readonly="readonly" value="2" id="promo_row" autocomplete="off" class="valid">	
+														<ul class="select_ul3" style="">
+															<li>2</li>
+															<li>1</li>
+														</ul>
+													</div>
+													<em>1-2行商品推荐栏</em>
+												</div>
+												<div class="item3">
+													<label style="width:126px;margin-left:-10px;overflow:visible;">商品推荐栏商品数量：</label>
+													<div class="select_box3 select_box3_l1"><input type="text" readonly="readonly"  value="3" id="promo_col" autocomplete="off" class="valid">	
+														<ul class="select_ul3" style="">
+															<li>5</li>
+															<li>4</li>
+															<li class="active">3</li>
+														</ul>
+													</div>
+													<em>商品推荐栏一行放置商品数量</em>
+												</div>
+												<div class="item3">
+													<label>推荐栏商品类型：</label>
+													<div class="select_box3 select_box3_l1"><input type="text" readonly="readonly"  value="请选择" name="selectBox" autocomplete="off" class="valid">	
+														<input type="hidden" name="" value="" id="promo_type" autocomplete="off"/>
+														<ul class="select_ul3" style="">
+															<li data-value="1">选项1</li>
+															<li data-value="2">选项2</li>
+															<li data-value="3">选项3</li>
+															<li data-value="4">选项4</li>
+														</ul>
+													</div>
+													<em>推荐商品是根据商品类型进行展示</em>
+												</div>
+												<div class="item2">
+													<label>&nbsp;</label>
+													<div class="textbox">
+														<!--
+														<a class="btn2" style="margin-left:0; float:left;">保 存</a><a class="btn2" style="margin-left:5px; float:left;">预 览</a>
+													   -->
+													   <a class="blue-btn1" id="btn1">
+															<span style="color: #FFFFFF;">保 存</span>
+														</a>
+														<a class="green-btn1" id="btn2">
+															<span style="color: #FFFFFF;">预览效果</span>
+														</a>
+													</div>
+												</div>
+								       	</div>
+									 </form>
+								   </div>
+							  <div class="set-right " style=" overflow: visible;display:none;">
+								<h4>商品推荐栏动态预览：</h4>
+								<div class="pre-promo-box" >
+										<span class="box-title">
+											dsaffffffffffff
+										</span>
+										<ul>
+											<li>
+												<a href="#">
+													<img src="../../images/pic-38.jpg"/>
+													<label>【数码节狂促1000台】抢到赚到尼康D3000！</label>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../../images/pic-38.jpg"/>
+													<label>【数码节狂促1000台】抢到赚到尼康D3000！</label>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../../images/pic-38.jpg"/>
+													<label>【数码节狂促1000台】抢到赚到尼康D3000！</label>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<img src="../../images/pic-38.jpg"/>
+													<label>【数码节狂促1000台】抢到赚到尼康D3000！</label>
+												</a>
+											</li>
+											
+											<li>
+												<a href="#">
+													<img src="../../images/pic-38.jpg"/>
+													<label>【数码节狂促1000台】抢到赚到尼康D3000！</label>
+												</a>
+											</li>
+											
+										</ul>
+										
+										<span class="box-bottom">推豆儿</span>
+								</div>
+							</div>
+						  </div>	
+						  
+						  </div>
+						  
+					  </div>	
+				 </div>	 
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p><%@ include file="/foot.jsp"%></p>
+	</div>
+	<!-- footer  结束 -->
+	</body>
+</html>

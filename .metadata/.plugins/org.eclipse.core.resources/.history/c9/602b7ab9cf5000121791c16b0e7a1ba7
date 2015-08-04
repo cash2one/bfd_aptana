@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>百分点分析引擎</title>
+<link href="./css/packed.css" rel="stylesheet" type="text/css" />
+<link href="./css/struct.css" rel="stylesheet" type="text/css" />
+<link href="./resources/menus/baeLeftBar/css/baeLeftBar.css" rel="stylesheet" type="text/css" />
+<link rel="favicon icon" href="favicon.ico" type="image/x-icon" />
+<!--[if IE]>
+<link href="./css/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+<link href="./css/ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript"  language="JavaScript" src="./resources/jquery/jquery.js"></script>
+<script type="text/javascript"  language="JavaScript" src="./resources/commons/jquery.cookie.js"></script>
+<script type="text/javascript"  language="JavaScript" src="./resources/menus/baeLeftBar/js/baeLeftBar.js"></script>
+<script type="text/javascript"  language="JavaScript" src="./js/main.js"></script>
+<script type="text/javascript" src="./resources/commons/jquery.cookie.js"></script>
+<script type="text/javascript" src="./loginOut.js"></script>
+<script type="text/javascript"  language="JavaScript" src="./js/frame.js"></script>
+<script type="text/javascript"  language="JavaScript">
+$(function(){
+	$.post("./user/getLoginedUser.action", null,
+			function(data){
+				var name = data.name;
+				var auth = data.auth;
+				$('#name').html(name);
+				if("true"==auth){
+					$('#func').hide().parent().css('margin-right','50px');
+				}
+			}
+		);
+	
+});
+</script>
+</head>
+
+<body>
+<div class="head">
+  <div class="logo"><a href="./function/charts/synthetical.html" target="function"></a></div>
+  <div class="menu">欢迎您 <span id="name"></span>
+  	<div id="func" style="display:inline;">
+  		&nbsp;|<a href="http://passport.baifendian.com/bbgweb/setting.jsp" target="_blank">账户设置</a>|<a href="http://www.baifendian.com/bae-faq/" target="_blank">帮助中心</a>|<a href="#" onClick="loginOut();">安全退出</a>
+  	</div>
+</div>
+</div>
+<div class="content">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top" class="left">
+      	<div style="width: 149px;overflow:hidden;">
+		      	<div class="zdsettings">
+		          <dl>
+		            <dt>站点：</dt>
+		            <dd><a href="./setting.html?action=site">管理</a></dd>
+		          </dl>
+		           <div class="zdlist">
+							 	  <div><a></a></div>
+								  <div class="others">
+								  	 
+								  </div>
+							</div>
+		        </div>
+		        <div class="menulist">
+		        </div>
+		</div>
+		</td>
+      <td valign="top" class="right">
+      	   <iframe src="./function/charts/synthetical.html" frameborder="0" border="0" cellspacing="0" style="width:100%;" scrolling="no" name="function" id="function"></iframe>
+		</td>
+    </tr>
+  </table>
+</div>
+<div class="footer">
+  <div class="l"><a  target="_blank" href="http://www.baifendian.com/product/">产品介绍</a> <a target="_blank" href="http://www.baifendian.com/contact/">联系我们</a> <a target="_blank" href="http://www.baifendian.com/intr/">公司简介</a></div>
+  <div class="r">京ICP备09109727号 Copyright © 2012 百分点信息科技有限公司. All Right Reserved.</div>
+</div>
+<div class="misc">
+  <div class="feedback"> <a href="#" class="trackable"></a> </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="273" key="DIALOG_WIDTH"/>
+		<item value="105" key="DIALOG_Y_ORIGIN"/>
+		<item value="1036" key="DIALOG_X_ORIGIN"/>
+		<item value="410" key="DIALOG_HEIGHT"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="&quot;" key="selection"/>
+		<list key="findhistory">
+			<item value="&quot;&quot;"/>
+			<item value="//"/>
+			<item value="content"/>
+			<item value="getYear "/>
+			<item value="setH"/>
+			<item value="setDate"/>
+			<item value="setdate"/>
+			<item value="s.substr(1)"/>
+		</list>
+		<list key="replacehistory">
+			<item value="&quot;"/>
+			<item value=""/>
+			<item value="getFullYear "/>
+			<item value="s.substr(delimiter.length)"/>
+			<item value="delimiter"/>
+			<item value="init?k:(path+&apos;/&apos;+k)"/>
+			<item value="radio"/>
+			<item value="setting.option[0]"/>
+		</list>
+	</section>
+</section>

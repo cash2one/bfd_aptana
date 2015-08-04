@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>站点管理</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<script type="text/javascript">
+		function changeTab(a){
+			var lis = document.getElementById('nav').getElementsByTagName("li");
+			//alert("111");
+			for (var i=0;i<lis.length;i++) {
+				if(lis[i]==a){				
+
+					lis[i].className="current";
+				}else{
+					lis[i].className="";
+
+				}
+			}
+		}
+	</script>
+	<script>
+		 window.onload = changeMainSize; 
+		 window.onresize = changeMainSize; 
+		 function changeMainSize(){ 
+		 var mainDiv = document.getElementById("content"); 
+		 mainDiv.style.height =  window.innerHeight-17-78+ "px"; 
+		}
+	</script>
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好,测试用户</a></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="">
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div id="content" class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<div class="m-title">站点管理</div>
+			<div class="m-con border-top">
+				<div class="con-5">
+					<table class="data-tab2" cellspacing="0" cellpadding="0" border="0">
+						<tr class="bg">
+							<th class="w184">网站地址</th>
+							<th class="w130">建站平台</th>
+							<th class="w280">状态</th>
+							<th class="brn">操作</th>
+						</tr>
+						<tr>
+							<td class="center"><span class="color">blog.baidu.com</span></td>
+							<td><span class="">PHPCms</span></td>
+							<td><span class="green">√正常</span></td>
+							<td class="brn padding-right14">
+								<span class="operate-btn margin0"><a href="#">删除</a></span>
+								<span class="operate-btn"><a href="#">网站信息</a></span>
+								<span class="operate-btn"><a href="#">插件代码</a></span>
+								<span class="operate-btn"><a href="#">后台管理</a></span>
+							</td>
+						</tr>
+						<tr>
+							<td class="center"><span class="color">blog.baidu.com</span></td>
+							<td><span class="">PHPCms</span></td>
+							<td><span class="red">×未安装</span></td>
+							<td class="brn padding-right14">
+								<span class="operate-btn margin0"><a href="#">删除</a></span>
+								<span class="operate-btn"><a href="#">重新安装</a></span>
+							</td>
+						</tr>
+						<tr>
+							<td class="bbn"><span class="color">blog.baidu.com</span></td>
+							<td class="bbn"><span class="">PHPCms</span></td>
+							<td class="bbn"><span class="red">×安装错误</span></td>
+							<td class="bbn brn padding-right14">
+								<span class="operate-btn margin0"><a href="#">删除</a></span>
+								<span class="operate-btn"><a href="#">重新安装</a></span>
+							</td>
+						</tr>
+					</table>
+					<a href="#" class="add-btn">添加站点</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+</body>
+</html>

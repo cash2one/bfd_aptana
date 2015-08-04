@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>date packed</title>
+		 <link rel="stylesheet" media="screen" type="text/css" href="../resources/datepicker/css/datepicker.css" />
+		<script type="text/javascript" language="JavaScript" src="../resources/jquery/jquery.js">
+        </script>
+        <script type="text/javascript" src="../resources/datepicker/js/datepicker.js">
+        </script>
+		     <script type="text/javascript" src="../resources/commons/jquery.maskedinput-1.3.min.js">
+        </script>
+        <script type="text/javascript" src="../resources/commons/date_tools.js">
+        </script>
+		<script type="text/javascript">
+			$(function(){
+                 var d0=new Date()
+				 d0.setDate('1')
+				 d0.setMonth(d0.getMonth()-1)
+				 $('input:eq(0)').val(formatDate(d0,'Y-m-d'))
+				 var d1=new Date()
+				 d1.setDate('1')
+				 d1.setDate(d1.getDate()-1)
+				 $('input:eq(1)').val(formatDate(d1,'Y-m-d'))
+				$('input:eq(0)').DatePicker({
+					date: $('input:eq(0)').val(),
+					current: $('input:eq(0)').val(),
+					starts: 1,
+					calendars: 1,
+	                mode: 'single',
+					position: 'bottom',
+					onBeforeShow: function(){
+						$('input:eq(0)').DatePickerSetDate($('input:eq(0)').val(), true);
+					},
+					onChange: function(formated, dates){
+						    $('input:eq(0)').val(formated);
+							$('input:eq(0)').DatePickerHide();
+					}
+				}).keypress(function(){
+					return false
+				})
+				$('input:eq(1)').DatePicker({
+					date: $('input:eq(1)').val(),
+					current: $('input:eq(1)').val(),
+					starts: 1,
+					calendars: 1,
+	                mode: 'single',
+					position: 'bottom',
+					onBeforeShow: function(){
+						$('input:eq(1)').DatePickerSetDate($('input:eq(1)').val(), true);
+					},
+					onChange: function(formated, dates){
+						    $('input:eq(1)').val(formated);
+							$('input:eq(1)').DatePickerHide();
+					}
+				}).keypress(function(){
+					return false
+				})
+				$('button').click(function(){
+					var d0=parseDate($('input:eq(0)').val(),'Y-m-d')
+					var d1=parseDate($('input:eq(1)').val(),'Y-m-d')
+					if(d1-d0<0){
+						alert('结束居然早于开始')
+					}else if(d1-d0==0){
+						alert('同一天')
+					}else if(d1-d0>100*20*60*60*1000){
+						alert('大于100天')
+					}else if(d1>=parseDate(formatDate(new Date,'Y-m-d'),'Y-m-d')){
+						alert('不能晚于今天')
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="text" value="2008-06-04">
+		<input type="text" value="2008-06-04">
+		<button>测试</button>
+	</body>
+</html>

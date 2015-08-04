@@ -1,0 +1,20 @@
+            div.arrow {
+                width: 80px;
+                height: 80px;
+				position: absolute;
+                cursor: pointer;
+                -webkit-border-radius: 40px;
+                -moz-border-radius: 40px;
+                border-radius: 40px;
+            }
+            
+            div#control-down{
+                background: rgba(255, 255, 255, 0.2) url(http://archive.unity3d.com/download_unity/4/sprites-4.png) -248px -150px no-repeat;
+            }
+            
+            div#control-up{
+                background: rgba(255, 255, 255, 0.2) url(http://archive.unity3d.com/download_unity/4/sprites-4.png) -248px -81px no-repeat;
+            }
+			div.allkj{
+				min-height:500px;
+			}

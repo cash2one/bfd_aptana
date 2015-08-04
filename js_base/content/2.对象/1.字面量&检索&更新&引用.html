@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>字面量&检索&更新&引用</title>
+		<script type="text/javascript">
+			//字面量
+			var o={
+				k1:'ttttt',
+				'k2':{
+					k21:'11111111'
+				},
+				k3:[1,2,3],
+				k4:true
+			}
+			//检索
+			var a1=o['k1-1']
+			var b1=o.k2.k21
+			//更新
+			o.k5=20
+			o.k4=false
+			//引用
+		    var a={},b={},c={}//a,b,c引用三个不同对象
+		    a=b=c={}//a,b,c都引用同一个对象
+		    //{}=={}
+			//[]==[]
+			alert(new Date)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

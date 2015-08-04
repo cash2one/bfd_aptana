@@ -1,0 +1,796 @@
+{
+	"data": {
+		"ad": {
+			"value": 73,
+			"color": "#2045FF"
+		},
+		"ae": {
+			"value": 83,
+			"color": "#202bFF"
+		},
+		"af": {
+			"value": 23,
+			"color": "#20c6FF"
+		},
+		"ag": {
+			"value": 99,
+			"color": "#2002FF"
+		},
+		"ai": {
+			"value": 46,
+			"color": "#208bFF"
+		},
+		"al": {
+			"value": 93,
+			"color": "#2012FF"
+		},
+		"am": {
+			"value": 77,
+			"color": "#203bFF"
+		},
+		"an": {
+			"value": 7,
+			"color": "#20efFF"
+		},
+		"ao": {
+			"value": 56,
+			"color": "#2071FF"
+		},
+		"ar": {
+			"value": 77,
+			"color": "#203bFF"
+		},
+		"as": {
+			"value": 94,
+			"color": "#200fFF"
+		},
+		"at": {
+			"value": 46,
+			"color": "#208bFF"
+		},
+		"au": {
+			"value": 20,
+			"color": "#20ceFF"
+		},
+		"aw": {
+			"value": 37,
+			"color": "#20a2FF"
+		},
+		"ax": {
+			"value": 42,
+			"color": "#2095FF"
+		},
+		"az": {
+			"value": 98,
+			"color": "#2005FF"
+		},
+		"ba": {
+			"value": 86,
+			"color": "#2024FF"
+		},
+		"bb": {
+			"value": 95,
+			"color": "#200cFF"
+		},
+		"bd": {
+			"value": 78,
+			"color": "#2038FF"
+		},
+		"be": {
+			"value": 81,
+			"color": "#2030FF"
+		},
+		"bf": {
+			"value": 17,
+			"color": "#20d5FF"
+		},
+		"bg": {
+			"value": 76,
+			"color": "#203dFF"
+		},
+		"bh": {
+			"value": 31,
+			"color": "#20b1FF"
+		},
+		"bi": {
+			"value": 98,
+			"color": "#2005FF"
+		},
+		"bj": {
+			"value": 68,
+			"color": "#2052FF"
+		},
+		"bn": {
+			"value": 88,
+			"color": "#201eFF"
+		},
+		"bo": {
+			"value": 54,
+			"color": "#2076FF"
+		},
+		"br": {
+			"value": 95,
+			"color": "#200cFF"
+		},
+		"bs": {
+			"value": 52,
+			"color": "#207bFF"
+		},
+		"bt": {
+			"value": 44,
+			"color": "#2090FF"
+		},
+		"bw": {
+			"value": 60,
+			"color": "#2067FF"
+		},
+		"by": {
+			"value": 45,
+			"color": "#208dFF"
+		},
+		"bz": {
+			"value": 14,
+			"color": "#20ddFF"
+		},
+		"ca": {
+			"value": 47,
+			"color": "#2088FF"
+		},
+		"cd": {
+			"value": 17,
+			"color": "#20d5FF"
+		},
+		"cf": {
+			"value": 43,
+			"color": "#2092FF"
+		},
+		"cg": {
+			"value": 80,
+			"color": "#2033FF"
+		},
+		"ch": {
+			"value": 30,
+			"color": "#20b4FF"
+		},
+		"ci": {
+			"value": 2,
+			"color": "#20fcFF"
+		},
+		"cl": {
+			"value": 17,
+			"color": "#20d5FF"
+		},
+		"cm": {
+			"value": 92,
+			"color": "#2014FF"
+		},
+		"cn": {
+			"value": 94,
+			"color": "#200fFF"
+		},
+		"co": {
+			"value": 87,
+			"color": "#2021FF"
+		},
+		"cr": {
+			"value": 10,
+			"color": "#20e7FF"
+		},
+		"cu": {
+			"value": 86,
+			"color": "#2024FF"
+		},
+		"cy": {
+			"value": 69,
+			"color": "#204fFF"
+		},
+		"cz": {
+			"value": 4,
+			"color": "#20f7FF"
+		},
+		"de": {
+			"value": 59,
+			"color": "#2069FF"
+		},
+		"dj": {
+			"value": 95,
+			"color": "#200cFF"
+		},
+		"dk": {
+			"value": 82,
+			"color": "#202eFF"
+		},
+		"dm": {
+			"value": 4,
+			"color": "#20f7FF"
+		},
+		"do": {
+			"value": 70,
+			"color": "#204dFF"
+		},
+		"dz": {
+			"value": 84,
+			"color": "#2029FF"
+		},
+		"ec": {
+			"value": 70,
+			"color": "#204dFF"
+		},
+		"ee": {
+			"value": 98,
+			"color": "#2005FF"
+		},
+		"eg": {
+			"value": 83,
+			"color": "#202bFF"
+		},
+		"eh": {
+			"value": 57,
+			"color": "#206eFF"
+		},
+		"er": {
+			"value": 15,
+			"color": "#20daFF"
+		},
+		"es": {
+			"value": 16,
+			"color": "#20d8FF"
+		},
+		"et": {
+			"value": 19,
+			"color": "#20d0FF"
+		},
+		"fi": {
+			"value": 46,
+			"color": "#208bFF"
+		},
+		"fj": {
+			"value": 80,
+			"color": "#2033FF"
+		},
+		"fr": {
+			"value": 53,
+			"color": "#2079FF"
+		},
+		"fk": {
+			"value": 82,
+			"color": "#202eFF"
+		},
+		"ga": {
+			"value": 34,
+			"color": "#20aaFF"
+		},
+		"uk": {
+			"value": 27,
+			"color": "#20bcFF"
+		},
+		"gd": {
+			"value": 19,
+			"color": "#20d0FF"
+		},
+		"ge": {
+			"value": 88,
+			"color": "#201eFF"
+		},
+		"gf": {
+			"value": 70,
+			"color": "#204dFF"
+		},
+		"gh": {
+			"value": 9,
+			"color": "#20eaFF"
+		},
+		"gi": {
+			"value": 94,
+			"color": "#200fFF"
+		},
+		"gl": {
+			"value": 61,
+			"color": "#2064FF"
+		},
+		"gm": {
+			"value": 47,
+			"color": "#2088FF"
+		},
+		"gn": {
+			"value": 46,
+			"color": "#208bFF"
+		},
+		"gp": {
+			"value": 45,
+			"color": "#208dFF"
+		},
+		"gq": {
+			"value": 87,
+			"color": "#2021FF"
+		},
+		"gr": {
+			"value": 71,
+			"color": "#204aFF"
+		},
+		"gt": {
+			"value": 52,
+			"color": "#207bFF"
+		},
+		"gw": {
+			"value": 93,
+			"color": "#2012FF"
+		},
+		"gy": {
+			"value": 95,
+			"color": "#200cFF"
+		},
+		"hk": {
+			"value": 92,
+			"color": "#2014FF"
+		},
+		"hm": {
+			"value": 84,
+			"color": "#2029FF"
+		},
+		"hn": {
+			"value": 100,
+			"color": "#2000FF"
+		},
+		"hr": {
+			"value": 59,
+			"color": "#2069FF"
+		},
+		"ht": {
+			"value": 87,
+			"color": "#2021FF"
+		},
+		"hu": {
+			"value": 68,
+			"color": "#2052FF"
+		},
+		"id": {
+			"value": 97,
+			"color": "#2007FF"
+		},
+		"ie": {
+			"value": 35,
+			"color": "#20a7FF"
+		},
+		"il": {
+			"value": 81,
+			"color": "#2030FF"
+		},
+		"in": {
+			"value": 86,
+			"color": "#2024FF"
+		},
+		"iq": {
+			"value": 7,
+			"color": "#20efFF"
+		},
+		"ir": {
+			"value": 50,
+			"color": "#2080FF"
+		},
+		"is": {
+			"value": 65,
+			"color": "#205aFF"
+		},
+		"it": {
+			"value": 65,
+			"color": "#205aFF"
+		},
+		"jm": {
+			"value": 45,
+			"color": "#208dFF"
+		},
+		"jo": {
+			"value": 69,
+			"color": "#204fFF"
+		},
+		"jp": {
+			"value": 31,
+			"color": "#20b1FF"
+		},
+		"ke": {
+			"value": 32,
+			"color": "#20afFF"
+		},
+		"kg": {
+			"value": 82,
+			"color": "#202eFF"
+		},
+		"kh": {
+			"value": 80,
+			"color": "#2033FF"
+		},
+		"kp": {
+			"value": 29,
+			"color": "#20b6FF"
+		},
+		"kr": {
+			"value": 93,
+			"color": "#2012FF"
+		},
+		"kw": {
+			"value": 100,
+			"color": "#2000FF"
+		},
+		"ky": {
+			"value": 40,
+			"color": "#209aFF"
+		},
+		"kz": {
+			"value": 14,
+			"color": "#20ddFF"
+		},
+		"la": {
+			"value": 42,
+			"color": "#2095FF"
+		},
+		"lb": {
+			"value": 90,
+			"color": "#2019FF"
+		},
+		"lc": {
+			"value": 5,
+			"color": "#20f4FF"
+		},
+		"lk": {
+			"value": 58,
+			"color": "#206cFF"
+		},
+		"lr": {
+			"value": 37,
+			"color": "#20a2FF"
+		},
+		"lt": {
+			"value": 39,
+			"color": "#209dFF"
+		},
+		"lu": {
+			"value": 4,
+			"color": "#20f7FF"
+		},
+		"lv": {
+			"value": 89,
+			"color": "#201cFF"
+		},
+		"ly": {
+			"value": 22,
+			"color": "#20c8FF"
+		},
+		"ma": {
+			"value": 7,
+			"color": "#20efFF"
+		},
+		"mc": {
+			"value": 88,
+			"color": "#201eFF"
+		},
+		"md": {
+			"value": 93,
+			"color": "#2012FF"
+		},
+		"me": {
+			"value": 54,
+			"color": "#2076FF"
+		},
+		"mg": {
+			"value": 45,
+			"color": "#208dFF"
+		},
+		"mk": {
+			"value": 5,
+			"color": "#20f4FF"
+		},
+		"ml": {
+			"value": 73,
+			"color": "#2045FF"
+		},
+		"mm": {
+			"value": 40,
+			"color": "#209aFF"
+		},
+		"mn": {
+			"value": 8,
+			"color": "#20ecFF"
+		},
+		"mq": {
+			"value": 93,
+			"color": "#2012FF"
+		},
+		"mr": {
+			"value": 45,
+			"color": "#208dFF"
+		},
+		"ms": {
+			"value": 10,
+			"color": "#20e7FF"
+		},
+		"mt": {
+			"value": 26,
+			"color": "#20beFF"
+		},
+		"mw": {
+			"value": 67,
+			"color": "#2055FF"
+		},
+		"mx": {
+			"value": 17,
+			"color": "#20d5FF"
+		},
+		"my": {
+			"value": 2,
+			"color": "#20fcFF"
+		},
+		"mz": {
+			"value": 91,
+			"color": "#2017FF"
+		},
+		"na": {
+			"value": 22,
+			"color": "#20c8FF"
+		},
+		"nc": {
+			"value": 30,
+			"color": "#20b4FF"
+		},
+		"ne": {
+			"value": 39,
+			"color": "#209dFF"
+		},
+		"ng": {
+			"value": 45,
+			"color": "#208dFF"
+		},
+		"ni": {
+			"value": 71,
+			"color": "#204aFF"
+		},
+		"nl": {
+			"value": 80,
+			"color": "#2033FF"
+		},
+		"no": {
+			"value": 12,
+			"color": "#20e2FF"
+		},
+		"np": {
+			"value": 19,
+			"color": "#20d0FF"
+		},
+		"nz": {
+			"value": 9,
+			"color": "#20eaFF"
+		},
+		"om": {
+			"value": 55,
+			"color": "#2073FF"
+		},
+		"pa": {
+			"value": 76,
+			"color": "#203dFF"
+		},
+		"pe": {
+			"value": 53,
+			"color": "#2079FF"
+		},
+		"pg": {
+			"value": 24,
+			"color": "#20c3FF"
+		},
+		"ph": {
+			"value": 96,
+			"color": "#200aFF"
+		},
+		"pk": {
+			"value": 94,
+			"color": "#200fFF"
+		},
+		"pl": {
+			"value": 23,
+			"color": "#20c6FF"
+		},
+		"pr": {
+			"value": 54,
+			"color": "#2076FF"
+		},
+		"pt": {
+			"value": 32,
+			"color": "#20afFF"
+		},
+		"py": {
+			"value": 42,
+			"color": "#2095FF"
+		},
+		"qa": {
+			"value": 87,
+			"color": "#2021FF"
+		},
+		"ro": {
+			"value": 22,
+			"color": "#20c8FF"
+		},
+		"rs": {
+			"value": 35,
+			"color": "#20a7FF"
+		},
+		"ru": {
+			"value": 65,
+			"color": "#205aFF"
+		},
+		"rw": {
+			"value": 3,
+			"color": "#20f9FF"
+		},
+		"sa": {
+			"value": 2,
+			"color": "#20fcFF"
+		},
+		"sb": {
+			"value": 50,
+			"color": "#2080FF"
+		},
+		"sd": {
+			"value": 62,
+			"color": "#2061FF"
+		},
+		"se": {
+			"value": 70,
+			"color": "#204dFF"
+		},
+		"sg": {
+			"value": 64,
+			"color": "#205cFF"
+		},
+		"si": {
+			"value": 63,
+			"color": "#205fFF"
+		},
+		"sk": {
+			"value": 55,
+			"color": "#2073FF"
+		},
+		"sl": {
+			"value": 8,
+			"color": "#20ecFF"
+		},
+		"sn": {
+			"value": 54,
+			"color": "#2076FF"
+		},
+		"so": {
+			"value": 49,
+			"color": "#2083FF"
+		},
+		"sr": {
+			"value": 69,
+			"color": "#204fFF"
+		},
+		"sv": {
+			"value": 89,
+			"color": "#201cFF"
+		},
+		"sy": {
+			"value": 30,
+			"color": "#20b4FF"
+		},
+		"sz": {
+			"value": 77,
+			"color": "#203bFF"
+		},
+		"td": {
+			"value": 59,
+			"color": "#2069FF"
+		},
+		"tf": {
+			"value": 6,
+			"color": "#20f2FF"
+		},
+		"tg": {
+			"value": 33,
+			"color": "#20acFF"
+		},
+		"th": {
+			"value": 35,
+			"color": "#20a7FF"
+		},
+		"tj": {
+			"value": 82,
+			"color": "#202eFF"
+		},
+		"tl": {
+			"value": 73,
+			"color": "#2045FF"
+		},
+		"tm": {
+			"value": 16,
+			"color": "#20d8FF"
+		},
+		"tn": {
+			"value": 69,
+			"color": "#204fFF"
+		},
+		"to": {
+			"value": 1,
+			"color": "#20ffFF"
+		},
+		"tr": {
+			"value": 43,
+			"color": "#2092FF"
+		},
+		"tt": {
+			"value": 77,
+			"color": "#203bFF"
+		},
+		"tw": {
+			"value": 94,
+			"color": "#200fFF"
+		},
+		"tz": {
+			"value": 56,
+			"color": "#2071FF"
+		},
+		"ua": {
+			"value": 62,
+			"color": "#2061FF"
+		},
+		"ug": {
+			"value": 35,
+			"color": "#20a7FF"
+		},
+		"us": {
+			"value": 8,
+			"color": "#20ecFF"
+		},
+		"uy": {
+			"value": 48,
+			"color": "#2085FF"
+		},
+		"uz": {
+			"value": 39,
+			"color": "#209dFF"
+		},
+		"vc": {
+			"value": 2,
+			"color": "#20fcFF"
+		},
+		"ve": {
+			"value": 50,
+			"color": "#2080FF"
+		},
+		"vn": {
+			"value": 98,
+			"color": "#2005FF"
+		},
+		"vu": {
+			"value": 16,
+			"color": "#20d8FF"
+		},
+		"wa": {
+			"value": 76,
+			"color": "#203dFF"
+		},
+		"wf": {
+			"value": 96,
+			"color": "#200aFF"
+		},
+		"ye": {
+			"value": 20,
+			"color": "#20ceFF"
+		},
+		"za": {
+			"value": 18,
+			"color": "#20d3FF"
+		},
+		"ls": {
+			"value": 25,
+			"color": "#20c1FF"
+		},
+		"zm": {
+			"value": 66,
+			"color": "#2057FF"
+		},
+		"zw": {
+			"value": 34,
+			"color": "#20aaFF"
+		}
+	}
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="fcb1899chart/fcb1899chart.js"></script>
+		<script type="text/javascript">
+             $(function(){
+			 	var data1={
+					title:'某人的西甲数据',
+					x:['2008-2009', '2009-2010', '2010-2011', '2011-2012', '2012-2013'],//x轴-赛季
+					starter:[2, 3, 5, 7, 6],//首发数据
+					bench:[3, 2, 1, 3, 4],//替补数据
+					goals: [30, 40, 50, 60, 70],//进球数
+					yellow:[3, 5, 4, 6, 83]//黄牌
+				}
+				var data2={
+					title:'某人的国王杯数据',
+					x:['2008-2009', '2009-2010', '2010-2011', '2011-2012', '2012-2013'],//x轴-赛季
+					starter:[20, 30, 50, 7, 10],//首发数据
+					bench:[3, 2, 1, 3, 4],//替补数据
+					goals: [30, 40, 50, 60, 70],//进球数
+					yellow:[3, 5, 4, 6, 83]//黄牌
+				}
+				var data3={
+					title:'某人的欧冠数据',
+					x:['2008-2009', '2009-2010', '2010-2011', '2011-2012', '2012-2013'],//x轴-赛季
+					starter:[20, 30, 50, 70, 60],//首发数据
+					bench:[3, 2, 1, 3, 4],//替补数据
+					goals: [35, 45, 55, 65, 75],//进球数
+					yellow:[3, 5, 4, 6, 18]//黄牌
+				}
+				var setting = $.extend({}, data1, {
+					renderTo: 'container',//渲染到元素的id,非必须,默认为container
+//					backgroundImage: path+'images/bg.jpg',背影图片,非必须,不建议在此更改，如更换可直接换掉fac1899chart/images/bg.jpg
+					bench_color: '#B22222',//替补场次颜色,非必须,默认为'#B22222'
+					starter_color: '#0000FF',//首发场次颜色,非必须,默认为#0000FF
+					goals_color: '#008000',//进球线颜色,非必须,默认为#008000
+					yellow_color: '#FFFF00'//黄牌颜色,非必须,默认为#FFFF00
+				})
+			 	var chart=$.fcb1899chart(setting)
+				$('button').toggle(function(){
+					chart.reset(data2)
+				},function(){
+					chart.reset(data3)
+				},function(){
+					chart.reset(data1)
+				})
+			 })
+		</script>
+	</head>
+	<body>
+<div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
+<button>test</button>
+	</body>
+</html>

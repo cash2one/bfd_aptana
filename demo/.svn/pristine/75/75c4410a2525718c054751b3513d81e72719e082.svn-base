@@ -1,0 +1,83 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+					autoOffset();
+					buttonEvent();
+	                $(window.parent.window).scroll(function(){
+                    $('.chapter-labels').each(function(){
+                        var contentHeight = window.parent.document.documentElement.clientHeight - 160//+99
+                        var contentWidth = window.parent.document.documentElement.clientWidth
+                        var leftMargin = (contentWidth - 980) / 2
+                        //							  leftMargin=leftMargin*2
+                        var scollHeigth = $(window.parent.window).scrollTop() + 160
+                        var top = $(this).offset().top + 160
+                        if (top >= scollHeigth && top <= scollHeigth + contentHeight + 99) {
+//                            console.info((top - scollHeigth - contentHeight) / contentHeight)
+                            var scale = 1 - ((top - scollHeigth) / contentHeight)
+                            $(this).css('margin-right', leftMargin + 430 - ((leftMargin + 430 + 248) * scale) + 'px')
+                            
+                        }
+						//确定当前容器
+						if(top == scollHeigth ){
+							$(".allkj").attr("show","flase");
+							$(this).parent().attr("show","true");
+						}
+						
+                    })
+					autoOffset();
+                })
+})
+
+function autoOffset(){
+	var scollhe = $(window.parent.window).scrollTop();
+	$(".buttonDiv").css("top",scollhe);
+	$(".buttonDiv").height( window.parent.document.documentElement.clientHeight - 160);
+}
+
+function buttonEvent(){
+	var $controlUp = $("#control-up");
+	var $controlDown = $("#control-down");
+	var $controlUpC = $(".control-up");
+	var $$controlDownc = $(".control-down");
+	$controlUpC.hover(
+		function(){ $controlUp.show();},
+		function(){ $controlUp.hide(); }
+	);
+
+	$controlUpC.mousemove(function(event){
+		var wwt = event.pageY < ($(window.top.document).scrollTop() + 150);
+		if(wwt){
+			var my = event.pageY - $(window.top.document).scrollTop() - 40; 
+			$controlUp.css({top:my,left:event.pageX-40});
+		}
+	});
+	
+	$$controlDownc.mousemove(function(event){
+		var h = window.parent.document.documentElement.clientHeight - 160;
+		var wwt = event.pageY > ($(window.top.document).scrollTop()+ h - 150);
+		if(wwt){
+			var my = event.pageY - $(window.top.document).scrollTop()-h+150 - 40; 
+			$controlDown.css({top:my,left:event.pageX-40});
+		}
+	});
+
+
+	$$controlDownc.hover(
+		function(){$controlDown.show();},
+		function(){$controlDown.hide(); }
+	);
+	
+	$controlUp.click(function(){
+			var Obj = $("div[show ='true']").prev("div[show='flase']");
+			var next_top = Obj.offset().top;
+			window.top.setScroll(next_top);
+	});
+	
+	$controlDown.click(function(){
+			var Obj = $("div[show ='true']").next("div[show='flase']");
+			var next_top = Obj.offset().top;
+			window.top.setScroll(next_top);
+	});
+}
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Bootstrap, from Twitter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <style>
+            body {
+                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+            }
+        </style>
+        <link href="./resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="./resources/jquery/jquery.js">
+        </script>
+        <script src="./resources/bootstrap/js/bootstrap.min.js">
+        </script>  
+         <script type="text/javascript">
+         			$(function(){
+	$('li > a').click(function(){
+		$(this).css('background-color','#7bbfea')
+		$(this).parent().siblings().find('>a').css('background-color','#fff')
+	})
+})
+	</script>
+	</head>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+					亲，来考试咯
+                </div>
+            </div>
+        </div>
+        
+        <div class="alert alert-success">
+    		<h4>6.关于自然人，下列阐述错误的一项是（ ）</h4>
+    	</div>
+       
+    	    <ul class="nav nav-tabs nav-stacked">
+
+    	    	<li>
+				<a class="row"><span class="badge badge-success span1">A</span><span class="span11">自然人一出生就成为独立享有法律规定的权利和义务的民事主体</span></a>
+				</li>
+				<li>
+				<a><span class="badge badge-success">B</span>自然人不包括外国人和无国籍人</a>
+				</li>
+				<li>
+				<a><span class="badge badge-success">C</span>自然人的民事权利终身享有，不可剥夺</a>
+				</li>
+				<li>
+				<a><span class="badge badge-success">D</span>自然人的民事行为能力以民事权利能力为前提</a>
+				</li>
+    		</ul>
+ <!--     	
+    	<div class="span12">
+			<span class="badge badge-success">A</span>
+			<a>自然人一出生就成为独立享有法律规定的权利和义务的民事主体</a>
+		</div>
+		<div class="span12">
+			<span class="badge badge-warning">B</span>
+			自然人不包括外国人和无国籍人
+		</div>
+		<div class="span12">
+			<span class="badge badge-error">C</span>
+			自然人的民事权利终身享有，不可剥夺
+		</div>
+		<div class="span12">
+			<span class="badge badge-info">D</span>
+			自然人的民事行为能力以民事权利能力为前提
+		</div>
+-->
+	<ul class="pager">
+    <li class="previous">
+    <a href="#">&larr; 上一题</a>
+    </li>
+    <li class="next">
+    <a href="#">下一题 &rarr;</a>
+    </li>
+    </ul>
+
+	    
+    </body>
+</html>

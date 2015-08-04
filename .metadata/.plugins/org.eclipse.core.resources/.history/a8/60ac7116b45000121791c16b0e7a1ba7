@@ -1,0 +1,146 @@
+/**
+ * @author Administrator
+ */
+(function( $ ){
+	$.template('_alertFail' , '<div class="float-layer">'+
+											'<div class="fl-title">'+
+											'<h4>${title}</h4>'+
+											'<a href="#">&nbsp;</a>'+
+											'</div>'+
+											'<div class="fl-content2 plr39">'+
+											'<img src="${basePath}/images/doubt.png" class="doubt-pic" alt="">'+
+											'<p class="doubt">${content}</p>'+
+											'<div class="btn-2">'+
+											'<a href="#" class="grey-btn1">'+
+											'<span>知道了</span>'+
+											'</a>'+
+											'</div>'+
+											'</div>'+
+											'</div>')
+	$.template('_alertSuccess','<div class="float-layer ">'+
+												'<div class="fl-title">'+
+												'<h4>${title}</h4>'+
+												'<a href="#">&nbsp;</a>'+
+												'</div>'+
+												'<div class="fl-content2 plr39">'+
+												'<p class="win"><img alt="" class="win-pic" src="${basePath}/images/win-2.png">${title}</p>'+
+												'<div class="btn-2">'+
+												'<a class="grey-btn1" href="#">'+
+												'<span>知道了</span>'+
+												'</a>'+
+												'</div>'+
+												'</div>'+
+												'</div>')		
+	$.template('_alertSuccessMuti','<div class="float-layer">'+
+														'<div class="fl-title">'+
+														'<h4>${title}</h4>'+
+													//	'<a href="#">&nbsp;</a>'+
+														'</div>'+
+														'<div class="fl-content2 ">'+
+														'<p class="win"><img alt="" class="win-pic" src="${basePath}/images/win-2.png">${content}</p>'+
+														//'<p class="tip">3秒后，进入<a class="admin" href="#">管理后台</a></p>'+
+														'</div>'+
+														'</div>')		
+	$.template('_confirmNormal','<div class="float-layer">'+
+													'<div class="fl-title">'+
+													'<h4>${title}</h4>'+
+													'<a href="#">&nbsp;</a>'+
+													'</div>'+
+													'<div class="fl-content">'+
+													'<p>${content}</p>'+
+													'<div class="btn">'+
+													'<a class="blue-btn1" href="#">'+
+													'<span>确 定</span>'+
+													'</a>'+
+													'<a class="grey-btn1" href="#">'+
+													'<span>取 消</span>'+
+													'</a>'+
+													'</div>'+
+													'</div>'+
+													'</div>')																														
+  var methods = {
+    'alertFail' : function( options ) { 
+	        var defaults={
+				callBack:$.noop
+			}
+			var setting = $.extend(true, defaults, options)
+	        var dom=$.tmpl('_alertFail',setting)
+			dom.find('.fl-title a').add(dom.find('.fl-content2 .btn-2 a')).click(function(){
+				$.unblockUI()
+				setting.callBack()
+			})
+			$.blockUI({ message:dom,
+			                    css:{ border: 'none',
+								         width: '300px',
+										 top:  ($(window).height() - 204) /2 + 'px'},
+								overlayCSS:{opacity: 0}		 
+							})
+    },
+	 'alertSuccess' : function( options ) { 
+	       var defaults={
+				callBack:$.noop
+			}
+			var setting = $.extend(true, defaults, options)
+	        var dom=$.tmpl('_alertSuccess',setting)
+			dom.find('.fl-title a').add(dom.find('.fl-content2 .btn-2 a')).click(function(){
+				$.unblockUI()
+				setting.callBack()
+			})
+			$.blockUI({ message:dom,
+			                    css:{ border: 'none',
+								         width: '300px',
+										 top:  ($(window).height() - 204) /2 + 'px'},
+								overlayCSS:{opacity: 0}		 
+							})
+    },
+	'alertSuccessMuti' : function( options ) { 
+	        var defaults={
+				dom:$()
+			}
+			var setting = $.extend(true, defaults, options)
+	        var dom=$.tmpl('_alertSuccessMuti',setting)
+			setting.dom.appendTo(dom.find('.fl-content2'))
+			$.blockUI({ message:dom,
+			                    css:{ border: 'none',
+								         width: '300px',
+										 top:  ($(window).height() - 204) /2 + 'px'},
+								overlayCSS:{opacity: 0}		 
+							})
+    },
+    'confirmNormal' : function( ) {
+			var defaults={
+				yesCallBack:$.noop,
+				noCallBack:$.noop
+			}
+			var setting = $.extend(true, defaults, options)
+	        var dom=$.tmpl('_confirmNormal',setting)
+			dom.find('.fl-title a').add(dom.find('.fl-content2 .btn-2 a')).click(function(){
+				$.unblockUI()
+				setting.callBack()
+			})
+			$.blockUI({ message:dom,
+			                    css:{ border: 'none',
+								         width: '300px',
+										 top:  ($(window).height() - 204) /2 + 'px'},
+								overlayCSS:{opacity: 0}		 
+							})
+    },
+    'loading' : function( ) { 
+	
+    }
+  };
+
+  $.ifmWidget = function( method ) {
+    
+    // Method calling logic
+    if ( methods[method] ) {
+      return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+    } else if ( typeof method === 'object' || ! method ) {
+      return methods.init.apply( this, arguments );
+    } else {
+      $.error( 'Method ' +  method + ' does not exist on jQuery.ifmWidget' );
+    }    
+  
+  };
+
+})( jQuery );

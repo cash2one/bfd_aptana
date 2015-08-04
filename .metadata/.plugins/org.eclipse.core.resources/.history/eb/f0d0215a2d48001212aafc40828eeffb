@@ -1,0 +1,32 @@
+.pagination {
+            font-size: 80%;
+        }
+        
+.pager a {
+    text-decoration: none;
+	border: solid 1px #e5e5e5;
+	color: #444;
+}
+.pager a:hover,.pager .current{
+   background:url(../images/nav_active.jpg) center repeat-x #c33; text-decoration:none; color:#fff; border-color:#c33;
+}
+.pager .current.prev, .pager .current.next{
+	color:#999;
+	background:#fff;
+	border: solid 1px #e5e5e5;
+	}
+
+.pager a, .pager span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+}
+.page_info,form{ float:left; font-size:12px;padding:0; margin:0; display:block;}
+.page_info{ padding-top:1px;}
+.page_info span{ float:left;}
+.page_num{ display:block; padding: 0.3em 0.5em;}
+.page_form{ padding-top:1px;}
+.page_form input{vertical-align:middle; margin-top:-2px; _padding-top:2px; _padding-bottom:0px;}
+.page_form input.page_input{ width:24px; height:12px; margin-left:5px; margin-right:5px;}

@@ -1,0 +1,158 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>内容管理-图片管理</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/exp.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/ifmWidget/css/ifmWidget.css" />
+	<script type="text/javascript">
+	     var sessionData={'JSESSIONID':"<%= session.getId() %>"}
+	</script>
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+<script type="text/javascript" src="../../js/regulateSize.js"></script>
+<script type="text/javascript" src="../../js/changeSite.js"></script>
+<script type="text/javascript" src="../../js/messageTip.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="../../resources/ifmWidget/js/ifmWidget.js"></script>
+	<script type="text/javascript" src="../../resources/uploadify/jquery.uploadify.min.js"></script>
+	<script type="text/javascript" src="../../js/validateSession.js"></script>
+	<script type="text/javascript" src="../../js/ContentManager/content-imagemanager.js"></script>
+	<style type="text/css">
+	.uploadify-button-text{font-size:10px;}
+	#file-box,#file-box2{left:0;}
+	</style>
+<link rel="shortcut icon" href="../../favicon.ico" >
+             </head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li>你好,<s:property value="#session.sessionUser.username" /></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="../../SiteManager/site/!index">站点管理</a></li>
+					<li><a href="../../Account/user/!showUpdatePassword">账号设置</a></li>
+					<li><a href="../../help.html" target="_blank">帮助中心</a></li>
+					<li class="no-bg"><a href="../../Account/user/!loginOut">退出</a></li>
+				</ul>
+			</div>
+			<a href="../../DataAnalysis/stat/!synthetical.action">
+                <div class="logo">
+                    <strong>media</strong>
+                </div>
+            </a>
+            
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="current">
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../Promo/profit/!showRecommendedBar">
+                    <em class="icon5">&nbsp;</em>
+                    <span>自盈利</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div id="content" class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<ul class="nav2 padding-left40">
+				<li class=""><a href="../../ContentManager/content/!showEmbodyStatistics">收录统计</a></li>
+				<li class="rbgno current"><a href="../../ContentManager/content/!showImageManager">图片设置</a></li>
+			</ul>
+			<div class="m-con">
+				<div class="con-6">
+					<div class="arrow"></div>
+					<div class="title">
+						<h2>默认图片设置</h2>
+					</div>
+					<div class="upload-set">
+						<div class="upload-pic" style="position:relative;">
+						     <div  style="width:142px;height:143px;position: absolute;">
+							       <div id="file-box2"></div>
+							 </div>
+						     <img src='<s:property value="defaulrSiteImageUrl"/>' style="width:140px;height:140px;"/>
+						</div>
+						<div class="set">
+							<div class="file-box">
+							    <div  style="width:315px;height:32px;position: absolute;">
+							       <div id="file-box"></div>
+							    </div>
+								<form action="../../ContentManager/content/!saveSettingImage" method="post" enctype="">
+									<input type='text' name='textfield' id='textfield' class='txt'  readonly="readonly" />  
+									<input type='button' class='btn' value='' />
+									<input type="button" name="fileField" class="file" id="file" size="28"  />
+								</form>
+							</div>
+							<p class="note">支持jpg、jpeg、gif、png格式，且文件大小不超过2M的图片</p>
+						</div>
+					</div>	
+					<a id="sub" class="cannot-save-btn">保 存</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p><%@ include file="/foot.jsp"%>/p>
+	</div>
+	<!-- footer  结束 -->
+    <!-- 站点设置 -->
+    <div class="site_setting_container">
+       <div class="site_setting_wrap">
+                <!-- site-ad  开始 -->
+                <div class="site-ad">
+                    <div class="click-btn"><s:property value="#session.sessionUser.address"/></div>
+                    <ul class="this">
+                        <s:iterator value="#session.sessionUser.sites"><li class="site"><a class="bg" href="../../SiteManager/site/!changeSiteOfSessionUser?siteId=<s:property value="id"/>"><s:property value="address"/></a></li></s:iterator>
+                        <li class="site admin">
+                            <span class="add-s"><a href="../../SiteManager/site/!showCheckingAddress">+添加站点</a></span>
+                            <span class="s-ad"><a href="../../SiteManager/site/!index">站点管理></a> </span>
+                        </li>
+                    </ul>
+                </div>
+             <!-- site-ad 结束 -->
+       </div>
+    </div>
+    <!-- 站点设置结束 -->
+</body>
+</html>

@@ -1,0 +1,166 @@
+[{
+	"id": 0,
+	"type": "menuitem",
+	"container": "menu",
+	"cols": ["uv", "pv"]
+}, {
+	"id": 1,
+	"type": "chart",
+	"container": "container",
+	"cols": ["uv", "pv"],
+	"groupBy": ["s1", "s2"],
+	"option": {
+		"chart": {
+			"type": "line",
+			"width": 1000,
+			"height": 600,
+			"alignTicks": false
+		},
+		"credits": {
+			"enabled": false
+		},
+		"title": {
+			"text": "Average Monthly Weather Data for Tokyo"
+		},
+		"subtitle": {
+			"text": "Source: WorldClimate.com"
+		},
+		"xAxis": [{
+			"gridLineWidth": 1,
+			"endOnTick": true,
+			"startOnTick": true
+		}, {
+			"opposite": true,
+			"gridLineWidth": 0
+		}],
+		"yAxis": [{
+			
+			"title": {
+				"text": "Temperature",
+				"style": {
+					"color": "#89A54E"
+				}
+			},
+			"opposite": true
+
+		}, {
+			"gridLineWidth": 0,
+			"title": {
+				"text": "Rainfall",
+				"style": {
+					"color": "#4572A7"
+				}
+			}
+
+		}, {
+			"gridLineWidth": 0,
+			"title": {
+				"text": "Sea-Level Pressure",
+				"style": {
+					"color": "#AA4643"
+				}
+			},
+			"opposite": true
+		}],
+		"tooltip": {
+
+		},
+		"legend": {
+			"layout": "vertical",
+			"align": "left",
+			"x": 120,
+			"verticalAlign": "top",
+			"floating": true,
+			"backgroundColor": "#FFFFFF"
+		}
+
+	}
+}, {
+	"id": 2,
+	"type": "chart",
+	"container": "pie",
+	"option": {
+		"chart": {
+			"plotBackgroundColor": null,
+			"plotBorderWidth": null,
+			"plotShadow": false
+		},
+		"title": {
+			"text": "Browser market shares at a specific website, 2010"
+		},
+		"tooltip": {
+			"formatter": null
+		}
+
+	}
+}, {
+	"id": 3,
+	"type": "worldmap",
+	"container": "worldmap",
+	"option": {
+		"chart": {
+			"type": "map",
+			"animation": false,
+			"borderWidth": 1,
+			"width": 1200,
+			"height": 800
+		},
+		"title": {
+			"text": "China"
+		},
+		"legend": {
+			"enabled": false
+		},
+		"credits": {
+			"enabled": false
+		},
+		"tooltip": {},
+		"series": [{
+			"data": [],
+			"dataLabels": {
+				"enabled": false,
+				"color": "white",
+				"style": {
+					"fontWeight": "bold"
+				}
+			},
+			"name": "",
+			"cursor": "pointer"
+		}]
+	}
+}, {
+	"id": 4,
+	"type": "chinamap",
+	"container": "chinamap",
+	"option": {
+		"chart": {
+			"type": "map",
+			"animation": false,
+			"borderWidth": 1,
+			"width": 850,
+			"height": 755
+		},
+		"title": {
+			"text": "China"
+		},
+		"legend": {
+			"enabled": false
+		},
+		"credits": {
+			"enabled": false
+		},
+		"tooltip": {},
+		"series": [{
+			"data": [],
+			"dataLabels": {
+				"enabled": false,
+				"color": "white",
+				"style": {
+					"fontWeight": "bold"
+				}
+			},
+			"name": "",
+			"cursor": "pointer"
+		}]
+	}
+}]

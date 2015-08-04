@@ -1,0 +1,47 @@
+$(function(){
+    var spacing = 1 / 14, character = 26 / 28, array = [], xAxisLabel = []
+    for (var i = 0; i < 16; i++) {
+        console.info(Math.pow(character, i) * spacing)
+        array.push(Math.pow(character, i) * spacing)
+        xAxisLabel.push(i + 1)
+    }
+    function format(value){
+        return value * 100 + '%'
+    }
+    new Highcharts.Chart({
+        chart: {
+            renderTo: 'container',
+            type: 'column'
+        },
+        title: {
+            text: null
+        },
+        xAxis: {
+            categories: xAxisLabel
+        },
+        yAxis: {
+            title: {
+                text: null
+            },
+            labels: {
+                formatter: function(){
+                    return format(this.value).replace(/\.\d+/g, '')
+                }
+            }
+        },
+        tooltip: {
+            formatter: function(){
+                return '出现' + this.x + '个字母单词的概率是' + format(this.y)
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            data: array
+        }]
+    });
+})

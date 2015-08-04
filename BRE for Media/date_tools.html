@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script type="text/javascript" src="./resources/baifendianWidgetsCombo/commons/date_tools.js"></script>
+		<script type="text/javascript">
+			var re=/^(\d{4})(\d{2})(\d{2})$/
+			var result=re.exec('20121225')
+		    var now =new Date()
+			var end=now.getTime()
+			now.setFullYear(parseInt(result[1],10))
+			now.setMonth(parseInt(result[2],10)-1)
+			now.setDate(parseInt(result[3],10))
+			var start=now.getTime()
+			var range= (end-start)/ 3600000 / 24
+			console.info(range)
+//			var d=parseDate('20111225','ymd')
+//			console.info(d)
+//			var d1=parseDate('2011-12-25','y-m-d')
+//			console.info(d1)
+		</script>
+		<title>Untitled Document</title>
+	</head>
+	<body>
+	</body>
+</html>

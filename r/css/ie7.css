@@ -1,0 +1,31 @@
+@charset "utf-8";
+/*.right .datacontent .data03 .ud_select {
+	padding: 8px;
+}
+.right .datacontent .data03 .ud_select ul li {
+	line-height: 6px;
+	margin-bottom: 6px;
+}
+.right .datacontent .data03 .ud_select ul li {
+	display: block;
+	width: 115px;
+	float: left;
+	line-height: 12px;
+	font-size: 12px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}*/
+.right .datacontent .data03 .ud_select ul li input {
+	margin: 0px;
+	padding: 0px;
+	font-size: 1px;
+	height: 12px;
+	width: 12px;
+}
+.right .datacontent .data03 .ud_select ul li span {
+	display: block;
+	float: left;
+	padding-top: 1px;
+}

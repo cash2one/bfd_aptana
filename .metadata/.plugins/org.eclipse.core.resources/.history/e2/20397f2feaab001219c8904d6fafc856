@@ -1,0 +1,230 @@
+.clear-both{clear:both;}
+.content-box{padding-left:45px;
+                     .content-top{
+                     	 $left-width : 125px;
+						 height:30px;
+						 line-height:30px;
+                     	 .top-left{
+                     	 	float:left;
+                     	 	width: $left-width ;
+							label{
+								color: #444444;
+                                cursor: pointer;
+								vertical-align:middle;
+								padding:{
+									right:5px;
+								}
+								font:{
+									size:14px;
+									weight: bold;
+									family:Tahoma;
+								}
+							}
+                     	 }
+						 .top-right{
+							margin:{
+								left:$left-width;
+							}
+							color:#999999;
+							font:{
+								family: arial;
+								size:12px;
+							}
+							padding:{
+								top:2px;
+							}
+						 }
+                     }
+				.content-contentbox{
+					.content-items li{
+						$fontsize:14px;
+						$topbottom:20px;
+						margin:{
+							top:$topbottom;
+							bottom:$topbottom;
+						}
+						label{
+							font:{
+								size:$fontsize;
+							}
+						}
+						h4{
+							font:{
+								size:$fontsize;
+								weight:bold;
+							}
+							margin:{
+								left:26px;
+							}
+						}
+						textarea{
+							width:570px;
+							height:100px;
+							resize:none;
+							font-size:12px;
+						}
+						.copy-btn{
+							height: 27px;
+							margin: 5px 0 22px 0;
+							width: 576px;
+							.copy{font-weight: bold;float:right;width:66px;height:27px;line-height:27px;margin-left:5px;text-align:center;background:url(../images/copy-btn.png) 0 0 no-repeat;font-size:12px;color:#444;}
+						    .right{float:right;width:58px;height:27px;line-height:27px;padding-left:35px;background:url(../images/right-bg3.png) 0 0 no-repeat;font-size:12px;color:#7bbb00;}
+						}
+						.view-label{
+							margin:{
+								left:0;
+								bottom:10px;
+							}
+						}
+					}
+				} 
+}
+.previewbox{
+	height:30px;
+	line-height:30px;
+	@mixin fleft{
+		float: left;
+	}
+	@mixin textheight{
+		height: 25px;
+       line-height: 25px;
+	}
+	span{
+		font-family:Tahoma;
+		@include fleft;
+		@include textheight;
+	}
+	input{
+		width:458px;
+		@include fleft;
+		@include textheight;
+	}
+	.view-btn{
+		@include fleft;
+		margin-left:5px;
+		font-weight: bold;
+		width:66px;height:27px;line-height:27px;text-align:center;background:url(../images/copy-btn.png) 0 0 no-repeat;font-size:12px;color:#444;
+	}
+}
+
+.blank-account-box{
+	$whole-width:900px;
+	$whole-height:250px;
+	$rate:0.372;
+	width:$whole-width;
+	margin-top:20px;
+	.accont-box-top{
+		width:$whole-width;
+		height:40px;
+		line-height:40px;
+		font:{
+			size:16px;
+			weight:bold;
+		}
+	}
+	.account-left{
+		float:left;
+		width:$whole-width*$rate;
+		height:$whole-height;
+		$left:36px;
+		.account-amount{
+			 margin-left:$left;
+			 height:30px;
+			 line-height:30px;
+			 font-size:14px;
+		}
+		.account-tip{
+			 line-height:30px;
+			 font-size:14px;
+		}
+		ul{
+			list-style-type: none;
+			margin-left:$left;
+			li{
+			 	height:30px;
+				line-height:30px;
+				/*margin:{
+					top:14px;
+				}*/
+				font-size:12px;
+			}
+		}
+	}
+	.account-right{
+		width:$whole-width*(1-$rate) - 10;
+		margin-left: $whole-width*$rate;
+		height:$whole-height;
+		border:{
+			left:1px solid #E1E1E1;
+		}
+		font-size:14px;
+		$item-height:50px;
+		.account-item{
+			height:$item-height;
+			line-height:$item-height;
+			font-family:Tahoma;
+			@mixin input-size{
+				height: 18px;
+				width:180px;
+			}
+			label{
+				width:150px;
+				text-align:right;
+				display: inline-block;
+			}
+			input{
+				padding:2px;
+				@include input-size;
+				/*border:1px solid #444;*/
+			}
+			select{
+				height: 23px;
+				width:185px;
+			}
+			.account-input-error{
+				
+			}
+			.account-btn{
+				margin-left:154px;
+				font-weight: bold;
+				display:block;
+				width:66px;height:27px;line-height:27px;text-align:center;background:url(../images/copy-btn.png) 0 0 no-repeat;font-size:12px;color:#444;
+			}
+		}
+	}
+}
+.promo-product-ad{
+	background:url(../images/promo-ad1.jpg) 0 0 no-repeat;
+	position:relative;
+	.product-ad{
+	   position:absolute;
+	   top:85px;
+	   left:260px;
+	   width:260px;
+	   height:175px;
+	   background:url(../images/promo-ad1-box.png) 0 0 no-repeat;
+	   font:{
+	   	weight:blod;
+	   }
+	   .product-ad-top{
+		 text-align: center;
+		  font-size: 16px;
+          font-weight: bold;
+		/*  height: 40px;
+          line-height: 40px;*/
+		  margin-top:40px;
+	   }
+	   ul{
+		li{
+			list-style-type: disc;
+			font:{
+				size:12px;
+				weight:bold;
+			}
+			text-align: center;
+			height:18px;
+			line-height:18px;
+		}
+	   }
+	}
+}

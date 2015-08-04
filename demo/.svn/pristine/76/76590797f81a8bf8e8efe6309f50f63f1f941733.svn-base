@@ -1,0 +1,195 @@
+/**
+ * @author Administrator
+ */
+var a = {
+    "rec": [],
+    "his": [{
+        "source": "\u8d70\u79c0\u7f51",
+        "tag": null,
+        "opration": "visititem",
+        "name": "\u4eac\u6da6\u73cd\u73e0 gNpearl \u5178\u96c5\u5962\u534e\u7cfb\u5217 \u5929\u7136\u5357\u6d0b\u73cd\u73e0\u6212\u6307 \u3010\u5c0a\u8d35\u4e4b\u6212\u3011\u9ed1\u8272",
+        "cid": "Czouxiu",
+        "iid": "2090444",
+        "img_src": "http://images.xiustatic.com/upload/goods20120612/46000295/460002950001/g1_100_100.jpg"
+    }, {
+        "source": "\u8d70\u79c0\u7f51",
+        "tag": null,
+        "opration": "visititem",
+        "name": "\u4eac\u6da6\u73cd\u73e0 gNpearl \u5178\u96c5\u5962\u534e\u7cfb\u5217 \u5929\u7136\u5357\u6d0b\u73cd\u73e0\u6212\u6307 \u3010\u5fc3\u6212\u3011\u767d\u8272",
+        "cid": "Czouxiu",
+        "iid": "2090538",
+        "img_src": "http://images.xiustatic.com/upload/goods20120612/46000297/460002970001/g1_100_100.jpg"
+    }, {
+        "source": "\u8d70\u79c0\u7f51",
+        "tag": null,
+        "opration": "visititem",
+        "name": "lux-women 3A\u7ea7\u5929\u7136\u78a7\u73ba\u5973\u6212 \u6b27\u9646\u98ce\u60c5\u7cfb\u5217 \u751c\u871c12# LW11120102367 \u9ec4/\u767d/\u7eff /\u7ea2",
+        "cid": "Czouxiu",
+        "iid": "1040654",
+        "img_src": "http://images.xiustatic.com/upload/goods20111219/35000544/350005440001/g1_100_100.jpg"
+    }, {
+        "source": "\u8d70\u79c0\u7f51",
+        "tag": [{
+            "323000047": 1
+        }, {
+            "422400073": 1
+        }, {
+            "572284139": 1
+        }, {
+            "48854137": 1
+        }, {
+            "597304137": 1
+        }, {
+            "47714130": 1
+        }],
+        "opration": "visititem",
+        "name": "LANHO \u84dd\u8272\u591a\u7459\u6cb3 18K\u91d1\u94bb\u77f3\u6212\u6307-\u751c\u5fc3\u7cbe\u7075 HD000446N \u73ab\u7470\u91d1\u8272/\u767d\u8272",
+        "cid": "Czouxiu",
+        "iid": "1850473",
+        "img_src": "http://images.xiustatic.com/upload/goods20120423/40002372/400023720001/g1_100_100.jpg"
+    }, {
+        "source": "\u8d70\u79c0\u7f51",
+        "tag": null,
+        "opration": "visititem",
+        "name": "\u4eac\u6da6\u73cd\u73e0 gNpearl \u5178\u96c5\u5962\u534e\u7cfb\u5217 \u5929\u7136\u5357\u6d0b\u73cd\u73e0\u6212\u6307 \u3010\u82b1\u8bed\u3011\u91d1\u9ec4\u8272",
+        "cid": "Czouxiu",
+        "iid": "2090559",
+        "img_src": "http://images.xiustatic.com/upload/goods20120612/46000291/460002910001/g1_100_100.jpg"
+    }, {
+        "source": "\u8d70\u79c0\u7f51",
+        "tag": null,
+        "opration": "visititem",
+        "name": "\u4eac\u6da6\u73cd\u73e0 gNpearl \u5178\u96c5\u5962\u534e\u7cfb\u5217 \u5929\u7136\u5357\u6d0b\u73cd\u73e0\u6212\u6307 \u3010\u6d01\u7231\u3011\u767d\u8272",
+        "cid": "Czouxiu",
+        "iid": "2090544",
+        "img_src": "http://images.xiustatic.com/upload/goods20120612/46000307/460003070001/g1_100_100.jpg"
+    }, {
+        "source": "\u8d70\u79c0\u7f51",
+        "tag": null,
+        "opration": "visititem",
+        "name": "D-feng \u94bb\u77f3\u51e4\u51f0 18K\u91d1\u603b\u91cd20\u5206\u94bb\u77f3\u5973\u6212 \u50b2\u6162A00210 \u767d\u8272",
+        "cid": "Czouxiu",
+        "iid": "1038270",
+        "img_src": "http://images.xiustatic.com/upload/goods20111216/30001869/300018690001/g1_100_100.jpg"
+    }, {
+        "source": "\u8d70\u79c0\u7f51",
+        "tag": null,
+        "opration": "visititem",
+        "name": "Cartier \u5361\u5730\u4e9a LOVE\u7cfb\u521718k\u73ab\u7470\u91d1\u6212\u6307 B4084854 \u91d1\u8272(\u9999\u6e2f\u901f\u9012)",
+        "cid": "Czouxiu",
+        "iid": "780697",
+        "img_src": "http://images.xiustatic.com/upload/goods20111020/43000201/430002010001/g1_100_100.jpg"
+    }],
+    "scenario": [{
+        "logo_src": "http://www.baifendian.com/templates/my/skins/my/images/case/case_tn.gif",
+        "products": [{
+            "source": "\u9014\u725b\u7f51",
+            "tag": null,
+            "opration": null,
+            "name": "<\u6d77\u5357\u53cc\u98de6\u65e5\u6e38>\u8708\u652f\u6d32\u5c9b\uff0c3\u665a\u6302\u56db\u9152\u5e97\uff0c2\u665a\u8fd1\u6d77\u9152\u5e97",
+            "cid": "Ctuniu",
+            "iid": "route_343759",
+            "img_src": "http://images.tuniu.com/images/2009-09-16/s/sK1QFtW5322R0ui6m.jpg"
+        }, {
+            "source": "\u9014\u725b\u7f51",
+            "tag": null,
+            "opration": null,
+            "name": "<\u5357\u5317\u6234\u6cb3\u81ea\u9a7e3\u65e5\u6e38>\u6d77\u666f\u516c\u5bd3\u5927\u5e8a\u623f\uff0c2\u665a\u4f4f\u5bbf\uff0c\u542b\u4ed9\u87ba\u5c9b\u95e8\u7968",
+            "cid": "Ctuniu",
+            "iid": "route_402872",
+            "img_src": "http://images.tuniu.com/images/2012-04-19/2/2012-11-191334804854_m.jpg"
+        }, {
+            "source": "\u9014\u725b\u7f51",
+            "tag": null,
+            "opration": null,
+            "name": "<\u6d77\u5357\u53cc\u98de5\u65e5>\u8d85\u503c\u534a\u81ea\u52a9\uff0c\u5168\u7a0b\u5165\u4f4f\u4e09\u4e9a\u6e7e\u6d77\u666f\u623f",
+            "cid": "Ctuniu",
+            "iid": "route_331459",
+            "img_src": "http://images.tuniu.com/images/2012-01-06/2/2012-02-061325829966_m.jpg"
+        }, {
+            "source": "\u9014\u725b\u7f51",
+            "tag": null,
+            "opration": null,
+            "name": "<\u534e\u4e1c\u4e94\u5e02-\u7075\u5c71\u5927\u4f5b-\u4e4c\u9547-\u6728\u6e0e\u53cc\u98de5\u65e5\u6e38>\u6625\u822a\u65b0\u666f",
+            "cid": "Ctuniu",
+            "iid": "route_372146",
+            "img_src": "http://images.tuniu.com/images/2006-06-06/2/2Y63dvY76dH08B5em.jpg"
+        }],
+        "name": "\u60a8\u53ef\u80fd\u662f\u6765\u9014\u725b\u7f51\u968f\u4fbf\u901b\u901b",
+        "value": 30
+    }, {
+        "logo_src": "http://www.baifendian.com/templates/my/skins/my/images/case/case_ku8.gif",
+        "products": [{
+            "source": "\u5e93\u5df4",
+            "tag": null,
+            "opration": null,
+            "name": "\u6d77\u5c14\uff08Haier\uff09\u806a\u660e\u98ce\u7cfb\u52171.5\u53392\u7ea7\u80fd\u6548\u51b7\u6696\u578b\u6302\u5f0f\u5b9a\u9891\u7a7a\u8c03KFR-35GW/03ECC12||P124785",
+            "cid": "Ckuba_shop",
+            "iid": "157575",
+            "img_src": "http://p2.51mdq.com/img/201111/22/200_20111122073023948.jpg"
+        }, {
+            "source": "\u5e93\u5df4",
+            "tag": null,
+            "opration": null,
+            "name": "\u7fbd\u535a\uff08YOOBAO\uff09\u79fb\u52a8\u7535\u6e90 YB-631\uff08\u767d\u8272\uff09||P176927",
+            "cid": "Ckuba_shop",
+            "iid": "176927",
+            "img_src": "http://p4.51mdq.com/img/201202/06/200_20120206104212797.jpg"
+        }, {
+            "source": "\u5e93\u5df4",
+            "tag": null,
+            "opration": null,
+            "name": "\u5927\u91d1\uff08DAIKIN\uff09E-MAX G\u7cfb\u52172.5\u53392\u7ea7\u80fd\u6548\u51b7\u6696\u578b\u67dc\u5f0f\u53d8\u9891\u7a7a\u8c03FVXG60JV2CW\uff08\u767d\u8272\uff09||P124569",
+            "cid": "Ckuba_shop",
+            "iid": "131958",
+            "img_src": "http://p2.51mdq.com/img/201104/23/120_20110513015839682.jpg"
+        }, {
+            "source": "\u5e93\u5df4",
+            "tag": null,
+            "opration": null,
+            "name": "\u6208\u535a\uff08GERBER\uff09\u6208\u535a\u8d1d\u5c14\u7cfb\u5217-\u7ec8\u6781\u6551\u63f4\u530522-31-000701||P213332",
+            "cid": "Ckuba_shop",
+            "iid": "213332",
+            "img_src": "http://p4.51mdq.com/img/201204/26/120_20120426173114736.jpg"
+        }],
+        "name": "\u60a8\u53ef\u80fd\u662f\u6765\u5e93\u5df4\u968f\u4fbf\u901b\u901b",
+        "value": 32
+    }, {
+        "logo_src": "http://www.xiustatic.com/static/css/default/img/index/x_logo.jpg",
+        "products": [{
+            "source": "\u8d70\u79c0\u7f51",
+            "tag": null,
+            "opration": null,
+            "name": "\u795e\u66f2 \u70ab\u91d1\u857e\u4e1d\u82b1\u8fb9\u5851\u578b\u6587\u80f8 SQ-B106",
+            "cid": "Czouxiu",
+            "iid": "500176",
+            "img_src": "http://images.xiustatic.com/upload/goods20110930/13002791/130027910001/g1_100_100.jpg"
+        }, {
+            "source": "\u8d70\u79c0\u7f51",
+            "tag": null,
+            "opration": null,
+            "name": "\u7b80\u7ea6\u9ad8\u8d35\u5c0f\u5de7\u9ed1\u7c89\u7f8e\u4f53\u6587\u80f8 SQ-B115",
+            "cid": "Czouxiu",
+            "iid": "574503",
+            "img_src": "http://images.xiustatic.com/upload/goods20110924/13002822/130028220002/g1_100_100.jpg"
+        }, {
+            "source": "\u8d70\u79c0\u7f51",
+            "tag": null,
+            "opration": null,
+            "name": "\u795e\u66f2 \u8695\u4e1d\u7acb\u4f53\u5851\u5f62\u7f8e\u4f53\u6587\u80f8 SQ-B102",
+            "cid": "Czouxiu",
+            "iid": "103731",
+            "img_src": "http://images.xiustatic.com/upload/goods20110924/13002652/130026520001/g1_100_100.jpg"
+        }, {
+            "source": "\u8d70\u79c0\u7f51",
+            "tag": null,
+            "opration": null,
+            "name": "\u795e\u66f2 \u7c89\u8272\u8776\u5f62\u857e\u4e1d\u523a\u7ee3\u5b9a\u578b\u6587\u80f8 SQ-B101",
+            "cid": "Czouxiu",
+            "iid": "494624",
+            "img_src": "http://images.xiustatic.com/upload/goods20110923/13002696/130026960001/g1_100_100.jpg"
+        }],
+        "name": "\u60a8\u53ef\u80fd\u5bf9\u8d70\u79c0\u7f51\u4e0a [@all|\u9970\u54c1|\u9996\u9970\u529f\u80fd\u5206\u7c7b|\u6212\u6307|\u73e0\u5b9d|\u73cd\u73e0\u9996\u9970|\u6212\u6307(29%) & @all|\u9970\u54c1|\u9996\u9970\u529f\u80fd\u5206\u7c7b|\u6212\u6307|\u73e0\u5b9d|\u94bb\u77f3\u9970\u54c1|\u94bb\u77f3\u6212\u6307(29%) & @all|\u9970\u54c1|\u5929\u7136\u5b9d\u77f3|\u9996\u9970\u529f\u80fd\u5206\u7c7b|\u6212\u6307(16%)] \u5546\u54c1\u611f\u5174\u8da3",
+        "value": 90
+    }]
+}

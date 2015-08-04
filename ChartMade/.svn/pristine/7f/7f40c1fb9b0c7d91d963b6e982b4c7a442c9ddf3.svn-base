@@ -1,0 +1,15 @@
+/**
+ * @author Administrator
+ */
+
+ var _baifendianWidgetsComboSettingURL=''
+ var _baifendianDataURL=''
+ 
+ var _baifendianWidgets={
+ 	chart:{
+		requires:[]
+	},
+	grid:{
+		requires:[]
+	}
+ }

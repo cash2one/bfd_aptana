@@ -1,0 +1,22 @@
+/**
+ * @author Administrator
+ */
+function Chart(setting){
+	var self=this;
+	self.init=function(){
+		//TODO parse setting
+		self.chart = new Highcharts.Chart(setting)
+		self.chart.showLoading('正在加载，请稍候……');
+	}
+	self.setData=function(item){
+		//TODO parse data
+		self.chart.xAxis.setCategories(item.categories)
+		self.chart.setData(item.series);
+		self.chart.hideLoading();
+	}
+	self.init()
+}
+_baifendianWidgets.chart.parse=function(item){//设置中返回的项
+   var c=new Chart(item);
+   return c
+}

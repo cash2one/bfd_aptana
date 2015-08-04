@@ -1,0 +1,80 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	Number.prototype.fixMoney = function(){
+                    return this.toString().replace(/(\d{1,3})(?=(\d{3})+(?:$|\.))/g, "$1,")
+    }
+	function G(){//漏斗图
+		var self=this
+		this.flush=function(){
+			$('.tubiao07 > ul >li').find('strong:first').each(function(){
+				     $(this).numberScroll({
+                            random: function(){
+                                return parseInt((Math.random() * 1000000)).fixMoney()
+                            }
+                        })
+			})
+			$('.tubiao07 > ul >li').find('strong:last:not(.tubiao07 > ul  li strong:eq(0))').each(function(){
+				 $(this).numberScroll({
+                            random: function(){
+                                return parseInt(Math.random() * 100)+','+parseInt(Math.random() * 100) + '%'
+                            }
+                        })
+			})
+			$.ajax({
+				 type: "GET",
+                        url: "url",
+                        data: {
+                            'key': $('.data_select select').val()
+                        },
+                        dataType: "json",
+                        success: function(data){
+							$('.tubiao07 > ul >li').find('strong:first').each(function(){
+								$(this).numberScroll('stop')
+							})
+							$('.tubiao07 > ul >li').find('strong:last:not(.tubiao07 > ul  li strong:eq(0))').each(function(){
+								$(this).numberScroll('stop')
+							})
+							  for (var k in data) {
+                                $('#' + k).html(data[k])
+                            }
+						}
+			})
+		}
+		this.flush()
+	}
+	function C(){//chart
+		var self=this
+		function getUrl(){
+			     var url = 'url' + '?' +
+                    $.param( {
+                        key: $('.data_select select').val(),
+                        l: $('.data03 > .tab a.active').attr('value')
+                    })
+				 return url	
+		}
+		this.flush=function(){
+			$('#chart').baeLineChart('setData', getUrl())
+		}
+		this.init=function(){
+			$('#chart').baeLineChart({
+				           dataSource: getUrl(),
+                           width: '100%',
+                           hight: 288
+			})
+		}
+		this.init()
+	}
+	function L(){//lenged
+		this.flush=function(){
+			$('.data_info_header strong').each(function(){
+				    $(this).numberScroll({
+                            random: function(){
+                                return parseInt(Math.random() * 10)+','+parseInt(Math.random() * 100) + '%'
+                            }
+                        })
+			})
+		}
+	}
+})

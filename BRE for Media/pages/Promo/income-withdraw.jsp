@@ -1,0 +1,227 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>自盈利-收益提现</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/exp.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/ifmWidget/css/ifmWidget.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+<script type="text/javascript" src="../../js/regulateSize.js"></script>
+<script type="text/javascript" src="../../js/changeSite.js"></script>
+<script type="text/javascript" src="../../js/messageTip.js"></script>
+	<script type="text/javascript"  src="../../resources/commons/jquery.form.js">
+    </script>
+    <script type="text/javascript"  src="../../resources/commons/jquery.validate.min.js">
+    </script>
+	<script type="text/javascript" src="../../resources/commons/jquery.tmpl.min.js"></script>
+	<script type="text/javascript" src="../../resources/commons/jquery.blockUI.js"></script>
+	<script type="text/javascript" src="../../resources/ifmWidget/js/ifmWidget.js"></script>
+	<script type="text/javascript" src="../../resources/jquery_tools/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="../../js/Promo/income-withdraw.js"></script>
+	<script type="text/javascript" src="../../js/validateSession.js"></script>
+<link rel="shortcut icon" href="../../favicon.ico" >
+             </head>
+	<style type="text/css">
+		.data-tab2 td {
+			height:36px;
+		}
+	</style>		 
+	<body>
+    <!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li>你好,<s:property value="#session.sessionUser.username" /></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="../../SiteManager/site/!index">站点管理</a></li>
+					<li><a href="../../Account/user/!showUpdatePassword">账号设置</a></li>
+					<li><a href="../../help.html" target="_blank">帮助中心</a></li>
+					<li class="no-bg"><a href="../../Account/user/!loginOut">退出</a></li>
+				</ul>
+			</div>
+			<a href="../../DataAnalysis/stat/!synthetical.action">
+                <div class="logo">
+                    <strong>media</strong>
+                </div>
+            </a>
+            
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="current">
+					<a href="#">
+                    <em class="icon5">&nbsp;</em>
+                    <span>自盈利</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->		
+	<!-- content   开始 -->
+	<div id="content" class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<ul class="nav2">
+				<li><a href="../../DataAnalysis/stat/!income.action">收益统计</a></li>
+				<li class="current"><a href="../../Promo/income/!showCps.action">收益提现</a></li>
+				<li><a href="../../Promo/profit/!showRecommendedBar">商品推荐栏</a></li>
+				<li class="rbgno"><a href="../../Promo/profit/!showWaterfall">电商频道</a></li>
+			</ul>
+			<div class="m-con">
+				 <div class="con-1">
+				 	  <div class="arrow2-5"></div>
+					  <table class="data-tab2" cellspacing="0" cellpadding="0" border="0">
+						  <tr>
+						  	<!--
+						  	<td style="border-bottom:none;">全部站点收益：1000元</td>
+							-->
+							<td>站点名称</td>
+							<td>开启收益时长（天）</td>
+							<!--
+							<td>可提现收益（元）</td>
+							-->
+							<td>总收益（元）</td>
+						  </tr>
+						  <s:iterator value="cpsProfits" var="profit">
+							  <tr>
+							  	<!--
+							  	<td style="padding-left: 30px;">可提现总收益：1000元</td>
+								-->
+								<td> <s:property  value="#profit.address"/> </td>
+								<td> <s:property  value="#profit.interval"/> </td>
+								<!--
+								<td> <s:property  value="#profit.balance"/> </td>
+								-->
+								<td> <s:property  value="#profit.total"/> </td>
+							  </tr>
+						  </s:iterator>
+						  <tr>
+						  	<td colspan="2" style="text-align:center;">总计</td>
+						  	<!--
+							<td> <s:property  value="balance"/> </td>
+							-->
+							<td> <s:property  value="total"/> </td>
+						  </tr>
+					  </table>
+					  <s:if test="balance>0.0">
+					  <div class="blank-account-box">
+					  	 <div class="accont-box-top">
+					  	 	提取现金
+					  	 </div>	
+					  	 <div class="account-left">
+					  	 	  <div class="account-amount">
+					  	 	  	  可提取金额：￥<em id="maxMoney"><s:property  value="balance"/></em>元
+					  	 	  </div>
+							  <div class="account-tip">
+							  	  提现须知
+							  </div>
+							  <ul>
+							  	<li>1.申请提交后我方会在7个工作日内完成审核。</li>
+								<li>2.提现申请如有疑问时，客户经理将主动与贵方沟通核实。</li>
+								<li>3.提现申请处于审核状态时，提现功能将被冻结，直到申请被成功处理后方可解除冻结。</li>
+								<li>4.每一笔收益提现将会收取2元手续费，最低提现金额为10元。</li>
+							  </ul>
+					  	 </div>
+						 <div class="account-right">
+						 	 <form id="form1" action="../../Promo/income/!saveDrawcash.action" autocomplete="off" >
+						 	    <div class="account-item">
+						 	    	<label>提现金额：</label>
+									<input type="text" name="operateMoney" id="operateMoney" autocomplete="off" />
+									<!--
+									<span class="exp-tip-wrong2">
+										<span class="_undefineClass" for="user.password" style="display: inline-block;">
+										请输入金额
+										</span>
+									</span>	
+									-->
+						 	    </div>
+								<div class="account-item">
+						 	    	<label>开户银行：</label>
+									<select name="bankName" autocomplete="off" >
+										<option value="defalusts">请选择</option>
+										<s:iterator value="bankNames" var="bankName" >
+											<option value="<s:property  value="#bankName"/>"><s:property  value="#bankName"/></option>
+										</s:iterator>
+									</select>	
+						 	    </div>
+								<div class="account-item">
+						 	    	<label>开户人：</label>
+									<input type="text" name="accountName" autocomplete="off" />
+						 	    </div>
+								<div class="account-item">
+						 	    	<label>银行帐号：</label>
+									<input type="text" id="account-id" name="bankAccount" autocomplete="off" />
+						 	    </div>
+								<div class="account-item">
+						 	    	 <a class="account-btn" id="btn1">申请提现</a>
+						 	    </div>
+								</form>
+						 </div>
+					  </div>
+					  </s:if>
+				 </div>	 
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p><%@ include file="/foot.jsp"%></p>
+	</div>
+	<!-- footer  结束 -->
+	<!-- footer  结束 -->
+    <!-- 站点设置 -->
+    <div class="site_setting_container">
+       <div class="site_setting_wrap">
+                <!-- site-ad  开始 -->
+                <div class="site-ad">
+                    <div class="click-btn"><s:property value="#session.sessionUser.address"/></div>
+                    <ul class="this">
+                        <s:iterator value="#session.sessionUser.sites"><li class="site"><a class="bg" href="../../SiteManager/site/!changeSiteOfSessionUser?siteId=<s:property value="id"/>"><s:property value="address"/></a></li></s:iterator>
+                        <li class="site admin">
+                            <span class="add-s"><a href="../../SiteManager/site/!showCheckingAddress">+添加站点</a></span>
+                            <span class="s-ad"><a href="../../SiteManager/site/!index">站点管理></a> </span>
+                        </li>
+                    </ul>
+                </div>
+             <!-- site-ad 结束 -->
+       </div>
+    </div>
+    <!-- 站点设置结束 -->
+	</body>
+</html>

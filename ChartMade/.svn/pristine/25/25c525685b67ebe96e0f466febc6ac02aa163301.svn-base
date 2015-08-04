@@ -1,0 +1,44 @@
+/**
+ * @author Administrator
+ */
+
+function Chart(setting) {
+	var self = this;
+	self.init = function() {
+		setting.option.tooltip.formatter = function() {
+			var unit = {
+				'Rainfall': 'mm',
+				'Temperature': '°C',
+				'Sea-Level Pressure': 'mb',
+				'MSIE': '%'
+			}[this.series.name];
+			if(this.point.name){
+				return '<b>' + this.point.name + '</b><br/>' + this.x + ': ' + this.y + ' ' + unit;
+			}else{
+				return '' + this.x + ': ' + this.y + ' ' + unit;
+			}
+			
+		}
+		setting.option.chart.renderTo = setting.container;
+		//TODO parse setting
+		self.chart = new Highcharts.Chart(setting.option)
+		self.chart.showLoading('正在加载，请稍候……');
+	}
+	self.setData = function(item) {
+		//TODO parse data
+		$.each(item.categories, function(n, i) {
+			self.chart.xAxis[n].setCategories(i,false);
+		})
+		$.each(item.series, function(n, i) {
+			self.chart.addSeries(i,false,true);
+		});
+		self.chart.redraw();
+		//self.chart.series[0].setData(item.series);
+		self.chart.hideLoading();
+	}
+	self.init()
+}
+_baifendianWidgets.chart.parse = function(item) { //设置中返回的项
+	var c = new Chart(item);
+	return c
+}

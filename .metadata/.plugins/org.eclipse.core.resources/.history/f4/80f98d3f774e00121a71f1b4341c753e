@@ -1,0 +1,13 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	$('#sub').click(function(){
+		$('#form1').submit()
+	})
+	$('body').keyup(function(event){
+		if(event.keyCode===13){
+			$('#form1').submit();
+			}
+	})
+})

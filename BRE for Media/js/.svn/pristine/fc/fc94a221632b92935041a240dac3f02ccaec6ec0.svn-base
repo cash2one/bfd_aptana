@@ -1,0 +1,140 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	if($('#nameinput').val()!==''){
+		$('#namelabel').hide()
+	}
+	$('#nameinput').focus(function(){
+		$('#namelabel').hide()
+	}).blur(function(){
+		if($(this).val()==''){
+			$('#namelabel').show()
+		}
+	})
+	$('#namelabel').click(function(){
+		$(this).hide()
+		$('#nameinput').focus()
+	})
+	if($('#qq').val()!==''){
+		$('#qqlabel').hide()
+	}
+	$('#qq').focus(function(){
+		$('#qqlabel').hide()
+	}).blur(function(){
+		if($(this).val()==''){
+			$('#qqlabel').show()
+		}
+	})
+	$('#qqlabel').click(function(){
+		$(this).hide()
+		$('#qq').focus()
+	})
+	$('.select_box input:text').click(function(){
+		$('.select_box ul').slideToggle()
+	}).val('请选择')
+	$('.select_box ul li').click(function(){
+			$('.select_box input:text').val($(this).html())
+			$('.select_box ul').find('li.active').removeClass('active')
+			$(this).addClass('active')
+			$('.select_box ul').slideUp()
+			$('.btn').show()
+			$('#site_type').val($(this).data('value'))
+		})
+		if($('#site_type').val()!==''){
+			$('.select_box ul li').each(function(){
+				if($(this).data('value')===$('#site_type').val()){
+					$(this).click()
+				}
+			})
+		}
+})
+$(function(){
+		$('#sub').click(function(){
+			$('#form1').submit()
+		})
+		$('body').keyup(function(event){
+			if(event.keyCode===13){
+				$('#form1').submit();
+				}
+		})
+		$('.cbox:eq(1)').change(function(){
+			if($(this).is(':checked')){
+				$('#qq').parent().show()
+			}else{
+				$('#qq').parent().hide()
+			}
+		}).change()
+	    $.validator.addMethod("checkboxchecked", function(value,element) { 
+	          return $('.cbox:checked').size()>0;   
+	 	 }, "请选择联系方式");
+		 $.validator.addMethod("qqrequire", function(value,element) { 
+	          if($('.cbox:eq(1)').is(':checked')&&$('#qq').val()===''){
+			  	   return false
+			  }
+			  return true
+	 	 }, "请输入qq号码");
+		 $.validator.addMethod("qqchecked", function(value,element) { 
+	         if($('.cbox:eq(1)').is(':checked')&&!/^[1-9]\d{4,11}$/.test($('#qq').val())){
+			  	   return false
+			  }
+			  return true
+	 	 }, "请输入正确的qq号码");
+		 $.validator.addMethod("sitetype", function(value,element) { 
+	         return $('#sitetype').val()!=='请选择'
+	 	 }, "请选择网站类型");
+		var validater = $('#form1').validate({
+		submitHandler: function(form){
+			$(form).ajaxSubmit({
+				success:function(responseText, statusText, xhr, $form){
+					if(responseText=='0' ){
+					  //window.document.location.href = "url";
+						$("#form2").submit();
+					} else if(responseText == '1'){
+						validater.showErrors({'url':'保存失败'});
+					} 
+				}
+			})
+			return false
+			//form.submit()
+		},
+        rules: {
+			'sitename': {
+        		required:true
+             },
+             'description':{
+            	 required:true
+             },
+        	'letter': {
+            	 checkboxchecked: true
+             },
+			 'qqcheckbox':{
+			 	qqrequire:true,
+				qqchecked:true
+			 },
+			 'sitetype':{
+			 	sitetype:true
+			 }
+         },
+		 messages: {
+        	 'sitename': {
+                 required: '请输入网站名称'
+             },
+             'description':{
+            	 required:'请输入网站描述'
+             }
+         },
+         focusInvalid:true,
+         onkeyup: false,
+         wrapper:null,
+         errorElement:'span',
+		 errorClass:'site_info_error',
+         errorPlacement: function(error, element){
+		 	 if(element.is('textarea')){
+			 	 error.appendTo(element.parent());
+			 }else{
+			 	 error.appendTo(element.parent().parent());
+			 }
+         }
+     })
+})

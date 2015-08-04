@@ -1,0 +1,26 @@
+BfdWidget.prototype.chord = function(setting) {
+	this.parseSetting = function() {
+		setting.option.container = setting.container;
+		this.chord = new d3chord(setting.option);
+	}
+	this.mergeParam = function() {
+		var cols = setting.cols.slice(0);
+		//cols.push(setting.groupBy);
+		$.merge(cols,setting.groupBy)
+		return {
+			requestId:setting.id,
+			cols: cols,
+			start: setting.start,
+			end: setting.end,
+			limit: 0,//开始的位置
+			range: 20,//个数
+			type:setting.type,//请求类型
+			init:false,//在init为True时返回，为false或不存在时无需返回
+			keys:['name', 'attr2'],//参数名称
+			values:['v1', 'v2']//参数值
+		};
+	}
+	this.parseData = function(data, empty) {
+		this.chord.setData(data);
+	}
+}

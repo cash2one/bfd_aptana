@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;baeUE/src/baeUE/function.css&apos; to &apos;function1.css&apos;" description="Rename resource &apos;function.css&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/baeUE/function.css" name="function1.css" stamp="1335355985347" updateReferences="true"/>
+</session>

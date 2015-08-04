@@ -1,0 +1,101 @@
+/**
+ * @author Administrator
+ */
+
+(function(document, window) {
+	var _path = document.scripts;
+	_path = _path[_path.length - 1].src.substring(0, _path[_path.length - 1].src.lastIndexOf("/") + 1);
+	if ((_path.indexOf('http') != 0 && _path.indexOf('/') != 0) || _path.indexOf('./') == 0) {
+		_path = window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1) + _path
+	} /*加载LAB.js*/
+	// var script = document.createElement("script");
+	// script.type = "text/javascript";
+	// script.src = _path + 'commons/LAB.js';
+	// document.getElementsByTagName("head")[0].appendChild(script);
+	window.BaifendianWidgets = function(id) {
+		var self = this
+		var widgets = []
+		//var 
+		self.init = function() {
+			typeof(jQuery) == 'undefined' ? $LAB.script(_path + 'commons/jquery.js').wait(_jqLoad) : _jqLoad()
+
+			function _jqLoad() {
+				self.getSetting().done(function(data) {
+					$.each(data, function(i, item) {
+						var bfdWidget = new BfdWidget(item);
+						widgets.push(bfdWidget);
+						self[item.type] ? self[item.type].push(bfdWidget) : self[item.type] = [bfdWidget];
+						console.log(bfdWidget)
+						bfdWidget.load().generateUI().getData()
+
+					})
+				})
+			}
+
+		}
+
+		self.get = function(index) {
+			return widgets[index]
+		}
+		self.getByType = function(type) {
+			return self[type]
+		}
+		self.getSetting = function() {
+			return $.ajax({
+				url: _baifendianWidgetsComboSettingURL,
+				data: {
+					pageID: id
+				},
+				dataType: 'json'
+			})
+		}
+		self.getData = function(param) {
+			return
+		}
+		self.init()
+	}
+	window.BfdWidget = function(item) {
+		var self = this
+		var type = item.type
+		var requires = _baifendianWidgets[type]['requires'].slice(0);
+		var $l = $LAB.sandbox()
+		requires.push('models/' + type + '/parse.js')
+		self.item = item;
+		self.load = function() {
+			$.each(requires, function(a, b) {
+				$l = $l.script(_path + b).wait()
+			})
+			return self;
+		}
+		self.generateUI = function() {
+			$l.wait(function() {
+				self[type] = new self[type](self.item)
+				self[type].parseSetting()
+			})
+			return self;
+		}
+
+		self.getData = function() {
+			$l.wait(function() {
+				var param = self[type].mergeParam()
+				$.ajax({
+					url: _baifendianDataURL[param.id - 1],
+					//_baifendianDataURL
+					data: param,
+					dataType: 'json'
+				}).done(function(d) {
+					self[type].parseData(d,true)
+				})
+			})
+			return self;
+		}
+		self.reload = function(item){
+			$.extend(true,self.item,item);
+			self.generateUI().getData();
+			return self;
+		}
+	}
+	BfdWidget.prototype.checkload = function(){
+
+	}
+})(document, window);

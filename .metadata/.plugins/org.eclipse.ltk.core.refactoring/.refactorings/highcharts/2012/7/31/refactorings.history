@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;highcharts/3.html&apos; to &apos;map.html&apos;" description="Rename resource &apos;3.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="3.html" name="map.html" stamp="1343723932890" updateReferences="true"/>
+</session>

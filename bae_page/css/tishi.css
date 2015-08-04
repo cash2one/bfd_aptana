@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+.tishi{position: fixed; z-index: 3;height:350px; padding:40px;width:570px;top:20%;left:25%;background: url(../images/ts_01.gif) no-repeat; overflow:hidden;}
+ .tishi span{ display:block; height:40px; background:url(../images/ts_02.gif) no-repeat 0px 5px; padding-left:50px; font-family:"微软雅黑"; font-size:16px; color:#036; line-height:40px;}
+ .tishi font{ display:block; padding:20px 10px; line-height:18px; color:#666;}
+ .tishi dl{ height:180px; overflow:hidden;}
+ .tishi dl dt{ line-height:24px;font-family:"微软雅黑";color:#333; padding-left:10px;}
+ .tishi dl dd{ height:125px;}
+ .tishi dl dd img{ float:left; margin:7px;}
+ .tishi p{ text-align:center;}
+.tishi_bg{position:fixed; top:0; left:0; z-index:2; width:100%; height:100%; background:#000; filter:alpha(opacity=65); opacity:0.65;}
+
+.tc_danpin{position:fixed;z-index:3;height:585px; padding:3px;width:979px;top:1%;left:14%;background:#fff; }
+ .tc_danpin .close{ position:relative; left:982px; top:-588px; z-index:1000; float:left; height:22px; width:22px;}
+ .tc_danpin .dp_iframe{ float:left; width:739px; height:575px; border:5px solid #ddd; margin-left:6px;overflow:hidden;}
+ .tc_danpin .dp_iframe iframe{FILTER: alpha(opacity=70);-moz-opacity:0.7; opacity:0.7;}
+ .tc_danpin .dp_r{ width:223px; float:left; margin:8px 0px 0px 0px;}
+ .tc_danpin .dp_r ul{ height:80px; margin-top:-8px;  width:205px; position: relative; padding:11px 9px 20px 9px;}
+  .tc_danpin .dp_r ul li{display:block;}
+   .tc_danpin .dp_r ul li.tit{font-family:"微软雅黑"; font-size:18px; height:30px; line-height:30px;}
+   .tc_danpin .dp_r ul li.ts{ font-size:12px; height:28px; line-height:22px; padding:0px 1px;}
+   .tc_danpin .dp_r ul li.ts span{float:left; display:block; width:140px;overflow:hidden; height:28px;}
+   .tc_danpin .dp_r ul li.ts font{ float:left; width:63px;height:28px;}
+   .tc_danpin .dp_r ul li.ts font input{ margin-top:2px;}
+   .tc_danpin .dp_r ul li.text{height:20px; line-height:20px; padding:0px 8px;}
+  
+  .tc_danpin .dp_r ul.ul_normal{  background:url(../images/ts_dp_01b.gif) no-repeat; }
+  .tc_danpin .dp_r ul.ul_normal li.tit{  color:#aaa;}
+  .tc_danpin .dp_r ul.ul_normal li.tit span{color:#aaa;}
+  .tc_danpin .dp_r ul.ul_normal li.ts{ color:#aaa;}
+  .tc_danpin .dp_r ul.ul_normal li.ts font{display:none;}
+  .tc_danpin .dp_r ul.ul_normal li.text{color:#aaa;}
+ 
+ .tc_danpin .dp_r ul.ul_ok{  background:url(../images/ts_dp_01.gif) no-repeat;}
+  .tc_danpin .dp_r ul.ul_ok li.tit{ color:#FFF;}
+  .tc_danpin .dp_r ul.ul_ok li.tit span{ color:#fff;}
+  .tc_danpin .dp_r ul.ul_ok li.ts{ color:#d5e6ea;}
+  .tc_danpin .dp_r ul.ul_ok li.ts font{display:none;}
+  .tc_danpin .dp_r ul.ul_ok li.text{color:#21607d;}
+  
+  .tc_danpin .dp_r ul.ul_hover{background:url(../images/ts_dp_01c.gif) no-repeat;}
+  .tc_danpin .dp_r ul.ul_hover li.tit{ color:#FFF;}
+  .tc_danpin .dp_r ul.ul_hover li.tit span{ color:#FFFc00;}
+  .tc_danpin .dp_r ul.ul_hover li.ts{ color:#e7ffd3;}
+  .tc_danpin .dp_r ul.ul_hover li.ts font{ display:block;}
+  .tc_danpin .dp_r ul.ul_hover li.text{color:#386320;}
+  
+  .tc_danpin .dp_r p{ height:31px; margin-top:-8px; width:223px; position: relative; padding:0;}
+  
+  .tc_danpin .dp_r dl{ width:223px; height:37px; margin-top:2px;}
+  .tc_danpin .dp_r dl a{width:223px; height:37px; display:block; background:url(../images/ts_dp_03b.gif);}
+  .tc_danpin .dp_r dl a:ok{width:223px; height:37px; display:block; background:url(../images/ts_dp_03c.gif);}
+  .tc_danpin .dp_r dl dt{ float:left;}
+  .tc_danpin .dp_r dl dd{ float:left; margin-left:3px;}
+  
+  
+ .denglu{position: fixed; z-index:3;height:299px;width:470px;top:22%;left:32%;background: url(../images/denlu_01.gif) no-repeat; overflow:hidden; padding:1px;}
+  .denglu .close{ text-align:right;}
+  .denglu p{ padding:0px 40px;}
+  .denglu ul{ padding:15px 50px 5px 63px;}
+  .denglu ul li{ height: 22px;}
+  .denglu ul li span{ display:block; float:left; line-height:22px; margin-right:10px; color:#1e617d;}
+  .denglu ul li a{ text-decoration:underline; color:#36F;}
+  .denglu ul li a.forget{ color:#999;}
+  .denglu ul li input{ height:20px; line-height:20px; border:1px solid #ddd; width:200px;}
+  .denglu ul li b{ padding-left:48px; color:#F00; line-height:16px;}
+  .denglu dl{ padding-left:109px;}
+  .denglu dl dt{ float:left;}
+  .denglu dl dd{ margin-left:15px; float:left; line-height:29px;}
+  
+.chenggong{position: fixed; z-index:3;height:299px;width:470px;top:22%;left:32%;background: url(../images/denlu_01.gif) no-repeat; overflow:hidden; padding:1px;} 
+ .chenggong .close{ text-align:right; height:30px;}
+ .chenggong dl{ display:block; padding:180px 83px 0px 0px; background:url(../images/forget_05.gif) no-repeat 30px 15px; height:30px;}
+ .chenggong dl dt{ float:right; margin-left:10px;}
+ .chenggong dl dd{ float:right;}
+ 
+.shibai{position: fixed; z-index:3;height:299px;width:470px;top:22%;left:32%;background: url(../images/denlu_01.gif) no-repeat; overflow:hidden; padding:1px;} 
+ .shibai .close{ text-align:right; height:30px;}
+ .shibai dl{ display:block; padding:180px 83px 0px 0px; background:url(../images/forget_08.gif) no-repeat 35px 15px; height:30px;}
+ .shibai dl dt{ float:right; margin-left:10px;}
+ .shibai dl dd{ float:right;}

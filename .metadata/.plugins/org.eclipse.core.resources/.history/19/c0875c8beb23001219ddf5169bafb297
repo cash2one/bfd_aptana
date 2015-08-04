@@ -1,0 +1,6 @@
+/**
+ * @author Administrator
+ */
+if(typeof Object.beget !== 'function'){
+	
+}

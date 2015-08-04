@@ -1,0 +1,8 @@
+/**
+ * @author Administrator
+ */
+
+//this.legendflush = function(legend) {
+//		setting.cols = [legend.current]
+//		flush();
+//	}

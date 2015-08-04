@@ -1,0 +1,41 @@
+	div.control{
+				height:150px;
+            	width:100%;
+				position: absolute;
+			}
+			
+            div.control-up {
+                top: 0;
+            }
+            
+            div.control-down {
+                bottom: 0;
+            }
+            
+            div.arrow {
+                width: 80px;
+                height: 80px;
+				position: relative;
+                cursor: pointer;
+                -webkit-border-radius: 40px;
+                -moz-border-radius: 40px;
+                border-radius: 40px;
+            }
+            
+            div.control-down div.arrow{
+                background: rgba(255, 255, 255, 0.2) url(http://archive.unity3d.com/download_unity/4/sprites-4.png) -248px -150px no-repeat;
+            }
+            
+            div.control-up div.arrow{
+                background: rgba(255, 255, 255, 0.2) url(http://archive.unity3d.com/download_unity/4/sprites-4.png) -248px -81px no-repeat;
+            }
+            div.buttonDiv {
+                width: 100%;
+                position: absolute;
+                z-index: 99;
+				left:0;
+				top:0;
+            }
+			div.allkj{
+				min-height:500px;
+			}

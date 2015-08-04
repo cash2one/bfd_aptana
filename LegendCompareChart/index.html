@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>LegendCompareChart</title>
+		<link href="./resources/DateRange/css/datepicker.css" rel="stylesheet" type="text/css" />
+		<link href="./resources/LegendCompareChart/css/LegendCompareChart.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="./resources/commons/jquery.js"></script>
+		<script type="text/javascript" src="./resources/DateRange/js/date_tools.js"></script>
+		<script type="text/javascript" src="./resources/DateRange/js/datarange.all.min.js"></script>
+		<script type="text/javascript" src="./resources/charts/highcharts/highcharts.js"></script>
+		<script type="text/javascript" src="./resources/qtip/jquery.qtip-1.0.0.min.js"></script>
+		<script type="text/javascript" src="./resources/LegendCompareChart/js/LegendCompareChart.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var dateRange=new DateRange($('#date'))
+				var lcc=new LegendCompareChart($('#chart'),{
+					items:[{"checked": true, "key": "uv",  "title": "\u552f\u4e00\u8bbf\u5ba2\u6570 ","desc":'\u552f\u4e00\u8bbf\u5ba2\u6570'}, {"key": "pv", "value": "123213", "title": "\u9875\u9762\u6d4f\u89c8\u91cf "}],
+					menuItem:{
+						url:'menuItem.json',
+						data:{}
+					},
+					chart:{
+						 url:'chart.json',
+						 data:{}
+					}
+				},dateRange)
+			})
+		</script>
+	</head>
+	<body>
+		<div id="date"></div>
+		<div id="chart"></div>
+		<div id="chart1"></div>
+	</body>
+</html>

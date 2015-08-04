@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>datepacker</title>
+        <link rel="stylesheet" type="text/css" href="./datepicker/css/datepicker.css"/>
+        <script type="text/javascript" src="jquery.js">
+        </script>
+        <script type="text/javascript" src="./datepicker/js/date_tools.js">
+        </script>
+        <script type="text/javascript" src="./datepicker/js/datepicker.js">
+        </script>
+        <script type="text/javascript">
+			$(function(){
+				        var events={},event={}
+						var temp={
+									'2012-05-01':[{name:'label'}],
+								    '2012-05-16':[{name:'date'},{name:'memori'}],
+								   '2012-05-17':[{name:'memori'}],
+								   '2012-05-18':[{name:'label'}]
+								}
+						events['2012-5']=temp		
+						function parseEventDom(es){
+							var hash={
+								'menstr':function(item){
+									return '<span class="icon_menstr"><img src="images/icon_menstr.png" alt="Menstrual period"></span>'
+								},
+								'label':function(item){
+									return '<span class="icon_label"><img alt="标签" src="images/icon_label.png"></span>'
+								},
+								'date':function(item){
+									return '<span class="icon_date"><img alt="约会" src="images/icon_date.png"></span>'
+								},
+								'memori':function(item){
+									return '<span class="icon_memori"><img alt="纪念日" src="images/icon_memori.png"></span>'
+								}
+							}
+							var result=[]
+//							for(var k in es){
+//								if(hash[k]){
+//									result.push(hash[item.name](es[k]))
+//								}
+//							}
+							$.each(es,function(i,item){
+								result.push(hash[item.name](item))
+							})
+							return result
+						}
+                        $('.rili').DatePicker({
+//							onChange:function(date){
+//								//选中一个日期的事件(可选 )
+//								console.info('onchange:'+date)
+//								return true
+//							},
+							beforefill:function(firsdateofmonth){
+//								console.info(formatDate(firsdateofmonth,'Y-B'))
+								var m=formatDate(firsdateofmonth,'Y-B')
+								if(!events[m]){
+									$.ajax({
+										async:false,
+										 url: 'url',
+										 cache:false,
+				                         dataType: "json",
+										 data:{'d':m},
+				                         success:function(data){
+											   events[m]=data
+										 }
+									})
+								}
+								event=events[m]
+							},
+							fillevents:function(date){
+								var result=[]
+								var formateDate=formatDate(date,'Y-m-d')
+								if(event[formateDate]){
+									result=result.concat(parseEventDom(event[formateDate]))
+								}
+								return result
+							}
+						})
+			})
+        </script>
+        <style type="text/css">
+            #test {
+                background: url("./images/cal_bg.jpg") no-repeat scroll 0 0 transparent;
+            }
+            
+            .icon_menstr, .icon_date, .icon_memori, .icon_label, .weekday {
+                position: absolute;
+            }
+            
+            .icon_menstr {
+                left: 3px;
+                top: 6px;
+            }
+            
+            .icon_date {
+                left: 43px;
+                top: 6px;
+            }
+            
+            .icon_memori {
+                left: 3px;
+                top: 38px;
+            }
+            
+            .icon_label {
+                left: 43px;
+                top: 38px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="test">
+        </div>
+    </body>
+</html>

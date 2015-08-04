@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BaeWidgetDoc/img/流程图1.jpg&apos; to &apos;flow.jpg&apos;" description="Rename resource &apos;流程图1.jpg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="img/流程图1.jpg" name="flow.jpg" stamp="1353317326130" updateReferences="true"/>
+</session>

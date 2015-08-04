@@ -1,0 +1,114 @@
+body{margin:0px;padding:0px;font-family:"微软雅黑",Arial, Tahoma,Verdana,sans-serif; font-size:12px; }
+ul{margin:0px;padding:0px;}
+li{margin:0px;padding:0px; list-style:none;}
+h1{margin:0px;padding:0px;}
+h2{margin:0px;padding:0px;}
+h3{margin:0px;padding:0px;}
+h4{margin:0px;padding:0px;}
+
+dl{margin:0px;padding:0px;}
+dd{margin:0px;padding:0px;}
+dt{margin:0px;padding:0px;}
+img{border:0px;}
+span{
+	margin:0px;
+	padding:0px;
+}
+p{margin:0px;padding:0px;}
+a{color:#292929; text-decoration:none;blr:expression(this.onFocus=this.blur())}
+a:visited{color:#292929; text-decoration:none;}
+a:hover{color:#ff3600; text-decoration:none;}
+em{ color:#ff6434; font-style:normal;}
+.clear{clear: both;display: block;font-size: 1px;height: 0;line-height: 0;visibility: hidden;width: 1px;}
+
+#container{width:1000px; margin:0px auto;}
+/*头部*/
+#header{width:100%;float:left;height:70px; background:#1a1a1a;}
+/*logo区域*/
+
+#header .top{width:1000px;height:70px;margin:0px auto;display:block;background:#1a1a1a;}
+#header .top a{ float:right; display:block;color:#999999;margin-left:10px;margin-right:10px;margin-top:25px;}
+#header a.logo{ float:left; margin:0;}
+#header .top a:hover{color:#ffffff;}
+
+/*联系方式--主体*/
+.container{wdith:100%;margin: 0px auto;}
+.mainbody{width:1000px;margin:0px auto;}
+.main{width:100%;margin:0px auto; float:left;padding-bottom:80px;}
+.main h1{color:#171b62;display:block; float:left;width:100%;font-size:20px;height:80px;border-bottom:1px #ececeb solid;line-height:80px;}
+.main .ct_content{ display:block;width:600px; float:left; color:#808080; font-size:14px;line-height:23px;margin-top:20px;}
+.main .dt{ float:right;margin-top:20px;}
+/*帮助中心*/
+.main h2{ color:#4d4d4d;font-size:16px;font-weight:normal;margin-bottom:15px;margin-top:20px; display:block; float:left;width:100%;}
+.main .help_content{margin-left:15px; float:left; color:#808080;font-size:14px;line-height:25px; display:block;width:95%; margin-bottom:10px;}
+/*安装教程*/
+.main .menu{width:154px; float:left;margin-top:20px;}
+.main .menu a{
+	background:url(../images/tb_tb15.jpg);
+	width:134px;
+	height:41px;
+	display:block;
+	margin-bottom:5px;
+	line-height:41px;
+	color:#717372;
+	text-align:left;
+	font-size:14px;
+	padding-left: 20px;
+}
+.main .menu a.now{ background:url(../images/tb_tb12.jpg);color:#ffffff;}
+.main .menu a:hover{ background:url(../images/tb_tb13.jpg);color:#717372;}
+.main .setup_content{width:834px;float:right;}
+.main .setup_content h3{
+	width:819px;
+	height:41px;
+	background:url(../images/tb_tb14.jpg);
+	color:#ffffff;
+	line-height:41px;
+	padding-left:15px;
+	margin-bottom:15px;
+	margin-top:20px;
+}
+
+.step p{height:30px;line-height:30px; }
+.step .lh54{height:54px;line-height:54px;}
+.step .number{
+	float:left;
+	font-size:14px;
+	font-weight:normal;
+	color:#FFF;
+	margin-right:8px;
+	background-image: url(../images/numbg.gif);
+	background-repeat: no-repeat;
+	height: 22px;
+	width: 22px;
+	line-height: 22px;
+	text-align: center;
+}
+.step .text{
+	float:left;
+	font-size:14px;
+	color:#444;
+	line-height: 22px;
+}
+.step .p-top{
+	padding-top: 20px;
+}
+.step .p-con{
+	padding:20px 0 0 30px; font-size:14px;
+}
+
+
+.step .ml30{margin-left:30px;}
+.step a.btn_1{display:block;width:66px;height:29px;line-height:28px;text-align:center;background:url(../images/download-btn.png) 0 0 no-repeat; clear:both; margin-top:10px;margin-left:30px; }
+.step a.btn_1 span{height:29px;font-size:12px;color:#0099ff;}
+.step .ml24{margin-left:24px;}
+
+.main .list{ background:url(../images/tb_tb16.jpg) no-repeat;min-height:28px;float:left;width:834px;}
+.main .list h4 span{display:block; float:left;}
+.main .list .nob{padding-left:7px;padding-right:10px;line-height:21px;}
+.main .list .text{width:750px;line-height:21px;}
+.main .listimg{margin-left:27px; float:left;margin-top:5px;margin-bottom:5px;}
+.main h4{font-size:14px; color:#717372;font-weight:normal;}
+/*底部区域*/
+.footer{width:100%; float:left;height:70px;line-height:70px; text-align:center;color:#b3b3b3; background:#f8f6ef;}
+.footer a{display: none;}

@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		 <link href="style.css" rel="stylesheet" type="text/css" />
+		 <script type="text/javascript" src="./js/jquery.min.js">
+        </script>
+		<script type="text/javascript" src="./js/scroll.js"></script>
+		<script type="text/javascript">
+			/*$(function(){
+				function getHeight(){
+				    if (typeof window.parent.window.innerHeight != 'undefined'){
+				      var viewportheight = window.parent.window.innerHeight;
+				    }
+				    else if (typeof window.parent.window.document.documentElement != 'undefined' && typeof window.parent.window.document.documentElement.clientHeight != 'undefined' && window.parent.window.document.documentElement.clientHeight != 0){
+				      var viewportheight = window.parent.window.document.documentElement.clientHeight;
+				    }
+				    else {
+				      var viewportheight = window.parent.window.document.getElementsByTagName('body')[0].clientHeight;
+				    }
+				    return viewportheight;
+				  }
+			$(window.parent.document).mousemove(function(e){
+				var h=getHeight()
+				var y = $(window.parent.window.document).scrollTop();
+		        var triggerArea = 150;
+		        var currentTop = y;
+		        var currentBottom = y + h;
+		        var mousePosY = e.pageY;
+		        var mousePosX = e.pageX;
+				// Up arrow
+//		        if(mousePosY >= currentTop + 40 && mousePosY <= currentTop + triggerArea && $(document).scrollTop() > h / 2){
+		        if(currentTop > 0 && mousePosY < currentTop+(h/2)+){
+				  console.info('up')
+				  $('#control-up').fadeIn(300);
+		          $('#control-up').css('top',mousePosY - y - 50).css('left',mousePosX);
+		        } else {
+		          $('#control-up').hide();
+		        }
+				// Down arrow
+//		        if(mousePosY <= currentBottom && mousePosY >= currentBottom - triggerArea && $(document).scrollTop() < $(document).height() - h && mousePosY > h){
+		        if(currentTop < $('body').height()-h && mousePosY > currentTop+(h/2)+160){
+					console.info('down')
+			      $('#control-down').fadeIn(300);
+		          $('#control-down').css('top',mousePosY - y - h - 50).css('left',mousePosX);
+		        } else {
+		          $('#control-down').hide();
+		        }
+			})
+			})*/
+		</script>
+		<style type="text/css">
+			div.control{
+				height:150px;
+            	width:100%;
+				position: absolute;
+			}
+			
+            div.control-up {
+                top: 0;
+            }
+            
+            div.control-down {
+                bottom: 0;
+            }
+            
+            div.arrow {
+                width: 80px;
+                height: 80px;
+				position: relative;
+                cursor: pointer;
+                -webkit-border-radius: 40px;
+                -moz-border-radius: 40px;
+                border-radius: 40px;
+            }
+            
+            div.control-down div.arrow{
+                background: rgba(255, 255, 255, 0.2) url(http://archive.unity3d.com/download_unity/4/sprites-4.png) -248px -150px no-repeat;
+            }
+            
+            div.control-up div.arrow{
+                background: rgba(255, 255, 255, 0.2) url(http://archive.unity3d.com/download_unity/4/sprites-4.png) -248px -81px no-repeat;
+            }
+            div.buttonDiv {
+                width: 100%;
+                position: absolute;
+                z-index: 99;
+				left:0;
+				top:0;
+            }
+			div.allkj{
+				min-height:500px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="buttonDiv">
+			<div class="control-up control"><div id="control-up" class="arrow" data-direction="up" style="left: 1014px; display: none;"></div></div>
+			<div class="control-down control"><div id="control-down" class="arrow" data-direction="down" style="display: none; left: 913px; "></div></div>
+		</div>
+		<div class="allkj" show="true">
+					<div style="margin-right: -248px;" class="chapter-labels">
+					      <div class="labels">
+					        <h1>推荐技术</h1>
+					        <h3>The recommended techniques</h3>
+					      </div>
+					    </div>
+						<div class="txtcon01">
+						      <div class="l">
+						        <div class="txt">
+						          <h2>推荐技术</h2>
+						          <p>浏览和收藏代表用户的偏好，购买行为则最贴近用户的真实需求，通常在互联网上完成购买行为越多的用户，其兴趣展示越充分。 在群体智慧与复杂网络领域的多年耕耘 让百分点科技拥有海量消费偏好挖掘能力，确保每次送达的精准性和时效性。百分点推荐运用其独特的场景引擎、规则引擎和算法引擎，结合用户兴趣 偏好以及电商运营的KPI设定目标，在不降低用户体验的前提下大幅提高电商运营水平。推荐引擎可以提高长尾商品的曝光率，从而将尾部变粗，从 而提高高毛利商品的动销，提高总毛利。</p>
+						        </div>
+						        <div class="limg"><img width="450" height="92" src="images/demo02a.jpg"></div>
+						      </div>
+						      <div class="r"><img src="images/demoa.jpg"></div>
+						      <div style="clear:both"></div>
+						    </div>
+                    </div>
+                    <div class="allkj" show="flase">
+					<div style="margin-right: -248px;" class="chapter-labels">
+					      <div class="labels">
+					        <h1>云计算平台</h1>
+					        <h3>Cloud computing platform</h3>
+					      </div>
+					    </div>
+							<div class="txtcon02">
+							      <div class="l">
+							        <div class="txt">
+							          <h2>云计算平台</h2>
+							          <p>满足针对用户全网兴趣偏好进行精准分 析，打通顾客在多个网站的行为数据和兴趣偏好，形成顾客商业行为数据平台。百分点为为您服务时，会利用百分点积累的用户的全网行为偏好和规律，这样比仅仅 利用它自身的数据全面和精准很多。百分点每增加一家合作网站，所有的原有合作方都会受益。 百分点云计算平台已是最大的跨网站消费偏好平台，推荐引擎服务用户数已达1.4亿，超过200亿个消费偏好标签推荐，为电商带来的销售额已超过1.5亿近，200家合作伙伴。</p>
+							        </div>
+							        <div class="limg"><img width="450" height="92" src="images/demo02.jpg"></div>
+							      </div>
+							      <div class="r"><img src="images/demo.jpg"></div>
+							      <div style="clear:both"></div>
+							    </div>
+                    </div>
+	 <div class="allkj" show="flase">
+						<div style="margin-right: -248px;" class="chapter-labels">
+						      <div class="labels">
+						        <h1>个性化产品</h1>
+						        <h3>Personalized products</h3>
+						      </div>
+						    </div>
+                        <div class="txtcon03"><div class="txt">
+          <h2>个性化产品</h2>
+          <p>场景引擎，实时流计算，在最短的时间内迅速判断用户目前所处的决策阶段并挖掘用户的购物意图，根据用户当前所处的场景实时反馈推荐结果，已达 成最好的用户体验和推荐效果。
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;个性化邮件营销，根据用户历史的行为偏好特质和电商定义的发送时机，给用户提供个性化的营销邮件。提供个性化的标题和内容，大幅提高邮件的打 开率和转化率。
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;个性化着陆页，根据用户的搜索关键字和其行为偏好，实现千人千面的着陆页，最大的实现页面资源的利用和SEM的费用投入，大幅度提高用户的二 跳率和转化率。
+			<br />&nbsp;&nbsp;&nbsp;&nbsp;百分点实验室，定制化提供电商KPI调节接口，与百分点规则引擎一起实现在不降低用户体验的前提下大幅提高电商运营水平，达成KPI的高效完 成。</p>
+        </div>
+      <div class="l">
+        <div class="limg"><img width="450" height="92" src="images/demo02c.jpg"></div>
+      </div>
+      <div class="r"><span class="limg"><img width="450" height="92" src="images/democ.jpg"></span></div>
+      <div style="clear:both"></div>
+    </div>
+                    </div>
+<div class="footer">
+<p>Copyright©2012 Baifendian Corporation All Right Reserved.　京ICP备09109727号　京公网安备110108400769号</p>
+</div>					
+	</body>
+</html>

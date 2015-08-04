@@ -1,0 +1,66 @@
+/**
+ * @author Administrator
+ */
+(function(document, window) {
+	var _path = document.scripts;
+	_path = _path[_path.length - 1].src.substring(0, _path[_path.length - 1].src.lastIndexOf("/") + 1);
+	if ((_path.indexOf('http') != 0 && _path.indexOf('/') != 0) || _path.indexOf('./') == 0) {
+		_path = window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1) + _path
+	}
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src = _path + 'commons/LAB.js';
+	document.getElementsByTagName("head")[0].appendChild(script);
+	window.baifendianWidgets = function(id) {
+		if (typeof jQuery == 'undefined') {
+			$LAB.script(_path + 'commons/jquery.js').wait(_jqLoad)
+		} else {
+			_jqLoad()
+		}
+
+		function _jqLoad() {
+			$.ajax({
+				url: _baifendianWidgetsComboSettingURL,
+				data: {
+					pageID: id
+				},
+				dataType: 'json',
+				success: function(data) {
+					$.each(data, function(i, item) {
+						var $l
+						$.each(_baifendianWidgets[item.type]['requires'], function(a, b) {
+							if (a == 0) {
+								$l = $LAB.script(_path + 'models/' + item.type + '/requires/' + b).wait()
+							} else {
+								$l.script(_path + 'models/' + item.type + '/requires/' + b).wait()
+							}
+						})
+//						$LAB
+//						.script($.map(_baifendianWidgets[item.type]['requires'],function(i){
+//							return _path+'models/'+item.type+'/requires/'+i
+//						}))
+//						.wait()
+						if ($l) {
+							$l.script(_path + 'models/' + item.type + '/parse.js')
+						} else {
+							$l = $LAB.script(_path + 'models/' + item.type + '/parse.js')
+						}
+						$l.wait(function() {
+							var c = _baifendianWidgets[item.type].parse(item)
+							$.ajax({
+								url: _baifendianDataURL,
+								data: {
+									data: id
+								},
+								dataType: 'json',
+								success: function(d) {
+									c.setData(d)
+								}
+							})
+						})
+					})
+				}
+			})
+		}
+	}
+})(document, window);

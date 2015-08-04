@@ -1,0 +1,100 @@
+$(function(){
+	$('#sub').click(function(){
+		$('#form1').submit()
+	})
+	$('body').keyup(function(event){
+		if(event.keyCode===13){
+			$('#form1').submit();
+			}
+	})
+	$('.agree span').click(function(){
+		if($(this).parent().find(':checkbox').is(':checked')){
+			$(this).parent().find(':checkbox').attr('checked',false)
+		}else{
+			$(this).parent().find(':checkbox').attr('checked',true)
+		}
+	})
+	var validater = $('#form1').validate({
+		submitHandler: function(form){
+			$(form).ajaxSubmit({
+				success:function(responseText, statusText, xhr, $form){
+					if(responseText=='7' ){
+						window.document.location.href = "/ifm/SiteManager/site/!index";
+					}else if(responseText == '0'){
+						validater.showErrors({'user.username':'请输入邮箱地址'});
+						validater.showErrors({'user.password':'请输入密码'});
+					} else if(responseText == '1'){
+						validater.showErrors({'user.username':'请输入邮箱地址'});
+					} else if(responseText == '2'){
+						validater.showErrors({'user.password':'请输入密码'});
+					} else if(responseText == '3'){
+						validater.showErrors({'user.username':'邮箱格式错误，请重新输入'});
+					} else if(responseText == '4'){
+						validater.showErrors({'user.password':'密码格式错误，请重新输入'});
+					} else if(responseText == '5'){
+						validater.showErrors({'user.username':'该账号已存在，请填写其他邮箱或登录'});
+					} else if(responseText == '6'){
+					} 
+				}
+			})
+			return false
+		},
+        rules: {
+        	'user.username': {
+            	 required: true,
+                 email:true,
+                 remote:{
+                	 url:'/ifm/Account/user/!queryUserByUserName2',//返回true or false
+                	 type:'post',
+                	 dataType:'json',
+                	 data:{username:function(){
+                		 return $('#username').val()
+                	 }}
+                 }
+             },
+             'user.password':{
+             	 required: true,
+             	 minlength: 6,
+            	 maxlength: 18
+             },
+             repassword: {
+             	required: true,
+                 equalTo: "#password"
+             },
+             agree:{
+            	 required:function(element){
+            		 if($(element).is(':checked')){
+            			 return false
+            		 }
+            		 return true
+            	 }
+             }
+         },
+         messages: {
+        	 'user.username': {
+                 required: "请输入邮箱",
+                 email:'邮箱格式错误',
+                 remote:'用户已存在'
+             },
+             'user.password':{
+             	required: "密码不能为空",
+             	minlength:"密码最少6位",
+            	maxlength:"密码最多18位"
+             },
+             repassword:{
+            	 required:"请重复确认密码",
+             	  equalTo:'两次输入密码不一致' 
+             },
+             agree:{
+            	 required:'请同意使用协议'
+             }
+         },
+         focusInvalid:true,
+         onkeyup: false,
+         wrapper:null,
+         errorElement:'span',
+         errorPlacement: function(error, element){
+             error.appendTo(element.parent());
+         }
+     })
+})

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>New Web Project</title>
+        <script src="../resources/jquery/jquery.js" type="text/javascript"></script>
+        <script src="../resources/highcharts/highcharts.js"type="text/javascript"></script>
+        <script src="../js/base_option.js" type="text/javascript"></script>
+        <script src="../js/detail_option.js" type="text/javascript"></script>
+        <script src="../js/data_option.js" type="text/javascript"></script>
+        <script type="text/javascript">
+    $(document).ready(function() {
+        base.xAxis.push(xAxis0);
+        base.xAxis.push(xAxis1);
+        base.yAxis.push(yAxis0);
+        base.yAxis.push(yAxis1);
+        base.yAxis.push(yAxis2);
+        $.each(series,function(n,i){
+             base.series.push(i);
+        });
+        //添加点击事件
+        base.plotOptions.column = {
+            point:{
+                events:{
+                    click:function(){
+                        alert(this.series.name+':'+this.y)
+                        console.log(this)
+                    }
+                }
+            }
+        }
+        //设置tooltips
+        base.tooltip.formatter = function() {
+                return '<b>'+ this.series.name +'</b><br/>'+
+                this.x +': '+ this.y +'';
+        };
+        //生成图表
+        var chart = new Highcharts.Chart(base);
+    });
+</script>
+    </head>
+    <body>
+        <div id="container" style="margin: auto;width:100%;height:600px;"></div>
+    </body>
+</html>

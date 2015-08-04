@@ -1,0 +1,13 @@
+#coding=utf-8
+from baeUE.chart.views import index
+from django.conf.urls.defaults import patterns, url
+
+
+urlpatterns = patterns('',
+    url(r'^$', index),
+    )
+
+
+
+if __name__ == '__main__':
+    pass

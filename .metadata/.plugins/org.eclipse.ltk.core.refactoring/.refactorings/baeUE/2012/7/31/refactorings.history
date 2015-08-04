@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;baeUE/static/test/function/chart.js&apos; to &apos;Chart.js&apos;" description="Rename resource &apos;chart.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="static/test/function/chart.js" name="Chart.js" stamp="1343723631788" updateReferences="true"/>
+</session>

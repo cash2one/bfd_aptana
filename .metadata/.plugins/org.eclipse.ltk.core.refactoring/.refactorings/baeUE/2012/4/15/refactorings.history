@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;baeUE/static/test/temp.html&apos; to &apos;Template.html&apos;" description="Rename resource &apos;temp.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="static/test/temp.html" name="Template.html" stamp="1334311711586" updateReferences="true"/>
+</session>

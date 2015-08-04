@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>正则表达式</title>
+		<script type="text/javascript">
+			//定义
+			var re=/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/i
+			var re2=new RegExp('^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$','i')
+			//最后一个i是标识 i表达不区分大小写 g表达全局匹配(匹配多次) m表示多行
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

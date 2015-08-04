@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		<link href="./resources/isocheckbox/ioscheckbox.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="./resources/jquery/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="./resources/isocheckbox/ioscheckbox.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(':checkbox').iphoneStyle({
+					checkedLabel: 'YES',
+  					uncheckedLabel: 'NO',
+					onChange:function(dom,value){
+						console.info(value)
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="checkbox"/>
+	</body>
+</html>

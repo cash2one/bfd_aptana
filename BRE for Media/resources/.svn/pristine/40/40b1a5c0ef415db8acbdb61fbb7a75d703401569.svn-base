@@ -1,0 +1,194 @@
+@charset "utf-8";
+/* CSS Document */
+
+div.datepicker {
+	cursor: default;
+	display: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 140px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 196px;
+	background-color: #F9FBFD;
+}
+.datepickerContainer {
+	left: 10px;
+	position: absolute;
+	top: 10px;
+	background-color: #F9FBFD;
+}
+.datepickerBorderT {
+    height: 10px;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+.datepickerBorderB {
+    bottom: 0;
+    height: 10px;
+    left: 10px;
+    position: absolute;
+    right: 10px;
+}
+.datepickerBorderL {
+    bottom: 10px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 10px;
+}
+.datepickerBorderR {
+    bottom: 10px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 10px;
+}
+.datepickerBorderTL {
+    height: 10px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 10px;
+}
+.datepickerBorderTR {
+    height: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+}
+.datepickerBorderBL {
+    bottom: 0;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    width: 10px;
+}
+.datepickerBorderBR {
+    bottom: 0;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    width: 10px;
+}
+.datepickerHidden {
+    display: none;
+}
+/*div.datepicker table {
+    border-collapse: collapse;
+}*/
+div.datepicker a {
+    color: #000000;
+    cursor: default;
+    outline: medium none;
+    text-decoration: none;
+}
+div.datepicker table td {
+	margin: 0;
+	text-align: right;
+	padding-top: 0;
+	padding-right: 1px;
+	padding-bottom: 0;
+	padding-left: 0;
+}
+div.datepicker th {
+    color: #999999;
+    font-weight: normal;
+    text-align: center;
+}
+div.datepicker tbody th {
+    text-align: left;
+}
+div.datepicker tbody a {
+    display: block;
+}
+.datepickerDays a {
+	height: 18px;
+	line-height: 18px;
+	padding-right: 1px;
+	width: 16px;
+}
+.datepickerYears a, .datepickerMonths a {
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    width: 44px;
+}
+td.datepickerNotInMonth a {
+	color: #DBDBDB;
+}
+th.datepickerWeek a {
+    color: #999999;
+}
+tbody.datepickerDays td.datepickerSelected {
+	background-color: #FC0;
+}
+tbody.datepickerDays td.datepickerSelected a {
+	color: #FFF;
+}
+tbody.datepickerDays td.datepickerNotInMonth.datepickerSelected {
+	background-attachment: scroll;
+	background-color: #FFF0AA;
+	background-image: none;
+	background-repeat: repeat;
+	background-position: 0 0;
+}
+tbody.datepickerYears td.datepickerSelected, tbody.datepickerMonths td.datepickerSelected {
+    background: none repeat scroll 0 0 #17384D;
+}
+div.datepicker a:hover, div.datepicker a:hover {
+    color: #88C5EB;
+}
+div.datepicker td.datepickerNotInMonth a:hover {
+    color: #999999;
+}
+div.datepicker tbody th {
+    text-align: right;
+}
+.datepickerSpace div {
+    width: 20px;
+}
+.datepickerGoNext a, .datepickerGoPrev a, .datepickerMonth a {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.datepickerGoNext a {
+    float: right;
+    width: 20px;
+}
+.datepickerGoPrev a {
+    float: left;
+    width: 20px;
+}
+table.datepickerViewDays td,table.datepickerViewDays th{
+	cursor:pointer;
+}
+tr.datepickerDoW th{
+	cursor:default;
+}
+table.datepickerViewDays tbody.datepickerMonths, table.datepickerViewDays tbody.datepickerYears {
+    display: none;
+}
+table.datepickerViewMonths tbody.datepickerDays, table.datepickerViewMonths tbody.datepickerYears, table.datepickerViewMonths tr.datepickerDoW {
+    display: none;
+}
+table.datepickerViewYears tbody.datepickerDays, table.datepickerViewYears tbody.datepickerMonths, table.datepickerViewYears tr.datepickerDoW {
+    display: none;
+}
+td.datepickerDisabled a, td.datepickerDisabled.datepickerNotInMonth a {
+    color: #333333;
+}
+td.datepickerDisabled a:hover {
+    color: #333333;
+}
+td.datepickerSpecial a {
+    background: none repeat scroll 0 0 #770000;
+}
+td.datepickerSpecial.datepickerSelected a {
+    background: none repeat scroll 0 0 #AA0000;
+}

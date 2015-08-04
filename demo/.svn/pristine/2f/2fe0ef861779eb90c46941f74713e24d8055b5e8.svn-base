@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>首页</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="./js/jquery.tools.min.js">
+        </script>
+		 <script type="text/javascript" src="./js/jquery.blockUI.js">
+        </script>
+        <script type="text/javascript" src="./js/index.js">
+        </script>
+		<script type="text/javascript">
+		</script>
+        <style type="text/css">
+            body {
+                overflow-x: hidden;
+            }
+            
+            .scrollable {
+                /* required settings */
+                position: relative;
+                /*  overflow: hidden;*/
+            }
+            
+            .scrollable .items {
+                /* this cannot be too large */
+                width: 20000em;
+                position: absolute;
+            }
+            
+            .con {
+                float: left;
+            }
+        </style>
+    </head>
+    <body scroll="no">
+        <div class="alltop">
+            <div class="toplogo">
+                <div class="top">
+                    <a href="#" class="logo"></a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="m_list">
+                    <ul>
+                        <li>
+                            <a><img src="images/menu01b.png" alt="首页" /></a>
+                        </li>
+                        <li>
+                            <a><img src="images/menu02.png" alt="场景" /></a>
+                        </li>
+                        <li>
+                            <a><img src="images/menu03.png" alt="EDM" /></a>
+                        </li>
+                        <li>
+                            <a><img src="images/menu04.png" alt="着陆页" /></a>
+                        </li>
+                        <li>
+                            <a><img src="images/menu05.png" alt="实验" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="scrollable" id="scrollable">
+            <div class="items">
+                <div class="con">
+                    <iframe src="./1.html" frameborder="0" border="0" cellspacing="0" width="100%" height="1560px" scrolling="no">
+                    </iframe>
+                </div>
+                <div class="con">
+                    <iframe src="./scene.html" frameborder="0" border="0" cellspacing="0" width="100%" height="800px" scrolling="no">
+                    </iframe>
+                </div>
+                <div class="con">
+                    <iframe src="./edm.html" frameborder="0" border="0" cellspacing="0" width="100%" height="800px" scrolling="no">
+                    </iframe>
+                </div>
+                <div class="con">
+                    <iframe src="./search.html" frameborder="0" border="0" cellspacing="0" width="100%" height="800px" scrolling="no">
+                    </iframe>
+                </div>
+                <div class="con">
+                    <iframe src="./exp.html" frameborder="0" border="0" cellspacing="0" width="100%" height="800px" scrolling="no">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

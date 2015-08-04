@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;BRE for Media/pages/DataAnalysis/test.json&apos; to &apos;chart.json&apos;" description="Rename resource &apos;test.json&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pages/DataAnalysis/test.json" name="chart.json" stamp="1356314606456" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;BRE for Media/pages/DataAnalysis/test.json&apos; to &apos;grid.json&apos;" description="Rename resource &apos;test.json&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pages/DataAnalysis/test.json" name="grid.json" stamp="1356316192574" updateReferences="true"/>
+</session>

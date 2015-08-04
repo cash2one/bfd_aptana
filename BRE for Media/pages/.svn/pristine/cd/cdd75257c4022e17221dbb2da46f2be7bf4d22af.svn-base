@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>流量交换-设置</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	
+	
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好,测试用户</a></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="current">
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div id="content" class="content" style="min-height:560px;">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<ul class="nav2">
+				<li class=""><a href="#">网站列表</a></li>
+				<li class="rbgno current"><a href="#">设置</a></li>
+			</ul>
+			<div class="m-con">
+				<div class="con-2">
+					<div class="arrow3">&nbsp;</div>
+					<div class="section">
+						<div class="set-left">
+							<div class="top">
+								<input type="checkbox" />
+								<span>开启流量交换</span>
+							</div>
+							<div class="display">
+								<div class="item1">
+									<label>显示模式：</label>
+									<input type="radio" />
+									<span>文字模式</span>
+									<input type="radio" />
+									<span>图片模式</span>
+								</div>
+								<div class="item2">
+									<label>显示条数：</label>
+									<div class="select_box2"><input id="myselect" type="text" value="请选择" readonly="readonly">
+										<ul class="select_ul2">
+											<li>选项一</li>
+											<li>选项二</li>
+										</ul>
+									</div>
+								</div>
+								<div class="item3">
+									<label>图片宽度：</label>
+									<div class="textbox">
+										<div class="textbox-l">
+											<div class="textbox-r">
+												<input type="text" class="txt-width50" value="100" name="form_email" />		
+											</div>
+										</div>
+									</div>
+									<span>px</span>
+								</div>
+							</div>
+							<div class="display">
+								<dl>
+									<dt>流量交换验证方式：</dt>
+									<dd>
+										<input type="radio" checked="checked" name="2" value="手动审核"   />
+										<p>
+											<span>手动审核</span>
+											<em>该选项用于控制流量交换网站的质量</em>
+										</p>
+									</dd>
+									<dd>
+										<input type="radio" name="2" value="自动通过"   />
+										<p>
+											<span>自动通过</span>
+											<em>该选项用于提高交换效率</em>
+										</p>
+									</dd>
+								</dl>
+							</div>
+							<a href="#" class="btn">保 存</a>
+						</div>
+						<div class="set-right">
+							<h4>预览：</h4>
+							<div class="preview">
+								<img src="../../images/pic-19.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+</body>
+</html>

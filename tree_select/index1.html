@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>BRE-规则管理-创建规则</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link type="text/css" rel="stylesheet" href="css/frame.css">
+	<link type="text/css" rel="stylesheet" href="css/public.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/combobox2.js"></script>
+	<script type="text/javascript" src="js/c.js"></script>
+</head>
+<body>
+	<!-- hd 开始 -->
+	<div class="hd">
+		<div class="logo-siteadmin">
+			<a href="#" class="logo"></a>
+		</div>
+		<div class="login-set">
+			<div class="welcome">
+				欢迎您
+				<span id="">user_data</span>
+			</div>
+			<div class="menu">
+				<a href="#" class="set">账户设置</a>
+				<a href="#" class="help">帮助中心</a>
+				<a href="#" class="login">安全退出</a>
+			</div>
+		</div>
+	</div>
+	<!-- hd 结束 -->
+	<!-- bd 开始 -->
+	<div class="bd">
+		<!-- sidebar        开始 -->
+		<div class="sidebar">
+			<ul class="nav">
+				<li class="">
+					<a href="#" class="top">
+						<strong>推荐栏管理</strong>
+						<span class=""><img src="images/em1.jpg" alt="" /></span>
+					</a>
+				</li>
+				<li class="current">
+					<a href="#">
+						<strong>规则管理</strong>
+						<span class=""><img src="images/em2-2.jpg" alt="" /></span>
+					</a>
+				</li>
+				<li class="">
+					<a href="#" class="bottom">
+						<strong>模版管理</strong>
+						<span class=""><img src="images/em3.jpg" alt="" /></span>
+					</a>
+				</li>
+			</ul>
+			<a class="trackable" href="#"></a>
+		</div>
+		<!-- sidebar        结束 -->
+		<!-- container      开始 -->
+		<div class="container">
+			<div class="main">
+				<div class="data">
+					<div class="ty-top">
+						<div class="ty-top-left">
+							<div class="ty-top-right">
+								<div class="title">创建规则</div>
+							</div>
+						</div>
+					</div>
+					<div class="ty-con">
+						<div class="padding20">
+							<div class="section">
+								<h3>规则基本信息</h3>
+								<div class="add">
+									<div class="item">
+										<label>规则名称：</label>
+										<div class="textbox">
+											<div class="textbox-l">
+												<div class="textbox-r">
+													<input type="text" class="txt-width340" value="" name="1"  />		
+												</div>
+											</div>
+										</div>
+										<strong class="tip">请填写运营规则名称</strong>
+									</div>
+									<div class="item2">
+										<label>规则描述：</label>
+										<textarea class="width480" style="border:1px  #d2d2d2  solid">&nbsp;</textarea>
+									</div>
+								</div>
+							</div>
+							<div class="section">
+								<h3>用户数据选择</h3>
+								<div class="add">
+									<div class="item3 margin20">
+										<label>浏览：</label>
+										<div class="choose">
+										<!--	
+											<div class="area">
+												<div class="top-estop"></div>
+												<div class="choose-box">
+													<ul>
+														<li>
+															<input type="radio"  checked="checked" name="3" value="大家电"/>
+															<span>大家电</span>
+														</li>
+														<li>
+															<input type="radio" name="3" value="数码、手机"/>
+															<span>数码、手机</span>
+														</li>
+														<li>
+															<input type="radio" name="3" value="电脑、办公"/>
+															<span>电脑、办公</span>
+														</li>
+														<li>
+															<input type="radio" name="3" value="生活电器"/>
+															<span>生活电器</span>
+														</li>
+														<li>
+															<input type="radio" name="3" value="精品家纺"/>
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="radio" name="3" value="厨具餐具"/>
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="radio" name="3" value="精品家纺"/>
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="radio" name="3" value="厨具餐具"/>
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="radio" name="3" value="精品家纺"/>
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="radio" name="3" value="厨具餐具"/>
+															<span>厨具餐具</span>
+														</li>
+													</ul>													
+												</div>	
+											</div>
+											<div class="area">
+												<div class="top-estop"></div>
+												<div class="choose-box">
+													<ul>
+														<li>
+															<input type="radio"  checked="checked" name="2" value="大家电"/>
+															<span>大家电</span>
+														</li>
+														<li>
+															<input type="radio" name="2" value="数码、手机"/>
+															<span>数码、手机</span>
+														</li>
+														<li>
+															<input type="radio" name="2" value="电脑、办公"/>
+															<span>电脑、办公</span>
+														</li>
+														<li>
+															<input type="radio" name="2" value="生活电器"/>
+															<span>生活电器</span>
+														</li>
+														<li>
+															<input type="radio" name="2" value="精品家纺"/>
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="radio" name="2" value="厨具餐具"/>
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="radio" name="2" value="精品家纺"/>
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="radio" name="2" value="厨具餐具"/>
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="radio" name="2" value="精品家纺"/>
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="radio" name="2" value="厨具餐具"/>
+															<span>厨具餐具</span>
+														</li>
+													</ul>
+												</div>	
+											</div>
+											<div class="area margin0">
+												<div class="top-estop"></div>
+												<div class="choose-box margin0">
+													<ul>
+														<li>
+															<input type="radio"  checked="checked" name="1" value="大家电"/>
+															<span>大家电</span>
+														</li>
+														<li>
+															<input type="radio" name="1" value="数码、手机"/>
+															<span>数码、手机</span>
+														</li>
+														<li>
+															<input type="radio" name="1" value="生活电器"/>
+															<span>电脑、办公</span>
+														</li>
+														<li>
+															<input type="radio" name="1" value="生活电器"/>
+															<span>生活电器</span>
+														</li>
+														<li>
+															<input type="radio" name="1" value="精品家纺"/>
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="radio" name="1" value="厨具餐具"/>
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="radio" name="1" value="精品家纺"/>
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="radio" name="1" value="厨具餐具"/>
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="radio" name="1" value="精品家纺"/>
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="radio" name="1" value="厨具餐具"/>
+															<span>厨具餐具</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+											-->
+										</div>
+									</div>
+									<div class="item3 height236">
+										<label class="padding0">推荐结果：</label>
+										<div class="choose">
+											<!--
+											<div class="area">
+												<div class="top-estop"></div>
+												<div class="choose-box">
+													<ul>
+														<li>
+															<input type="checkbox" />
+															<span>大家电</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>数码、手机</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>电脑、办公</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>生活电器</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>生活电器</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>厨具餐具</span>
+														</li>
+													</ul>
+												</div>
+												<div class="choose-btn">
+													<a href="#" class="all">全选</a>
+													<a href="#" class="reverse">反选</a>
+												</div>
+											</div>
+											<div class="area">
+												<div class="top-estop"></div>
+												<div class="choose-box">
+													<ul>
+														<li>
+															<input type="checkbox" />
+															<span>大家电</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>数码、手机</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>电脑、办公</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>生活电器</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>生活电器</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>厨具餐具</span>
+														</li>
+													</ul>
+												</div>
+												<div class="choose-btn">
+													<a href="#" class="all">全选</a>
+													<a href="#" class="reverse">反选</a>
+												</div>
+											</div>
+											<div class="area margin0">
+												<div class="top-estop"></div>
+												<div class="choose-box margin0">
+													<ul>
+														<li>
+															<input type="checkbox" />
+															<span>大家电</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>数码、手机</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>电脑、办公</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>生活电器</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>生活电器</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>厨具餐具</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>精品家纺</span>
+														</li>
+														<li>
+															<input type="checkbox" />
+															<span>厨具餐具</span>
+														</li>
+													</ul>
+												</div>
+												<div class="choose-btn">
+													<a href="#" class="all">全选</a>
+													<a href="#" class="reverse">反选</a>
+												</div>
+											</div>
+											-->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="section">
+								<h3>价格排序</h3>
+								<div class="add">
+									<div class="item4">
+										<label>价格排序：</label>
+										<div class="radio">
+											<input type="radio"  checked="checked" name="4" value="默认排序"/>
+											<span>默认排序</span>
+											<input type="radio" name="4" value="价高优先"/>
+											<span>价高优先</span>
+											<input type="radio" name="4" value="价低优先"/>
+											<span>价低优先</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="section">
+								<h3>时间排序</h3>
+								<div class="add">
+									<div class="item5">
+										<label>时间调节：</label>
+										<div class="p">
+											<input class="radio" type="radio"  checked="checked" name="5" value="固定时间" />
+											<span class="left">固定时间</span>
+											<div class="select_box"><input type="text" value="分钟" readonly="readonly">
+												<ul class="select_ul">
+													<li>居中</li>
+													<li>居左</li>
+													<li>居右</li>
+												</ul>
+											</div>
+											<div class="select_box"><input type="text" value="小时" readonly="readonly">
+												<ul class="select_ul">
+													<li>居中</li>
+													<li>居左</li>
+													<li>居右</li>
+												</ul>
+											</div>
+											<div class="select_box"><input type="text" value="日期" readonly="readonly">
+												<ul class="select_ul">
+													<li>居中</li>
+													<li>居左</li>
+													<li>居右</li>
+												</ul>
+											</div>
+											<div class="select_box margin0"><input type="text" value="分钟" readonly="readonly">
+												<ul class="select_ul">
+													<li>居中</li>
+													<li>居左</li>
+													<li>居右</li>
+												</ul>
+											</div>
+											<div class="select_box margin0"><input type="text" value="小时" readonly="readonly">
+												<ul class="select_ul">
+													<li>居中</li>
+													<li>居左</li>
+													<li>居右</li>
+												</ul>
+											</div>
+											<div class="select_box margin0"><input type="text" value="日期" readonly="readonly">
+												<ul class="select_ul">
+													<li>居中</li>
+													<li>居左</li>
+													<li>居右</li>
+												</ul>
+											</div>
+											<span class="right">至</span>
+										</div>
+									</div>
+									<div class="item5 margin40">
+										<div class="p width111">
+											<input class="radio" type="radio" name="5" value="周期时间" />
+											<span class="left">周期时间</span>
+											<div class="select-right">
+												<div class="select_box"><input type="text" value="分钟" readonly="readonly">
+													<ul class="select_ul">
+														<li>居中</li>
+														<li>居左</li>
+														<li>居右</li>
+													</ul>
+												</div>
+												<div class="select_box"><input type="text" value="小时" readonly="readonly">
+													<ul class="select_ul">
+														<li>居中</li>
+														<li>居左</li>
+														<li>居右</li>
+													</ul>
+												</div>
+												<div class="select_box"><input type="text" value="星期一" readonly="readonly">
+													<ul class="select_ul">
+														<li>星期一</li>
+														<li>星期一</li>
+														<li>星期一</li>
+													</ul>
+												</div>
+												<div class="select_box"><input type="text" value="按周" readonly="readonly">
+													<ul class="select_ul">
+														<li>按天</li>
+														<li>按周</li>
+														<li>居月</li>
+													</ul>
+												</div>
+												<div class="select_box margin0"><input type="text" value="分钟" readonly="readonly">
+													<ul class="select_ul">
+														<li>按天</li>
+														<li>按周</li>
+														<li>居月</li>
+													</ul>
+												</div>
+												<div class="select_box margin0"><input type="text" value="小时" readonly="readonly">
+													<ul class="select_ul">
+														<li>居中</li>
+														<li>居左</li>
+														<li>居右</li>
+													</ul>
+												</div>
+												<div class="select_box margin0"><input type="text" value="星期一" readonly="readonly">
+													<ul class="select_ul">
+														<li>居中</li>
+														<li>居左</li>
+														<li>居右</li>
+													</ul>
+												</div>
+												<span class="right">至</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="btn">
+								<input class="bluebtn" type="submit" value="确认" />
+								<input class="graybtn" type="submit" value="放弃" />
+							</div>
+						</div>
+					</div>
+					<div class="ty2-bottom">
+						<div class="ty2-bottom-left">
+							<div class="ty2-bottom-right"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- container      结束 -->
+	</div>
+	<!-- bd  结束 -->
+</body>
+</html>

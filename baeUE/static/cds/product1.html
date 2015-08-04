@@ -1,0 +1,451 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Page 3</title>
+        <link href="../css/packed.css" rel="stylesheet" type="text/css" />
+        <link href="../css/function.css" rel="stylesheet" type="text/css" />
+       <!--[if IE]>
+		        <link href="../css/ie.css" rel="stylesheet" type="text/css" />
+	 <![endif]-->
+	<!--[if IE 6]>
+		        <link href="../css/ie6.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+        <link rel="stylesheet" media="screen" type="text/css" href="../resources/datepicker/css/datepicker.css" />
+		 <link rel="stylesheet" media="screen" type="text/css" href="../resources/grid/baeGrid/css/grid.css" />
+        <script type="text/javascript" language="JavaScript" src="../resources/jquery/jquery.js">
+        </script>
+        <script type="text/javascript" src="../resources/datepicker/js/datepicker.js">
+        </script>
+		     <script type="text/javascript" src="../resources/commons/jquery.maskedinput-1.3.min.js">
+        </script>
+        <script type="text/javascript" src="../resources/commons/date_tools.js">
+        </script>
+        <script type="text/javascript" src="../resources/commons/jquery.cookie.js">
+        </script>
+        <script type="text/javascript" src="../resources/datepicker/js/baeDatePicker.js">
+        </script>
+        <script type="text/javascript" src="../resources/charts/baeChars/baeChart.js">
+        </script>
+        <script type="text/javascript" src="../resources/grid/baeGrid/js/baeGrid.js">
+        </script>
+        <script type="text/javascript" language="JavaScript" src="../resources/commons/baeInstall.js">
+        </script>
+		 <script type="text/javascript" language="JavaScript" src="../resources/commons/jquery.blockUI.js">
+        </script>
+		<script type="text/javascript" language="JavaScript" src="../resources/qtip/jquery.qtip-1.0.0.min.js">
+        </script>
+        <script type="text/javascript" language="JavaScript">
+            $(function(){
+                var install,globelsetting			
+				var models={
+					type0:{//按品类
+						 level0:{
+						 	model:{
+								colName: '商品类别',
+		                        name: 'F0',
+		                        fixed: true,
+		                        onRander:function(dom){
+										dom.css({
+											color:'blue'
+									    }).click(function(){
+											models['type0']['level1']['modelData']['pager.category']=dom.html()
+											 l.level='level1'
+											 l.flush()
+											 globelsetting.grid.filter.fixColModel=models['type0']['level1']['model']
+											 globelsetting.grid.grid.data=models['type0']['level1']['modelData']
+											 globelsetting.grid.pie.data=models['type0']['level1']['pieData']
+											 install.grid.flush()
+										})
+								}
+							},
+							modelData:{
+								'pager.code':'100001'
+							},
+							pieData:{
+								
+							}
+						 },
+						 level1:{
+						 	model:{
+								   colName: '商品品牌',
+			                       name: 'F0',
+			                       fixed: true,
+			                       onRander:function(dom){
+									   	dom.css({
+												color:'blue'
+										    }).click(function(){
+												 models['type0']['level2']['modelData']['pager.brand']=dom.html()
+												 models['type0']['level2']['modelData']['pager.category']=models['type0']['level1']['modelData']['pager.category']
+												 l.level='level2'
+												 l.flush()
+												 globelsetting.grid.filter.fixColModel=models['type0']['level2']['model']
+												 globelsetting.grid.grid.data=models['type0']['level2']['modelData']
+												 globelsetting.grid.pie.data=models['type0']['level2']['pieData']
+												 install.grid.flush()
+											})
+								   }
+							},
+							modelData:{
+								 'pager.code':'100003'
+							},
+							pieData:{
+								
+							}
+						 },
+						 level2:{
+						 	model:{
+								colName: '商品名称',
+		                        name: 'F0',
+		                        fixed: true
+							},
+							modelData:{
+								 'pager.code':'100005'
+							},
+							pieData:{
+								
+							}
+						 }
+					},
+					type1:{//按品牌
+						 level0:{
+						 	model:{
+								 colName: '商品品牌',
+		                         name: 'F0',
+		                         fixed: true,
+		                         onRander:function(dom){
+									 	dom.css({
+											color:'blue'
+										}).click(function(){
+											 models['type1']['level1']['modelData']['pager.brand']=dom.html()
+											 l.level='level1'
+											 l.flush()
+											 globelsetting.grid.filter.fixColModel=models['type1']['level1']['model']
+											 globelsetting.grid.grid.data=models['type1']['level1']['modelData']
+											 globelsetting.grid.pie.data=models['type1']['level1']['pieData']
+											 install.grid.flush()
+										})
+								 }
+							},
+							modelData:{
+								'pager.code':'100001'
+							},
+							pieData:{
+								
+							}
+						 },
+						 level1:{
+						 	model:{
+								colName: '商品类别',
+		                         name: 'F0',
+		                         fixed: true,
+		                         onRander:function(dom){
+								 	     dom.css({
+												color:'blue'
+										    }).click(function(){
+												 models['type1']['level2']['modelData']['pager.category']=dom.html()
+												  models['type1']['level2']['modelData']['pager.brand']=models['type1']['level1']['modelData']['pager.brand']
+												 l.level='level2'
+												 l.flush()
+												 globelsetting.grid.filter.fixColModel=models['type1']['level2']['model']
+												 globelsetting.grid.grid.data=models['type1']['level2']['modelData']
+												 globelsetting.grid.pie.data=models['type1']['level2']['pieData']
+												 install.grid.flush()
+											})
+								 }
+							},
+							modelData:{
+								'pager.code':'100004'
+							},
+							pieData:{
+								
+							}
+						 },
+						 level2:{
+						 	model:{
+								colName: '商品名称',
+		                        name: 'F0',
+		                        fixed: true
+							},
+							modelData:{
+								'pager.code':'100005'
+							},
+							pieData:{
+								
+							}
+						 }
+					}
+				}		
+				function L(){
+					var self=this
+					self.level='level0'
+					self.type='type0'
+					self.flush=function(){
+						$('.data03 .top > span span,.data03 .top > span a').hide()
+						if(self.level=='level1'){
+							$('.data03 .top > span:eq(0),.data03 .top > span a').show()
+							if(self.type=="type0"){
+								$('.data03 .top > span:eq(0)').text('当前品类:'+models[self.type]['level1']['model']['data']['pager.category'])
+							}else{
+								$('.data03 .top > span:eq(0)').text('当前品牌:'+models[self.type]['level1']['model']['data']['pager.brand'])
+							}
+							$('.data03 .top > span a').unbind().click(function(){
+							     globelsetting.grid.filter.fixColModel=models[self.type]['level0']['model']
+								 globelsetting.grid.grid.data=models[self.type]['level0']['modelData']
+								 globelsetting.grid.pie.data=models[self.type]['level0']['pieData']
+								 install.grid.flush()
+							})
+						}else if(self.level=='level2'){
+							$('.data03 .top > span,.data03 .top > span a').show()
+							if(self.type=="type0"){
+								$('.data03 .top > span:eq(0)').text('当前品类:'+models[self.type]['level1']['model']['data']['pager.category'])
+							   $('.data03 .top > span:eq(1)').text('当前品牌:'+models[self.type]['level2']['model']['data']['pager.brand'])
+							}else{
+								$('.data03 .top > span:eq(0)').text('当前品牌:'+models[self.type]['level1']['model']['data']['pager.brand'])
+							    $('.data03 .top > span:eq(1)').text('当前品类:'+models[self.type]['level2']['model']['data']['pager.category'])
+							}
+							$('.data03 .top > span a').unbind().click(function(){
+								 globelsetting.grid.filter.fixColModel=models[self.type]['level1']['model']
+								 globelsetting.grid.grid.data=models[self.type]['level1']['modelData']
+								 globelsetting.grid.pie.data=models[self.type]['level1']['pieData']
+								 install.grid.flush()
+							})
+						}
+					}
+				}		
+				var l=new L()
+				
+				$('.menu > a:eq(0)').click(function(){
+                                               if(!$(this).hasClass('now')){
+											   	   l.level='level0'
+					                               l.type='type0'
+												   l.flush()
+												   globelsetting.grid.filter.fixColModel=models['type0']['level0']['model']
+												   globelsetting.grid.grid.data=models['type0']['level0']['modelData']
+												   globelsetting.grid.pie.data=models['type0']['level0']['pieData']
+												   install.grid.flush()
+                                                }
+										   })
+			    $('.menu > a:eq(1)').click(function(){
+                                               if(!$(this).hasClass('now')){
+                                            	    l.level='level0'
+					                               l.type='type1'
+												   l.flush()
+												   globelsetting.grid.filter.fixColModel=models['type1']['level0']['model']
+												   globelsetting.grid.grid.data=models['type1']['level0']['modelData']
+												   globelsetting.grid.pie.data=models['type1']['level0']['pieData']
+												   install.grid.flush()
+                                                }
+										   })
+                $.baeInstall({
+                    title: {
+                        content: '商品分析'
+                    },
+                    hideMenu:true,
+                    menuItem: {
+                    	url: '../json/jsonSum.action',
+                        data: {
+                        	code:'product'
+                        }
+                    },
+                    chart: {
+                    	url:'../chart/dbLine.action',
+						data:{
+							chartId:656613
+						}
+						},
+                    grid: {
+                        filter: {
+                            fixColModel: models['type0']['level0']['model'],
+							colModel: [{
+	                            colName: '页面浏览数',
+	                            name: 'F1'
+	                        },{
+	                            colName: '推荐浏览次数',
+	                            name: 'F2'
+	                        },{
+	                            colName: '推荐浏览占比',
+	                            name: 'F3'
+	                        },{
+	                            colName: '推荐加入购物车次数',
+	                            name: 'F4'
+	                        },{
+	                            colName: '推荐加入购物车占比',
+	                            name: 'F5'
+	                        },{
+	                            colName: '推荐购物车转化率',
+	                            name: 'F6'
+	                        },{
+	                            colName: '推荐下定次数',
+	                            name: 'F7'
+	                        },{
+	                            colName: '推荐下定占比',
+	                            name: 'F8'
+	                        },{
+	                            colName: '推荐下定转化率',
+	                            name: 'F9'
+	                        }],
+	                        defaultCols: ["F0", "F1", "F2", "F3","F7","F8"],
+	                        orderCols: ["UV", "PV", "F5", "F8", "F9", "F10"],
+	                        goodsCols: ["UV", "PV", "F5", "F6", "F7"],
+                        },
+                        grid: {
+                            url: '../grid/list.action',
+							data:models['type0']['level0']['modelData']
+                        },
+                        pie: {
+                            url: '/pie1.xml',
+							data:models['type0']['level0']['pieData']
+                        }
+                    },
+					expand:function(setting){
+									   install=this
+									   globelsetting=setting
+								}
+                });
+            })
+        </script>
+		<style type="text/css">
+			.redfont{
+				color:red;
+				display:inline;
+			}
+		</style>
+    </head>
+    <body>
+        <div class="r_tittle">
+            <h1><span class="txt">全部来源</span>
+                <div class="day_select">
+                    <div class="left">
+                        &nbsp;
+                    </div>
+                    <div class="daydata">
+                        <a href="#">
+                            <div class="ico01">
+                            </div>
+                            <div class="data">
+                               
+                            </div>
+                            <div class="ico02">
+                            </div>
+                        </a>
+                        <div class="day_range">
+                            <div>
+                            </div>
+                            <div>
+                            </div>
+                            <p>
+                                <input type="checkbox"/>
+                                <label>
+                                    与其他时间对比
+                                </label>
+                                <button>
+                                    确定
+                                </button>
+                                <button>
+                                    取消
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        &nbsp;
+                    </div>
+                </div>
+            </h1>
+            <div class="menu">
+            	<a class="now">按品类</a>
+               <a href="#">按品牌</a>
+            </div>
+        </div>
+        <div class="datacontent">
+        	<div class="contrastpic">
+	            <div class="tushi0">
+		              <div class="tscolor01">&nbsp;</div>
+		              <span></span>
+				  </div>
+	            <div class="tushi0 tushi0_1">
+		              <div class="tscolor02">&nbsp;</div>
+		              <span></span>
+				 </div>
+          </div>
+            <table border="0" cellspacing="0" cellpadding="0" class="data01">
+                <tr>
+                    <td class="l">
+                    </td>
+                    <td class="z">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        </table>
+                    </td>
+                    <td class="r">
+                    </td>
+                </tr>
+            </table>
+			 <table border="0" cellspacing="0" cellpadding="0" class="data01 data01_01">
+                <tr>
+                    <td class="l">
+                    </td>
+                    <td class="z">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        </table>
+                    </td>
+                    <td class="r">
+                    </td>
+                </tr>
+            </table>
+            <div class="data02">
+                <div class="top">
+                    <div class="tushi">
+                        <div class="tscolor01">
+                            &nbsp;
+                        </div>
+                        <span></span>
+                    </div>
+					<div class="tushi">
+		                <div class="tscolor02">&nbsp;</div>
+		                <span></span>
+					</div>
+					<div class="tushi">
+		                <div class="tscolor03">&nbsp;</div>
+		                <span></span>
+					</div>
+					<div class="tushi">
+		                <div class="tscolor04">&nbsp;</div>
+		                <span></span>
+					</div>
+                    <div class="data_select">
+                        <select name="compare">
+                            <option>对比指标</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tubiao" id="tubiao">
+                </div>
+            </div>
+            <div class="data03">
+                <div class="top">
+                	<span>
+                		<span style="display:none;">当前品牌：</span>
+                		<span style="display:none;">当前品类：</span>
+						<a style="display:none;">[返回上级页面]</a>
+                	</span>
+                    <a href="#" class="userdata">自定义指标项</a>
+                    <a href="#" id="girdModel" class="b_pic">饼图模式</a>
+                </div>
+                    <div  class="ud_select">
+                    	<div></div>
+	                    <div  class="select">
+	                         <div class="but">取消</div>
+				             <div class="but">确认</div><div class="txt">
+				                指标分析模式：<a  class="now">默认</a><a>订单</a><a>商品</a>
+	                    </div>
+                    </div>
+                 </div>
+                    <div id="grid">
+                    </div>
+                    <div class="pager">
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>

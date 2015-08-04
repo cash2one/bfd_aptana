@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>1</title>
+		<script type="text/javascript" src="./resources/jquery/jquery.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#list1 tr').each(function(i){
+					if(i==0){
+						return 
+					}
+					var name=$(this).find('td:first a').text()
+					var link=$(this).find('td:last a').attr('href')
+					console.info(name+' '+link)
+					$('#test').append('<a href="'+link+'">[第'+i+'集] '+name+'</a><br/>')
+				})
+			})
+		</script>
+	</head>
+	<body>
+	<table class="m-clist" id="list1">
+      <tbody><tr>
+        <th>名称</th>
+        <!-- <th>课程下载</th>
+      -->
+      <th>视频下载</th>
+    </tr>
+                  <tr class="u-even">
+      <td class="u-ctitle">
+        [第1集]
+        <a href="http://v.163.com/movie/2010/11/B/J/M6GOB7TT6_M6GOBOPBJ.html">谋杀背后的道德逻辑</a>
+                <img src="http://img1.cache.netease.com/v/2011/1414.png" class="isyy">
+              </td>
+      <!-- <td class="u-cref">
+      <a class="refbtn" href=""></a>
+    </td>
+    -->
+    <td class="u-cdown">
+            <a class="downbtn" href="http://mov.bn.netease.com/movieMP4/2012/12/7/K/S8H4PPO7K.mp4"></a>
+          </td>
+  </tr>
+                 <tr class="u-odd">
+      <td class="u-ctitle">
+        [第2集]
+        <a href="http://v.163.com/movie/2010/11/E/A/M6GOB7TT6_M6GOBT1EA.html">为生命标价</a>
+                <img src="http://img1.cache.netease.com/v/2011/1414.png" class="isyy">
+              </td>
+      <!-- <td class="u-cref">
+      <a class="refbtn" href=""></a>
+    </td>
+    -->
+    <td class="u-cdown">
+            <a class="downbtn" href="http://mov.bn.netease.com/movieMP4/2012/12/V/8/S8H4U3IV8.mp4"></a>
+          </td>
+  </tr>
+                 <tr class="u-even">
+      <td class="u-ctitle">
+        [第3集]
+        <a href="http://v.163.com/movie/2010/11/T/F/M6GOB7TT6_M6GOBUNTF.html">自由选择</a>
+                <img src="http://img1.cache.netease.com/v/2011/1414.png" class="isyy">
+              </td>
+      <!-- <td class="u-cref">
+      <a class="refbtn" href=""></a>
+    </td>
+    -->
+    <td class="u-cdown">
+            <a class="downbtn" href="http://mov.bn.netease.com/movieMP4/2012/12/G/I/S8H4VMUGI.mp4"></a>
+          </td>
+  </tr>
+                 <tr class="u-odd">
+      <td class="u-ctitle">
+        [第4集]
+        <a href="http://v.163.com/movie/2010/11/G/0/M6GOB7TT6_M6GOCBCG0.html">这是我的土地</a>
+                <img src="http://img1.cache.netease.com/v/2011/1414.png" class="isyy">
+              </td>
+      <!-- <td class="u-cref">
+      <a class="refbtn" href=""></a>
+    </td>
+    -->
+    <td class="u-cdown">
+            <a class="downbtn" href="http://mov.bn.netease.com/movieMP4/2012/12/E/0/S8H52DCE0.mp4"></a>
+          </td>
+  </tr>
+                 <tr class="u-even">
+      <td class="u-ctitle">
+        [第5集]
+        <a href="http://v.163.com/movie/2010/11/C/9/M6GOB7TT6_M6GOCHTC9.html">是否雇佣顶替自己服役的人</a>
+                <img src="http://img1.cache.netease.com/v/2011/1414.png" class="isyy">
+              </td>
+      <!-- <td class="u-cref">
+      <a class="refbtn" href=""></a>
+    </td>
+    -->
+    <td class="u-cdown">
+            <a class="downbtn" href="http://mov.bn.netease.com/movieMP4/2012/12/U/N/S8H53DHUN.mp4"></a>
+          </td>
+  </tr>
+                 <tr class="u-odd">
+      <td class="u-ctitle">
+        [第6集]
+        <a href="http://v.163.com/movie/2010/11/O/P/M6GOB7TT6_M6GOCJEOP.html">小心你的动机</a>
+                <img src="http://img1.cache.netease.com/v/2011/1414.png" class="isyy">
+              </td>
+      <!-- <td class="u-cref">
+      <a class="refbtn" href=""></a>
+    </td>
+    -->
+    <td class="u-cdown">
+            <a class="downbtn" href="http://mov.bn.netease.com/movieMP4/2012/12/E/M/S8H53G8EM.mp4"></a>
+          </td>
+  </tr>
+                 <tr class="u-even">
+      <td class="u-ctitle">
+        [第7集]
+        <a href="http://v.163.com/movie/2010/11/D/D/M6GOB7TT6_M6GOCSFDD.html">谎言的教训</a>
+                <img src="http://img1.cache.netease.com/v/2011/1414.png" class="isyy">
+              </td>
+      <!-- <td class="u-cref">
+      <a class="refbtn" href=""></a>
+    </td>
+    -->
+    <td class="u-cdown">
+            <a class="downbtn" href="http://mov.bn.netease.com/movieMP4/2012/12/9/O/S8H7CNU9O.mp4"></a>
+          </td>
+  </tr>
+                 <tr class="u-odd">
+      <td class="u-ctitle">
+        [第8集]
+        <a href="http://v.163.com/movie/2010/11/5/3/M6GOB7TT6_M6GOD1A53.html">公平的起点是什么</a>
+                <img src="http://img1.cache.netease.com/v/2011/1414.png" class="isyy">
+              </td>
+      <!-- <td class="u-cref">
+      <a class="refbtn" href=""></a>
+    </td>
+    -->
+    <td class="u-cdown">
+            <a class="downbtn" href="http://mov.bn.netease.com/movieMP4/2012/12/N/D/S8H7FGQND.mp4"></a>
+          </td>
+  </tr>
+                 <tr class="u-even">
+      <td class="u-ctitle">
+        [第9集]
+        <a href="http://v.163.com/movie/2010/11/7/5/M6GOB7TT6_M6GOD6P75.html">平权行动的争论</a>
+                <img src="http://img1.cache.netease.com/v/2011/1414.png" class="isyy">
+              </td>
+      <!-- <td class="u-cref">
+      <a class="refbtn" href=""></a>
+    </td>
+    -->
+    <td class="u-cdown">
+            <a class="downbtn" href="http://mov.bn.netease.com/movieMP4/2012/12/1/B/S8H7H4K1B.mp4"></a>
+          </td>
+  </tr>
+                 <tr class="u-odd">
+      <td class="u-ctitle">
+        [第10集]
+        <a href="http://v.163.com/movie/2010/11/D/T/M6GOB7TT6_M6GODEHDT.html">好公民</a>
+                <img src="http://img1.cache.netease.com/v/2011/1414.png" class="isyy">
+              </td>
+      <!-- <td class="u-cref">
+      <a class="refbtn" href=""></a>
+    </td>
+    -->
+    <td class="u-cdown">
+            <a class="downbtn" href="http://mov.bn.netease.com/movieMP4/2012/12/H/R/S8H7J9BHR.mp4"></a>
+          </td>
+  </tr>
+          </tbody></table>
+	 <br/>
+	 <div id="test"></div>
+	</body>
+</html>

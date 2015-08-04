@@ -1,0 +1,16 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	function G(){//漏斗图
+		var self=this
+		this.flush=function(){
+			$('.tubiao07 > ul >li').find('strong:first').each(function(){
+				
+			})
+		}
+	}
+	function C(){//chart
+		var self=this
+	}
+})

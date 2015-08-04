@@ -1,0 +1,111 @@
+$(function(){
+	$('#btn1').click(function(event){
+		$('#form1').submit()
+		return false
+	})
+	$('#form1').keyup(function(event){
+		if(event.keyCode===13){
+			$('#form1').submit();
+			}
+	})
+	 $.validator.addMethod("valueNotEquals", function(value, element, arg){
+	    return arg != value;
+	 }, "请选择开户银行");
+	$.validator.addMethod("chinablankcard", function(value, element, arg){
+	    return /^\d{16,25}$/.test(value.replace(/\s/g,''));
+	 }, "请输入正确的银行卡号");
+	$.validator.addMethod("moneymin", function(value, element, arg){
+	    return parseFloat(value.replace(/\s/g,''))!=0
+	 }, "请输入正确的金额");
+	var maxmoney=parseFloat($('#maxMoney').html())
+	$.validator.addMethod("maxMoney", function(value, element, arg){
+	    return parseFloat(value.replace(/\s/g,''))<=maxmoney
+	 }, "超过当前最大可提现金额");
+	 var validater = $('#form1').validate({
+		submitHandler:function(form){
+			$(form).ajaxSubmit({
+				success:function(responseText, statusText, xhr, $form){
+//					var resp=$.parseJSON(responseText)
+					resp = responseText;
+					if(resp.code==1){
+						$.ifmWidget('alertSuccess',{'title':'申请成功',content:'申请成功'})
+						form.reset()
+					} else{
+						$.ifmWidget('alertFail',{'title':'申请失败',content:resp.msg})
+					} 
+				}
+			})
+			return false
+		},
+		rules: {
+			'operateMoney':{
+				required:true,
+				number:true,
+				moneymin:true,
+				maxMoney:true
+			},
+        	'bankName': {
+            	 valueNotEquals: 'defalusts'
+             },
+			 'accountName':{
+			 	required:true
+			 },
+			 'bankAccount':{
+			 	required:true,
+			 	chinablankcard:true
+			 }
+         },
+         messages: {
+        	'operateMoney':{
+				required:'请输入金额 ',
+				number:'请输入正确的金额'
+			},
+			 'accountName':{
+			 	required:'请输入开户人名称'
+			 },
+			 'bankAccount':{
+			 	required:'请输入银行帐号'
+			 }
+         },
+         showErrors: function (errorMap, errorList) {
+     	    this.defaultShowErrors();
+     	    $.each(errorList, function (i, error) {
+     	        $(error.element).next().addClass('exp-tip-wrong2').find('span').css("display", "inline-block");     	   
+     	    });
+         },
+         focusInvalid:true,
+         onkeyup: false,
+         wrapper:'span',
+         errorElement:'span',
+         errorClass:'_undefineClass',
+         errorPlacement: function(error, element){
+		 	element.after(error)
+         }
+	})
+})
+$(function(){
+	$('#operateMoney').keydown(function(event){
+		var code=event.keyCode
+		if (event.shiftKey||code==32){
+			return false
+		}
+		if((code>=96&&code<=105)||((!event.shiftKey)&&code>=48&&code<=57)||code<57||code==110||code==190){
+			return true
+		}
+		return false
+	})
+	$('#account-id').keydown(function(event){
+		var code=event.keyCode
+		if (event.shiftKey){
+			return false
+		}
+		if((code>=96&&code<=105)||((!event.shiftKey)&&code>=48&&code<=57)||code<57){
+			return true
+		}
+		return false
+	})
+	$('#account-id').keyup(function(){
+//		$(this).val($(this).val().replace(/\s/g,'').replace(/(\d{4})(?=\d)/g,"$1 "))
+	    $(this).val($(this).val().replace(/\s/g,'').replace(/(\d{4})/g,"$1 "))
+	})
+})

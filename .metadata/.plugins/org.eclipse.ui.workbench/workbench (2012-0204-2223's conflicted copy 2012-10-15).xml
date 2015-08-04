@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="29" version="2.0">
+<workbenchAdvisor/>
+<window height="728" maximized="true" minimized="true" width="1024" x="75" y="0">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="101" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="181" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="78" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="s.com.aptana.ide.core.ui.actionSet.ShowAptanaView" itemType="typeToolBarContribution" x="135" y="22"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.aptana.ide.editors.CSSEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.python.pydev.editor.PythonEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.aptana.ide.editors.HTMLEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.aptana.ide.editors.JSEditor" itemType="typePlaceholder" x="38" y="22"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page focus="true" label="Workspace - Aptana Web">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor activePart="true" focus="true" id="com.aptana.ide.editors.HTMLEditor" name="1.html" partName="1.html" path="E:/Dropbox/aptana_work/tree_select/1.html" title="1.html" tooltip="tree_select/1.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/tree_select/1.html"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="com.aptana.ide.js.ui.views.profilesView" partName="References"/>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="com.aptana.ide.editors.HTMLEditor" activePerspective="com.aptana.ide.js.ui.WebPerspective">
+<perspective editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.aptana.ide.core.ui.WebPerspectiveFactory" id="com.aptana.ide.js.ui.WebPerspective" label="Aptana Web"/>
+<alwaysOnActionSet id="a.com.aptana.ide.core.ui.actionSet.myaptana"/>
+<alwaysOnActionSet id="x.com.aptana.ide.core.ui.actionSet.myaptana"/>
+<alwaysOnActionSet id="eclipsemonkeyAction.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.core.ui.actionSet.aptanamenu"/>
+<alwaysOnActionSet id="s.com.aptana.ide.core.ui.actionSet.ShowAptanaView"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.debug.ui.JSDebugActionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.desktop.integration.protocolhandler.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.core.ui.actionSet.documentation"/>
+<alwaysOnActionSet id="com.aptana.ide.editors.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.installer.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.intro.menuActionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.pathtools.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.scripting.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.ssh.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.update.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<show_view_action id="com.aptana.ide.scripting.SnippetsView"/>
+<show_view_action id="com.aptana.ide.ui.io.fileExplorerView"/>
+<show_view_action id="com.aptana.ide.js.ui.views.profilesView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="com.aptana.ide.js.ui.views.problemsView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="com.aptana.ide.js.docgen.views.visualscriptdoc"/>
+<show_view_action id="com.aptana.ide.logging.LogView"/>
+<show_view_action id="com.aptana.ide.server.ui.serversView"/>
+<new_wizard_action id="com.aptana.ide.wizards.WebProjectWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.CssUntitledWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.HtmlUntitledWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.JsUntitledWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.ScriptDocUntitledWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.UntitledTextFileWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.XmlUntitledWizard"/>
+<new_wizard_action id="om.aptana.ide.editors.wizards.file.JsonUntitledFileWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="com.aptana.ide.js.ui.views.profilesView"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="leftTop">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="com.aptana.ide.js.ui.views.profilesView" label="References"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="com.aptana.ide.ui.io.fileExplorerView" label="LabelNotFound"/>
+<page content="com.aptana.ide.ui.io.fileExplorerView:*" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="1"/>
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="leftTop">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.24206643" ratioLeft="328" ratioRight="1027" relationship="2" relative="leftTop"/>
+<info folder="true" part="right" ratio="0.7" ratioLeft="560" ratioRight="240" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2"/>
+</info>
+<info folder="true" part="rightBottom" ratio="0.6985173" ratioLeft="424" ratioRight="183" relationship="4" relative="right">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.eclipsemonkey.views.ScriptsView" label="LabelNotFound"/>
+<page content="com.aptana.ide.scripting.SnippetsView" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="bottom" ratio="0.65806454" ratioLeft="408" ratioRight="212" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="com.aptana.ide.js.ui.views.problemsView" label="LabelNotFound"/>
+<page content="com.aptana.ide.server.ui.serversView" label="LabelNotFound"/>
+<page content="com.aptana.ide.ui.ViewPlugins" label="LabelNotFound"/>
+<page content="com.aptana.ide.js.ui.views.GenericScriptableView:*" label="LabelNotFound"/>
+<page content="com.aptana.ide.logging.LogView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="left" ratio="0.66774195" ratioLeft="414" ratioRight="206" relationship="4" relative="leftTop">
+<folder appearance="2" expanded="2">
+<page content="com.aptana.ide.documentation.TutorialView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" path="/r/resources/baifendianWidgetsCombo/models/legend/parse.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/r/pages/demo.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" path="/r/resources/baifendianWidgetsCombo/load.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" path="/r/resources/baifendianWidgetsCombo/models/grid/requires/Grid.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/nice1/5.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" path="/r/resources/baifendianWidgetsCombo/models/grid/requires/baeGrid/js/baeGrid.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/r/pages/account.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/r/main.html"/>
+<editor factoryID="com.aptana.ide.server.portal.ui.MyAptanaElementFactory" id="com.aptana.ide.server.portal.ui.MyAptanaEditor"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" path="/r/resources/baifendianWidgetsCombo/models/grid/requires/baeGrid/js/baeGrid.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/r/pages/demo.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" path="/r/resources/baifendianWidgetsCombo/config.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" path="/r/resources/baifendianWidgetsCombo/load.js"/>
+<editor factoryID="com.aptana.ide.server.portal.ui.MyAptanaElementFactory" id="com.aptana.ide.server.portal.ui.MyAptanaEditor"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/tree_select/1.html"/>
+<editor factoryID="com.aptana.ide.server.portal.ui.MyAptanaElementFactory" id="com.aptana.ide.server.portal.ui.MyAptanaEditor"/>
+</editors>
+<item historyLabel="parse.js" index="0">
+<position info="not_deleted" x="282" y="123"/>
+</item>
+<item historyLabel="load.js" index="2">
+<position info="not_deleted" x="2967" y="21"/>
+</item>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="Grid.js" index="3">
+<position info="not_deleted" x="523" y="0"/>
+</item>
+<item historyLabel="5.html" index="4"/>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="5.html" index="4"/>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="parse.js" index="0">
+<position info="not_deleted" x="5390" y="0"/>
+</item>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="parse.js" index="0">
+<position info="not_deleted" x="5390" y="0"/>
+</item>
+<item historyLabel="parse.js" index="0">
+<position info="not_deleted" x="4435" y="9"/>
+</item>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="Grid.js" index="3">
+<position info="not_deleted" x="523" y="0"/>
+</item>
+<item historyLabel="5.html" index="4"/>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="parse.js" index="0">
+<position info="not_deleted" x="4345" y="70"/>
+</item>
+<item historyLabel="Grid.js" index="3">
+<position info="not_deleted" x="954" y="0"/>
+</item>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="Grid.js" index="3">
+<position info="not_deleted" x="3776" y="84"/>
+</item>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="Grid.js" index="3">
+<position info="not_deleted" x="3860" y="0"/>
+</item>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="Grid.js" index="3">
+<position info="not_deleted" x="3693" y="0"/>
+</item>
+<item historyLabel="baeGrid.js" index="5">
+<position info="not_deleted" x="96" y="0"/>
+</item>
+<item historyLabel="Grid.js" index="3">
+<position info="not_deleted" x="3094" y="9"/>
+</item>
+<item historyLabel="5.html" index="4"/>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="Grid.js" index="3">
+<position info="not_deleted" x="5755" y="0"/>
+</item>
+<item historyLabel="5.html" index="4"/>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="Grid.js" index="3">
+<position info="not_deleted" x="5755" y="0"/>
+</item>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="Grid.js" index="3">
+<position info="not_deleted" x="3860" y="0"/>
+</item>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="account.html" index="6"/>
+<item historyLabel="demo.html" index="1"/>
+<item historyLabel="main.html" index="7"/>
+<item historyLabel="My Studio" index="8"/>
+<item historyLabel="baeGrid.js" index="9">
+<position info="not_deleted" x="96" y="0"/>
+</item>
+<item historyLabel="main.html" index="7"/>
+<item historyLabel="demo.html" index="10"/>
+<item historyLabel="config.js" index="11">
+<position info="not_deleted" x="521" y="75"/>
+</item>
+<item historyLabel="load.js" index="12">
+<position info="not_deleted" x="2967" y="21"/>
+</item>
+<item historyLabel="config.js" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="My Studio" index="13"/>
+<item historyLabel="config.js" index="11">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="1.html" index="14"/>
+<item historyLabel="My Studio" index="15"/>
+<item active="true" historyLabel="1.html" index="14"/>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="com.aptana.ide.intro.StartPageAction"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="1.html" tooltip="tree_select/1.html">
+<persistable path="/tree_select/1.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="main.html" tooltip="r/main.html">
+<persistable path="/r/main.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="account.html" tooltip="r/pages/account.html">
+<persistable path="/r/pages/account.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" name="baeGrid.js" tooltip="r/resources/baifendianWidgetsCombo/models/grid/requires/baeGrid/js/baeGrid.js">
+<persistable path="/r/resources/baifendianWidgetsCombo/models/grid/requires/baeGrid/js/baeGrid.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" name="Grid.js" tooltip="r/resources/baifendianWidgetsCombo/models/grid/requires/Grid.js">
+<persistable path="/r/resources/baifendianWidgetsCombo/models/grid/requires/Grid.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="5.html" tooltip="nice1/5.html">
+<persistable path="/nice1/5.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" name="parse.js" tooltip="r/resources/baifendianWidgetsCombo/models/legend/parse.js">
+<persistable path="/r/resources/baifendianWidgetsCombo/models/legend/parse.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" name="config.js" tooltip="r/resources/baifendianWidgetsCombo/config.js">
+<persistable path="/r/resources/baifendianWidgetsCombo/config.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" name="load.js" tooltip="r/resources/baifendianWidgetsCombo/load.js">
+<persistable path="/r/resources/baifendianWidgetsCombo/load.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="demo.html" tooltip="r/pages/demo.html">
+<persistable path="/r/pages/demo.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="barCharts.html" tooltip="baeUE/static/barCharts.html">
+<persistable path="/baeUE/static/barCharts.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="columnCharts.html" tooltip="baeUE/static/columnCharts.html">
+<persistable path="/baeUE/static/columnCharts.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="pieCharts.html" tooltip="baeUE/static/pieCharts.html">
+<persistable path="/baeUE/static/pieCharts.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.CSSEditor" name="no-login.css" tooltip="nice1/no-login.css">
+<persistable path="/nice1/no-login.css"/>
+</file>
+</mruList>
+</workbench>

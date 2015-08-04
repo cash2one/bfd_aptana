@@ -1,0 +1,31 @@
+
+* {
+    border: 0 none;
+    font-style: normal;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #1A74B0;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+body, font {
+    font-family: Arial,"宋体";
+    font-size: 12px;
+}
+body {
+    margin: 0;
+    min-width: 1000px;
+    padding: 0;
+}
+select {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+input {
+	vertical-align: middle;
+}

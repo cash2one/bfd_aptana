@@ -1,0 +1,49 @@
+$(function(){
+	$('#btn1').click(function(event){
+		$('#form1').submit()
+		return false
+	})
+	$('#form1').keyup(function(event){
+		if(event.keyCode===13){
+			$('#form1').submit();
+			}
+	})
+	 $.validator.addMethod("valueNotEquals", function(value, element, arg){
+	    return arg != value;
+	 }, "请选择开户银行");
+	 var validater = $('#form1').validate({
+		submitHandler:function(form){
+//			$(form).ajaxSubmit({
+//				success:function(responseText, statusText, xhr, $form){
+//					
+//				}
+//			})
+			return false
+		},
+		rules: {
+			'amount':{
+				require:true
+			}
+        	'blank': {
+            	 valueNotEquals: 'defalusts'
+             }
+         },
+         messages: {
+        	
+         },
+         showErrors: function (errorMap, errorList) {
+     	    this.defaultShowErrors();
+     	    $.each(errorList, function (i, error) {
+     	        $(error.element).next().addClass('exp-tip-wrong2').find('span').css("display", "inline-block");     	   
+     	    });
+         },
+         focusInvalid:true,
+         onkeyup: false,
+         wrapper:'span',
+         errorElement:'span',
+         errorClass:'_undefineClass',
+         errorPlacement: function(error, element){
+		 	element.after(error)
+         }
+	})
+})

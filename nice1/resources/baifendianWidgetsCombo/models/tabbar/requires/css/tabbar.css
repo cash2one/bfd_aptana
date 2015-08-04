@@ -1,0 +1,28 @@
+.tabmenu{
+	line-height: 27px;
+	color: #999;
+	float: left;
+}
+.tabmenu span{
+	display: block;
+	width: 65px;
+	float: left;
+}
+.tabmenu a{
+	display: block;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+.tabmenu .now{
+	background-color: #FFFFFF;
+	border-left: 1px solid #C1CBD4;
+	border-right: 1px solid #C1CBD4;
+	border-top: 1px solid #C1CBD4;
+}
+.tabmenu .now {
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}

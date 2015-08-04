@@ -1,0 +1,28 @@
+$(function(){
+	$('.site-ad .click-btn').click(function(){
+		$('.site-ad > ul').slideToggle()
+	})
+	$('body').click(function(event){
+		if($(event.target).parents('.site-ad').size()==0){
+			$('.site-ad > ul').slideUp()
+		}
+	})
+})
+$(function(){
+	$.post('../../SiteManager/msg/!getUnreadMsgNum',function(data){
+		if(data){
+			$('.top > ul > li > a:contains("消息")').addClass('bg')
+		}
+	})
+})
+$(function(){
+	if($('.content').size()>0){
+		(function(){
+			try{
+				var bodyheight=window.parent.document.documentElement.clientHeight
+				var minHeight=bodyheight-199
+				$('.content').css('min-height',minHeight)
+			}catch (ex){}
+		})();
+	}
+})

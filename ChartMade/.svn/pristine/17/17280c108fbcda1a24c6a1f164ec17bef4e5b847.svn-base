@@ -1,0 +1,67 @@
+[{
+	"key": "sy",
+	"name": "首页",
+	"to": [{
+		"key":"lm", "value": 10
+	}]
+}, {
+	"key": "lm",
+	"name": "类目",
+	"to": [{
+		"key":"ssjgy", "value": 10
+	}, {
+		"key":"dpy", "value": 10
+	}]
+}, {
+	"key": "dpy",
+	"name": "单品页",
+	"to": [{
+		"key":"sy", "value": 16
+	}, {
+		"key":"hyy", "value": 80
+	}, {
+		"key":"help", "value": 60
+	}]
+}, {
+	"key": "hdy",
+	"name": "活动页",
+	"to": [{
+		"key":"dpy", "value": 10
+	}, {
+		"key":"help", "value": 100
+	}]
+}, {
+	"key": "hyy",
+	"name": "会员页",
+	"to": [{
+		"key":"lm", "value": 100
+	}, {
+		"key":"ssjgy", "value": 100
+	}]
+}, {
+	"key": "ssjgy",
+	"name": "搜索结果页",
+	"to": [{
+		"key":"gwcy", "value": 19
+	}, {
+		"key":"dpy", "value": 10
+	}]
+}, {
+	"key": "gwcy",
+	"name": "购物车页",
+	"to": [{
+		"key":"lm", "value": 40
+	}, {
+		"key":"gwcy", "value": 20
+	}]
+}, {
+	"key": "help",
+	"name": "帮助",
+	"to": [{
+		"key":"sy", "value": 90
+	}, {
+		"key":"dpy", "value": 30
+	}, {
+		"key":"hdy", "value": 50
+	}]
+}]

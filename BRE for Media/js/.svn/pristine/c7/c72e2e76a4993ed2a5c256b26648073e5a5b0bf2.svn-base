@@ -1,0 +1,67 @@
+/**
+ * @author Administrator
+ */
+$.ajaxSettings.traditional = true
+$(function(){
+    $('.choose > li').click(function(){
+        if (!$(this).hasClass('current')) {
+            document.title = '展示设置-' + $(this).find('a').html()
+            $(this).siblings().removeClass('current')
+            $(this).addClass('current')
+            $('.set-box').hide().eq($(this).index()).show()
+        }
+    })
+})
+$(function(){
+	$('.select_box3 input:text').click(function(){
+		$('.select_box3').find('ul').not($(this).parents('.select_box3').find('ul')).slideUp()
+		$(this).parents('.select_box3').find('ul').slideToggle()
+	})
+	$('.select_box3 ul li').click(function(){
+			$(this).parents('.select_box3').find('input:text').val($(this).html())
+			$(this).parents('.select_box3').find('ul li.active').removeClass('active')
+			$(this).addClass('active')
+			$(this).parents('.select_box3').find('ul').slideUp()
+			$(this).parents('.select_box3').find('input:hidden').val($(this).data('value'))
+	})
+	$('.select_box3 input:text').each(function(){
+		var value=$(this).val()
+		$(this).parents('.select_box3').find('li').each(function(){
+			if($(this).html()===value){
+				$(this).addClass('active')
+			}
+		})
+	})
+	$('.top input:checkbox').change(function(){
+		var p=$(this).parents('.set-box')
+		if($(this).is(':checked')){
+			p.find('.display').add(p.find('.sbox-left a.btn2')).add(p.find('.sbox-right')).show()
+		}else{
+			p.find('.display').add(p.find('.sbox-left a.btn2')).add(p.find('.sbox-right')).hide()
+		}
+	}).change()
+})
+$(function(){
+	  $('a.btn2').click(function(){
+			$(this).parents('form').submit()
+		})
+		$('.set-box').keyup(function(event){
+			if(event.keyCode===13){
+				$(this).find('form').submit();
+				}
+		})
+		$('#form0,#form1,#form2,#form3,#form4').validate({
+			submitHandler: function(form){
+				$(form).ajaxSubmit({
+					success:function(responseText, statusText, xhr, $form){
+						if(responseText=='4' ){
+						   $.ifmWidget('alertFail',{'title':'设置失败',basePath:'../../resources/ifmWidget'})
+						} else if(responseText == '0'){
+							 $.ifmWidget('alertSuccess',{'title':'设置成功',basePath:'../../resources/ifmWidget'})
+						} 
+					}
+				})
+				return false
+			}
+		})
+})

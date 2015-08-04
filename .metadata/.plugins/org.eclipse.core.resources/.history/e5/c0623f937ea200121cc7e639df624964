@@ -1,0 +1,9 @@
+$(function(){
+    $('#openProductScream').iphoneStyle({
+        checkedLabel: 'YES',
+        uncheckedLabel: 'NO',
+        onChange: function(dom, value){
+            console.info(value)
+        }
+    })
+})

@@ -1,0 +1,47 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	$('#sub').click(function(){
+		$('#form1').submit()
+	})
+	$('body').keyup(function(event){
+		if(event.keyCode===13){
+			$('#form1').submit();
+			}
+	})
+	var validater = $('#form1').validate({
+		submitHandler: function(form){
+			$(form).ajaxSubmit({
+				success:function(responseText, statusText, xhr, $form){
+					if(responseText=='4' ){
+					  window.document.location.href = "url";
+					} else if(responseText == '0'){
+						validater.showErrors({'url':'错误信息'})
+					} 
+				}
+			})
+			return false
+			//form.submit()
+		},
+        rules: {
+        	'url': {
+            	 required: true,
+                 email:true
+             }
+         },
+         messages: {
+        	 'url': {
+                 required: "请输入域名",
+                 email:'域名格式错误，请重新输入'
+             }
+         },
+         focusInvalid:true,
+         onkeyup: false,
+         wrapper:null,
+         errorElement:'span',
+         errorPlacement: function(error, element){
+             error.appendTo(element.parent());
+         }
+     })
+})

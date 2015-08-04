@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+	</head>
+	<style type="text/css">
+		.error{
+			padding-left:31px;
+			background:url(wrong-bg2_01.gif) 0 0 no-repeat;
+			display: inline-block;
+            line-height: 28px;
+		}
+		.error span{
+			height:28px;
+			padding:0 8px 0 5px;
+			background:url(wrong-bg2_03.gif) right 0 no-repeat #ffe8e8;
+			display: inline-block;
+		}
+	</style>
+	<body>
+		<span class="error">
+			<span>艹艹艹艹</span>
+		</span>
+	</body>
+</html>

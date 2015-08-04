@@ -1,0 +1,28 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	$('#file').uploadify({
+							        swf           : '../../resources/uploadify/uploadify.swf',
+									'fileObjName' : 'the_files',
+							        uploader      : 'url',
+									buttonText:null,
+							        height        : 32,
+							        width         : 35,
+									'fileTypeExts' : '*.gif; *.jpg; *.png',
+									'fileSizeLimit' : '4MB',
+									formData:{},
+									multi:false,
+									'onSelect' : function(file){
+										$('#textfield').val(file.name)
+									},
+									onUploadError:function(){
+										$('#textfield').val('')
+									},
+									onUploadSuccess:function(file, data, response){
+										 dom.find('span.current').removeClass('current')
+										 dom.find('div.pic img').attr('src',data)
+										 imageurl=data
+									}
+							   });	
+})

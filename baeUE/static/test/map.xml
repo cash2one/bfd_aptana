@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GBK"?>
+<map 
+includeValueInLabels="1" fillAlpha="90" showLegend="1" legendBgColor="F2F6FF"  numberSuffix="%" legendBorderColor="cccccc" baseFontSize="9" showBevel="1" showLabels="1" hoverColor="f2c97e" legendPosition="Bottom" showCanvasBorder="0" borderColor="FFFFFF" borderAlpha="50" formatNumberScale="0"chartTopMargin = "0" chartLeftMargin = "0">
+<data>
+<entity id="CN.ZJ" tooltext="浙江:Pv:0" displayvalue="浙江" value="0"/>
+<entity id="CN.XZ" displayvalue="西藏" value="0"/>
+<entity id="CN.TA" displayvalue="台湾" value="0"/>
+<entity id="CN.QH" displayvalue="青海" value="0"/>
+<entity id="CN.GS" displayvalue="甘肃" value="0"/>
+<entity id="CN.FJ" displayvalue="福建" value="0"/>
+<entity id="CN.XJ" displayvalue="新疆" value="0"/>
+<entity id="CN.SC" displayvalue="四川" value="0"/>
+<entity id="CN.NM" displayvalue="内蒙古" value="0"/>
+<entity id="CN.HU" displayvalue="湖北" value="0"/>
+<entity id="CN.GX" displayvalue="广西" value="0"/>
+<entity id="CN.CQ" displayvalue="重庆" value="0"/>
+<entity id="CN.YN" displayvalue="云南" value="0"/>
+<entity id="CN.SD" displayvalue="山东" value="0"/>
+<entity id="CN.HA" displayvalue="海南" value="0"/>
+<entity id="CN.HN" displayvalue="湖南" value="0"/>
+<entity id="CN.JX" displayvalue="江西" value="0"/>
+<entity id="CN.NX" displayvalue="宁夏" value="0"/>
+<entity id="CN.HL" displayvalue="黑龙江" value="1"/>
+<entity id="CN.GZ" displayvalue="贵州" value="1"/>
+<entity id="CN.AH" displayvalue="安徽" value="1"/>
+<entity id="CN.JL" displayvalue="吉林" value="2"/>
+<entity id="CN.LN" displayvalue="辽宁" value="2"/>
+<entity id="CN.HE" displayvalue="河南" value="1"/>
+<entity id="CN.GD" displayvalue="广东" value="2"/>
+<entity id="CN.JS" displayvalue="江苏" value="3"/>
+<entity id="CN.SA" displayvalue="山西" value="2"/>
+<entity id="CN.SX" displayvalue="陕西" value="1"/>
+<entity id="CN.TJ" displayvalue="天津" value="6"/>
+<entity id="CN.SH" displayvalue="上海" value="14"/>
+<entity id="CN.HB" displayvalue="河北" value="10"/>
+
+</data><colorRange>
+<color minValue="0" maxValue="0" displayValue="0~0" color='BEDAE8' /><color minValue="0" maxValue="3" displayValue="0~3" color='0397D7' /><color minValue="3" maxValue="333.01" displayValue="3~333" color='FFFFFF' /></colorRange></map>

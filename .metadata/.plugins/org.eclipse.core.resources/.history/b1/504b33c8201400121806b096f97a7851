@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>template</title>
+        <link href="../css/packed.css" rel="stylesheet" type="text/css" />
+        <link href="../css/function2.css" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+            <link href="../css/ie.css" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <!--[if IE 6]>
+            <link href="../css/ie6.css" rel="stylesheet" type="text/css" />
+        <![endif]-->
+		<link href="../resources/baifendianWidgetsCombo/models/DateRange/css/datepicker.css" rel="stylesheet" type="text/css" />
+        <script src="../resources/baifendianWidgetsCombo/commons/LAB.js" type="text/javascript"></script>
+        <script src="../js/report.js" type="text/javascript"></script>
+        <script src="../resources/baifendianWidgetsCombo/load.js" type="text/javascript"></script>
+		 <script src="../resources/baifendianWidgetsCombo/commons/jquery.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="r_tittle">
+            <h1>
+                <span class="txt">访客分布</span>
+                <div id="dateRange"></div>
+            </h1>
+            <div class="menu">
+                <div id="tabbar1"></div>
+                <div id="bbdown" class="bb_down">
+                    <a href="#">报表导出</a>
+                </div>
+            </div>
+        </div>
+        <div class="datacontent">
+            <div id="legend1"></div>
+            <div class="data00">
+                <div id="chinamap" style="width:50%;margin:auto;"></div>
+            </div>
+            <div class="data00">
+                <div id="filtergrid"></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        	window.BfdWidget = {}
+             $LAB.script(['../resources/baifendianWidgetsCombo/commons/jquery.js',
+			                       '../resources/baifendianWidgetsCombo/commons/date_tools.js',
+								   '../resources/baifendianWidgetsCombo/commons/lib/jquery.qtip-1.0.0.min.js',
+								   '../resources/baifendianWidgetsCombo/models/grid/requires/baeGrid/js/baeGrid.js',
+									'../resources/baifendianWidgetsCombo/models/grid/requires/Grid.js']).wait()
+								   .script(['../resources/baifendianWidgetsCombo/commons/jquery.cookie.js',
+								               '../resources/baifendianWidgetsCombo/models/DateRange/js/datarange.all.min.js',
+												'../resources/baifendianWidgetsCombo/models/legend/parse.js',
+												'../resources/baifendianWidgetsCombo/models/grid/parse.js'])
+									.wait(function(){
+										 var dateRange=new DateRange('#dateRange',false,'right')
+										 var legend=new BfdWidget.legend({
+										 	    "container": "legend1",
+							                    "cols": [{
+							                        "key": "uv",
+							                        "title": "唯一访客数",
+							                        "checked": "true",
+							                        "format": "numFix",
+							                        "desc": "以天为统计单位进行计算的，网站唯一访客数量，单日内同一用户的多次访问只计算一个访客"
+							                    }, {
+							                        "key": "pv",
+							                        "title": "页面浏览数",
+							                        "format": "numFix",
+							                        "desc": "Page View，即PV，用户浏览页面数量的总和数"
+							                    }, {
+							                        "key": "order_number",
+							                        "title": "下定订单数量",
+							                        "format": "numFix",
+							                        "desc": "网站下定订单的数量"
+							                    }, {
+							                        "key": "order_sales",
+							                        "title": "下定订单金额",
+							                        "format": "money",
+							                        "desc": "网站下定订单的金额"
+							                    }, {
+							                        "key": "purchase_number",
+							                        "title": "下定商品数量",
+							                        "format": "numFix",
+							                        "desc": "网站下定商品中，包含商品的数量"
+							                    }, {
+							                        "key": "order_change_rate",
+							                        "title": "下定订单转化率",
+							                        "format": "rate",
+							                        "desc": "网站下定订单数量和访次的百分比"
+							                    }],
+							                    "groupBy": "",
+							                    "events": [{
+							                        "name": "change",
+							                        "target": "13_chinamap",
+							                        "action": "legendflush"
+							                    }],
+							                    "option": {}
+							                }, {
+							                    "id": "13_chinamap",
+							                    "type": "chinamap",
+							                    "container": "chinamap",
+							                    "cols": [{
+							                        "key": "uv",
+							                        "title": "唯一访客数",
+							                        "format": "numFix"
+							                    }]
+										 },{'dateRange':dateRange})
+									})			
+        </script>
+    </body>
+</html>

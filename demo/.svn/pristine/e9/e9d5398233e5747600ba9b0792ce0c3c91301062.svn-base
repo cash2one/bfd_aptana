@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>parse json</title>
+		 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+        </script>
+		 <script type="text/javascript">
+		 	$(function(){
+				var a='{"rec": [], "his": [], "scenario": [["\u60a8\u662f\u7b2c\u4e00\u6b21\u6765\u5230\u6211\u4eec\u7684\u5408\u4f5c\u7f51\u7ad9\uff0c\u8bf7\u7559\u4e0b\u66f4\u591a\u7684\u8db3\u8ff9\u5427\uff01", []]]}'
+				console.info($.parseJSON(a))
+			})
+		 
+        </script>
+	</head>
+	<body>
+	</body>
+</html>

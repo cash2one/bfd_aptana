@@ -1,0 +1,69 @@
+-- VERSION_3
+-- START DISKCACHE
+E:\Dropbox\aptana_work\.metadata\.plugins\org.eclipse.core.resources\.projects\py_test\com.python.pydev.analysis\v1_indexcache
+.v1_indexcache
+2|0|E:\Dropbox\aptana_work\py_test\src\2.py
+replace_tools|0|E:\Dropbox\aptana_work\py_test\src\replace_tools.py
+163download|0|E:\Dropbox\aptana_work\py_test\src\163download.py
+1|0|E:\Dropbox\aptana_work\py_test\src\1.py
+clearSVN|0|E:\Dropbox\aptana_work\py_test\src\clearSVN.py
+template_tools|0|E:\Dropbox\aptana_work\py_test\src\template_tools.py
+getTiltle|0|E:\Dropbox\aptana_work\py_test\src\getTiltle.py
+download_torrent|0|E:\Dropbox\aptana_work\py_test\src\download_torrent.py
+cds.__init__|0|E:\Dropbox\aptana_work\py_test\src\cds\__init__.py
+cds.replace_tools|0|E:\Dropbox\aptana_work\py_test\src\cds\replace_tools.py
+getGridFilter|0|E:\Dropbox\aptana_work\py_test\src\getGridFilter.py
+-- END DISKCACHE
+-- START DICTIONARY
+10
+7=2
+6=1
+5=replace_tools
+1=163download
+10=Conn.__init__
+8=template_tools
+2=download_torrent
+9=Conn
+4=cds.replace_tools
+3=getGridFilter
+-- END DICTIONARY
+-- START TREE 1
+31
+c|2|c!11@c!19@
+col|2|colModel!27@colModelRander!27@
+con|5|content!35@Conn!17@Conn!9@content!27@content!43@
+def|1|defaultCols!27@
+dow|4|downurl!11@download_torrent!10@downurl!19@download_torrent!18@
+end|2|end!19@end!11@
+err|2|error_file_list!19@error_file_list!11@
+fil|3|filelist!51@filelist!19@filelist!11@
+fin|1|findContent!26@
+fix|2|fixColModel!27@fixColModelRander!27@
+goo|1|goodsCols!27@
+has|1|hasChildModel!27@
+int|2|into_list_page!10@into_list_page!18@
+l|2|l!19@l!11@
+lis|4|list_pattern!19@list_page!19@list_pattern!11@list_page!11@
+m|2|m!11@m!19@
+nam|2|name!11@name!19@
+new|1|newtype!27@
+old|1|oldtype!27@
+ord|1|orderCols!27@
+pag|4|page_pattern!11@page_pattern!19@page!11@page!19@
+pat|7|pattern_colModel!27@pattern_orderCols!27@pattern_goodsCols!27@path!51@pattern_fixColModel!27@pattern_defaultCols!27@pattern_tilte!27@
+pos|2|pos!11@pos!19@
+pri|1|prices!59@
+res|1|result!27@
+sta|2|start!19@start!11@
+sto|1|stock!59@
+t|1|t!51@
+tem|1|template!67@
+thr|2|threads!11@threads!19@
+tit|1|title!27@
+-- END TREE
+-- START TREE 2
+3
+__i|2|__init__!9&10@__init__!9&18@
+hea|2|headers!10&19@headers!10&11@
+req|2|request!9&10@request!9&18@
+-- END TREE

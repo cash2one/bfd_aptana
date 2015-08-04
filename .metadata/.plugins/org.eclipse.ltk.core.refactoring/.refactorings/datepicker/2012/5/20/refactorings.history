@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;datepicker/datepicker/css/datepicker_new.css&apos; to &apos;datepicker.css&apos;" description="Rename resource &apos;datepicker_new.css&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="datepicker/css/datepicker_new.css" name="datepicker.css" stamp="1336984135111" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;datepicker/2.html&apos; to &apos;index.html&apos;" description="Rename resource &apos;2.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="2.html" name="index.html" stamp="1336984327412" updateReferences="true"/>
+</session>

@@ -1,0 +1,47 @@
+BfdWidget.selectbox = function(setting, global) {
+	Widget.call(this)
+	var data_param = {
+		requestId: setting.id,
+		cols: $.merge(setting.cols.slice(0), setting.groupBy),
+		start: global.dateRange.start,
+		end: global.dateRange.end,
+		limit: 0,
+		//开始的位置
+		range: 20,
+		//个数
+		type: setting.type,
+		//请求类型
+		init: false,
+		//在init为True时返回，为false或不存在时无需返回
+		keys: ['name', 'attr2'],
+		//参数名称
+		values: ['v1', 'v2'] //参数值
+	}
+	var self = this
+	var parseSetting = function() {
+			self.selectbox = new render(setting);
+			var legend = $.grep(setting.option.groups, function(n, t) {
+				return !n.checked
+			})
+			self.flush({others:legend})
+		}
+	var render = function(setting){
+		var select = $('<select name="compare"></select>').appendTo("#"+setting.container)
+		return select
+	}
+	this.init = function() {
+		parseSetting()
+		self.addEvent('change',function(){})
+		self.selectbox.change(function(){
+			self.fireEvent('change',[$(this).val()])
+		})
+	}
+	this.flush = function(legend){
+		self.selectbox.empty().append("<option>对比指标</option>")
+		$.each(legend.others, function(n,i){
+			self.selectbox.append('<option value="'+i.key+'">'+i.title+'</option>');
+		})
+		
+	}
+	this.init();
+}

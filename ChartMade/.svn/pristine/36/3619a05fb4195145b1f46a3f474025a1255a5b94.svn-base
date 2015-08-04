@@ -1,0 +1,140 @@
+{
+	"data": {
+		"heilongjiang": {
+			"value": 21,
+			"color": "#20cdFF"
+		},
+		"jilin": {
+			"value": 32,
+			"color": "#20afFF"
+		},
+		"xinjiang": {
+			"value": 91,
+			"color": "#200dFF"
+		},
+		"liaoning": {
+			"value": 15,
+			"color": "#20deFF"
+		},
+		"beijing": {
+			"value": 76,
+			"color": "#2036FF"
+		},
+		"neimenggu": {
+			"value": 46,
+			"color": "#2089FF"
+		},
+		"gansu": {
+			"value": 64,
+			"color": "#2057FF"
+		},
+		"tianjin": {
+			"value": 3,
+			"color": "#20ffFF"
+		},
+		"hebei": {
+			"value": 76,
+			"color": "#2036FF"
+		},
+		"shanxi": {
+			"value": 94,
+			"color": "#2005FF"
+		},
+		"ningxia": {
+			"value": 95,
+			"color": "#2002FF"
+		},
+		"shandong": {
+			"value": 65,
+			"color": "#2055FF"
+		},
+		"qinghai": {
+			"value": 7,
+			"color": "#20f4FF"
+		},
+		"shaanxi": {
+			"value": 69,
+			"color": "#204aFF"
+		},
+		"jiangsu": {
+			"value": 50,
+			"color": "#207eFF"
+		},
+		"henan": {
+			"value": 77,
+			"color": "#2034FF"
+		},
+		"xizang": {
+			"value": 70,
+			"color": "#2047FF"
+		},
+		"anhui": {
+			"value": 87,
+			"color": "#2018FF"
+		},
+		"sichuan": {
+			"value": 37,
+			"color": "#20a1FF"
+		},
+		"hubei": {
+			"value": 11,
+			"color": "#20e9FF"
+		},
+		"chongqing": {
+			"value": 30,
+			"color": "#20b4FF"
+		},
+		"zhejiang": {
+			"value": 49,
+			"color": "#2080FF"
+		},
+		"jiangxi": {
+			"value": 9,
+			"color": "#20eeFF"
+		},
+		"hunan": {
+			"value": 28,
+			"color": "#20baFF"
+		},
+		"guizhou": {
+			"value": 49,
+			"color": "#2080FF"
+		},
+		"fujian": {
+			"value": 42,
+			"color": "#2094FF"
+		},
+		"yunnan": {
+			"value": 96,
+			"color": "#2000FF"
+		},
+		"guangdong": {
+			"value": 33,
+			"color": "#20acFF"
+		},
+		"guangxi": {
+			"value": 6,
+			"color": "#20f6FF"
+		},
+		"taiwan": {
+			"value": 14,
+			"color": "#20e0FF"
+		},
+		"xianggang": {
+			"value": 21,
+			"color": "#20cdFF"
+		},
+		"aomen": {
+			"value": 75,
+			"color": "#2039FF"
+		},
+		"hainan": {
+			"value": 7,
+			"color": "#20f4FF"
+		},
+		"shanghai": {
+			"value": 73,
+			"color": "#203fFF"
+		}
+	}
+}

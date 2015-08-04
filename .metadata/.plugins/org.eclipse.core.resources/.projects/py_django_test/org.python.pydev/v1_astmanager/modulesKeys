@@ -1,0 +1,9 @@
+MODULES_MANAGER_V2
+py_django_test.__init__|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\__init__.py
+py_django_test.manage|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\manage.py
+py_django_test.refer_test.__init__|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\refer_test\__init__.py
+py_django_test.refer_test.models|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\refer_test\models.py
+py_django_test.refer_test.tests|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\refer_test\tests.py
+py_django_test.refer_test.views|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\refer_test\views.py
+py_django_test.settings|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\settings.py
+py_django_test.urls|E:\Dropbox\aptana_work\py_django_test\src\py_django_test\urls.py

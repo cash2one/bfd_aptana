@@ -1,0 +1,13 @@
+#coding=utf-8
+import os
+
+if __name__ == '__main__':
+    for file in os.listdir(os.getcwd()):
+         if file.endswith('html'):
+             content= open(file, 'r').read()
+             content=content.replace("""<a href="#" class="userdata">自定义指标项</a>
+                    <a href="#" id="girdModel" class="b_pic">饼图模式</a>""","""<a class="userdata">自定义指标项</a>
+                    <a  id="girdModel" class="b_pic">饼图模式</a>""")
+             open(file, 'w').write(content)
+             
+ 

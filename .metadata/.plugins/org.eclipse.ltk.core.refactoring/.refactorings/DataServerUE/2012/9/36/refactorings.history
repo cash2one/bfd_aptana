@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;DataServerUE/static/resources/baifendianWidgetsCombo/load1.js&apos; to &apos;load.js&apos;" description="Rename resource &apos;load1.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="static/resources/baifendianWidgetsCombo/load1.js" name="load.js" stamp="1346739794803" updateReferences="true"/>
+</session>

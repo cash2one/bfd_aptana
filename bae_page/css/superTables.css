@@ -1,0 +1,278 @@
+/*
+///////////////////////////////////////////////////////////////////////////////////////// 
+// Super Tables v0.30 - MIT Style License
+// Copyright (c) 2008 Matt Murphy --- www.matts411.com
+//
+// Contributors:
+// Joe Gallo
+///////////////////////////////////////////////////////////////////////////////////////// 
+*/
+.fakeContainer { /* The parent container */
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    width: 770px; /* Required to set */
+    height: 450px; /* Required to set */
+    overflow: hidden; /* Required to set */
+        border-right:1px #D6D6D6 solid;
+        border-bottom:1px #D6D6D6 solid;
+        border-left:1px #D6D6D6 solid;
+    margin-left:6px;}
+.configbg{width:766px;background:#F8F8F8; border:1px #D6D6D6 solid;border-bottom:none;padding:2px;margin-left:6px;}                                
+div.option-table{font-size:12px; font-family:Arial, Helvetica, sans-serif; position:absolute;
+display:none;padding:1px;z-index:10000;background:#FFFFFF;width:500px;border:2px solid #7DCECA;margin-top:24px;margin-left:6px;}
+div.option-table-bar{background:#D7F0EF;clear:both;padding:2px 5px 8px 5px;}
+div.option-table-btn{clear:both;padding:5px;}
+div.option-table-box{padding:5px;line-height:22px;}
+div.option-table-box label{display:block;float:left;width:120px;vertical-align:middle;}
+div.option-table-box label input{vertical-align:middle;margin-top:0;margin-bottom:0;}
+
+div.config-btn {
+	font-size: 12px;
+	font-family: Arial;
+	width: 90px;
+	line-height: 22px;
+	height: 22px;
+	color: #8A5215;
+	text-indent: 25px;
+	cursor: pointer;
+	overflow: hidden;
+	background-image: url(../images/new_report_sprite.gif);
+	background-clip: border-box;
+	background-color: transparent;
+	background-origin: padding-box;
+	color: #FFF;
+	cursor: pointer;
+	display: block;
+	font-size: 12px;
+	height: 27px;
+	line-height: 27px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	text-indent: 35px;
+	width: 116px;
+
+Styles
+:active :hover
+:focus:visited
+; 		background-repeat: no-repeat;
+}
+
+.sBase {
+        position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* HEADERS */
+.sHeader {
+        position: absolute;
+        z-index: 3;
+        background-color: #ffffff;
+}
+.sHeaderInner {
+        position: relative;
+}
+.sHeaderInner table {
+        border-spacing: 0px 0px !important;
+        border-collapse: collapse !important;
+        width: 1px !important;
+        table-layout: fixed !important;
+        background-color: #ffffff; /* Here b/c of Opera 9.25 :( */
+}
+
+/* HEADERS - FIXED */
+.sFHeader {
+        position: absolute;
+        z-index: 4;
+        overflow: hidden;
+}
+.sFHeader table {
+        border-spacing: 0px 0px !important;
+        border-collapse: collapse !important;
+        width: 1px !important;
+        table-layout: fixed !important;
+        background-color: #ffffff; /* Here b/c of Opera 9.25 :( */
+}
+
+/* BODY */
+.sData {
+        position: absolute;
+        z-index: 2;
+        overflow: auto;
+        background-color: #ffffff;
+}
+.sData table {
+        border-spacing: 0px 0px !important;
+        border-collapse: collapse !important;
+        width: 1px !important;
+        table-layout: fixed !important;
+}
+
+/* BODY - FIXED */
+.sFData {
+        position: absolute;
+        z-index: 1;
+        background-color: #ffffff;
+}
+
+.sFData {
+        position: absolute;
+        z-index: 1;
+        background-color: #ffffff;
+}
+.sFDataInner {
+        position: relative;
+}
+.sFData table {
+        border-spacing: 0px 0px !important;
+        border-collapse: collapse !important;
+        width: 1px !important;  
+        table-layout: fixed !important;
+}
+
+
+/*
+///////////////////////////////////////////////////////////////////////////////////////// 
+// Super Tables - Skin Classes
+// Remove if not needed
+///////////////////////////////////////////////////////////////////////////////////////// 
+*/
+
+/* sDefault */
+.sDefault {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        font-family: Verdana, Arial, sans serif;
+        font-size:12px;
+}
+.sDefault th, .sDefault td {
+        border: 1px solid #cccccc;
+        padding: 3px 6px 3px 4px;
+        white-space: nowrap;
+}
+.sDefault th {
+        background-color: #e5e5e5;
+        border-color: #c5c5c5;
+}
+.sDefault-Fixed {
+        background-color: #eeeeee;
+        border-color: #c5c5c5;
+}
+.sdata{
+border:none;
+border-right:1px solid #C0C0C0;
+border-left:1px solid #C0C0C0;
+background:#FFFFFF:
+}
+.sSky .bg1{background:#eaeaea; }
+.sSky .bg2{background:#ffffff;}
+/* sSky */
+.sSky {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        font-family: Verdana, Arial, sans serif;
+        font-size:12px;
+}
+.sSky .tr2 th {
+    cursor: auto;
+}
+.sSky th{
+        border: 1px solid #D6D6D6 ;
+        padding: 3px 6px 3px 4px;
+        white-space: nowrap;
+        text-align:center;
+        height:20px;
+}
+.sSky .cth1{background-color:#F8F8F8;background-image:none;color:#888888;cursor: auto;height:65px;line-height:21px;}
+.sSky td {
+        border: 1px solid #D6D6D6 ;
+        padding: 3px 6px 3px 4px;
+        /*white-space: nowrap;*/
+        text-align:right;
+        height:20px;
+        background:#FFF;
+		overflow:hidden
+        
+}
+/*鍔犲彿鍑忓彿*/
+.sSky a.add{background: url(../images/add.gif) 0px 0px no-repeat #eaeaea;cursor:pointer;width:13px;height:13px; display:block;}
+.sSky th {
+        background-color: #F5F5F5;cursor:pointer;height:20px;
+}
+.sSky-Fixed {
+        background-color: #F5F5F5;/*宸︿晶鑳屾櫙棰滆壊*/
+}
+
+/* sOrange */
+.sOrange {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        font-family: Verdana, Arial, sans serif;
+        font-size:12px;
+}
+.sOrange th, .sOrange td {
+        border: 1px solid #cebb9e;
+        padding: 3px 6px 3px 4px;
+        white-space: nowrap;
+}
+.sOrange th {
+        background-color: #ECD8C7;
+}
+.sOrange-Fixed {
+        background-color: #f7ede4;
+}
+
+/* sDark */
+.sDark {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        font-family: Verdana, Arial, sans serif;
+        font-size:12px;
+        color: #ffffff;
+}
+.sDark th, .sDark td {
+        border: 1px solid #555555;
+        padding: 3px 6px 3px 4px;
+        white-space: nowrap;
+}
+.sDark th {
+        background-color: #000000;
+}
+.sDark-Fixed {
+        background-color: #222222;
+}
+.sDark-Main {
+        background-color: #333333;
+}
+.sSky .tdleft {
+	text-align: left;
+	text-indent: 10px;
+}
+.tbtittle {
+	position: relative;
+}
+.tbtittle_up {
+	background-image: url(../images/up_down.gif);
+	background-repeat: no-repeat;
+	width: 5px;
+	position: absolute;
+	right: 0px;
+	z-index: 1;
+	top: 0px;
+}
+.tbtittle_down {
+	background-image: url(../images/up_down.gif);
+	background-repeat: no-repeat;
+	width: 5px;
+	position: absolute;
+	right: 0px;
+	z-index: 1;
+	top: 0px;
+	background-position: -6px;
+}

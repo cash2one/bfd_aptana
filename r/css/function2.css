@@ -1,0 +1,62 @@
+.r_tittle {
+	height: 70px;
+	background: url(../images/r_line.png) #F0F5F9 repeat-x bottom;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+ .r_tittle h1 {
+	line-height: 42px;
+	font-size: 18px;
+	font-family: Tahoma,"微软雅黑";
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+.r_tittle h1 .txt {
+	display: block;
+	float: left;
+}
+.r_tittle h1 .day_select {
+	float: right;
+	font-size: 12px;
+	margin-top: 10px;
+	height: 25px;
+}
+ .r_tittle .menu {
+	line-height: 27px;
+	color: #999;
+	clear: both;
+	/*height: 27px;*/
+}
+.datacontent {
+	padding: 10px 10px 15px 10px;
+}
+.datacontent .data00 {
+	margin-top: 15px;
+}
+.datacontent .data00.compareselect{
+	height: 23px;
+}
+.datacontent .compareselect div{
+	float:right;
+}
+
+.bb_down{
+	float: right;
+	line-height: 27px;
+}
+.bb_down a{
+	/*float: right;*/
+	display: block;
+	background-image: url(../images/but_download.gif);
+	height: 21px;
+	width: 82px;
+	line-height: normal;
+	text-decoration: none;
+	text-indent: 25px;
+	padding-top: 4px;
+	padding-right: 0px;
+	padding-left: 0px;
+	text-align:left;
+	_margin-top: -5px;
+}

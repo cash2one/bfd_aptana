@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;demo/js/scoll.js&apos; to &apos;scroll.js&apos;" description="Rename resource &apos;scoll.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="js/scoll.js" name="scroll.js" stamp="1341888057037" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;demo/style - 副本.css&apos; to &apos;style1.css&apos;" description="Rename resource &apos;style - 副本.css&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="style - 副本.css" name="style1.css" stamp="1341998072497" updateReferences="true"/>
+</session>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>数据分析-概况</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<script type="text/javascript">
+		function changeTab(a){
+			var lis = document.getElementById('nav').getElementsByTagName("li");
+			//alert("111");
+			for (var i=0;i<lis.length;i++) {
+				if(lis[i]==a){				
+
+					lis[i].className="current";
+				}else{
+					lis[i].className="";
+
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好,测试用户</a></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			<ul class="nav" id="nav">
+				<li class="current">
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- main   开始 -->
+	<div class="content">
+	<div class="main">
+		<div class="m-top">&nbsp;</div>
+		<ul class="nav2">
+			<li class="current"><a href="#">概况</a></li>
+			<li><a href="#">文章分析</a></li>
+			<li><a href="#">文章推荐插件</a></li>
+			<li class="rbgno "><a href="#">流量交换</a></li>
+		</ul>
+		
+		<div class="m-con">
+			<div class="con-1">
+				<div class="arrow"></div>
+				<div class="title">
+					<h2>概况</h2>
+					<img src="../../images/riqi.jpg" alt="" />
+				</div>
+				<div class="section">
+					<div class="data-chart"><img src="../../images/img1.jpg" /></div>
+					<ul class="statistics">
+						<li>
+							<em>258</em>
+							<span>文章浏览量</span>
+						</li>
+						<li>
+							<em>134</em>
+							<span>文章推荐插件点击次数</span>
+						</li>
+						<li>
+							<em>5</em>
+							<span>平均文章浏览量</span>
+						</li>
+						<li class="norb">
+							<em>7</em>
+							<span>平均文章分页浏览量</span>
+						</li>
+					</ul>
+					<table class="data-tab" cellspacing="0" cellpadding="0" border="0">
+						<tr>
+							<th>时间</th>
+							<th>文章浏览量</th>
+							<th>文章推荐插件点击次数</th>
+							<th>流量交换链入浏览量</th>
+							<th>流量交换链出浏览量</th>
+							<th>平均文章浏览量</th>
+							<th  class="brn">平均文章页浏览量</th>
+						</tr>
+						<tr>
+							<td><span>2012-08-15</span></td>
+							<td><span>312</span></td>
+							<td><span>312</span></td>
+							<td><span>312</span></td>
+							<td><span>312</span></td>
+							<td><span>312</span></td>
+							<td class="brn"><span>312</span></td>
+						</tr>
+						<tr>
+							<td><span>2012-08-15</span></td>
+							<td><span>514</span></td>
+							<td><span>514</span></td>
+							<td><span>514</span></td>
+							<td><span>514</span></td>
+							<td><span>514</span></td>
+							<td class="brn"><span>514</span></td>
+						</tr>
+						<tr>
+							<td><span>2012-08-15</span></td>
+							<td><span>327</span></td>
+							<td><span>327</span></td>
+							<td><span>327</span></td>
+							<td><span>327</span></td>
+							<td><span>327</span></td>
+							<td class="brn"><span>327</span></td>
+						</tr>
+						<tr>
+							<td><span>2012-08-15</span></td>
+							<td><span>419</span></td>
+							<td><span>419</span></td>
+							<td><span>419</span></td>
+							<td><span>419</span></td>
+							<td><span>419</span></td>
+							<td class="brn"><span>419</span></td>
+						</tr>
+						<tr>
+							<td class="bbn"><span>2012-08-15</span></td>
+							<td class="bbn"><span>785</span></td>
+							<td class="bbn"><span>785</span></td>
+							<td class="bbn"><span>785</span></td>
+							<td class="bbn"><span>785</span></td>
+							<td class="bbn"><span>785</span></td>
+							<td class="bbn brn"><span>785</span></td>
+						</tr>
+					</table>
+					<div class="data2">
+						<div class="data2-l">
+							<h3 class="d2-tit">流量交换</h3>
+							<a href="#">详细数据 >></a>
+							<img src="../../images/img2.jpg" />
+						</div>
+						<div class="data2-r">
+							<h3 class="d2-tit">分享</h3>
+							<a href="#">详细数据 >></a>
+							<img src="../../images/img3.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- main   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+</body>
+</html>

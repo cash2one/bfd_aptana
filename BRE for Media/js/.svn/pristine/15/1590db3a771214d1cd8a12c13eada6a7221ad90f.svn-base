@@ -1,0 +1,47 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	var imageurl
+	$('#file').uploadify({
+							        swf           : '../../resources/uploadify/uploadify.swf',
+									'fileObjName' : 'file',
+							        uploader      : '../../ContentManager/content/!uploadSettingImage',//上传图片url
+									buttonText:null,
+							        height        : 32,
+							        width         : 35,
+									'fileTypeExts' : '*.gif; *.jpg; *.png',
+									'fileSizeLimit' : '4MB',
+									formData:sessionData,
+									'onSelect' : function(file){
+										$('#textfield').val(file.name)
+									},
+									onUploadError:function(){
+										$('#textfield').val('')
+									},
+									onUploadSuccess:function(file, data, response){
+//										 $('.upload-pic').append('<img src="'+data+'" style="width:140px;height:140px;"/>')
+										 $('.upload-pic img').attr('src',data)
+										 $('#sub').addClass('save-btn')
+										 imageurl=data
+									}
+							   });	
+	$('#sub').click(function(){
+		if($(this).hasClass('save-btn')){
+			$.ifmWidget("loading",{
+	    		title:'正在操作',
+	    		content:'正在操作...'
+			})
+			$.post('../../ContentManager/content/!saveSettingImage',{imageurl:imageurl}).done(function(){
+				$.ifmWidget("alertSuccess",{
+		    		title:'操作成功',
+		    		content:'操作成功',
+		    		callBack:function(){
+		    			$('#sub').removeClass('save-btn')
+		    			$('#textfield').val('')
+		    		}
+		    	})
+			})
+		}
+	})
+})

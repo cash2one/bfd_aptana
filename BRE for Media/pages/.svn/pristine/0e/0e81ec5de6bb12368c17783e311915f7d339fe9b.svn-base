@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>数据分析-文章分析-文章推荐插件</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<script type="text/javascript">
+		function changeTab(a){
+			var lis = document.getElementById('nav').getElementsByTagName("li");
+			//alert("111");
+			for (var i=0;i<lis.length;i++) {
+				if(lis[i]==a){				
+
+					lis[i].className="current";
+				}else{
+					lis[i].className="";
+
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好,测试用户</a></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			<ul class="nav" id="nav">
+				<li class="current">
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- main   开始 -->
+	<div class="content">
+	<div class="main">
+		<div class="m-top">&nbsp;</div>
+		<ul class="nav2">
+			<li><a href="#">概况</a></li>
+			<li class="current"><a href="#">文章分析</a></li>
+			<li><a href="#">文章推荐插件</a></li>
+			<li class="rbgno "><a href="#">流量交换</a></li>
+		</ul>
+		<div class="m-con">
+			<div class="con-2">
+				<div class="arrow"></div>
+				<div class="title">
+					<h2>文章分析</h2>
+					<img src="../../images/riqi.jpg" alt="" />
+				</div>
+				<div class="section">
+					<div class="choose-area">
+						<ul class="choose">
+							<li class="current"><a href="#">文章推荐插件</a></li>
+							<li class=""><a href="#">流量交换</a></li>
+						</ul>
+						<div class="search-box">
+							<input type="text" class="" />
+							<a href="#" class="btn">搜索</a>
+						</div>
+					</div>
+					<table class="data-tab3" cellspacing="0" cellpadding="0" border="0">
+						<tr class="bg">
+							<th class="w44"></th>
+							<th class="w233 center">文章标题</th>
+							<th>浏览量</th>
+							<th>关键词浮层</th>
+							<th>嵌入式</th>
+							<th>浮窗式</th>
+							<th>标签云</th>
+							<th  class="brn">个性化文榜</th>
+						</tr>
+						<tr>
+							<td class="fw-bold"><span>1</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr class="color">
+							<td class="fw-bold"><span>2</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr>
+							<td class="fw-bold"><span>3</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr class="color">
+							<td class="fw-bold"><span>4</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr>
+							<td class="fw-bold"><span>5</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr class="color">
+							<td class="fw-bold"><span>6</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr>
+							<td class="fw-bold"><span>7</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr class="color">
+							<td class="fw-bold"><span>8</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr>
+							<td class="fw-bold"><span>9</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr class="color">
+							<td class="fw-bold"><span>10</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr>
+							<td class="fw-bold"><span>11</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr class="color">
+							<td class="fw-bold"><span>12</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr>
+							<td class="fw-bold"><span>13</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr class="color">
+							<td class="fw-bold"><span>14</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr>
+							<td class="fw-bold"><span>15</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr class="color">
+							<td class="fw-bold"><span>16</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr>
+							<td class="fw-bold"><span>17</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr class="color">
+							<td class="fw-bold"><span>18</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr>
+							<td class="fw-bold"><span>19</span></td>
+							<td class="left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right"><span>114</span></td>
+							<td style="text-align:right"><span>312</span></td>
+							<td style="text-align:right" class="brn"><span>114</span></td>
+						</tr>
+						<tr class="color">
+							<td class="bbn fw-bold"><span>20</span></td>
+							<td class="bbn left"><span>设计原则，减轻用户的记忆负担</span></td>
+							<td  style="text-align:right" class="bbn"><span>312</span></td>
+							<td  style="text-align:right" class="bbn"><span>114</span></td>
+							<td  style="text-align:right" class="bbn"><span>312</span></td>
+							<td  style="text-align:right" class="bbn"><span>114</span></td>
+							<td  style="text-align:right" class="bbn"><span>312</span></td>
+							<td  style="text-align:right" class="bbn brn"><span>114</span></td>
+						</tr>
+					</table>
+					
+				</div>
+				<ul class="page">
+					<li class="number current"><a href="#">1</a></li>
+					<li class="number"><a href="#">2</a></li>
+					<li class="number"><a href="#">3</a></li>
+					<li class="number"><a href="#">4</a></li>
+					<li class="number"><a href="#">5</a></li>
+					<li class="number"><a href="#">6</a></li>
+					<li class="number"><a href="#">7</a></li>
+					<li class="number"><a href="#">8</a></li>
+					<li class="number"><a href="#">9</a></li>
+					<li class="number"><a href="#">10</a></li>
+					<li><a href="#">下一页</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- main   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+</body>
+</html>
+

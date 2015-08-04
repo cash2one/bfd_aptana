@@ -1,0 +1,132 @@
+/**
+ * @author Administrator
+ */
+
+// function Chart(setting) {
+// }
+/*_baifendianWidgets.chart.parse = function(item) { //设置中返回的项
+	var c = new Chart(item);
+	return c
+}*/
+BfdWidget.chart = function(setting, global) {
+	Widget.call(this)
+	var self = this
+	//加工setting,请求数据,生成UI,相应事件
+	//var cols = ;
+	var data_param = function() {
+			return {
+				requestId: setting.id,
+				cols: $.merge(setting.cols.slice(0), setting.groupBy),
+				start: global.dateRange.start,
+				end: global.dateRange.end,
+				limit: 0,
+				//开始的位置
+				range: 20,
+				//个数
+				type: setting.type,
+				//请求类型
+				init: false,
+				//在init为True时返回，为false或不存在时无需返回
+				keys: ['name', 'attr2'],
+				//参数名称
+				values: ['v1', 'v2'] //参数值
+			}
+		};
+	var getData = function() {
+			return $.ajax({
+				url: '../test_pages/' + data_param().cols[0] + '.json',
+				//_baifendianDataURL,
+				data: data_param(),
+				dataType: "json"
+			});
+		}
+	var parseSetting = function() {
+		setting.option.chart.renderTo = setting.container;
+		setting.option.tooltip.formatter = function() {
+			var unit = {
+				'Rainfall': 'mm',
+				'Temperature': '°C',
+				'Sea-Level Pressure': 'mb',
+				'MSIE': '%'
+			}[this.series.name];
+			if (this.point.name) {
+				return '<b>' + this.point.name + '</b><br/>' + this.x + ': ' + this.y + ' ' + unit;
+			} else {
+				return '' + this.x + ': ' + this.y + ' ' + unit;
+			}
+		}
+	}
+	var parseData = function(data) {
+		$.each(data.categories, function(n, i) {
+			setting.option.xAxis[n].categories = i
+		})
+		$.each(data.series, function(n, i) {
+			setting.option.series[n] = i
+			setting.option.yAxis[n].title = {
+				text: i.name
+			}
+		})
+		if (self.chart) {
+			self.chart.destroy();
+		}
+		self.chart = new Highcharts.Chart(setting.option);
+	}
+	this.init = function() {
+		parseSetting()
+		self.chart = new Highcharts.Chart(setting.option);
+		self.chart.showLoading("wait...")
+		//self.chart.showLoading("wait...")
+		getData().done(parseData);
+	}
+	this.init();
+	// this.parseData = function(data, empty) {
+	// 	var self = this
+	// 	$.each(data.categories, function(n, i) {
+	// 		self.chart.xAxis[0].setCategories(i, false);
+	// 	})
+	// 	if (empty) {
+	// 		while (self.chart.series.length) {
+	// 			self.chart.series[0].remove(false);
+	// 		}
+	// 	}
+	// 	$.each(data.series, function(n, i) {
+	// 		self.chart.addSeries(i, false, true);
+	// 	});
+	// 	self.chart.redraw();
+	// 	
+	// }
+	this.flush = function(legend) {
+		//$.extends(setting,newsetting);
+		//self.chart.showLoading("wait...")
+		setting.cols = [legend.current.key]
+		self.chart.showLoading("wait...")
+		getData().done(parseData)
+		//this.init();
+	}
+	this.compare = function(key){
+		setting.cols = [key]
+		getData().done(function(data){
+			self.chart.addSeries(data.series[0],false,true)
+
+			self.chart.redraw()
+		})
+		
+	}
+	//this.parseSetting()
+	// this.parseData = function(data, empty) {
+	// 	var self = this
+	// 	if (empty) {
+	// 		while (self.chart.series.length) {
+	// 			self.chart.series[0].remove(false);
+	// 		}
+	// 	}
+	// 	$.each(data.stores, function(n, i) {
+	// 		self.chart.xAxis[n].setCategories(i[setting.groupBy[n]], false);
+	// 		$.each(setting.cols,function(m,j){
+	// 			self.chart.addSeries(i[j], false, true);
+	// 		})
+	// 	})
+	// 	self.chart.redraw();
+	// 	this.chart.hideLoading();
+	// }
+}

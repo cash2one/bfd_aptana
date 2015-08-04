@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <meta charset="utf-8">
+        <title>Bootstrap, from Twitter</title>
+        <meta name="viewport" content="width=device-width, height=device-height,initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Le styles -->
+        <link href="./resources/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+        	html {
+			    min - height: 100% ;
+			    background-size: cover;
+			}
+			body {
+			    min - height: 100%;
+			}
+            body {
+                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+            }
+        </style>
+        <link href="./resources/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+		<script src="./resources/jquery/jquery.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+    	 <div class="container">
+            <ul class="nav nav-tabs nav-stacked">
+                <li class="active">
+                    <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#">介绍</a>
+                </li>
+                <li>
+                    <a href="#">消息</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <ul class="nav nav-tabs nav-stacked">
+                <li>
+                    <span class="badge badge-success">A</span>
+                    自然人一出生就成为独立享有法律规定的权利和义务的民事主体
+                </li>
+                <li>
+                    <span class="badge badge-warning">B</span>
+                    自然人不包括外国人和无国籍人
+                </li>
+                <li>
+                    <span class="badge badge-error">C</span>
+                    自然人的民事权利终身享有，不可剥夺
+                </li>
+            </ul>
+        </div>
+		<div class="container">
+			<div class="row">
+				<div class="span2">A</div><div class="span10">自然人一出生就成为独立享有法律规定的权利和义务的民事主体</div>
+			</div>
+		</div>	
+    </body>
+	<script type="text/javascript">
+		$(function(){
+	$('li > a').click(function(){
+		$(this).css('background-color','blue')
+		$(this).parent().siblings().find('>a').css('background-color','#fff')
+	})
+})
+	</script>
+</html>

@@ -1,0 +1,9 @@
+.selectbox_container{
+	
+}
+.selectbox_container select{
+	border: 1px solid #DDD;
+	line-height: 21px;
+	height: 21px;
+	margin: 0px;
+}

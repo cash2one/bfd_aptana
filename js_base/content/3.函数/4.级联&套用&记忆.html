@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>级联&套用&记忆</title>
+		<script type="text/javascript" src="../../commons/common.js"></script>
+		<script type="text/javascript">
+			//级联 方法中返回this
+			var myObject=function(){
+					var value=0//value变为私有的
+					return {
+						increment:function(inc){
+							value += typeof inc === 'number' ? inc:1
+							return this
+						},
+						getValue:function(){
+							return value
+						}
+					}
+				}();
+//				console.info(myObject.increment(2).increment().getValue())
+				//套用  用函数产生函数 类似于functools.partial
+				function add(a,b){
+					return a+b
+				}
+//				var add1=add.curry(1)
+//				add1(6)//7
+//                Function.method('curry',function(){
+//					var args= arguments,that=this
+//					return function(){
+//						return that.apply(null,args.concat(arguments))
+//					}
+//				})
+//				var add1=add.curry(1)
+//				add1(6)//7
+//				Function.method('curry',function(){
+//					var slice=Array.prototype.slice,
+//					      args= slice.apply(arguments),
+//						  that=this;
+//				   return function(){
+//				     	return that.apply(null,args.concat(slice.apply(arguments)))
+//				   }
+//				})
+//				var add1=add.curry(1)
+//				add1(6)//7
+//				console.info(add1(6))
+         //记忆 用对象记住之前操作的结果,从而避免无谓的计算
+//		 var count=0
+//		 var fibonacci=function(n){//斐波那契
+//		 	count++
+//		 	return n<2?n:fibonacci(n-1)+fibonacci(n-2)
+//		 }
+//		 for(var i=0;i<=10;i++){
+//		 	document.writeln('#'+i+':'+fibonacci(i)+'<br/>')
+//		 }
+//		 document.writeln('#一共计算:'+count+'次<br/>')
+	   /*
+	     var count=0
+		 var fibonacci=function(n){
+			var memo=[0,1]
+			var fib=function(n){
+				count++
+				var result=memo[n]
+				if(typeof result !== 'number'){
+					result=fib(n-1)+fib(n-2)
+					memo[n]=result
+				}
+				return result
+			}
+		 	return fib
+		 }();
+		 for(var i=0;i<=10;i++){
+		 	document.writeln('#'+i+':'+fibonacci(i)+'<br/>')
+		 }
+		 document.writeln('#一共计算:'+count+'次<br/>')
+		 */
+		 //以上函数一般化为
+		 var memoizer=function(memo,lambda){
+		 	var shell=function(n){
+				var result=memo[n]
+				if(typeof result !=='number'){
+					result=lambda(shell,n)
+					memo[n]=result
+				}
+				return result
+			}
+			return shell
+		 }
+		 var fibonacci1=memoizer([0,1],function(shell,n){
+		 	return shell(n-1)+shell(n-2)
+		 })
+		 document.writeln(fibonacci(10))
+		 document.writeln('<br/>')
+		 var factorial=memoizer([0,1],function(shell,n){//阶乘
+		 	return n*shell(n-1)
+		 })
+		 document.writeln(factorial(10))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

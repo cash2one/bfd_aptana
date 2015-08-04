@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>安装插件</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/style-1.css" />
+	<script type="text/javascript">
+		function changeTab(a){
+			var lis = document.getElementById('nav').getElementsByTagName("li");
+			//alert("111");
+			for (var i=0;i<lis.length;i++) {
+				if(lis[i]==a){				
+
+					lis[i].className="current";
+				}else{
+					lis[i].className="";
+
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<!-- header 开始 -->
+	<div class="header">
+		<div class="w970">
+			<div class="top">
+				<ul class="t-group">
+					<li><a href="#">你好,测试用户</a></li>
+					<li><a href="../../SiteManager/msg/!index.action">消息</a></li>
+					<li><a href="#">站点管理</a></li>
+					<li><a href="#">账号设置</a></li>
+					<li><a href="#">帮助中心</a></li>
+					<li class="no-bg"><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<a href="#">
+				<div class="logo">
+					<strong>media</strong>
+				</div>
+			</a>
+			<ul class="nav" id="nav">
+				<li>
+					<a href="../../DataAnalysis/stat/!synthetical.action">
+                    <em class="icon1">&nbsp;</em>
+                    <span>数据分析</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li class="">
+					<a href="../../ContentManager/content/!showEmbodyStatistics">
+                     <em class="icon3">&nbsp;</em>
+                    <span>内容管理</span>
+                    <strong class="position">&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../ViewSetting/view/!showViewSetting">
+                    <em class="icon2">&nbsp;</em>
+                    <span>展示设置</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+				<li>
+					<a href="../../SourceShare/source/!showSoureShare">
+                    <em class="icon4">&nbsp;</em>
+                    <span>流量交换</span>
+                    <strong>&nbsp;</strong>
+                    </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header 结束 -->
+	<!-- content   开始 -->
+	<div class="content">
+		<div class="main">
+			<div class="m-top">&nbsp;</div>
+			<div class="m-title">添加站点</div>
+			<div class="m-con border-top">
+				<div class="con-5">
+					<div class="add-site-tit3">
+						<a href="#" class="set-btn1">基本设置</a>
+						<a href="#" class="set-btn2">安装插件</a>
+						<a href="#" class="set-btn3">验证，完成</a>
+					</div>
+					<div class="add-site-c">
+						<h3>WordPress安装插件教程</h3>
+						<div class="step">
+							<span class="number">1.</span>
+							<p>下载相关文章插件(related-posts.zip)，并且保存到你的电脑里<br><a href="#" class="plugin">WordPress插件下载</a><em>（右击另存为）</em></p>
+						</div>
+						<div class="step">
+							<span class="number">2.</span>
+							<p>进入WordPress后台的插件安装页面</p>
+						</div>
+						<div class="step">
+							<span class="number">3.</span>
+							<p>上传你刚下载的相关文章插件（如图）<img src="../../images/pic-15.jpg" alt="" /></p>
+						</div>
+						<div class="step">
+							<span class="number">4.</span>
+							<p>激活插件（如图）<img src="../../images/pic-16.jpg" alt="" /></p>
+						</div>
+						<div class="step">
+							<span class="number">5.</span>
+							<p>安装完毕，您可进入管理中心进行自定义设置。</p>
+						</div>
+						<div class="btn">
+							<a href="#" class="after">下一步</a>
+							<a href="#" class="before">上一步</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content   结束 -->
+	<!-- footer  开始 -->
+	<div class="footer">
+		<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+	</div>
+	<!-- footer  结束 -->
+</body>
+</html>

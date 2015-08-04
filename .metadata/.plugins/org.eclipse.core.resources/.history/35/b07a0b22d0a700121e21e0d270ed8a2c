@@ -1,0 +1,17 @@
+$(function(){
+		$('.section').scrollable({vertical: true})
+		var api=$('.section').data('scrollable')
+		$('.set-box:first').click(function(){
+//			$.post('url',{},function(data){
+//				if(data==""){
+					api.seekTo(1)
+//				}
+//			},'json')
+		});
+		$('#isopenpromo').change(function(){
+			var dom=$(this)
+			$.post('url',{'参数名':dom.prop('checked')?'选中':'未选中'},function(){
+				
+			},'json')
+		})
+})

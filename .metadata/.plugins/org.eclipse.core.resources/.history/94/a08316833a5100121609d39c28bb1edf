@@ -1,0 +1,19 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	if($('#nameinput')!==''){
+		$('#namelabel').hide()
+	}
+	$('#nameinput').focus(function(){
+		$('#namelabel').hide()
+	}).blur(function(){
+		if($(this).val()==''){
+			$('#namelabel').show()
+		}
+	})
+	$('#namelabel').click(function(){
+		$(this).hide()
+		$('#nameinput').focus()
+	})
+})

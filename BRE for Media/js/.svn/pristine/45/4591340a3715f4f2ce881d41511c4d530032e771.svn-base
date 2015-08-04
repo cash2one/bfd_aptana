@@ -1,0 +1,139 @@
+$(function(){
+	$('.select_box2 input:text').click(function(){
+		$('.select_box2').find('ul').not($(this).parents('.select_box2').find('ul')).slideUp()
+		$(this).parents('.select_box2').find('ul').slideToggle()
+	})
+	$('.select_box2 ul li').click(function(){
+			$(this).parents('.select_box2').find('input:text').val($(this).html())
+			$(this).parents('.select_box2').find('ul li.active').removeClass('active')
+			$(this).addClass('active')
+			$(this).parents('.select_box2').find('ul').slideUp()
+			$(this).parents('.select_box2').find('input:hidden').val($(this).data('value'))
+	})
+	$('.select_box2 input:text').each(function(){
+		var value=$(this).val()
+		$(this).parents('.select_box2').find('li').each(function(){
+			if($(this).html()===value){
+				$(this).addClass('active')
+			}
+		})
+	})
+})
+$(function(){
+	$('.item1 input:radio').change(function(){
+		if($(this).parent().parent().find('input:radio:first').is(':checked')){
+			$(this).parents('.display').find('.item2').show()
+		}else{
+			$(this).parents('.display').find('.item2').hide()
+		}
+	})
+	//开启
+	$('#i4').find('input:checkbox').change(function(){
+		if($(this).is(':checked')){
+			$(this).parents('form').find('.display input').attr('disabled',false)
+		}else{
+			$(this).parents('form').find('ul').slideUp()
+			$(this).parents('form').find('.display input').attr('disabled',true)
+		}
+	}).change()
+	//预览切换
+	$('.set-right .preview').scrollable({vertical: true})
+	var api=$('.set-right .preview').data('scrollable')
+	$('.item1 input:radio').change(function(){
+		if($(this).parent().parent().find('input:radio:first').is(':checked')){
+			api.seekTo(0)
+		}else{
+			api.seekTo(1)
+		}
+	}).change()
+	
+	//图片宽度文本输入
+	 function getNumberKeyValue(keyCode){
+	 	if(keyCode<=57){
+			return keyCode-48
+		}else{
+			return keyCode-96
+		}
+	 }
+	$('#i4 input:text').keydown(function(event){
+		if(event.keyCode==13||event.keyCode==8||event.keyCode==46||event.keyCode==37||event.keyCode==38||event.keyCode==39||event.keyCode==40){
+			return true;
+		}
+		if($(this).val()==''&&(event.keyCode==48||event.keyCode==96)){
+			return false
+		}
+		if((!(event.keyCode>=48&&event.keyCode<=57||event.keyCode==8))&&(!(event.keyCode>=96&&event.keyCode<=105))){
+			return false
+		}else{
+			if(parseInt($(this).val()+getNumberKeyValue(event.keyCode),10)>120){
+				return false
+			}
+		}
+	}).keyup(function(){
+					var item=$.trim($(this).val())
+					item=parseInt(item,10)
+					if(item<1||isNaN(item)){
+						$(this).val('')
+					}
+	}).blur(function(){
+						var item=$.trim($(this).val())
+						item=parseInt(item,10)
+						if(item<1||isNaN(item)){
+							$(this).val('')
+						}
+	})
+})
+$(function(){
+    $('a.btn').click(function(){
+  	    var d=$(this)
+  	    d.parents('form').submit()
+	})
+	$('#i4').keyup(function(event){
+		if(event.keyCode===13){
+			   $(this).find('a.btn').click();
+			}
+	})
+	$.validator.addMethod("imgWidthReq", function(value,element) { 
+	    if(!$(element).is(':visible')){
+			return true
+		}
+         if(value===''){
+		  	   return false
+		  }
+		  return true
+ 	 }, "请输入图片宽度");
+	 $.validator.addMethod("imgWidthMin", function(value,element) { 
+	   if(!$(element).is(':visible')){
+			return true
+		}
+         if(parseInt(value,10)<60){
+		  	   return false
+		  }
+		  return true
+ 	 }, "图片宽度最小需要60");
+	 var setting={
+				submitHandler: function(form){
+					$(form).ajaxSubmit({
+						success:function(responseText, statusText, xhr, $form){
+							if(responseText=='1' || responseText=='2'){
+							   $.ifmWidget('alertFail',{'title':'设置失败',content:'设置失败',basePath:'../../resources/ifmWidget'})
+							} else if(responseText == '0'){
+								 $.ifmWidget('alertSuccess',{'title':'设置成功',basePath:'../../resources/ifmWidget'})
+							} 
+						}
+					})
+					return false
+				 },
+				 rules:{'site.trafficExchange.pictureWide':{imgWidthReq:true,
+															imgWidthMin:true}},
+				 focusInvalid:true,
+		         onkeyup: false,
+		         wrapper:null,
+		         errorElement:'span',
+				 errorClass:'error',
+				 errorPlacement:function(error, element){
+					 error.appendTo(element.parents('.item3'))
+				 }
+			}
+	 $('#form1').validate(setting)
+})

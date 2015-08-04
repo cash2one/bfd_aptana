@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript">
+			var Quo=function(string){
+				this.status=string
+				this.get_status=function(){
+					return '22222222'
+				}
+			}
+//			Quo.prototype.get_status=function(){
+//				return this.status
+//			}
+			var myQuo=new Quo('tttttttt')
+			console.info(myQuo.get_status())
+			Quo.prototype.get_status.apply({status:'ppppppp'})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

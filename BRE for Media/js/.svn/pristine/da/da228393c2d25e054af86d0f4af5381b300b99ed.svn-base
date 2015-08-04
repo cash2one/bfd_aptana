@@ -1,0 +1,62 @@
+$(function(){
+    $.template('t','<div class="article-list">'+
+							'<div class="con">'+
+							'<span class="article-list-img">'+
+							'<a href="#"><img  src="${src}"></a>'+
+							'</span>'+
+							'<div class="article-list-content">'+
+							'<h3><a href="${link}">${title}</a></h3>'+
+							'<p class="summary2">${content}</p>'+
+							'</div>'+
+							'</div>'+
+							'</div>')
+	var url='';						
+	$('.nav3 > ul > li:not(.ml24)').each(function(){
+		$('#list > div').append('<div style="float:left;width:873px;"></div>')
+	})
+	$('#list').scrollable()
+	var api=$('#list').data('scrollable')
+	function madeList(opts){
+		var setting={
+				 	  url:url,
+					  testData:[{
+					  	src:'../../images/pic-1.jpg',
+						link:'http://www.sina.com.cn',
+						title:'小米便宜是因为卖期货？你们醒醒吧！',
+						content:'小米2发布之后，超性价比，引发了手机及互联网行业广泛的讨论。我们只看到小米的价格低，性价比高，有人分析是卖期货，"小米模式＝前期亏损少卖挣人气，中期大卖挣利润，后期甩卖清库存"，我不否认有这方面的意义。但，我相信这不是他们的初衷和重点。作为传统制造行业的一员，我认为智能手机主要作为一种硬件设备接近传统制造行业的产品，小米的运营模式，却给传统行业制造上了一堂很大的课。'
+					  }],
+					  beforeLoad:function(){
+										$.ifmWidget("loading",{
+								    		title:'加载中',
+								    		content:'加载中...'
+										})
+									},
+					  afterLoad:function(){ 
+										$.ifmWidget("unloading")
+									},
+					  Model: function(i, item){
+					  	                var self = this
+							            self.dom = $.tmpl('t', item)
+					  }				
+		}
+		result= new List($.extend(setting,opts))
+		return result
+	}
+	 $('.nav3 > ul > li:not(.ml24)').click(function(){
+		if(!$(this).find('a').hasClass('curr')){
+			 $('.nav3 > ul > li:not(.ml24)').find('a').removeClass('curr')
+			 $(this).find('a').addClass('curr')
+		}
+	})
+   $('.nav3 > ul > li:not(.ml24)').each(function(i){
+   	  $(this).click(function(){
+				api.seekTo(i)
+	  })
+	  if(i!==0){
+		  	$(this).one('click',function(){
+		  	     madeList({ container:$('#list > div > div').eq(i),data:{q:$(this).find('a').html()}})
+		   })
+	  }
+   })
+   madeList({ container:$('#list > div > div').eq(0),data:{q:'热门文章'}})
+})

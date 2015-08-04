@@ -1,0 +1,10 @@
+$(function(){
+	$('.site-ad .click-btn').click(function(){
+		$('.site-ad > ul').slideToggle()
+	})
+})
+$(function(){
+	$.post('',function(data){
+		
+	})
+})

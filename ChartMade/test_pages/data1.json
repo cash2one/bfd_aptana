@@ -1,0 +1,64 @@
+{
+	"categories": [
+		["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+		["<span style=\"color:red;\">Sun</span>", "Mon", "Tue", "Wed", "Thr", "Fri", "<span style=\"color:red;\">Sat</span>"]
+	],
+	"series": [{
+		"name": "Rainfall",
+		"color": "#4572A7",
+		"type": "column",
+		"yAxis": 1,
+		"data": [49.9, 71.5, 106.4, 129.2, 144, 176, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+		"point": {
+			"cursor": "pointer",
+			"events": {
+				"click": null
+			}
+		}
+	}, {
+		"name": "Sea-Level Pressure",
+		"type": "spline",
+		"color": "#AA4643",
+		"yAxis": 2,
+		"xAxis": 1,
+		"data": [1016, 1016, 1015.9, 1015.5, 1012.3, 1009.5, 1009.6],
+		"marker": {
+			"enabled": true
+		},
+		"dashStyle": "shortdot"
+	}, {
+		"name": "Temperature",
+		"color": "#89A54E",
+		"type": "line",
+		"xAxis": 1,
+		"data": [{
+			"y": 7.0,
+			"name": "Tokyooooooo",
+			"color": "#a60"
+		},{
+			"y": 6.9,
+			"name": "Tokyoooooo",
+			"color": "#b10"
+		},{
+			"y": 9.5,
+			"name": "Tokyooooo",
+			"color": "#c11"
+		},{
+			"y": 14.5,
+			"name": "Tokyoooo",
+			"color": "#d44"
+		},{
+			"y": 18.2,
+			"name": "Tokyooo",
+			"color": "#e56"
+		},{
+			"y": 21.5,
+			"name": "Tokyoo",
+			"color": "#f7a"
+		},{
+			"y": 25.2,
+			"name": "Tokyo",
+			"color": "#6a0"
+		}]
+	}]
+}

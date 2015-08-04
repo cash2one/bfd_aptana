@@ -1,0 +1,35 @@
+#coding=utf-8
+import os
+
+if __name__ == '__main__':
+    for root, dirs, files in os.walk(os.getcwd()):  
+          for name in files:
+                file = os.path.join(root, name)
+                if file.endswith('html') or file.endswith('jsp'):
+                    print file
+                     content= open(file, 'r').read()
+                     content=content.replace("""<a href="#">
+                <div class="logo">
+                    <strong>media</strong>
+                </div>
+            </a>""",
+                                                            """<a href="#">
+                <div class="logo">
+                    <strong>media</strong>
+                </div>
+            </a>
+            <!-- site-ad  开始 -->
+            <div class="site-ad">
+                <div class="click-btn"><s:property value="#session.sessionUser.address"/></div>
+                <ul class="this">
+                    <s:iterator value="#session.sessionUser.sites"><li class="site"><a class="bg" href="../../SiteManager/site/!changeSiteOfSessionUser?siteId=<s:property value="id"/>"><s:property value="address"/></a></li></s:iterator>
+                    <li class="site admin">
+                        <span class="add-s"><a href="../../SiteManager/site/!showCheckingAddress">+添加站点</a></span>
+                        <span class="s-ad"><a href="../../SiteManager/site/!index">站点管理></a> </span>
+                    </li>
+                </ul>
+            </div>
+            <!-- site-ad 结束 -->""")
+                     open(file, 'w').write(content)
+             
+ 

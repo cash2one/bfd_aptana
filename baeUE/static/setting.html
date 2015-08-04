@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="./css/packed.css" rel="stylesheet" type="text/css" />
+<link href="./css/setting.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link href="./css/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript" src="./resources/jquery/jquery.js"></script>
+<script type="text/javascript" src="./js/setting.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.post("/wbportal/user/getLoginedUser.action", null,
+			function(data){
+				var name = data.name;
+				$('#name').html(name);
+			}
+		);
+		function request(paras){
+		    var url = location.href;
+		    var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+		    var paraObj = {}
+		    for (i = 0; j = paraString[i]; i++) {
+		        paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+		    }
+		    var returnValue = paraObj[paras.toLowerCase()];
+		    if (typeof(returnValue) == "undefined") {
+		        return "";
+		    }
+		    else {
+		        return returnValue;
+		    }
+		}
+		if(request('action')==='site'){
+			$('#function').attr('src',"./function/site/site_list.html")
+			$('a[href*="site_list"]').addClass('now')
+		}else{
+			$('a[href*="userInfo"]').addClass('now')
+			$('#function').attr('src',"./function/user/userInfo.html")
+		}
+		$('.menulist a').click(function(){
+			if(!$(this).hasClass('now')){
+				$('.menulist a.now').removeClass('now')
+				$(this).addClass('now')
+			}
+		})
+});
+</script>
+</head>
+
+<body>
+<div class="head">
+  <div class="logo"><a href="#"></a></div>
+  <div class="menu">欢迎您  <span id="name"></span>|<a href="#">设置</a>|<a href="#">帮助中心</a>|<a href="/wbportal/user/logOut.action">登出</a></div>
+</div>
+<div class="content">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top" class="left">
+<div class="menulist">
+ 		  <h2 class="ml01"><a href="./main.html">返回数据中心</a></h2>
+          <h2 class="ml01">个人设置</h2>
+          <ul>
+            <li><a href="./function/user/userInfo.html"  target="function">个人资料</a></li>
+            <li><a href="./function/user/passwordManage.html" target="function">密码管理</a></li>
+          </ul>
+          <h2 class="ml02">站点设置</h2>
+          <ul>
+            <li><a href="./function/site/site_add.html" target="function">添加新的站点</a></li>
+            <li><a href="./function/site/site_list.html" target="function">站点管理</a></li>
+          </ul>
+          <h2 class="ml03">权限管理</h2>
+          <ul>
+            <li><a href="#">用户管理</a></li>
+            <li><a href="#">权限分配</a></li>
+          </ul>
+        </div>
+		</td>
+      <td valign="top" class="right">
+      	   <iframe src="" width="100%" height="800px" scrolling="no" name="function" id="function"></iframe>
+		   <script type="text/javascript">
+				window.setInterval(function(){
+					var iframe = document.getElementById("function");
+					try{
+					iframe.height =  (iframe.contentWindow.document.documentElement.scrollHeight>800?iframe.contentWindow.document.documentElement.scrollHeight:800);
+					}catch (ex){}
+				}, 200);
+				</script>
+		</td>
+    </tr>
+  </table>
+</div>
+<div class="footer">
+  <div class="l"><a href="#">产品介绍</a> <a href="#">联系我们</a> <a href="#">公司简介</a></div>
+  <div class="r">京ICP备09109727号 Copyright © 2012 百分点信息科技有限公司. All Right Reserved.</div>
+</div>
+<div class="misc">
+  <div class="feedback"> <a href="#" class="trackable"></a> </div>
+</div>
+</body>
+</html>

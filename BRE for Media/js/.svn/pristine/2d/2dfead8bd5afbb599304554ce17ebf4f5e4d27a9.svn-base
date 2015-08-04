@@ -1,0 +1,71 @@
+$(function(){
+	$('table tbody tr td').delegate('a:contains("安装插件")','click',function(){
+		window.location.href='../../SiteManager/site/!showSelectPlatform2?address='+encodeURIComponent($(this).parents('tr').data('site'))
+	})
+	$('table tbody tr td').delegate('a:contains("网站信息")','click',function(){
+		window.location.href='../../SiteManager/site/!showEditInformation?address='+encodeURIComponent($(this).parents('tr').data('site'))
+	})
+	$('table tbody tr td').delegate('a:contains("管理后台")','click',function(){
+		$(this).parents('tr').find('td:first a').click()
+	})
+	$('table tbody tr').find('td:first').delegate('a','click',function(){
+		$.ifmWidget("loading",{
+    		title:'正在操作',
+    		content:'正在操作...'
+    	})
+    	$.get("../../SiteManager/site/!setAddressOfSession",{'address':$(this).parents('tr').data('site')},function(data){
+    		if(data == "0") {
+    			window.location.href='../../ViewSetting/view/!showViewSetting?address='+encodeURIComponent($(this).parents('tr').data('site'))
+    		} else {
+    			$.ifmWidget("alertFail",{
+    	    		title:'出错啦',
+    	    		content:'出错啦'
+    	    	})
+    		}
+    	});
+	})
+	$('table tbody tr').find('td:eq(1)').delegate('img.az','click',function(){
+		var tr=$(this).parent().parent()
+		$(this).parent().html('<img src="../../images/jc-bg.png" class="jc"><span class="">检测中</span>')
+//	   tr.find('td:first span').wrapInner('<a href="javascript:void(0)"/>')
+		tr.find('td:first').append('<span class="fr">网站异常<em>&nbsp;</em></span>')
+		$.get("url",{'address':tr.data('site')},function(data){
+	    	if(data == 0){//成功
+	    		tr.find('td:first span').wrapInner('<a href="javascript:void(0)"/>')
+	    		tr.find('td:eq(1)').html('<span class="green">√正常</span>')
+	    		tr.find('td:last').html('<span class="operate-btn"><a>管理后台</a></span><span class="operate-btn margin0"><a>网站信息</a></span>')
+	    	}else if(data ==1){//未安装
+	    		tr.find('td:eq(1)').html('<span class="red">×未安装</span>')
+	    	}else{//网站异常'
+	    		tr.find('td:first').html('<span class="color">'+tr.data('site')+'</span><span class="fr">网站异常<em>&nbsp;</em></span>')
+	    		tr.find('td:gt(0)').html('')
+	    		tr.find('td:eq(0) em').qtip({
+	                content: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+	                position: {
+	                    corner: {
+	                        target: 'topMiddle',
+	                        tooltip: 'bottomMiddle'
+	                    }
+	                },
+	                style:  {
+			                        background: '#eefcff',
+			                        color: '#000',
+									'font-size': '12px',
+			                        border: {
+			                            color: '#d2eaea'
+			                        },
+				                    tip:{
+				                      corner:'bottomMiddle',
+									  color:'#d2eaea',
+									  size:{
+									  	x:10,
+										y:4
+									  }
+				                    }
+			                    }
+	            })
+	    	}
+	    })
+	})
+})
+

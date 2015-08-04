@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>on obj change</title>
+		<script type="text/javascript" language="JavaScript">
+			var a={"foo":"bar"}
+			a.watch("foo",function(id, oldval, newval){
+				  //console.info(id+' '+oldval+' '+newval)
+				    alert(id+' '+oldval+' '+newval)
+			})
+			
+			a.foo=123
+			
+			var MessagesCount=(function(){
+				var messagesCount;
+				var unReadMessagesCount;
+				var lettersCount;
+				var unReadLettersCount;
+				return function(){
+					
+				}
+			});
+			
+			function watch(obj,proty,listener,rate){
+				var value=obj[proty]
+				setInterval(function(){
+					if(obj[proty] != value){
+						listener(value,obj[proty])
+						value=obj[proty]
+					}
+				},rate||500)
+			}
+			
+			var buildMC=function(messagesCount,unReadMessagesCount,lettersCount,unReadLettersCount){
+				var mc={
+					messagesCount:messagesCount,
+					unReadMessagesCount:unReadMessagesCount,
+					lettersCount:lettersCount,
+					unReadLettersCount:unReadLettersCount
+				}
+				watch(mc,'messagesCount',function(oldval,newval){
+					
+				})
+				watch(mc,'unReadMessagesCount',function(oldval,newval){
+					
+				})
+				watch(mc,'lettersCount',function(oldval,newval){
+					
+				})
+				watch(mc,'unReadLettersCount',function(oldval,newval){
+					
+				})
+				return mc
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

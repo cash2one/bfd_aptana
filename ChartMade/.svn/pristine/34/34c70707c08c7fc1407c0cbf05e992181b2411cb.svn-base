@@ -1,0 +1,15 @@
+/**
+ * @author Administrator
+ */
+
+ var _baifendianWidgetsComboSettingURL='../test_pages/setting.json'
+ var _baifendianDataURL=['../test_pages/data1.json','../test_pages/data2.json']
+ 
+ var _baifendianWidgets={
+ 	chart:{
+		requires:['commons/lib/highcharts.js']
+	},
+	grid:{
+		requires:[]
+	}
+ }

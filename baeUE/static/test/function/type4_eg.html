@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Page 3</title>
+        <link href="../../css/packed.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/function.css" rel="stylesheet" type="text/css" />
+       <!--[if IE]>
+		        <link href="../../css/ie.css" rel="stylesheet" type="text/css" />
+	 <![endif]-->
+	<!--[if IE 6]>
+		        <link href="../../css/ie6.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+        <link rel="stylesheet" media="screen" type="text/css" href="../../resources/datepicker/css/datepicker.css" />
+		 <link rel="stylesheet" media="screen" type="text/css" href="../../resources/grid/baeGrid/css/grid.css" />
+        <script type="text/javascript" language="JavaScript" src="../../resources/jquery/jquery.js">
+        </script>
+        <script type="text/javascript" src="../../resources/datepicker/js/datepicker.js">
+        </script>
+		     <script type="text/javascript" src="../../resources/commons/jquery.maskedinput-1.3.min.js">
+        </script>
+        <script type="text/javascript" src="../../resources/commons/date_tools.js">
+        </script>
+        <script type="text/javascript" src="../../resources/commons/jquery.cookie.js">
+        </script>
+        <script type="text/javascript" src="../../resources/datepicker/js/baeDatePicker.js">
+        </script>
+        <script type="text/javascript" src="../../resources/charts/baeChars/baeChart.js">
+        </script>
+        <script type="text/javascript" src="../../resources/grid/baeGrid/js/baeGrid.js">
+        </script>
+        <script type="text/javascript" language="JavaScript" src="../../resources/commons/baeInstall_type3.js">
+        </script>
+        <script type="text/javascript" language="JavaScript">
+            $(function(){
+                $.baeInstall({
+                    title: {
+                        content: '测试标题1111111'
+                    },
+                    grid0: {
+                        grid: {
+                            url: '/grid/grid_filter_toggle/',
+							groupUrl:'/grid/group/',
+							data:{
+								code:'656786'
+							},
+							 colModel: [{
+                            colName: '唯一访客数',
+                            name: 'UV',
+							sortable:false
+                        }, {
+                            colName: '页面浏览数',
+                            name: 'PV',
+							sortable:false
+                        }, {
+                            colName: '新访次数',
+                            name: 'F0',
+							sortable:false
+                        }, {
+                            colName: '每次访问页数',
+                            name: 'F1',
+							sortable:false
+                        }]
+                        },
+                        chart: {
+							title:'test',
+							type:'pie',
+                            url: '/pie1.xml',
+							data:{teat:'tttttt'}
+                        }
+                    },
+					grid1: {
+                        grid: {
+                            url: '/grid/grid_filter_toggle/',
+							data:{
+								code:'656786'
+							},
+							 colModel: [{
+                            colName: '唯一访客数',
+                            name: 'UV',
+							sortable:false
+                        }, {
+                            colName: '页面浏览数',
+                            name: 'PV',
+							sortable:false
+                        }, {
+                            colName: '新访次数',
+                            name: 'F0',
+							sortable:false
+                        }, {
+                            colName: '每次访问页数',
+                            name: 'F1',
+							sortable:false
+                        }]
+                        },
+                        chart: {
+							title:'test',
+							type:'pie',
+                            url: '/pie1.xml',
+							data:{teat:'tttttt'}
+                        }
+                    },
+					grid2: {
+                        grid: {
+                            url: '/grid/grid_filter_toggle/',
+							data:{
+								code:'656786'
+							},
+							 colModel: [{
+                            colName: '唯一访客数',
+                            name: 'UV',
+							sortable:false
+                        }, {
+                            colName: '页面浏览数',
+                            name: 'PV',
+							sortable:false
+                        }, {
+                            colName: '新访次数',
+                            name: 'F0',
+							sortable:false
+                        }, {
+                            colName: '每次访问页数',
+                            name: 'F1',
+							sortable:false
+                        }]
+                        },
+                        chart: {
+							title:'test',
+							type:'pie',//还有一个是bar
+                            url: '/pie1.xml',
+							data:{teat:'tttttt'}
+                        }
+                    }
+                });
+
+            })
+        </script>
+		<style type="text/css">
+			.redfont{
+				color:red;
+				display:inline;
+			}
+			.r_tittle{
+				height:45px;
+			}
+		</style>
+    </head>
+    <body>
+        <div class="r_tittle">
+            <h1><span class="txt">全部来源</span>
+                <div class="day_select">
+                    <div class="left">
+                        &nbsp;
+                    </div>
+                    <div class="daydata">
+                        <a href="#">
+                            <div class="ico01">
+                            </div>
+                            <div class="data">
+                               
+                            </div>
+                            <div class="ico02">
+                            </div>
+                        </a>
+                        <div class="day_range">
+                            <div>
+                            </div>
+                            <div>
+                            </div>
+                            <p>
+                                <button>
+                                    确定
+                                </button>
+                                <button>
+                                    取消
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </h1>
+        </div>
+        <div class="datacontent">
+            <div class="data03">
+            </div>
+			  <div class="data03">
+            </div>
+			  <div class="data03">
+            </div>
+        </div>
+    </body>
+</html>

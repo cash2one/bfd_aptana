@@ -1,0 +1,116 @@
+(function() {
+	$.extend($.fn,{
+		upAndDown : function(Select) {
+			
+			if($(".buttonDiv") == null){
+				alert("in");
+				return false;	
+			}
+			init();
+			autoOffset();
+			buttonEvent();
+            $(window.parent.window).scroll(function(event){
+            $('.chapter-labels').each(function(){
+                var scollHeigth = $(window.parent.window).scrollTop() + 160
+                var top = $(this).offset().top + 160
+				//确定当前容器
+				if(top <= scollHeigth && scollHeigth < (top + $(".allkj").height())){
+					$(".allkj").attr("show","false");
+					$(this).parent().attr("show","true");
+				}
+            })
+			autoOffset();
+			topHidden(event);
+        })
+			
+			
+			//初始化界面
+			function init(){
+				var mouseHtml = '<div class="buttonDiv"><div class="control-up control"><div id="control-up" class="arrow" data-direction="up" style="left: 1014px; display: none;"></div></div><div class="control-down control"><div id="control-down" class="arrow" data-direction="down" style="display: none; left: 913px; "></div></div></div>';
+				$("body").append(mouseHtml);
+				
+				$(".allkj").each(function(i){
+					var obj = $(this);
+					if(i == 0){
+						obj.attr("show","true");
+					}else{
+						obj.attr("show","false");
+					}
+					
+				});
+			}
+			
+			//鼠标按钮区域
+			function autoOffset(){
+				var scollhe = $(window.parent.window).scrollTop();
+				$(".buttonDiv").css("top",scollhe);
+				$(".buttonDiv").height( window.parent.document.documentElement.clientHeight - 160);
+			}
+			//鼠标事件绑定	
+			function buttonEvent(){
+				var $controlUp = $("#control-up");
+				var $controlDown = $("#control-down");
+				var $controlUpC = $(".control-up");
+				var $controlDownc = $(".control-down");
+				$controlUpC.hover(
+					function(event){
+						 topHidden(event);
+						 $controlUp.show();},
+					function(){ $controlUp.hide(); }
+				);
+
+				$controlUpC.mousemove(function(event){
+					var wwt = event.pageY < ($(window.top.document).scrollTop() + 150);
+					if(wwt){
+						var my = event.pageY - $(window.top.document).scrollTop() - 40; 
+						$controlUp.css({top:my,left:event.pageX-40});
+						topHidden(event);
+					}
+				});
+				
+				$controlDownc.mousemove(function(event){
+					var h = window.parent.document.documentElement.clientHeight - 160;
+					var wwt = event.pageY > ($(window.top.document).scrollTop()+ h - 150);
+					if(wwt){
+						var my = event.pageY - $(window.top.document).scrollTop()-h+150 - 40; 
+						$controlDown.css({top:my,left:event.pageX-40});
+					}
+				});
+
+
+				$controlDownc.hover(
+					function(){$controlDown.show();},
+					function(){$controlDown.hide(); }
+				);
+				
+				$controlUp.click(function(event){
+						var Obj = $("div[show ='true']").prev("div[show='false']");
+						if(Obj.attr("class") != "allkj"){
+							return false;
+						}
+						var next_top = Obj.offset().top;
+						window.top.setScroll(next_top);
+				});
+				$controlDown.click(function(){
+						var Obj = $("div[show ='true']").next("div[show='false']");
+						if(Obj.attr("class") != "allkj"){
+							return false;
+						}
+						var next_top = Obj.offset().top;
+						window.top.setScroll(next_top);
+				});
+				function topHidden(event){
+					if(event.pageY < 320){
+						 	 $controlUp.hide();
+						 	return false;
+						 }
+				}
+				function goToIt(id){
+					var Obj = $("#"+id+"");
+					var next_top = Obj.offset().top;
+						window.top.setScroll(next_top);
+				}
+			}
+		}
+	});	
+})(jQuery);

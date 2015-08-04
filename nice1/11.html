@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>test</title>
+        <script src="./resources/jquery/jquery.js">
+        </script>
+        <script type="text/javascript">
+$(function(){
+var mask=String.fromCharCode(1161)
+
+var trans = function(s){
+    var r = '', length = s.length
+    for (var i = 0; i < length; i++) {
+        r += s.charAt(length - i - 1)+mask
+    }
+    return r
+}
+var source=$('textarea:first')
+var result=$('textarea:last')
+source.keyup(function(){
+    result.val(trans(source.val()))
+})
+
+})
+        </script>
+    </head>
+    <body>
+        <textarea>
+        </textarea>
+        <textarea>
+        </textarea>
+    </body>
+</html>

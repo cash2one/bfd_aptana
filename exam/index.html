@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Single page template</title> 
+	<link rel="stylesheet" href="./resources/jquery.mobile/jquery.mobile-1.2.0.min.css" />
+	<script src="./resources/jquery/jquery-1.8.2.min.js"></script>
+	<script src="./resources/jquery.mobile/jquery.mobile-1.2.0.js"></script>
+	<script type="text/javascript">
+		 $(document).bind('pageinit',function(){
+				$("body").bind("swipeleft",function(){
+				  $.mobile.changePage("#page2",{transition: "slide",changeHash: true});
+				});
+		 })
+	</script>
+</head> 
+<body> 
+<div data-role="page">
+	<div data-role="header">
+		<a href="index.html" data-icon="delete">Cancel</a>
+		<h1>Edit Contact</h1>
+		<a href="index.html" data-icon="check">Save</a>
+	</div><!-- /header -->
+	<div data-role="content" id="content">	
+		<ul data-role="listview" data-inset="true" data-filter="false">
+			<li><a href="#">Acura</a></li>
+			<li><a href="#">Audi</a></li>
+			<li><a href="#">BMW</a></li>
+			<li><a href="#">Cadillac</a></li>
+			<li><a href="#">Ferrari</a></li>
+		</ul>
+	</div><!-- /content -->
+	<div data-role="footer"> 
+		<h4>Footer content</h4> 
+	</div> 
+</div><!-- /page -->
+<div data-role="page" id="page1" data-title="Page1">
+  <div data-role="collapsible" id="collapse1">
+    <h3>I'm a header</h3>
+    <ul data-role="listview">
+       <li><a data-role="button" href="#page0" data-theme="b" data-transition="slide">back</a></li> 
+    </ul>
+  </div>
+</div>
+<div data-role="page" id="page2">
+	<p data-role="button" style="text-align:left;">欢迎访问PG99.NET(THIS　IS　Content)</p>
+	<fieldset data-role="controlgroup">
+				
+				<input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+				<label for="checkbox-1a">Cheetos</label>
+
+				<input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+				<label for="checkbox-2a">Doritos</label>
+
+				<input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+				<label for="checkbox-3a">Fritos</label>
+
+				<input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+				<label for="checkbox-4a">Sun Chips</label>
+		    </fieldset>
+</div>
+</body>
+</html>

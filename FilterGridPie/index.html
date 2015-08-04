@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>FilterGridPie</title>
+		<link rel="stylesheet" media="screen" type="text/css" href="./resources/DateRange/css/datepicker.css" />
+		<link rel="stylesheet" media="screen" type="text/css" href="./resources/FilterGridPie/css/FilterGridPie.css" />
+		<script type="text/javascript" src="resources/commons/jquery.js"></script>
+		<script type="text/javascript" src="resources/DateRange/js/date_tools.js"></script>
+		<script type="text/javascript" src="resources/DateRange/js/datarange.all.min.js"></script>
+		<script type="text/javascript" src="resources/commons/Widget.js"></script>
+		<script type="text/javascript" src="resources/charts/highcharts/highcharts.js"></script>
+		<script type="text/javascript" src="resources/grid/baeGrid/js/baeGrid.js"></script>
+		<script type="text/javascript" src="resources/FilterGridPie/js/FilterGridPie.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var dateRange=new DateRange(document.getElementById('dateRange'))
+				var setting={
+					container:'filterGrid',
+					option:[{
+						filter: {
+                            fixColModel: {
+                                colName: '来源',
+                                name: 'source',
+								format:'scala'
+                            },
+							colModel: [{
+                            colName: '唯一访客数',
+                            name: 'UV'
+                        }, {
+                            colName: '页面浏览数',
+                            name: 'PV'
+                        }, {
+                            colName: '新访次数',
+                            name: 'F0'
+                        }, {
+                            colName: '每次访问页数',
+                            name: 'F1'
+                        }, {
+                            colName: '平均网站访问时长',
+                            name: 'F2'
+                        }, {
+                            colName: '新访占比',
+                            name: 'F3',
+                            hideInPie: true
+                        }, {
+                            colName: '访次',
+                            name: 'F4'
+                        }, {
+                            colName: '网站跳出率',
+                            name: 'F5',
+                            hideInPie: true
+                        }, {
+                            colName: '下定商品数量',
+                            name: 'F6'
+                        }, {
+                            colName: '下定商品金额',
+                            name: 'F7'
+                        }, {
+                            colName: '下定订单数量',
+                            name: 'F8'
+                        }, {
+                            colName: '下定订单金额',
+                            name: 'F9'
+                        }, {
+                            colName: '下定订单转化率',
+                            name: 'F10',
+                            hideInPie: true
+                        }],
+                        defaultCols: ["UV", "PV", "F5", "F1", "F8", "F10"],
+                        orderCols: ["UV", "PV", "F5", "F8", "F9", "F10"],
+                        goodsCols: ["UV", "PV", "F5", "F6", "F7"]
+                        },
+                        grid: {
+							hasPie:false,//是否有饼图模式
+							data:{
+								code:'656786'
+							},
+							 agv_width: true,
+		                        page: {
+		                            rowList: [20, 50, 100, 200]
+		                        },
+							post_name:'source0',	//如果有子项,请求子项里传给后台的key, 如果不存在,将使用fixColModel中的name
+                            lable:'当前1:'//如果有子项,当进入子项时在表格上面当前选项的前缀,如"当前品牌"、"当前品类"
+					    }
+					},{
+						filter: {
+                            fixColModel: {
+                                colName: '来源2',
+                                name: 'source',
+                                fixed: true
+                            },
+							colModel: [{
+                            colName: '唯一访客数2',
+                            name: 'UV'
+                        }, {
+                            colName: '页面浏览数2',
+                            name: 'PV'
+                        }, {
+                            colName: '新访次数2',
+                            name: 'F0'
+                        }, {
+                            colName: '每次访问页数2',
+                            name: 'F1'
+                        }, {
+                            colName: '平均网站访问时长2',
+                            name: 'F2'
+                        }, {
+                            colName: '新访占比2',
+                            name: 'F3',
+                            hideInPie: true
+                        }, {
+                            colName: '访次2',
+                            name: 'F4'
+                        }, {
+                            colName: '网站跳出率2',
+                            name: 'F5',
+                            hideInPie: true
+                        }, {
+                            colName: '下定商品数量2',
+                            name: 'F6'
+                        }, {
+                            colName: '下定商品金额2',
+                            name: 'F7'
+                        }, {
+                            colName: '下定订单数量2',
+                            name: 'F8'
+                        }, {
+                            colName: '下定订单金额2',
+                            name: 'F9'
+                        }, {
+                            colName: '下定订单转化率2',
+                            name: 'F10',
+                            hideInPie: true
+                        }],
+                        defaultCols: [ "F8", "F10"],
+                        orderCols: ["UV", "PV", "F5", "F8", "F9", "F10"],
+                        goodsCols: ["UV", "PV", "F5", "F6", "F7"]
+                        },
+                        grid: {
+							data:{
+								code:'656786'
+							},
+							 agv_width: true,
+		                        page: {
+		                            rowList: [20, 50, 100, 200]
+		                        },
+							post_name:'source1'	//如果有子项,请求子项里传给后台的key, 如果不存在,将使用fixColModel中的name
+                        }
+					},{
+						filter: {
+                            fixColModel: {
+                                colName: '来源3',
+                                name: 'source',
+                                fixed: true
+                            },
+							colModel: [{
+                            colName: '唯一访客数3',
+                            name: 'UV'
+                        }, {
+                            colName: '页面浏览数3',
+                            name: 'PV'
+                        }, {
+                            colName: '新访次数3',
+                            name: 'F0'
+                        }, {
+                            colName: '每次访问页数3',
+                            name: 'F1'
+                        }, {
+                            colName: '平均网站访问时长3',
+                            name: 'F2'
+                        }, {
+                            colName: '新访占比3',
+                            name: 'F3',
+                            hideInPie: true
+                        }, {
+                            colName: '访次3',
+                            name: 'F4'
+                        }, {
+                            colName: '网站跳出率3',
+                            name: 'F5',
+                            hideInPie: true
+                        }, {
+                            colName: '下定商品数量3',
+                            name: 'F6'
+                        }, {
+                            colName: '下定商品金额3',
+                            name: 'F7'
+                        }, {
+                            colName: '下定订单数量3',
+                            name: 'F8'
+                        }, {
+                            colName: '下定订单金额3',
+                            name: 'F9'
+                        }, {
+                            colName: '下定订单转化率3',
+                            name: 'F10',
+                            hideInPie: true
+                        }],
+                        defaultCols: ["UV", "PV"],
+                        orderCols: ["UV", "PV", "F5", "F8", "F9", "F10"],
+                        goodsCols: ["UV", "PV", "F5", "F6", "F7"]
+                        },
+                        grid: {
+							data:{
+								code:'656786'
+							},
+							 agv_width: true,
+		                        page: {
+		                            rowList: [20, 50, 100, 200]
+		                        },
+							post_name:'source'	//如果有子项,请求子项里传给后台的key, 如果不存在,将使用fixColModel中的name
+                       
+					    }
+					}]
+				}
+				var fgp=new FilterGridPie(setting,{
+					dateRange:dateRange
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="dateRange"></div>
+		<div id="filterGrid"></div>
+	</body>
+</html>

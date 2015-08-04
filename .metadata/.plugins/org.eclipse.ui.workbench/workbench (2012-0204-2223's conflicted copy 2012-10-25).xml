@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="29" version="2.0">
+<workbenchAdvisor/>
+<window height="728" maximized="true" width="1024" x="75" y="0">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="101" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="181" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="78" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="s.com.aptana.ide.core.ui.actionSet.ShowAptanaView" itemType="typeToolBarContribution" x="135" y="22"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.compare.CompareEditor" itemType="typePlaceholder" x="84" y="22"/>
+<coolItem id="com.aptana.ide.editor.text" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.aptana.ide.editors.CSSEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.python.pydev.editor.PythonEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.aptana.ide.editors.HTMLEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.aptana.ide.editors.JSEditor" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page focus="true" label="Workspace - Aptana Web">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+<part id="11"/>
+<part id="12"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="com.aptana.ide.editors.HTMLEditor" name="1.html" partName="1.html" path="E:/Dropbox/aptana_work/exam/1.html" title="1.html" tooltip="exam/1.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/1.html"/>
+</editor>
+<editor id="com.aptana.ide.editors.HTMLEditor" name="index.html" partName="index.html" path="E:/aptana_work/exam/index.html" title="index.html" tooltip="exam/index.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/index.html"/>
+</editor>
+<editor id="com.aptana.ide.editors.JSEditor" name="Question.js" partName="Question.js" path="E:/Dropbox/aptana_work/exam/resources/questions/Question.js" title="Question.js" tooltip="exam/resources/questions/Question.js" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/resources/questions/Question.js"/>
+<editorState selectionHorizontalPixel="0" selectionLength="1" selectionOffset="738" selectionTopPixel="578"/>
+</editor>
+<editor id="com.aptana.ide.editors.JSEditor" name="Checkbox.js" partName="Checkbox.js" path="E:/Dropbox/aptana_work/exam/resources/questions/widgets/Checkbox/Checkbox.js" title="Checkbox.js" tooltip="exam/resources/questions/widgets/Checkbox/Checkbox.js" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/resources/questions/widgets/Checkbox/Checkbox.js"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="247" selectionTopPixel="158"/>
+</editor>
+<editor id="com.aptana.ide.editors.JSEditor" name="Radio.js" partName="Radio.js" path="E:/aptana_work/exam/resources/questions/widgets/Radio/Radio.js" title="Radio.js" tooltip="exam/resources/questions/widgets/Radio/Radio.js" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/resources/questions/widgets/Radio/Radio.js"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="com.aptana.ide.editors.HTMLEditor" name="q.html" partName="q.html" path="E:/Dropbox/aptana_work/exam/q.html" title="q.html" tooltip="exam/q.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/q.html"/>
+</editor>
+<editor id="com.aptana.ide.editors.HTMLEditor" name="3.html" partName="3.html" path="E:/Dropbox/aptana_work/exam/3.html" title="3.html" tooltip="exam/3.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/3.html"/>
+</editor>
+<editor id="com.aptana.ide.editors.HTMLEditor" name="login.html" partName="login.html" path="E:/Dropbox/aptana_work/exam/login.html" title="login.html" tooltip="exam/login.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/login.html"/>
+</editor>
+<editor id="com.aptana.ide.editors.HTMLEditor" name="qlist.html" partName="qlist.html" path="E:/Dropbox/aptana_work/exam/qlist.html" title="qlist.html" tooltip="exam/qlist.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/qlist.html"/>
+</editor>
+<editor id="com.aptana.ide.editors.HTMLEditor" name="main.html" partName="main.html" path="E:/Dropbox/aptana_work/r/main.html" title="main.html" tooltip="r/main.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/r/main.html"/>
+</editor>
+<editor activePart="true" focus="true" id="com.aptana.ide.editors.JSEditor" name="q.js" partName="q.js" path="E:/Dropbox/aptana_work/exam/js/q.js" title="q.js" tooltip="exam/js/q.js" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/js/q.js"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2156" selectionTopPixel="2538"/>
+</editor>
+<editor id="com.aptana.ide.editor.text" name="testData.json" partName="testData.json" path="E:/Dropbox/aptana_work/exam/testData.json" title="testData.json" tooltip="exam/testData.json" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/exam/testData.json"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="com.aptana.ide.js.ui.views.profilesView" partName="References"/>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="com.aptana.ide.editors.JSEditor" activePerspective="com.aptana.ide.js.ui.WebPerspective">
+<perspective editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.aptana.ide.core.ui.WebPerspectiveFactory" id="com.aptana.ide.js.ui.WebPerspective" label="Aptana Web"/>
+<alwaysOnActionSet id="a.com.aptana.ide.core.ui.actionSet.myaptana"/>
+<alwaysOnActionSet id="x.com.aptana.ide.core.ui.actionSet.myaptana"/>
+<alwaysOnActionSet id="eclipsemonkeyAction.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.core.ui.actionSet.aptanamenu"/>
+<alwaysOnActionSet id="s.com.aptana.ide.core.ui.actionSet.ShowAptanaView"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.debug.ui.JSDebugActionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.desktop.integration.protocolhandler.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.core.ui.actionSet.documentation"/>
+<alwaysOnActionSet id="com.aptana.ide.editors.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.installer.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.intro.menuActionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.pathtools.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.scripting.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.ssh.actionSet"/>
+<alwaysOnActionSet id="com.aptana.ide.update.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<show_view_action id="com.aptana.ide.scripting.SnippetsView"/>
+<show_view_action id="com.aptana.ide.ui.io.fileExplorerView"/>
+<show_view_action id="com.aptana.ide.js.ui.views.profilesView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="com.aptana.ide.js.ui.views.problemsView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="com.aptana.ide.js.docgen.views.visualscriptdoc"/>
+<show_view_action id="com.aptana.ide.logging.LogView"/>
+<show_view_action id="com.aptana.ide.server.ui.serversView"/>
+<new_wizard_action id="com.aptana.ide.wizards.WebProjectWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.CssUntitledWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.HtmlUntitledWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.JsUntitledWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.ScriptDocUntitledWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.UntitledTextFileWizard"/>
+<new_wizard_action id="com.aptana.ide.editors.wizards.file.XmlUntitledWizard"/>
+<new_wizard_action id="om.aptana.ide.editors.wizards.file.JsonUntitledFileWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="com.aptana.ide.js.ui.views.profilesView"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="leftTop">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="com.aptana.ide.js.ui.views.profilesView" label="References"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="com.aptana.ide.ui.io.fileExplorerView" label="LabelNotFound"/>
+<page content="com.aptana.ide.ui.io.fileExplorerView:*" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="1"/>
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="leftTop">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.24206643" ratioLeft="328" ratioRight="1027" relationship="2" relative="leftTop"/>
+<info folder="true" part="right" ratio="0.7" ratioLeft="560" ratioRight="240" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2"/>
+</info>
+<info folder="true" part="rightBottom" ratio="0.6985173" ratioLeft="424" ratioRight="183" relationship="4" relative="right">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.eclipsemonkey.views.ScriptsView" label="LabelNotFound"/>
+<page content="com.aptana.ide.scripting.SnippetsView" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="bottom" ratio="0.65806454" ratioLeft="408" ratioRight="212" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="com.aptana.ide.js.ui.views.problemsView" label="LabelNotFound"/>
+<page content="com.aptana.ide.server.ui.serversView" label="LabelNotFound"/>
+<page content="com.aptana.ide.ui.ViewPlugins" label="LabelNotFound"/>
+<page content="com.aptana.ide.js.ui.views.GenericScriptableView:*" label="LabelNotFound"/>
+<page content="com.aptana.ide.logging.LogView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="left" ratio="0.66774195" ratioLeft="414" ratioRight="206" relationship="4" relative="leftTop">
+<folder appearance="2" expanded="2">
+<page content="com.aptana.ide.documentation.TutorialView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.internal.presentations.classic.WorkbenchPresentationFactoryClassic"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/exam/1.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/exam/login.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/exam/qlist.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/r/main.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" path="/exam/resources/questions/Question.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" path="/exam/q.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" path="/exam/js/q.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editor.text" path="/exam/test.json"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editor.text" path="/exam/testData.json"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" path="/exam/resources/questions/widgets/Checkbox/Checkbox.js"/>
+</editors>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="317" y="0"/>
+</item>
+<item historyLabel="testData.json" index="8"/>
+<item historyLabel="test.json" index="7"/>
+<item historyLabel="testData.json" index="8"/>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="210" y="0"/>
+</item>
+<item historyLabel="testData.json" index="8"/>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="1289" y="0"/>
+</item>
+<item historyLabel="q.html" index="5"/>
+<item historyLabel="Question.js" index="4">
+<position info="not_deleted" x="1193" y="0"/>
+</item>
+<item historyLabel="login.html" index="1"/>
+<item historyLabel="qlist.html" index="2"/>
+<item historyLabel="1.html" index="0"/>
+<item historyLabel="q.html" index="5"/>
+<item historyLabel="qlist.html" index="2"/>
+<item historyLabel="1.html" index="0"/>
+<item historyLabel="login.html" index="1"/>
+<item historyLabel="1.html" index="0"/>
+<item historyLabel="Question.js" index="4">
+<position info="not_deleted" x="922" y="0"/>
+</item>
+<item historyLabel="q.html" index="5"/>
+<item historyLabel="testData.json" index="8"/>
+<item historyLabel="Question.js" index="4">
+<position info="not_deleted" x="922" y="0"/>
+</item>
+<item historyLabel="Checkbox.js" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Checkbox.js" index="9">
+<position info="not_deleted" x="247" y="0"/>
+</item>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2443" y="0"/>
+</item>
+<item historyLabel="main.html" index="3"/>
+<item historyLabel="1.html" index="0"/>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2443" y="0"/>
+</item>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2229" y="0"/>
+</item>
+<item historyLabel="1.html" index="0"/>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2229" y="0"/>
+</item>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2298" y="0"/>
+</item>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2247" y="0"/>
+</item>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2297" y="0"/>
+</item>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2367" y="5"/>
+</item>
+<item historyLabel="1.html" index="0"/>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2372" y="0"/>
+</item>
+<item historyLabel="1.html" index="0"/>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2350" y="0"/>
+</item>
+<item historyLabel="qlist.html" index="2"/>
+<item historyLabel="q.html" index="5"/>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2350" y="0"/>
+</item>
+<item historyLabel="q.js" index="6">
+<position/>
+</item>
+<item historyLabel="q.js" index="6">
+<position/>
+</item>
+<item historyLabel="q.js" index="6">
+<position/>
+</item>
+<item historyLabel="q.js" index="6">
+<position/>
+</item>
+<item historyLabel="q.js" index="6">
+<position/>
+</item>
+<item historyLabel="q.js" index="6">
+<position/>
+</item>
+<item historyLabel="q.js" index="6">
+<position info="not_deleted" x="2156" y="0"/>
+</item>
+<item historyLabel="q.html" index="5"/>
+<item active="true" historyLabel="q.js" index="6">
+<position info="not_deleted" x="2156" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="com.aptana.ide.intro.StartPageAction"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editor.text" name="testData.json" tooltip="exam/testData.json">
+<persistable path="/exam/testData.json"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" name="q.js" tooltip="exam/js/q.js">
+<persistable path="/exam/js/q.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="main.html" tooltip="r/main.html">
+<persistable path="/r/main.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="qlist.html" tooltip="exam/qlist.html">
+<persistable path="/exam/qlist.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="login.html" tooltip="exam/login.html">
+<persistable path="/exam/login.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="3.html" tooltip="exam/3.html">
+<persistable path="/exam/3.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" name="Radio.js" tooltip="exam/resources/questions/widgets/Radio/Radio.js">
+<persistable path="/exam/resources/questions/widgets/Radio/Radio.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" name="Checkbox.js" tooltip="exam/resources/questions/widgets/Checkbox/Checkbox.js">
+<persistable path="/exam/resources/questions/widgets/Checkbox/Checkbox.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" name="load.js" tooltip="bWidget/js/load.js">
+<persistable path="/bWidget/js/load.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.JSEditor" name="Question.js" tooltip="exam/resources/questions/Question.js">
+<persistable path="/exam/resources/questions/Question.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="index.html" tooltip="exam/index.html">
+<persistable path="/exam/index.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="1.html" tooltip="exam/1.html">
+<persistable path="/exam/1.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.HTMLEditor" name="e.z.html" tooltip="exam/e.z.html">
+<persistable path="/exam/e.z.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.ide.editors.CSSEditor" name="jquery.mobile.theme-1.2.0.min.css" tooltip="exam/resources/jquery.mobile/jquery.mobile.theme-1.2.0.min.css">
+<persistable path="/exam/resources/jquery.mobile/jquery.mobile.theme-1.2.0.min.css"/>
+</file>
+</mruList>
+</workbench>

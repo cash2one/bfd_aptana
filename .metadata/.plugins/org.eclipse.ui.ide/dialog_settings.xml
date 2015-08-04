@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="com.aptana.ide.feature.editors:2.0.5.1278523018-8o57z9icbz-hWlJZG"/>
+		<item value="com.aptana.ide.feature.rcp:2.0.5.1278522500-7g7W8tFDeS_tNIOZ7qse3rLx3Def"/>
+		<item value="com.aptana.ide.feature:2.0.5.1278614541-7D-7O7iRJci-jVhz-KFyoijH"/>
+		<item value="org.eclipse.dltk.core:1.0.2.v20100208-7C-77EAAoORwQXXqBeY-d"/>
+		<item value="org.eclipse.eclipsemonkey:2.0.5.1278523018-7D-47HNqtkUneQb"/>
+		<item value="org.eclipse.emf.ecore:2.5.0.v200906151043"/>
+		<item value="org.eclipse.help:1.1.2.R35x_v20100119-7e7eFAnFEx2X_fZltJhDjz-D"/>
+		<item value="org.eclipse.php.source:2.1.2.v20090826-1027-7L7979F8NcJKhKRU19TmWA"/>
+		<item value="org.eclipse.php:2.1.2.v20090826-1027-7L7979F8NcJKhKRU19TmWA"/>
+		<item value="org.eclipse.platform:3.5.2.R35x_v20100210-0800-9hEiFzmFst-TiEn9hNYgDWg1XN8ulH_JvCNGB"/>
+		<item value="org.eclipse.rcp:3.5.2.R35x_v20100119-9SA0FxwFnoCU5XxWItFdXXb27BA6"/>
+		<item value="org.eclipse.wst.common.fproj:3.1.1.v200908111817-37718s733L4C585I7F"/>
+		<item value="org.eclipse.wst.jsdt.feature:1.1.2.v200908101420-77-FGDCcNBDjBXMoBbFb"/>
+		<item value="org.eclipse.wst.web_ui.feature:3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3"/>
+		<item value="org.eclipse.wst.xml_ui.feature:3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo"/>
+		<item value="org.eclipse.wst.xsl.feature:1.0.2.v200908271520-7R7T8sFIhIehWg454rq_U1"/>
+		<item value="org.python.pydev.feature:2.5.0.2012030114"/>
+	</list>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="160" key="DIALOG_Y_ORIGIN"/>
+		<item value="379" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.ui.wizards.new.project" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+</section>

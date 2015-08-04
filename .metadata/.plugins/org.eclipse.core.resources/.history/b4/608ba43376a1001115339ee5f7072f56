@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cn" lang="cn">
+    <head>
+        <title>二人世界-Youmeonly，爱Ta，就和Ta进二人世界</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="keywords" content="二人世界（Youmeonly）——爱Ta，就带Ta进二人世界只有我和你的世界，分享彼此的心情、状态、计划和照片，纪录每个甜蜜的日子。支持智能手机应用下载。" />
+        <meta name="language" content="en" />
+        <link rel="stylesheet" type="text/css" href="css/common.css" />
+        <link rel="stylesheet" type="text/css" href="css/calendar.css" />
+        <link rel="stylesheet" type="text/css" href="css/dialog.css" />
+		<link rel="stylesheet" type="text/css" href="./datepicker/css/datepicker.css"/>
+        <script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="./datepicker/js/date_tools.js"></script>
+		<script type="text/javascript" src="./datepicker/js/datepicker.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				        var events={},event={}
+						var temp={
+									'2012-05-01':['<span class="icon_menstr"><img src="images/icon_menstr.png" alt="Menstrual period"></span>'],
+								    '2012-05-16':['<span class="icon_label"><img alt="标签" src="images/icon_label.png"></span>'],
+								   '2012-05-17':['<span class="icon_date"><img alt="约会" src="images/icon_date.png"></span>'],
+								   '2012-05-18':['<span class="icon_memori"><img alt="纪念日" src="images/icon_memori.png"></span>'],
+								}
+						events['2012-5']=temp		
+						function parseEventDom(es){
+							var hash={
+								'menstr':'<span class="icon_menstr"><img src="images/icon_menstr.png" alt="Menstrual period"></span>',
+								'label':'<span class="icon_label"><img alt="标签" src="images/icon_label.png"></span>',
+								'date':
+							}
+							var result=[]
+							$.each(es,function(i,item){
+								
+							})
+							return result
+						}
+                        $('.rili').DatePicker({
+//							onChange:function(date){
+//								//选中一个日期的事件(可选 )
+//								console.info('onchange:'+date)
+//								return true
+//							},
+							beforefill:function(firsdateofmonth){
+//								console.info(formatDate(firsdateofmonth,'Y-B'))
+								var m=formatDate(firsdateofmonth,'Y-B')
+								if(!events[m]){
+									$.ajax({
+										async:false,
+										 url: '',
+										 cache:false,
+				                         dataType: "json",
+										 data:{'d':m},
+				                         success:function(data){
+											   events[m]=data
+										 }
+									})
+								}
+								event=events[m]
+							},
+							fillevents:function(date){
+								var result=[]
+								var formateDate=formatDate(date,'Y-m-d')
+								if(event[formateDate]){
+									result=result.concat(event[formateDate])
+								}
+								return result
+							}
+						})
+			})
+		</script>
+    </head>
+    <body>
+        <!-- 日历 -->
+        <div class="cal_box">
+            <div class="cal_left">
+                <div class="rili">
+
+                </div>
+                <!-- rili end -->
+            </div>
+            <!-- cal_left end -->
+            <div class="cal_right">
+                <div class="w296">
+                    <dl class="riqi">
+                        <dt>
+                            02/15
+                        </dt>
+                        <dd>
+                            周三
+                        </dd>
+                    </dl>
+                    <h3>恋爱第 <span>252</span> 天</h3>
+                    <div class="w285">
+                        <span>纪念日</span>
+                        . <strong>结婚纪念日</strong>
+                    </div>
+                </div>
+                <div class="yuehui">
+                    <h3 class="yuehuibg">约会</h3>
+                    <dl class="dldate">
+                        <dt>
+                            圣诞节的主题约会约会
+                        </dt>
+                        <dd>
+                            8:30-4:00
+                        </dd>
+                    </dl>
+                </div>
+                <div class="yuehui">
+                    <h3 class="biaoq">标签</h3>
+                    <p class="date_descrip">
+                        <a href="#">修改</a>今天你们<span>一起</span>都做了些啥？
+                    </p>
+                    <div class="has_done clear">
+                        <span class="Selected">约会<a><img src="images/del_arrow.png" alt="删除按钮"/></a></span><span class="Selected">滑雪<a><img src="images/del_arrow.png" alt="删除按钮"/></a></span><span class="Selected">吃饭<a><img src="images/del_arrow.png" alt="删除按钮"/></a></span><span class="Selected">看电影<a><img src="images/del_arrow.png" alt="删除按钮"/></a></span><span class="Selected">约会<a><img src="images/del_arrow.png" alt="删除按钮"/></a></span><span class="Selected">滑雪<a><img src="images/del_arrow.png" alt="删除按钮"/></a></span><span class="Selected">吃饭<a><img src="images/del_arrow.png" alt="删除按钮"/></a></span><span class="Selected">看电影<a><img src="images/del_arrow.png" alt="删除按钮"/></a></span>
+                    </div>
+                </div>
+                <div class="yuehui">
+                    <h3 class="dymh3">标签</h3>
+                    <dl class="dldym">
+                        <dt>
+                            上次大姨妈到访日期：
+                            <select>
+                                <option>10月</option>
+                            </select>
+                            <select>
+                                <option>1日</option>
+                            </select>
+                        </dt>
+                        <dt>
+                            一般月经周期：
+                            <select>
+                                <option>28天</option>
+                            </select>
+                        </dt>
+                        <dd>
+                            没有纪录的时候，对方其实不知道有这个功能哦。所以，不用害羞哦！
+                        </dd>
+                    </dl>
+                </div>
+                <div class="w305">
+                    <p class="date_descrip">
+                        <a href="#">修改</a>今天你们<span>一起</span>都做了些啥？
+                    </p>
+                    <div class="has_done clear">
+                        <span class="Selected">约会<a><img src="images/del_arrow.png" alt="删除按钮"/></a></span><span class="Selected">滑雪<a><img src="images/del_arrow.png" alt="删除按钮"/></a></span>
+                    </div>
+                    <div class="wait_items clear">
+                        <span class="wait_arrow">
+                        约会</a>
+                    </span>
+                    <span class="wait_xz">
+                    溜冰</a>
+                </span>
+                <span class="wait_arrow">
+                去逛街</a>
+            </span>
+            <span class="wait_arrow">
+            午餐</a>
+        </span>
+        <span class="wait_xz">
+        旅游</a>
+    </span>
+    <span class="wait_gray">
+    看电影</a>
+</span>
+</div>
+<dl class="safeday">
+    <dt>
+        今天是 <span class="pinkicon">安全期</span>哦!
+    </dt>
+    <dt>
+        系统计算平均周期：
+        <select>
+            <option>28天</option>
+        </select>
+    </dt>
+    <dd>
+        距离开始还有20天。<input type="button" class="w85btn" value="已经结束"/>
+    </dd>
+</dl>
+<dl class="safeday">
+    <dt>
+        今天是 <span class="pinkicon">安全期</span>
+        哦!
+    </dt>
+    <dt>
+        系统计算平均周期：
+        <select>
+            <option>28天</option>
+        </select>
+    </dt>
+    <dd>
+        大姨妈预计2月24日造访：<input type="button" class="w85btn" value="立即开始"/>
+    </dd>
+</dl>
+</div>
+</div><!-- cal_right end -->
+</div><!-- cal_box end -->
+</body>
+</html>

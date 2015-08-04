@@ -1,0 +1,72 @@
+-- VERSION_3
+-- START DISKCACHE
+E:\Dropbox\aptana_work\.metadata\.plugins\org.eclipse.core.resources\.projects\baeUE\com.python.pydev.analysis\v1_indexcache
+.v1_indexcache
+baeUE.urls|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\urls.py
+baeUE.chart.models|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\chart\models.py
+baeUE.menu.__init__|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\menu\__init__.py
+baeUE.chart.urls|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\chart\urls.py
+baeUE.__init__|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\__init__.py
+baeUE.chart.__init__|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\chart\__init__.py
+baeUE.manage|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\manage.py
+baeUE.chart.tests|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\chart\tests.py
+baeUE.grid.urls|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\grid\urls.py
+baeUE.grid.views|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\grid\views.py
+baeUE.settings|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\settings.py
+baeUE.menu.views|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\menu\views.py
+baeUE.menu.urls|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\menu\urls.py
+baeUE.menu.models|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\menu\models.py
+baeUE.grid.tests|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\grid\tests.py
+baeUE.menu.tests|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\menu\tests.py
+baeUE.grid.models|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\grid\models.py
+baeUE.grid.__init__|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\grid\__init__.py
+baeUE.chart.views|0|E:\Dropbox\aptana_work\baeUE\src\baeUE\chart\views.py
+-- END DISKCACHE
+-- START DICTIONARY
+12
+9=baeUE.urls
+11=baeUE.chart.urls
+3=baeUE.menu.views
+10=baeUE.menu.urls
+5=baeUE.grid.tests
+6=baeUE.menu.tests
+8=baeUE.grid.urls
+7=baeUE.chart.tests
+2=baeUE.grid.views
+12=SimpleTest
+4=baeUE.chart.views
+1=baeUE.settings
+-- END DICTIONARY
+-- START TREE 1
+26
+adm|2|ADMINS!11@ADMIN_MEDIA_PREFIX!11@
+dat|1|DATABASES!11@
+deb|1|DEBUG!11@
+get|8|get_pie_grid!18@get_menu!26@get_compare_group!18@get_group!18@get_tree_deep_item!18@get_tree_deep_main!18@get_group_message!18@get_menuItem!26@
+gri|2|grid_filter_toggle!18@grid_index!18@
+ind|1|index!34@
+ins|1|INSTALLED_APPS!11@
+jso|3|json!35@json!19@json!27@
+lan|1|LANGUAGE_CODE!11@
+log|4|LOGGING!11@logger!27@logger!19@logger!35@
+man|1|MANAGERS!11@
+map|1|map!34@
+med|2|MEDIA_ROOT!11@MEDIA_URL!11@
+mid|1|MIDDLEWARE_CLASSES!11@
+pie|1|piedata!19@
+r|1|r!35@
+res|3|result!27@result!35@result!19@
+roo|1|ROOT_URLCONF!11@
+sec|1|SECRET_KEY!11@
+sim|3|SimpleTest!41@SimpleTest!49@SimpleTest!57@
+sit|1|SITE_ID!11@
+sta|4|STATIC_URL!11@STATIC_ROOT!11@STATICFILES_DIRS!11@STATICFILES_FINDERS!11@
+tem|3|TEMPLATE_DIRS!11@TEMPLATE_DEBUG!11@TEMPLATE_LOADERS!11@
+tim|1|TIME_ZONE!11@
+url|4|urlpatterns!67@urlpatterns!75@urlpatterns!83@urlpatterns!91@
+use|2|USE_L10N!11@USE_I18N!11@
+-- END TREE
+-- START TREE 2
+1
+tes|3|test_basic_addition!12&42@test_basic_addition!12&50@test_basic_addition!12&58@
+-- END TREE

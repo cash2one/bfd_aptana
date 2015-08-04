@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>数字</title>
+		<script type="text/javascript">
+			//只有单一的数字类似,没有分出整型数
+			console.info('1===1.0:'+(1===1.0))
+			//科学计数法 e e的前面是基数 e后面的数值n表示10的n次方,如
+		    console.info('5e2:'+5e2)	
+			//两个特殊的值NaN和Infinity
+			//NaN是一个不能产生正常结果的运算结果
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

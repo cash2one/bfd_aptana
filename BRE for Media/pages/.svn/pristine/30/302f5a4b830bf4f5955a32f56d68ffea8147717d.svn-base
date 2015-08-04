@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>重设密码</title>
+	<meta name="keywords" content=""/>
+	<meta name="description" content=""/>
+	<link rel="stylesheet" type="text/css" href="../../css/plugin.css" />
+	<script type="text/javascript" src="../../resources/baifendianWidgetsCombo/commons/jquery.js"></script>
+<script type="text/javascript" src="../../js/regulateSize.js"></script>
+<script type="text/javascript" src="../../js/changeSite.js"></script>
+<script type="text/javascript" src="../../js/messageTip.js"></script>
+	<script type="text/javascript" language="JavaScript" src="../../js/Account/resetpassword2.js">
+    </script>
+</head>
+<body style="background:url(../../images/bodybg.png) 0 0;position:relative;">
+	<div class="page">
+		<div id="login-area">
+			<div class="la-logo"></div>
+			<div class="la-box4">
+				<h2>重设密码</h2>
+				<div class="main">
+						<p class="">请到邮箱<em>$ceshi@163.com$</em>中接收密码重设邮件 :）</p>
+						<a href="#" class="blue-btn1">
+							<span>去邮箱收信</span>
+						</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>京ICP备09109727号 Copyright © 2013 百分点信息科技有限公司. All Right Reserved.</p>
+		</div>
+	</div>
+</body>
+</html>

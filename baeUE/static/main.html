@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>百分点分析引擎</title>
+<link href="./css/packed.css" rel="stylesheet" type="text/css" />
+<link href="./css/struct.css" rel="stylesheet" type="text/css" />
+<link href="./resources/menus/baeLeftBar/css/baeLeftBar.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link href="./css/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript"  src="./resources/jquery/jquery.js"></script>
+<script type="text/javascript"  src="./resources/commons/jquery.cookie.js"></script>
+<script type="text/javascript"  src="./resources/menus/baeLeftBar/js/baeLeftBar.js"></script>
+ <script type="text/javascript" language="JavaScript" src="./resources/commons/jquery.blockUI.js"> </script>
+<script type="text/javascript"  src="./js/main.js"></script>
+<script type="text/javascript" >
+$(function(){
+	$.post("/wbportal/user/getLoginedUser.action", null,
+			function(data){
+				var name = data.name;
+				$('#name').html(name);
+			}
+		);
+	
+});
+ window.blockui=function(setting){
+	$.blockUI(setting)
+}
+window.unblock=function(){
+	$.unblockUI()
+}
+</script>
+</head>
+
+<body>
+<div class="head">
+  <div class="logo"><a href="#"></a></div>
+  <div class="menu">欢迎您 <span id="name"></span>|<a href="./setting.html">设置</a>|<a href="#">帮助中心</a>|<a href="/wbportal/user/logOut.action">登出</a></div>
+</div>
+<div class="content">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top" class="left">
+      	<div style="width: 149px;overflow:hidden;">
+		      	<div class="zdsettings">
+		          <dl>
+		            <dt>站点：</dt>
+		            <dd><a href="./setting.html?action=site">管理</a></dd>
+		          </dl>
+		           <div class="zdlist">
+							 	  <div><a></a></div>
+								  <div class="others">
+								  	 
+								  </div>
+							</div>
+		        </div>
+		        <div class="menulist">
+		        	<h2 class="ml01">
+		        	   <span class="p_span"><a href="./function/chart/synthetical.html" style="text-indent: 40px;" target="function">综合概况</a></span>	
+					</h2>
+		        </div>
+		</div>
+		</td>
+      <td valign="top" class="right">
+      	   <iframe src="./test/function/3.html" width="100%" height="800px" scrolling="no" name="function" id="function"></iframe>
+		</td>
+    </tr>
+  </table>
+</div>
+<div class="footer">
+  <div class="l"><a href="#">产品介绍</a> <a href="#">联系我们</a> <a href="#">公司简介</a></div>
+  <div class="r">京ICP备09109727号 Copyright © 2012 百分点信息科技有限公司. All Right Reserved.</div>
+</div>
+<div class="misc">
+  <div class="feedback"> <a href="#" class="trackable"></a> </div>
+</div>
+</body>
+</html>

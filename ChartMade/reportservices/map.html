@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>New Web Project</title>
+        <script src="../resources/jquery/jquery.js" type="text/javascript"></script>
+        <script src="../resources/highcharts/highcharts.js"type="text/javascript"></script>
+        <script src="../resources/highcharts/modules/map.src.js" type="text/javascript"></script>
+        <script src="../js/chinamap.js" type="text/javascript"></script>
+        <script src="../js/worldmap.js" type="text/javascript"></script>
+        <script type="text/javascript">
+    $(document).ready(function() {
+        var data = {}
+
+    for (var i in world_shapes) {//随机的数据
+        data[i] = Math.ceil(Math.random() * 100)
+    }
+    var tempArray = []
+    for (var i in data) {
+        tempArray.push(data[i])
+    }
+    var max = Math.max.apply(Math, tempArray)
+    var min = Math.min.apply(Math, tempArray)
+    var range = max - min
+    for (var i in data) {
+        data[i] = {
+            value : data[i]
+        }
+        var v = Number(255 - (Math.ceil((data[i]['value'] - min) * 255 / range))).toString(16)
+        v = v.length > 1 ? v : ('0' + v)
+        data[i]['color'] = "#20" + v + "FF"
+    }
+    var chart_options = {
+        chart : {
+            renderTo : 'container',
+            type : 'map',
+            animation: false,
+            borderWidth : 1,
+            width:1200,
+            height:800
+        },
+        title : {
+            text : 'China'
+        },
+        legend : {
+            enabled : false
+        },
+        credits : {
+            enabled : false
+        },
+        tooltip : {
+            formatter : function() {
+                return "<center><b>" + this.point.name + "</b></center><br/><span>值：" + this.point.y + "</span>";
+            }
+        },
+        series : [{
+            data : [],
+            dataLabels : {
+                enabled : false,
+                color : 'white',
+                formatter : function(dataLabelOptions) {
+                    return this.point.options.key.toUpperCase();
+                },
+                style : {
+                    fontWeight : 'bold'
+                }
+            },
+            name : '',
+            cursor : 'pointer'
+        }]
+    };
+    console.log(JSON.stringify(data))
+    // var world_data = {};
+    // var i=0,j=0;
+    // $.each(data,function(){
+    //     i++;
+    // })
+    // $.each(world_shapes,function(){
+    //     j++;
+    // })
+    // console.log(i);
+    // console.log(j);
+    // for(var i in world_shapes){
+    //     var country = {};
+    //     try{
+    //         country.name = data[i].title;
+    //         country.path = world_shapes[i];
+            
+    //     }catch(e){
+    //         //console.log(i)
+    //         country.name = 'unknown'
+    //         country.path = world_shapes[i];
+    //     }
+    //     world_data[i] = country
+    // }
+    // console.log(JSON.stringify(world_data))
+    $.each(world_shapes, function(n, i) {
+        if(i.name=='unknown'){
+            data[n]['value'] = 200
+            data[n]['color'] = '#f60'
+            i.name = n
+        }
+        chart_options.series[0].data.push({
+            path : Highcharts.pathToArray(i.path),
+            name : i.name,
+            key : n,
+            y : data[n]['value'],
+            color : data[n]['color']
+        });
+    });
+    var chart = new Highcharts.Map(chart_options);
+    });
+</script>
+    </head>
+    <body>
+        <div id="container" style="margin: auto;width:100%;height:600px;"></div>
+    </body>
+</html>

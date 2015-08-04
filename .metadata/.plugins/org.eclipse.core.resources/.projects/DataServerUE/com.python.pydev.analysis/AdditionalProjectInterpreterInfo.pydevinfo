@@ -1,0 +1,58 @@
+-- VERSION_3
+-- START DISKCACHE
+E:\Dropbox\aptana_work\.metadata\.plugins\org.eclipse.core.resources\.projects\DataServerUE\com.python.pydev.analysis\v1_indexcache
+.v1_indexcache
+DataServerUE.commons.tests|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\commons\tests.py
+DataServerUE.settings|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\settings.py
+DataServerUE.urls|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\urls.py
+DataServerUE.chart.views|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\chart\views.py
+DataServerUE.chart.__init__|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\chart\__init__.py
+DataServerUE.commons.__init__|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\commons\__init__.py
+DataServerUE.commons.urls|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\commons\urls.py
+DataServerUE.commons.models|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\commons\models.py
+DataServerUE.chart.models|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\chart\models.py
+DataServerUE.chart.tests|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\chart\tests.py
+DataServerUE.manage|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\manage.py
+DataServerUE.__init__|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\__init__.py
+DataServerUE.chart.urls|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\chart\urls.py
+DataServerUE.commons.views|0|E:\Dropbox\aptana_work\DataServerUE\src\DataServerUE\commons\views.py
+-- END DISKCACHE
+-- START DICTIONARY
+9
+7=DataServerUE.urls
+2=DataServerUE.chart.views
+4=DataServerUE.commons.tests
+8=DataServerUE.commons.urls
+1=DataServerUE.settings
+9=SimpleTest
+5=DataServerUE.chart.tests
+6=DataServerUE.chart.urls
+3=DataServerUE.commons.views
+-- END DICTIONARY
+-- START TREE 1
+20
+adm|2|ADMIN_MEDIA_PREFIX!11@ADMINS!11@
+dat|1|DATABASES!11@
+deb|1|DEBUG!11@
+ins|1|INSTALLED_APPS!11@
+lan|1|LANGUAGE_CODE!11@
+log|2|logger!19@LOGGING!11@
+man|1|MANAGERS!11@
+med|2|MEDIA_URL!11@MEDIA_ROOT!11@
+mid|1|MIDDLEWARE_CLASSES!11@
+roo|1|ROOT_URLCONF!11@
+sec|1|SECRET_KEY!11@
+set|1|setting!26@
+sim|2|SimpleTest!33@SimpleTest!41@
+sit|1|SITE_ID!11@
+sta|4|STATICFILES_FINDERS!11@STATIC_URL!11@STATICFILES_DIRS!11@STATIC_ROOT!11@
+tem|3|TEMPLATE_DIRS!11@TEMPLATE_DEBUG!11@TEMPLATE_LOADERS!11@
+tes|1|test!18@
+tim|1|TIME_ZONE!11@
+url|3|urlpatterns!51@urlpatterns!59@urlpatterns!67@
+use|2|USE_L10N!11@USE_I18N!11@
+-- END TREE
+-- START TREE 2
+1
+tes|2|test_basic_addition!9&42@test_basic_addition!9&34@
+-- END TREE

@@ -1,0 +1,47 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	$('#sub').click(function(){
+		$('#form1').submit()
+	})
+	$('body').keyup(function(event){
+		if(event.keyCode===13){
+			$('#form1').submit();
+			}
+	})
+	var validater = $('#form1').validate({
+		submitHandler: function(form){
+			$(form).ajaxSubmit({
+				success:function(responseText, statusText, xhr, $form){
+					if(responseText=='4' ){
+					  window.document.location.href = "/ifm/Account/user/!showUpdatePassword";
+					} else if(responseText == '0'){
+						validater.showErrors({'url':'错误信息'})
+					} 
+				}
+			})
+			return false
+			//form.submit()
+		},
+        rules: {
+        	'user.username': {
+            	 required: true,
+                 email:true
+             }
+         },
+         messages: {
+        	 'user.username': {
+                 required: "请输入邮箱",
+                 email:'邮箱格式错误'
+             }
+         },
+         focusInvalid:true,
+         onkeyup: false,
+         wrapper:null,
+         errorElement:'span',
+         errorPlacement: function(error, element){
+             error.appendTo(element.parent());
+         }
+     })
+})

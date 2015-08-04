@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <meta charset="utf-8">
+        <title>Bootstrap, from Twitter</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script src="../resources/baifendianWidgetsCombo/commons/LAB.js" type="text/javascript"></script>
+        <script src="../resources/baifendianWidgetsCombo/config.js" type="text/javascript"></script>
+        <script src="../resources/baifendianWidgetsCombo/load.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+        </script>
+    </head>
+    <body>
+        <div id="menu"></div>
+        <div><button onclick="chart_reload();">重新加载数据</button></div>
+        <div id="container"></div>
+        <div id="worldmap"></div>
+        
+        
+        <div id="pie"></div>
+        <div id="chinamap"></div>
+        <div id="chord"></div>
+        <script type="text/javascript">
+            var bfd = new BaifendianWidgets({
+                    pageId:5,
+                    dateRange:{
+                        startDate: '234',
+                        endDate: '345'
+                    }
+                });
+
+            function chart_reload(){
+                var item = {
+                    dateRange:{
+                        startDate: '234',
+                        endDate: '345'
+                    }
+                }
+                bfd.get(1).reload(item)
+            }
+        </script>
+    </body>
+</html>

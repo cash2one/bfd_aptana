@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>概述</title>
+		<link type="text/css" rel="stylesheet" href="./resources/bootstrap/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="./resources/bootstrap/css/bootstrap-responsive.min.css">
+		<link type="text/css" rel="stylesheet" href="./css/doc.css">
+		<link type="text/css" rel="stylesheet" href="./resources/google-code-prettify/prettify.css">
+		<script type="text/javascript" src="./resources/jquery/jquery.js"></script>
+		<script type="text/javascript" src="./resources/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./resources/google-code-prettify/prettify.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			  window.prettyPrint;
+	          prettyPrint()
+			  var $win = $(window)
+		      , $nav = $('.subnav')
+		      , navTop = $('.subnav').length && $('.subnav').offset().top - 40
+		      , isFixed = 0
+		    processScroll()
+		    $win.on('scroll', processScroll)
+		    function processScroll() {
+		      var i, scrollTop = $win.scrollTop()
+		      if (scrollTop >= navTop && !isFixed) {
+		        isFixed = 1
+		        $nav.addClass('subnav-fixed')
+		      } else if (scrollTop <= navTop && isFixed) {
+		        isFixed = 0
+		        $nav.removeClass('subnav-fixed')
+		      }
+		    }
+		})
+		</script>	
+	</head>
+	<body data-offset="150" data-spy="scroll" data-target="header">
+		<div class="navbar navbar-fixed-top">
+		      <div class="navbar-inner">
+		        <div class="container">	         
+		          <div class="nav-collapse">
+		            <ul class="nav">
+		              <li>
+		                <a href="./index.html">概述</a>
+		              </li>
+		              <li>
+		                <a href="./design.html">设计</a>
+		              </li>
+		              <li class="active">
+		                <a href="./api_doc.html">数据格式</a>
+		              </li>
+		            </ul>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+			<div class="container">
+			   <header class="jumbotron subhead">
+					<div class="subnav">
+					   <ul class="nav nav-pills">
+							<li class="active">
+							     <a href="#i1">页面setting</a>
+							</li>
+							<li>
+							     <a href="#i2">DateRange</a>
+							</li>	
+							<li class="">
+							     <a href="#i3">组件通用格式</a>
+							</li>	
+							<li class="">
+							     <a href="#i4">legend</a>
+							</li>
+							<li class="">
+							     <a href="#i5">selectbox</a>
+							</li>
+							<li class="">
+							     <a href="#i6">chart</a>
+							</li>
+							<li class="">
+							     <a href="#i7">数据请求参数</a>
+							</li>
+							<li class="">
+							     <a href="#i8">数据返回格式</a>
+							</li>
+							<li class="">
+							     <a href="#i9">grid</a>
+							</li>
+							<li class="">
+							     <a href="#i4">filtergrid</a>
+							</li>
+							<li class="">
+							     <a href="#i10">chinamap</a>
+							</li>	
+							<li class="">
+							     <a href="#i11">worldmap</a>
+							</li>		
+							<li class="">
+							     <a href="#i12">chord</a>
+							</li>		
+							<li class="">
+							     <a href="#i13">forcedirected</a>
+							</li>		
+							<li class="">
+							     <a href="#i14">tabbar</a>
+							</li>								
+					  </ul>
+					</div>
+				</header>
+				<section id="i1">
+					<div class="page-header">
+						<h1>页面setting<small>页面内所有组件的信息</small></h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+							<pre class="prettyprint linenums">
+{
+    "global": { 
+        "dateRange": {
+            "type": "dynamic",
+            "container": "dateRange",
+            "isCompare": true,
+            "align": "left"
+        },
+        "param": {}
+    },
+    "configs": [
+        {
+            "id": "1_legend",
+            "type": "legend"
+        },
+        {
+            "id": "1_selectbox",
+            "type": "selectbox"
+        },
+        {
+            "id": "1_chart",
+            "type": "chart"
+        }
+    ]
+}</pre>	
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+								  <col class="span1">
+						          <col class="span6">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th colspan="2">描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						          <tr>
+						            <td rowspan="2">
+						             global
+						            </td>
+						            <td>
+							         dateRange
+						            </td>
+									 <td>
+							        日期选择插件(配置格式见下文)
+						            </td>
+						          </tr>
+								  <tr>
+								  	<td>
+							         param
+						            </td>
+									 <td>
+							        param中可传入全局变量，作为以后扩展的接口
+						            </td>
+								  </tr>	
+								   <tr>
+						            <td>
+						             configs
+						            </td>
+						            <td colspan="2">
+							        configs为一个数组，每个数组元素都是一个原子级的组件，配置见下文。
+						            </td>
+						          </tr>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>
+				<section id="i2">
+					<div class="page-header">
+						<h1>DateRange<small>日期选择器</small></h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+<pre class="prettyprint linenums">
+"dateRange": {//日期控件（BAE风格）
+        "type": "dynamic",
+        "container": "dateRange",
+        "isCompare": true,
+        "align": "left"
+}
+</pre>
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						          <tr>
+						          	<td>type</td>
+									<td>dynamic</td>
+						          </tr>
+								  <tr>
+								  	<td>container</td>
+									<td></td>
+								  </tr>	
+								   <tr>
+								   	<td>isCompare</td>
+									<td></td>
+						          </tr>
+								  <tr>
+								   	<td>align</td>
+									<td></td>
+						          </tr>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>
+				<section  id="i3">
+					<div class="page-header">
+						<h1>原子级组件通用格式</h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+<pre class="prettyprint linenums">
+{
+"id": "1_legend",
+"type": "legend",
+"container": "menu",
+"cols": [{                 
+    "key": "uv",
+    "title": "唯一访客数 ",
+    "desc": "鼠标滑上去出现的解释",
+    "format":"num",
+  "groupBy":0 //默认为0，groupBy中元素的索引值
+}]，
+"groupBy": ["state_date"],
+"dataParam":{
+"sort": "state_date", 
+     "sortMode": "asc"//在请求数据时表示排序方式asc或desc
+},
+"events": [{  
+     "name": "change",
+     "target": "1_chart",//被影响对象id
+     "action": "flush"//被影响对象响应函数名
+ }, {
+     "name": "change",//此例中legend的change事件影响2个对象 id=1的chart，id=10的selectbox
+    "target": "10_selectbox",
+    "action": "flush"
+}],
+"option": {}//这里存各组件的自定义setting
+}]
+}	
+</pre>								
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        	<tr>
+						        		<td>id</td>
+										<td>必须项，格式为"数据库id_组件type"，作为组件在页面中的唯一标识</td>
+						        	</tr>
+									<tr>
+						        		<td>type</td>
+										<td>必须项，组件的type</td>
+						        	</tr>
+									<tr>
+						        		<td>container</td>
+										<td>必须项，放置组件的div的id</td>
+						        	</tr>
+									<tr>
+						        		<td>cols</td>
+										<td>cols数组中传入数据项的key（必须项）,title（名称，必须项）,desc（描述），format（数据格式类型）,属性可扩展</td>
+						        	</tr>
+									<tr>
+						        		<td>groupBy</td>
+										<td>groupBy数组中传入用于分组的列的key</td>
+						        	</tr>
+									<tr>
+						        		<td>dataparam</td>
+										<td>dataparam中为自定义参数，在数据请求中直接将dataparam中所有字段传入后台</td>
+						        	</tr>
+									<tr>
+						        		<td>sort</td>
+										<td>在请求数据时要求的用于排序的列的key</td>
+						        	</tr>
+									<tr>
+						        		<td>sortMode</td>
+										<td>在请求数据时表示排序方式asc或desc</td>
+						        	</tr>
+									<tr>
+						        		<td>events</td>
+										<td>各组件加入events，events数组可存入多个事件，name为事件名称，target为被影响的组件的id，action为被影响组件在事件触发的执行自己的方法的名称。</td>
+						        	</tr>
+									<tr>
+						        		<td>option</td>
+										<td>这里存各组件的自定义setting</td>
+						        	</tr>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>
+				<section  id="i4">
+					<div class="page-header">
+						<h1>legend</h1>
+					</div>
+					<p>无自定义setting</p>
+				</section>	
+				<section  id="i5">
+					<div class="page-header">
+						<h1>selectbox</h1>
+					</div>
+					<p>无自定义setting</p>
+				</section>	
+				<section  id="i6">
+					<div class="page-header">
+						<h1>chart</h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+<pre class="prettyprint linenums">
+rule:{
+    sort:{
+        index:0, //指向groupBy中元素，根据此元素排序
+        mode:'asc',
+        type:'time'
+    },
+    needfill:true/false, 
+    colors:[['#609EC8', '#C3E3F8'],['#A6C71E', '#DCF185']], //BAE风格线图颜色
+            普通线图风格[[['#fff','#000']]]
+    x_maxrange:12 
+}	
+</pre>		
+<pre class="prettyprint linenums">
+{
+    "chart": {
+        "type": "line",
+        "width": 800,
+        "height": 600
+    },
+    "credits": {
+        "enabled": false
+    },
+    "labels": {
+        "items": []
+    },
+    "title": {
+        "text": "title",
+        "x": -20
+    },
+    "subtitle": {
+        "text": "subtitle",
+        "x": -20
+    },
+"plotOptions": {
+            "pie": {//当饼图时加入
+                "allowPointSelect": true,
+                "cursor": "pointer",
+                "dataLabels": {
+                    "enabled": true,
+                    "color": "#000000",
+                    "connectorColor": "#000000"
+                }
+  "bar": {//当横向柱状图时加入
+                        "dataLabels": {
+                                "enabled": true
+                          }
+                  }
+        },
+    "xAxis": [],
+    "yAxis": [],
+    "tooltip": {},
+    "legend": {},
+    "series": []
+}	
+</pre>							
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        	<tr>
+						        		<td>needfill</td>
+										<td>是否需要填充数据</td>
+						        	</tr>
+									<tr>
+						        		<td>x_maxrange</td>
+										<td>x轴最大刻度</td>
+						        	</tr>
+						        </tbody>
+						      </table>
+							  <table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        	<tr>
+						        		<td>type</td>
+										<td>bar为横向柱状图，column为纵向柱状图,pie为饼图,scatter为散点图，spline为曲线图</td>
+						        	</tr>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>		
+				<section  id="i7">
+					<div class="page-header">
+						<h1>数据请求参数</h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+							<pre class="prettyprint linenums">
+{
+ cols: ['uv', 'pv', 's1', 's2'],
+ start: '20120607',
+ end: '20120621'
+ requestId:100001,
+ type:grid,
+ keys:['sort', 'mode','dbStart','dbEnd'],
+ values:['v1', 'v2','v3','v4']
+}								
+							</pre>	
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        	<tr>
+						        		<td>cols</td>
+										<td>需要的查询结果项,必需项</td>
+						        	</tr>
+									<tr>
+						        		<td>start</td>
+										<td>开始时间,必需项</td>
+						        	</tr>
+									<tr>
+						        		<td>end</td>
+										<td>结束时间,必需项</td>
+						        	</tr>
+									<tr>
+						        		<td>requestId</td>
+										<td>请求id,必需项</td>
+						        	</tr>
+									<tr>
+						        		<td>type</td>
+										<td>请求类型,必需项</td>
+						        	</tr>
+									<tr>
+						        		<td>keys</td>
+										<td>参数名称</td>
+						        	</tr>
+									<tr>
+						        		<td>values</td>
+										<td>参数值</td>
+						        	</tr>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>		
+				<section  id="i8">
+					<div class="page-header">
+						<h1>数据返回格式</h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+							<pre class="prettyprint linenums">
+{
+    stores: [{
+        date: '2012年01月',
+        //日期条件1  date应为groupBy数组中
+        uv: 123,
+        //查询1
+        pv: 234 //查询2
+    },
+    {
+        date: '2012年02月',
+        uv: 123,
+        pv: 234
+    }]
+}								
+							</pre>	
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        	<tr>
+						        		<td></td>
+										<td></td>
+						        	</tr>
+									<tr>
+						        		<td></td>
+										<td></td>
+						        	</tr>
+									<tr>
+						        		<td></td>
+										<td></td>
+						        	</tr>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>		
+				<section  id="i9">
+					<div class="page-header">
+						<h1>grid</h1>
+					</div>
+					<div class="row">
+						<div class="span6">
+							<pre class="prettyprint linenums">
+{
+    "id": 1,
+    "type": "grid",
+    "container": "grid",
+    "cols": ["PV", "F4", "F2", "F5", "F6", "F8", "F9", "F10"],
+    "groupBy": ["s1", "s2"],
+    "option": {
+        "seq": false,
+        "hasPager": false,
+        "agv_width": true,
+        "data": {},//可选参数
+        "colModel": [{
+            "colName": "来源1",
+            "name": "s1",
+            "sortable": false
+        }, {
+            "colName": "来源2",
+            "name": "s2",
+            "sortable": false
+        }, {
+            "colName": "页面浏览数",
+            "name": "PV",
+            "sortable": false
+        }, {
+            "colName": "访次",
+            "name": "F4",
+            "sortable": false
+        }, {
+            "colName": "平均网站访问时长",
+            "name": "F2",
+            "sortable": false
+        }, {
+            "colName": "网站跳出率",
+            "name": "F5",
+            "sortable": false
+        }, {
+            "colName": "下定商品数量",
+            "name": "F6",
+            "sortable": false
+        }, {
+            "colName": "下定订单数量",
+            "name": "F8",
+            "sortable": false
+        }, {
+            "colName": "下定订单金额",
+            "name": "F9",
+            "sortable": false
+        }, {
+            "colName": "下定订单转化率",
+            "name": "F10",
+            "sortable": false,
+            "type": "Number"//"numFix","scale","toscale","decimal","money","time"
+        }],
+        chart: {//可选项
+            type: 'pie',
+            title: '图表项的表头',//必选项
+            hasScale: true,
+            labelsItem: 'source',
+            valueItem: 'uv',
+            enabledLastStore: false
+        },
+        "page": {
+            "rowList": [4]
+        }
+    }
+}					
+							</pre>	
+						</div>
+						<div class="span6">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span5">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        	<tr>
+						        		<td>hasPager</td>
+										<td>是否有分页,默认为true</td>
+						        	</tr>
+									<tr>
+						        		<td>chart.type</td>
+										<td>必选项,pie or bar</td>
+						        	</tr>
+									<tr>
+						        		<td>chart.hasScale</td>
+										<td>可选项,是否有占比项，默认为false</td>
+						        	</tr>
+									<tr>
+						        		<td>chart.labelsItem</td>
+										<td>可选项,图表中Lable是grid中的哪项(item的name),默认为colModel[0].name</td>
+						        	</tr>
+									<tr>
+						        		<td>chart.valueItem</td>
+										<td>可选项,图表中value是grid中的哪项(item的name),默认为colModel[1].name</td>
+						        	</tr>
+									<tr>
+						        		<td>chart.enabledLastStore</td>
+										<td>可选项,默认为true,指标项中是否包含最后一项的内容</td>
+						        	</tr>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>		
+				<section  id="i10">
+					<div class="page-header">
+						<h1>filtergrid</h1>
+					</div>
+					<div class="row">
+						<div class="span6">
+							<pre class="prettyprint linenums">
+{    "id": "filtergrid0",
+    "type": " filtergrid",
+    "container": " filtergrid",
+    "option": [
+        {
+            filter: {
+                fixColModel: {
+                    colName: '来源',name: 'source',
+                    format: 'scala'
+                },
+                colModel: [
+                    {
+                        colName: '唯一访客数',
+                        name: 'UV'
+                    },
+                    {
+                        colName: '页面浏览数',
+                        name: 'PV'
+                    },
+                    {
+                        colName: '新访次数',
+                        name: 'F0'
+                    },
+                    {
+                        colName: '每次访问页数',
+                        name: 'F1'
+                    },
+                    {
+                        colName: '平均网站访问时长',
+                        name: 'F2'
+                    },
+                    {
+                        colName: '新访占比',
+                        name: 'F3',
+                        hideInPie: true
+                    },
+                    {
+                        colName: '访次',
+                        name: 'F4'
+                    },
+                    {
+                        colName: '网站跳出率',
+                        name: 'F5',
+                        hideInPie: true
+                    },
+                    {
+                        colName: '下定商品数量',
+                        name: 'F6'
+                    },
+                    {
+                        colName: '下定商品金额',
+                        name: 'F7'
+                    },
+                    {
+                        colName: '下定订单数量',
+                        name: 'F8'
+                    },
+                    {
+                        colName: '下定订单金额',
+                        name: 'F9'
+                    },
+                    {
+                        colName: '下定订单转化率',
+                        name: 'F10',
+                        hideInPie: true
+                    }
+                ],
+                defaultCols: [
+                    "UV",
+                    "PV",
+                    "F5",
+                    "F1",
+                    "F8",
+                    "F10"
+                ],
+                orderCols: [
+                    "UV",
+                    "PV",
+                    "F5",
+                    "F8",
+                    "F9",
+                    "F10"
+                ],
+                goodsCols: [
+                    "UV",
+                    "PV",
+                    "F5",
+                    "F6",
+                    "F7"
+                ]
+            },
+            grid: {
+                hasPie: false, 
+                data: {
+                    code: '656786'
+                },
+                "sort":"UV",
+                "sortModel":"desc",
+                "seq": false,
+                "hasPager":false,//是否有分页,默认为true
+                "agv_width": true，
+                compareAble:false,//是否有对比，默认为true
+                agv_width: true,
+                page: {
+                    rowList: [
+                        20,
+                        50,
+                        100,
+                        200
+                    ]
+                },
+                post_name: 'source0',
+                //如果有子项,
+                请求子项里传给后台的key,
+                如果不存在,
+                将使用fixColModel中的namelable: '当前1: '//如果有子项,
+                当进入子项时在表格上面当前选项的前缀,
+                如"当前品牌"、"当前品类"
+            }
+        },
+        {
+            filter: {
+                fixColModel: {
+                    colName: '来源2',
+                    name: 'source',
+                    fixed: true
+                },
+                colModel: [
+                    {
+                        colName: '唯一访客数2',
+                        name: 'UV'
+                    },
+                    {
+                        colName: '页面浏览数2',
+                        name: 'PV'
+                    },
+                    {
+                        colName: '新访次数2',
+                        name: 'F0'
+                    },
+                    {
+                        colName: '每次访问页数2',
+                        name: 'F1'
+                    },
+                    {
+                        colName: '平均网站访问时长2',
+                        name: 'F2'
+                    },
+                    {
+                        colName: '新访占比2',
+                        name: 'F3',
+                        hideInPie: true
+                    },
+                    {
+                        colName: '访次2',
+                        name: 'F4'
+                    },
+                    {
+                        colName: '网站跳出率2',
+                        name: 'F5',
+                        hideInPie: true
+                    },
+                    {
+                        colName: '下定商品数量2',
+                        name: 'F6'
+                    },
+                    {
+                        colName: '下定商品金额2',
+                        name: 'F7'
+                    },
+                    {
+                        colName: '下定订单数量2',
+                        name: 'F8'
+                    },
+                    {
+                        colName: '下定订单金额2',
+                        name: 'F9'
+                    },
+                    {
+                        colName: '下定订单转化率2',
+                        name: 'F10',
+                        hideInPie: true
+                    }
+                ],
+                defaultCols: [
+                    "F8",
+                    "F10"
+                ],
+                orderCols: [
+                    "UV",
+                    "PV",
+                    "F5",
+                    "F8",
+                    "F9",
+                    "F10"
+                ],
+                goodsCols: [
+                    "UV",
+                    "PV",
+                    "F5",
+                    "F6",
+                    "F7"
+                ]
+            },
+            grid: {
+                data: {
+                    code: '656786'
+                },
+                agv_width: true,
+                page: {
+                    rowList: [
+                        20,
+                        50,
+                        100,
+                        200
+                    ]
+                },
+                post_name: 'source1'//如果有子项,
+                请求子项里传给后台的key,
+                如果不存在,
+                将使用fixColModel中的name
+            }
+        },
+        {
+            filter: {
+                fixColModel: {
+                    colName: '来源3',
+                    name: 'source',
+                    fixed: true
+                },
+                colModel: [
+                    {
+                        colName: '唯一访客数3',
+                        name: 'UV'
+                    },
+                    {
+                        colName: '页面浏览数3',
+                        name: 'PV'
+                    },
+                    {
+                        colName: '新访次数3',
+                        name: 'F0'
+                    },
+                    {
+                        colName: '每次访问页数3',
+                        name: 'F1'
+                    },
+                    {
+                        colName: '平均网站访问时长3',
+                        name: 'F2'
+                    },
+                    {
+                        colName: '新访占比3',
+                        name: 'F3',
+                        hideInPie: true
+                    },
+                    {
+                        colName: '访次3',
+                        name: 'F4'
+                    },
+                    {
+                        colName: '网站跳出率3',
+                        name: 'F5',
+                        hideInPie: true
+                    },
+                    {
+                        colName: '下定商品数量3',
+                        name: 'F6'
+                    },
+                    {
+                        colName: '下定商品金额3',
+                        name: 'F7'
+                    },
+                    {
+                        colName: '下定订单数量3',
+                        name: 'F8'
+                    },
+                    {
+                        colName: '下定订单金额3',
+                        name: 'F9'
+                    },
+                    {
+                        colName: '下定订单转化率3',
+                        name: 'F10',
+                        hideInPie: true
+                    }
+                ],
+                defaultCols: [
+                    "UV",
+                    "PV"
+                ],
+                orderCols: [
+                    "UV",
+                    "PV",
+                    "F5",
+                    "F8",
+                    "F9",
+                    "F10"
+                ],
+                goodsCols: [
+                    "UV",
+                    "PV",
+                    "F5",
+                    "F6",
+                    "F7"
+                ]
+            },
+            grid: {
+                data: {
+                    code: '656786'
+                },
+                agv_width: true,
+                page: {
+                    rowList: [
+                        20,
+                        50,
+                        100,
+                        200
+                    ]
+                },
+                post_name: 'source'
+            }
+        }
+    ]
+}								
+							</pre>	
+						</div>
+						<div class="span6">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span5">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        	<tr>
+						        		<td> grid.hasPie: false</td>
+										<td>是否有饼图模式</td>
+						        	</tr>
+									<tr>
+						        		<td>grid.sort</td>
+										<td>默认排序项，可选，不填默认按colModel中的第一项desc排</td>
+						        	</tr>
+									<tr>
+						        		<td>grid.sortModel</td>
+										<td>可选，如果有上面那项才有有此项，默认是desc,可填asc</td>
+						        	</tr>
+									<tr>
+						        		<td>grid.noDefaultSort</td>
+										<td>设置没有默认排序(与上面两项不可同时出现)</td>
+						        	</tr>
+									<tr>
+						        		<td>grid.hasPager</td>
+										<td>是否有分页,默认为true</td>
+						        	</tr>
+									<tr>
+						        		<td>grid.compareAble</td>
+										<td>是否有对比，默认为true</td>
+						        	</tr>
+									<tr>
+						        		<td>grid.post_name</td>
+										<td>如果有子项,请求子项里传给后台的key,如果不存在,将使用fixColModel中的name</td>
+						        	</tr>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>		
+				<section  id="i11">
+					<div class="page-header">
+						<h1>chinamap</h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+							<pre class="prettyprint linenums">
+{
+        "id": "中国地图",
+        "type": "chinamap",
+        "container": "chinamap",
+        "option": {
+            "chart": {
+                "type": "map",
+                "animation": false,
+                "borderWidth": 1,
+                "width": 850,
+                "height": 755
+            },
+            "title": {
+                "text": "China"
+            },
+            "legend": {
+                "enabled": false
+            },
+            "credits": {
+                "enabled": false
+            },
+            "tooltip": {},
+            "series": [
+                {
+                    "data": [],
+                    "dataLabels": {
+                        "enabled": false,
+                        "color": "white",
+                        "style": {
+                            "fontWeight": "bold"
+                        }
+                    },
+                    "name": "",
+                    "cursor": "pointer"
+                }
+            ]
+        }
+    }								
+							</pre>	
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>		
+				<section  id="i12">
+					<div class="page-header">
+						<h1>worldmap</h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+							<pre class="prettyprint linenums">
+{
+        "id": "世界地图",
+        "type": "worldmap",
+        "container": "worldmap",
+        "option": {
+            "chart": {
+                "type": "map",
+                "animation": false,
+                "borderWidth": 1,
+                "width": 1200,
+                "height": 800
+            },
+            "title": {
+                "text": "world"
+            },
+            "legend": {
+                "enabled": false
+            },
+            "credits": {
+                "enabled": false
+            },
+            "tooltip": {},
+            "series": [
+                {
+                    "data": [],
+                    "dataLabels": {
+                        "enabled": false,
+                        "color": "white",
+                        "style": {
+                            "fontWeight": "bold"
+                        }
+                    },
+                    "name": "",
+                    "cursor": "pointer"
+                }
+            ]
+        }
+    }								
+							</pre>	
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>		
+				<section  id="i13">
+					<div class="page-header">
+						<h1>chord</h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+							<pre class="prettyprint linenums">
+{
+         "width": 800,
+         "height": 800
+        }
+							</pre>	
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>		
+				<section  id="i14">
+					<div class="page-header">
+						<h1>forcedirected</h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+							<pre class="prettyprint linenums">
+{
+         "width": 800,
+         "height": 800
+        }								
+							</pre>	
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>		
+				<section>
+					<div class="page-header">
+						<h1>tabbar</h1>
+					</div>
+					<div class="row">
+						<div class="span4">
+							<pre class="prettyprint linenums">
+{
+    "id": "1_tabbar", //唯一标识
+    "type": "tabbar",//此组件类型
+    "container": "tabbar1",//存放的div的id
+    "current": 0, //当前所在页面在数组中的index
+    "items": [{ //items是个数组，每个元素是一个tab按钮
+        "title": "全部来源", //tab按钮的标题
+        "url": "./ref_all.html", //url
+        "param": { //请求url时携带的参数
+            "param1": "value1",
+            "param2": "value2"
+        },
+        "target": "_self" // "_self" "_blank" "_parent" "_top" 超链接在何处打开目标 URL。
+    }, {
+        "title": "直接访问",
+        "url": "./ref_direct_access.html",
+        "param": {
+            "param1": "value1",
+            "param2": "value2"
+        },
+        "target": "_self"
+    }],
+    "events": [],//事件
+    "option": {}//组件自定义setting
+}
+//X轴与Y轴配置可定义多个x轴或y轴，然后加入到base当中即可
+/*axis说明:{
+ line 轴线
+ gridLine 网格
+ minorGridLine 小网格
+ tick 小刻度
+ minorTick 小刻度
+ 可设置几种线段的宽度，颜色等，如lineWidth*/								
+							</pre>	
+						</div>
+						<div class="span8">
+							<table class="table table-bordered">
+						        <colgroup>
+						          <col class="span1">
+						          <col class="span7">
+						        </colgroup>
+						        <thead>
+						          <tr>
+						            <th>配置项</th>
+						            <th>描述</th>
+						          </tr>
+						        </thead>
+						        <tbody>
+						        </tbody>
+						      </table>
+						</div>
+					</div>
+				</section>		
+				<footer class="footer">
+			        <p class="pull-right"><a href="#">回到顶端</a></p>
+			        <p>数据服务化前端  设计与开发 by <a href="mailTo:binbin.ning@baifendian.com" target="_blank">@宁彬彬</a> and <a href="mailTo:xiaosong.fu@baifendian.com" target="_blank">@傅晓嵩</a></p>
+			      </footer>
+			</div>
+	</body>
+</html>

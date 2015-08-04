@@ -1,0 +1,72 @@
+body, div, h1, h2, h3, h4, h5, a, img, b, strong, span, var, em, ol, ul, dt, dd, dl, li, p, table, tr, th, td, button, input {
+    margin: 0;
+    padding: 0;
+}
+/*--------- 蓝按钮 ---------*/
+.blue-btn{cursor: pointer;height:29px;margin-bottom:20px;overflow:hidden;}
+.blue-btn1{cursor: pointer;float:left;width:47px;height:29px;line-height:29px;background:url(../images/blue-btn1.png) 0 0 no-repeat;padding-left:3px;margin-right:10px;}
+.blue-btn1 span{float:left;width:44px;height:29px;background:url(../images/blue-btn1.png) right 0 no-repeat;padding-right:3px;font-size:12px;color:#fff;text-align:center;}
+.blue-btn2{cursor: pointer;float:left;width:47px;height:29px;line-height:29px;background:url(../images/blue-btn2.png) 0 0 no-repeat;padding-left:3px;margin-right:10px;}
+.blue-btn2 span{float:left;width:44px;height:29px;background:url(../images/blue-btn2.png) right 0 no-repeat;padding-right:3px;font-size:12px;color:#fff;text-align:center;}
+.blue-btn3{cursor: pointer;float:left;width:47px;height:29px;line-height:29px;background:url(../images/blue-btn3.png) 0 0 no-repeat;padding-left:3px;}
+.blue-btn3 span{float:left;width:44px;height:29px;background:url(../images/blue-btn3.png) right 0 no-repeat;padding-right:3px;font-size:12px;color:#fff;text-align:center;}
+/*--------- 灰按钮 ---------*/
+.grey-btn{cursor: pointer;height:29px;margin-bottom:20px;overflow:hidden;}
+.grey-btn1{cursor: pointer;float:left;width:47px;height:29px;line-height:29px;background:url(../images/grey-btn1.png) 0 0 no-repeat;padding-left:3px;margin-right:10px;}
+.grey-btn1 span{float:left;width:44px;height:29px;background:url(../images/grey-btn1.png) right 0 no-repeat;padding-right:3px;font-size:12px;color:#666;text-align:center;}
+.grey-btn2{cursor: pointer;float:left;width:47px;height:29px;line-height:29px;background:url(../images/grey-btn2.png) 0 0 no-repeat;padding-left:3px;margin-right:10px;}
+.grey-btn2 span{float:left;width:44px;height:29px;background:url(../images/grey-btn2.png) right 0 no-repeat;padding-right:3px;font-size:12px;color:#666;text-align:center;}
+.grey-btn3{cursor: pointer;float:left;width:47px;height:29px;line-height:29px;background:url(../images/grey-btn3.png) 0 0 no-repeat;padding-left:3px;}
+.grey-btn3 span{float:left;width:44px;height:29px;background:url(../images/grey-btn3.png) right 0 no-repeat;padding-right:3px;font-size:12px;color:#666;text-align:center;}
+/*--------- 绿按钮 ---------*/
+.green-btn{cursor: pointer;height:28px;overflow:hidden;}
+.green-btn1{cursor: pointer;float:left;width:59px;height:28px;line-height:28px;background:url(../images/green-btn1.png) 0 0 no-repeat;padding-left:3px;margin-right:10px;}
+.green-btn1 span{float:left;width:56px;height:29px;background:url(../images/green-btn1.png) right 0 no-repeat;padding-right:3px;font-size:12px;color:#fff;text-align:center;}
+.green-btn2{cursor: pointer;float:left;width:59px;height:28px;line-height:28px;background:url(../images/green-btn2.png) 0 0 no-repeat;padding-left:3px;margin-right:10px;}
+.green-btn2 span{float:left;width:56px;height:29px;background:url(../images/green-btn2.png) right 0 no-repeat;padding-right:3px;font-size:12px;color:#fff;text-align:center;}
+.green-btn3{cursor: pointer;float:left;width:59px;height:28px;line-height:28px;background:url(../images/green-btn3.png) 0 0 no-repeat;padding-left:3px;}
+.green-btn3 span{float:left;width:56px;height:29px;background:url(../images/green-btn3.png) right 0 no-repeat;padding-right:3px;font-size:12px;color:#fff;text-align:center;}
+
+.float-layer{cursor:default;width:298px;height:;border:1px #e1e1e1 solid;border-radius:3px; box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0,0,0,0.1);overflow:hidden;}
+.fl-title{width:278px;height:37px;background:#f4f4f4;border-bottom:1px #e1e1e1 solid;padding:0 10px 0 10px;overflow:hidden;}
+.fl-title h4{float:left;height:37px;line-height:37px;font-size:12px;color:#333;}
+.fl-title a{float:right;width:16px;height:37px;background:url(../images/x-bg3.png) 0 10px no-repeat; cursor: pointer;
+    font-style: normal;
+    outline: medium none;
+    text-decoration: none;}
+.fl-content{width:298px;height:114px;text-align:center;padding:50px 0 0 0;}
+.fl-content p{font-size:14px;color:#444444;margin-bottom:50px;}
+.fl-content .btn{width:298px;height:29px;overflow:hidden;}
+.fl-content .blue-btn1{margin-left:79px;width:63px;}
+.fl-content .blue-btn1 span{width:60px;font-weight:bold;}
+.fl-content .grey-btn1{width:63px;}
+.fl-content .grey-btn1 span{width:60px;}
+.fl-content2{width:298px;margin-bottom: 20px;text-align:center;padding:35px 0 0 0;}
+.fl-content2 p{line-height:23px;font-size:14px;color:#444444;}
+.fl-content2 strong{display:block;font-size:14px;color:#bb0000;font-weight:lighter;margin-bottom:35px;}
+.fl-content2 .btn{width:298px;height:29px;overflow:hidden;}
+.fl-content2 .red-btn1{margin:0 10px 0 79px;float:left;width:63px;height:29px;line-height:29px;padding-left:3px;background:url(../images/red-btn1.png) 0 0 no-repeat;}
+.fl-content2 .red-btn1 span{float:left;width:60px;height:29px;font-weight:bold;font-size:12px;color:#fff;padding-right:3px;background:url(../images/red-btn1.png) right 0 no-repeat;}
+.fl-content2 .grey-btn1{width:63px;}
+.fl-content2 .grey-btn1 span{width:60px;}
+
+.fl-content2 .win{line-height:22px;font-size:14px;color:#7bbb00;margin-bottom:18px;overflow:hidden;}
+.fl-content2 .win .win-pic{position:relative;top:5px;left:-13px;}
+.fl-content2 .tip{line-height:24px;font-size:12px;color:#999;}
+.fl-content2 .tip .admin{color:#0099ff;text-decoration:underline;}
+
+.fl-content2 .doubt{_float:left;_width:200px;text-align:left;line-height:22px;font-size:14px;color:#666;margin-bottom:18px;overflow:hidden;}
+.fl-content2 .doubt-pic{float:left;margin:0 10px;}
+.plr39{width:234px;padding:35px 25px 0 39px;}
+.plr39 .btn-2{width:170px;overflow:hidden;padding:20px 0 0 73px;_padding:0 0 20px 73px;background: none repeat scroll 0 0 transparent;}
+/* 按钮与底部距离*/
+.plr39 .btn-2{margin-bottom: 20px;}
+.fl-content2 .jc{_padding-top:20px;line-height:62px;font-size:14px;font-weight:bold;color:#666;overflow:hidden;}
+.fl-content2 .jc .jc-pic{position:relative;top:3px;left:-10px;}
+
+.h69{height:69px;}
+.fl-content2 .shield{line-height:22px;font-size:14px;color:#333;margin-bottom:18px;overflow:hidden;}
+.fl-content2 .shield .win-pic{position:relative;top:5px;left:-13px;}
+
+.fl-content2 .anew{line-height:22px;font-size:14px;color:#333;margin-bottom:18px;overflow:hidden;}
+.fl-content2 .anew .win-pic{position:relative;top:5px;left:-13px;}

@@ -1,0 +1,163 @@
+$(function(){
+	var siteId = $("#siteId").val();
+    $.template('t','<div class="article-list">'+
+							'<div class="con">'+
+							'<span class="article-list-img">'+
+							'<a href="#"><img  src="${img_url}"></a>'+
+							'</span>'+
+							'<div class="article-list-content">'+
+							'<h3><a href="${url}">${title}</a></h3>'+
+							'<p class="summary2">${content}</p>'+
+							'</div>'+
+							'</div>'+
+							'</div>')
+	var url='';						
+	$('.nav3 > ul > li:not(.ml24)').each(function(){
+		$('#list > div').append('<div style="float:left;width:873px;"></div>')
+	})
+	$('#list').scrollable()
+	var api=$('#list').data('scrollable')
+	function madeList(opts){
+		var setting={
+				 	  url:"../../SourceShare/source/!getArticleListByTag?siteId="+siteId,
+					  beforeLoad:function(){
+										$.ifmWidget("loading",{
+								    		title:'加载中',
+								    		content:'加载中...'
+										})
+									},
+					  afterLoad:function(self){ 
+										$.ifmWidget("unloading")
+										$('#list').css('height',self.container.children().size()*201+'px')
+									},
+					  Model: function(i, item){
+					  	                var self = this
+							            self.dom = $.tmpl('t', item)
+					  }				
+		}
+		result= new List($.extend(setting,opts))
+		return result
+	}
+	 $('.nav3 > ul > li:not(.ml24)').click(function(){
+		if(!$(this).find('a').hasClass('curr')){
+			 $('.nav3 > ul > li:not(.ml24)').find('a').removeClass('curr')
+			 $(this).find('a').addClass('curr')
+		}
+	})
+   $('.nav3 > ul > li:not(.ml24)').each(function(i){
+   	  $(this).click(function(){
+				api.seekTo(i)
+				$('#list').css('height',$('#list > div >div').eq(i).children().size()*201+'px')
+	  })
+	  if(i!==0){
+		  	$(this).one('click',function(){
+		  	     madeList({ container:$('#list > div > div').eq(i),data:{q:$(this).find('a').html()}})
+		   })
+	  }
+   })
+   madeList({ container:$('#list > div > div').eq(0),data:{q:'热门文章'}})
+   /*//wyx
+   $('.s-title').delegate('a.contains("申请交换")','click',function(){
+
+	   
+	 })	*/
+   
+})
+
+$(function(){
+    function renderArc(rander, value){
+        var v=(-0.5+2*value)*Math.PI
+        var renderer = new Highcharts.Renderer(rander[0], 172, 172);
+        renderer.arc(86, 86, 86, 54, -Math.PI / 2, Math.PI * 1.5).attr({
+            fill: '#ECECEC',
+            stroke: 'black',
+            'stroke-width': 0
+        }).add();
+        renderer.arc(86, 86, 86, 54, -Math.PI / 2, v).attr({
+            fill: '#03A4DA',
+            stroke: 'black',
+            'stroke-width': 0
+        }).add();
+        renderer.text(parseInt(value*100,10)+'%', 60, 96).css({
+            'font-size': '30px'
+        }).attr({
+            'font-size': '30px'
+        }).add()
+    }
+   renderArc($('#chart'),parseFloat($('#chart').data('value')))
+})
+
+/*var siteId = $("#siteId").val();
+function applyExchangeFlow(a) {
+	
+	$.post("../../SourceShare/source/!applyExchangeFlow", {"beApplicationId":siteId}, function(data) {
+		alert(data);
+	})
+}
+
+function cancleExchangeFlow(a) {
+	
+	//$.post("../../SourceShare/source/!applyExchangeFlow", {"beApplicationId":siteId}, function(data) {
+		alert("dd");
+	//})
+}*/
+
+$(function(){
+	$('#sendMessage').click(function(){
+		$.blockUI({
+			message:$('#sendMessageDialog'),
+			css:{
+				width:'374px',
+				border: 'none',
+			    top:  ($(window).height() - 234) /2 + 'px'
+			},
+			overlayCSS:{opacity: 0}	
+		})
+	})
+	function letterEvent(dom,opts){
+		var defaults={postData:{},callback:$.noop}
+		var setting=$.extend(defaults,opts)
+		dom.find('textarea').keyup(function(){
+			var l=$(this).val().length
+			  if(l<=300){
+			  	   dom.find('.tex').text('还可以输入'+(300-l)+'字').css('color','#B8B7B7')
+			       dom.find('.fr > a').removeClass('grey-btn1').addClass('blue-btn1')
+			  }else{
+			  	  dom.find('.tex').text('已超过'+(l-300)+'字').css('color','#E44443')
+				  dom.find('.fr > a').removeClass('blue-btn1').addClass('grey-btn1')
+			  }
+		}).keyup()
+		dom.find('.fr > a').click(function(){
+				var textarea=dom.find('textarea')
+				if(textarea.val().length<=300){
+					$.ifmWidget("loading",{
+			    		title:'正在操作',
+			    		content:'正在操作...'
+					})
+					$.post('',$.extend({text:textarea.val()},setting.postData)).done(function(){
+						$.ifmWidget("alertSuccess",{
+				    		title:'操作成功',
+				    		content:'操作成功',
+				    		callBack:function(){
+				    			setting.callback()
+				    		}
+				    	})
+					})
+				}else{
+					textarea.highlightFade({
+						                            	 start:'#E44443',
+						                            	 speed:500,
+														 complete:function(){
+														 	textarea.highlightFade({
+																start:'#E44443',
+						                            	        speed:500
+															})
+														 }
+						                             })
+				}
+			})
+			dom.find('.fl-title > a').add(dom.find('em')).click($.unblockUI)
+	}
+	letterEvent($('#sendMessageDialog'))
+})
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;English_Radio/resources/jplayer/skin/circle.skin/circle.player_bak.css&apos; to &apos;circle.player.css&apos;" description="Rename resource &apos;circle.player_bak.css&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="resources/jplayer/skin/circle.skin/circle.player_bak.css" name="circle.player.css" stamp="1352360133267" updateReferences="true"/>
+</session>

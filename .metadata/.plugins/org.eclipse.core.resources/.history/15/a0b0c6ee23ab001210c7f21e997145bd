@@ -1,0 +1,38 @@
+.clear-both { clear: both;
+ font-family:"Comic Sans MS";
+ }
+
+.content-box { padding-left: 45px; }
+.content-box .content-top { height: 30px; line-height: 30px; }
+.content-box .content-top .top-left { float: left; width: 125px; }
+.content-box .content-top .top-left label { color: #444444; cursor: pointer; vertical-align: middle; padding-right: 5px; font-size: 14px; font-weight: bold; font-family: Tahoma; }
+.content-box .content-top .top-right { margin-left: 125px; color: #999999; font-family: arial; font-size: 12px; padding-top: 2px; }
+.content-box .content-contentbox .content-items li { margin-top: 20px; margin-bottom: 20px; }
+.content-box .content-contentbox .content-items li label { font-size: 14px; }
+.content-box .content-contentbox .content-items li h4 { font-size: 14px; font-weight: bold; margin-left: 26px; }
+.content-box .content-contentbox .content-items li textarea { width: 570px; height: 100px; resize: none; font-size: 12px; }
+.content-box .content-contentbox .content-items li .copy-btn { height: 27px; margin: 5px 0 22px 0; width: 576px; }
+.content-box .content-contentbox .content-items li .copy-btn .copy { font-weight: bold; float: right; width: 66px; height: 27px; line-height: 27px; margin-left: 5px; text-align: center; background: url(../images/copy-btn.png) 0 0 no-repeat; font-size: 12px; color: #444; }
+.content-box .content-contentbox .content-items li .copy-btn .right { float: right; width: 58px; height: 27px; line-height: 27px; padding-left: 35px; background: url(../images/right-bg3.png) 0 0 no-repeat; font-size: 12px; color: #7bbb00; }
+.content-box .content-contentbox .content-items li .view-label { margin-left: 0; margin-bottom: 10px; }
+
+.previewbox { height: 30px; line-height: 30px; }
+.previewbox span { font-family: Tahoma; float: left; height: 25px; line-height: 25px; }
+.previewbox input { width: 458px; float: left; height: 25px; line-height: 25px; }
+.previewbox .view-btn { float: left; margin-left: 5px; font-weight: bold; width: 66px; height: 27px; line-height: 27px; text-align: center; background: url(../images/copy-btn.png) 0 0 no-repeat; font-size: 12px; color: #444; }
+
+.blank-account-box { width: 900px; margin-top: 20px; }
+.blank-account-box .accont-box-top { width: 900px; height: 40px; line-height: 40px; font-size: 16px; font-weight: bold; }
+.blank-account-box .account-left { float: left; width: 334.8px; height: 250px; }
+.blank-account-box .account-left .account-amount { margin-left: 36px; height: 30px; line-height: 30px; font-size: 14px; }
+.blank-account-box .account-left .account-tip { line-height: 30px; font-size: 14px; }
+.blank-account-box .account-left ul { list-style-type: none; margin-left: 36px; }
+.blank-account-box .account-left ul li { height: 30px; line-height: 30px; /*margin:{
+	top:14px;
+}*/ font-size: 12px; }
+.blank-account-box .account-right { width: 555.2px; margin-left: 334.8px; height: 250px; border-left: 1px solid #e1e1e1; font-size: 14px; }
+.blank-account-box .account-right .account-item { height: 50px; line-height: 50px; font-family: Tahoma; }
+.blank-account-box .account-right .account-item label { width: 150px; text-align: right; display: inline-block; }
+.blank-account-box .account-right .account-item input { padding: 2px; height: 18px; width: 180px; /*border:1px solid #444;*/ }
+.blank-account-box .account-right .account-item select { height: 23px; width: 185px; }
+.blank-account-box .account-right .account-item .account-btn { margin-left: 154px; font-weight: bold; display: block; width: 66px; height: 27px; line-height: 27px; text-align: center; background: url(../images/copy-btn.png) 0 0 no-repeat; font-size: 12px; color: #444; }

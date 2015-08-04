@@ -1,0 +1,215 @@
+{
+param:{
+   dateRange:{
+       type:'fix'
+   }
+},
+configs:[{
+	"id": 1,
+	"type": "chart",
+	"container": "container",
+	"cols": ["uv", "pv"],
+	"groupBy": ["s1", "s2"],
+	"option": {
+		"chart": {
+			"type": "line",
+			"width": 800,
+			"height": 600
+		},
+		"credits": {
+			"enabled": false
+		},
+		"title": {
+			"text": "title",
+			"x": -20
+		},
+		"subtitle": {
+			"text": "subtitle",
+			"x": -20
+		},
+		"xAxis": [{
+			"lineWidth": 1
+		},{
+			"lineWidth": 1
+		}],
+		"yAxis": [{
+			"lineWidth": 1,
+			"title": {
+				"text": "Temperature (°C)"
+			},
+			"plotLines": [{
+				"value": 0,
+				"width": 1,
+				"color": "#808080"
+			}]
+		}],
+		"tooltip": {},
+		"legend": {},
+		"series": []
+
+	}
+}, {
+	"id": 2,
+	"type": "chart",
+	"container": "pie",
+	"cols": ["uv", "pv"],
+	"groupBy": ["s1", "s2"],
+	"option": {
+		"chart": {
+			"width":800,
+			"height":600,
+			"plotBackgroundColor": null,
+			"plotBorderWidth": null,
+			"plotShadow": false
+		},
+		"credits": {
+			"enabled": false
+		},
+		"title": {
+			"text": "Browser market shares at a specific website, 2010"
+		},
+		"tooltip": {
+			"formatter": null
+		}
+	}
+}, {
+	"id": 3,
+	"type": "worldmap",
+	"container": "worldmap",
+	"option": {
+		"chart": {
+			"type": "map",
+			"animation": false,
+			"borderWidth": 1,
+			"width": 1200,
+			"height": 800
+		},
+		"title": {
+			"text": "China"
+		},
+		"legend": {
+			"enabled": false
+		},
+		"credits": {
+			"enabled": false
+		},
+		"tooltip": {},
+		"series": [{
+			"data": [],
+			"dataLabels": {
+				"enabled": false,
+				"color": "white",
+				"style": {
+					"fontWeight": "bold"
+				}
+			},
+			"name": "",
+			"cursor": "pointer"
+		}]
+	}
+}, {
+	"id": 4,
+	"type": "chinamap",
+	"container": "chinamap",
+	"option": {
+		"chart": {
+			"type": "map",
+			"animation": false,
+			"borderWidth": 1,
+			"width": 850,
+			"height": 755
+		},
+		"title": {
+			"text": "China"
+		},
+		"legend": {
+			"enabled": false
+		},
+		"credits": {
+			"enabled": false
+		},
+		"tooltip": {},
+		"series": [{
+			"data": [],
+			"dataLabels": {
+				"enabled": false,
+				"color": "white",
+				"style": {
+					"fontWeight": "bold"
+				}
+			},
+			"name": "",
+			"cursor": "pointer"
+		}]
+	}
+}, {
+	"id": 5,
+	"type": "chord",
+	"container": "chord",
+	"cols": ["uv", "pv"],
+	"groupBy": ["s1", "s2"],
+	"option": {
+		"width": 600,
+		"height": 600,
+		"groups": [{
+			"key": "sy",
+			"name": "首页"
+		}, {
+			"key": "lm",
+			"name": "类目"
+		}, {
+			"key": "dpy",
+			"name": "单品页"
+		}, {
+			"key": "hdy",
+			"name": "活动页"
+		}, {
+			"key": "hyy",
+			"name": "会员页"
+		}, {
+			"key": "ssjgy",
+			"name": "搜索结果页"
+		}, {
+			"key": "gwcy",
+			"name": "购物车页"
+		}, {
+			"key": "help",
+			"name": "帮助"
+		}]
+	}
+}, {
+	"id": 6,
+	"type": "forcedirected",
+	"container": "forcedirected",
+	"cols": ["uv", "pv"],
+	"groupBy": ["s1", "s2"],
+	"option": {
+		"width": 960,
+		"height": 600,
+		"groups": [{
+			"key": "sy",
+			"name": "首页"
+		}, {
+			"key": "lm",
+			"name": "类目"
+		}, {
+			"key": "dpy",
+			"name": "单品页"
+		}, {
+			"key": "hdy",
+			"name": "活动页"
+		}, {
+			"key": "hyy",
+			"name": "会员页"
+		}, {
+			"key": "ssjgy",
+			"name": "搜索结果页"
+		}, {
+			"key": "gwcy",
+			"name": "购物车页"
+		}, {
+			"key": "help",
+			"name": "帮助"
+		}]
+	}
+}]}

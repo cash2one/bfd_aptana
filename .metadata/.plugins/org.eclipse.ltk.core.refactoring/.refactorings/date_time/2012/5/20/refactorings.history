@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;date_time/dateAnime.js&apos; to &apos;dateAnimate.js&apos;" description="Rename resource &apos;dateAnime.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="dateAnime.js" name="dateAnimate.js" stamp="1337321210632" updateReferences="true"/>
+</session>

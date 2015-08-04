@@ -1,0 +1,81 @@
+body,div,h1,h2,h3,h4,h5,a,img,strong,span,b,var,em,ol,ul,dt,dd,dl,li,p,table,tr,th,td,button,input {margin:0px;padding:0px;}
+a {text-decoration:none;cursor:pointer;font-style:normal;outline:none;}
+ol,ul {list-style-type:none;}
+ul,li{list-style:none;}
+a img {border:none;}
+em,var{font-style:normal;}
+.clear {clear:both;height:0px;overflow:hidden;}
+body{font-family:Arial,"宋体","微软雅黑";}
+/*--------------hd-------------------*/
+body{background:url(../images/body-bg.png) 0 0 ;}
+.hd{min-width:1000px;height:62px;background:url(../images/header-bg-x.png) 0 0 repeat-x;overflow:hidden;}
+.logo-siteadmin{float:left;height:49px;padding:13px 0 0 14px;}
+.logo-siteadmin .logo{float:left;width:210px;height:28px;background:url(../images/logo.jpg) 0 0 no-repeat;margin-top:3px;}
+.logo-siteadmin ul{float:left;width:157px;height:36px;line-height:36px;background:url(../images/siteadmin-ul-bg.png) 0 0 no-repeat;overflow:hidden;}
+.logo-siteadmin ul li{float:left;padding:0 0 0 13px;}
+.logo-siteadmin ul li a{float:left;font-size:12px;color:#fff;}
+.logo-siteadmin ul li a.btn{background:url(../images/dsj.png) 55px 16px no-repeat;padding-right:22px;}
+.login-set{float:right;height:37px;padding:25px 14px 0 0;overflow:hidden;}
+.login-set .welcome{float:left;font-size:12px;color:#d4e8f0;margin-right:25px;}
+.login-set .menu{float:left;}
+.menu .set{float:left;background:url(../images/set.jpg) 0 0 no-repeat;font-size:12px;color:#d4e8f0;padding-left:17px;margin-right:25px;}
+.menu .help{float:left;background:url(../images/help.jpg) 0 0 no-repeat;font-size:12px;color:#d4e8f0;padding-left:18px;margin-right:19px;}
+.menu .login{float:left;background:url(../images/login.jpg) 0 1px no-repeat;font-size:12px;color:#d4e8f0;padding-left:17px;}
+.menu .set:hover{text-decoration:underline;}
+.menu .help:hover{text-decoration:underline;}
+.menu .login:hover{text-decoration:underline;}
+/*--------------bd-------------------*/
+.bd{min-width:980px;background:;padding:19px 10px 13px 10px;overflow:hidden;border:1px #ccc solid;_float:left;}
+/*--------------sidebar-------------------*/
+.sidebar{float:left;width:250px;margin:0 10px 0 0;}
+.sidebar2{width:50px;overflow:hidden;}
+.nav{display:block;width:250px;overflow:hidden;}
+.nav li{float:left;width:250px;position:relative;}
+.nav li a.top{float:left;width:250px;height:47px;line-height:47px;background:url(../images/nav-li-abg1.jpg) 0 0 no-repeat;}
+.nav li a{float:left;width:250px;height:46px;line-height:46px;background:url(../images/nav-li-abg2.jpg) 0 0 no-repeat;}
+.nav li a.bottom{float:left;width:250px;height:46px;line-height:46px;background:url(../images/nav-li-abg3.jpg) 0 0 no-repeat;}
+.nav li.current .top{background:url(../images/nav-li-a-bluebg1.jpg) 0 0 no-repeat;}
+.nav li.current a{background:url(../images/nav-li-a-bluebg2.jpg) 0 0 no-repeat;}
+.nav li.current a strong{padding-left:40px;font-size:12px;font-weight:bold;color:#fff;}
+.nav li.current .bottom{background:url(../images/nav-li-a-bluebg3.jpg) 0 0 no-repeat;}
+.nav li a strong{float:left;padding-left:40px;font-size:12px;font-weight:bold;color:#444;}
+.nav li a span{float:right;position:absolute;top:2px;right:15px;*top:15px;}
+
+.trackable{display:block;width:29px;height:16px;background:url(../images/track-btn2.png) 0 0 no-repeat;margin:0 auto;}
+.trackable-r{display:block;width:29px;height:16px;background:url(../images/track-btn.png) 0 0 no-repeat;margin:0 auto;}
+
+.nav2{width:50px;overflow:hidden;}
+.nav2 li{float:left;width:48px;position:relative;border-right:1px #cccccc solid;border-left:1px #cccccc solid;}
+.nav2 li a.top{float:left;width:50px;height:47px;line-height:47px;background:url(../images/nav2-li-abg1.jpg) 0 0 no-repeat;}
+.nav2 li a{float:left;width:50px;height:46px;line-height:46px;background:url(../images/nav2-li-abg2.jpg) 0 0 no-repeat;}
+.nav2 li a.bottom{float:left;width:50px;height:46px;line-height:46px;background:url(../images/nav2-li-abg3.jpg) 0 0 no-repeat;}
+.nav2 li.current .top{background:url(../images/nav2-li-a-bluebg1.jpg) 0 0 no-repeat;}
+.nav2 li.current a{background:url(../images/nav2-li-a-bluebg2.jpg) 0 0 no-repeat;}
+.nav2 li.current a strong{display:none;padding-left:40px;font-size:12px;font-weight:bold;color:#fff;}
+.nav2 li.current .bottom{background:url(../images/nav2-li-a-bluebg3.jpg) 0 0 no-repeat;}
+.nav2 li a strong{display:none;float:left;padding-left:40px;font-size:12px;font-weight:bold;color:#444;}
+.nav2 li a span{float:right;position:absolute;top:2px;right:15px;*top:15px;}
+
+/*--------------container-------------------*/
+.container{overflow:auto;min-width:720px;}
+* html .container { float: left; overflow: visible; }
+.container .main{width:100%;overflow:hidden;}
+.main .data{width:100%;margin-bottom:11px;overflow:hidden;}
+.data-l{overflow:hidden;float:left;width:49%;}
+.data-r{overflow:hidden;float:right;width:49%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

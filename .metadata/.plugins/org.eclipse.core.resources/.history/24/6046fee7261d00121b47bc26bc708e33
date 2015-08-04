@@ -1,0 +1,25 @@
+/**
+ * @author Administrator
+ */
+MQ.widgets.Checkbox=function(setting){
+	MQ.Question.call(this)
+	var self=this
+	self.getValue=function(){
+		var result=[]
+		self.page.find(':checkbox:checked').each(function(){
+			result.push($(this).val())
+		})
+		return result
+	}
+	self.init=function(){
+		self.page=self.renderPage(setting.commonData)
+		$.each(setting.data,function(i,item){
+			$("<input>", {
+			    type: "checkbox",
+			    val: item.value?item.value:i,
+				id:"checkbox"+setting.index+i}).appendTo(self.page.find('fieldset'))
+		})
+		self.page.appendTo('body')
+	}
+	self.init()
+}

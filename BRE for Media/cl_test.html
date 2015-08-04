@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>Untitled Document</title>
+        <script src="./resources/baifendianWidgetsCombo/commons/jquery.js">
+        </script>
+        <script src="./resources/baifendianWidgetsCombo/commons/lib/highcharts.js">
+        </script>
+        <script type="text/javascript">
+            $(function(){
+                function renderArc(rander, value){
+                    var v = (-0.5 + 2 * value) * Math.PI
+                    var renderer = new Highcharts.Renderer(rander[0], 172, 172);
+                    renderer.arc(86, 86, 86, 54, -Math.PI / 2, Math.PI * 1.5).attr({
+                        fill: '#ECECEC',
+                        stroke: 'black',
+                        'stroke-width': 0
+                    }).add();
+                    renderer.arc(86, 86, 86, 54, -Math.PI / 2, v).attr({
+                        fill: '#03A4DA',
+                        stroke: 'black',
+                        'stroke-width': 0
+                    }).add();
+                    renderer.text(parseInt(value * 100, 10) + '%', 60, 96).css({
+                        'font-size': '30px'
+                    }).attr({
+                        'font-size': '30px'
+                    }).add()
+                }
+                renderArc($('#chart'), 0.2)
+            })
+        </script>
+    </head>
+    <body>
+        <div id="chart">
+        </div>
+    </body>
+</html>

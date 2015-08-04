@@ -1,0 +1,31 @@
+/**
+ * @author Administrator
+ */
+
+ var _baifendianWidgetsComboSettingURL='../test_pages/setting.json'
+ var _baifendianDataURL=['../test_pages/data0.json','../test_pages/data1.json','../test_pages/data2.json','../test_pages/data3.json', '../test_pages/data4.json', '../test_pages/data5.json','../test_pages/data6.json']
+ 
+ var _baifendianWidgets={
+ 	chart:{
+		requires:['commons/lib/highcharts.js']
+	},
+	grid:{
+		requires:[]
+	},
+	worldmap:{
+		requires:['commons/lib/highcharts.js','commons/lib/highcharts.map.src.js','models/worldmap/requires/worldshape.js']
+	},
+	chinamap:{
+		requires:['commons/lib/highcharts.js','commons/lib/highcharts.map.src.js','models/chinamap/requires/chinashape.js']
+	},
+	legend:{
+		requires:['commons/lib/jquery.qtip-1.0.0.min.js'],
+		css:['models/legend/requires/css/legend.css']
+	},
+	chord:{
+		requires:['commons/lib/d3.v2.min.js','models/chord/requires/chord.js']
+	},
+	forcedirected:{
+		requires:['commons/lib/d3.v2.min.js','models/forcedirected/requires/forcedirected.js']
+	}
+ }

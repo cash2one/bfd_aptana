@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>tool tip test</title>
+        <script type="text/javascript" language="JavaScript" src="./resources/jquery/jquery.js">
+        </script>
+        <script type="text/javascript" language="JavaScript" src="./resources/commons/jquery.qtip-1.0.0.min.js">
+        </script>
+        <script type="text/javascript">
+            $(function(){
+                $('div').qtip({
+                    content: '测试测试测试测试测试测试测试测试',
+                    style: {
+						border: {
+			                     width: 5,
+			                     radius: 10
+			                  }
+//							 name: 'dark'
+					}
+                })
+            })
+        </script>
+        <style type="text/css">
+            div {
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            test
+        </div>
+        <div>
+            test
+        </div>
+        <div>
+            test
+        </div>
+        <div>
+            test
+        </div>
+        <div>
+            test
+        </div>
+        <div>
+            test
+        </div>
+        <div>
+            test
+        </div>
+        <div>
+            test
+        </div>
+    </body>
+</html>

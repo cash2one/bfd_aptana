@@ -1,0 +1,18 @@
+/**
+ * @author Administrator
+ */
+BfdWidget['组件名'] = function(setting, global){//定义一个组件
+      Widget.call(this)//必须继承Widget
+      var self=this
+}
+
+
+
+
+
+
+
+
+
+
+

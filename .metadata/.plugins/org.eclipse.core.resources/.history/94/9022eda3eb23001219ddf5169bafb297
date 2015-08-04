@@ -1,0 +1,8 @@
+/**
+ * @author Administrator
+ */
+if(typeof Object.beget !== 'function'){
+	Object.beget=function(){
+		var F = function(){}
+	}
+}

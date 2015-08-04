@@ -1,0 +1,47 @@
+/**
+ * @author Administrator
+ */
+$(function(){
+	var imageurl
+	$('#file').uploadify({
+							        swf           : '../../resources/uploadify/uploadify.swf',
+									'fileObjName' : 'file',
+							        uploader      : '../../ContentManager/content/!uploadSettingImage',
+									buttonText:null,
+							        height        : 32,
+							        width         : 35,
+									'fileTypeExts' : '*.gif; *.jpg; *.png',
+									'fileSizeLimit' : '4MB',
+									formData:{},
+									'onSelect' : function(file){
+										$('#textfield').val(file.name)
+									},
+									onUploadError:function(){
+										$('#textfield').val('')
+									},
+									onUploadSuccess:function(file, data, response){
+										 dom.find('span.current').removeClass('current')
+										 dom.find('div.pic img').attr('src',data)
+										 $('#sub').addClass('save-btn')
+										 imageurl=data
+									}
+							   });	
+	$('#sub').click(function(){
+		if($(this).hasClass('save-btn')){
+			$.ifmWidget("loading",{
+	    		title:'正在操作',
+	    		content:'正在操作...'
+			})
+			$.post('url',{img:imageurl}).done(function(){
+				$.ifmWidget("alertSuccess",{
+		    		title:'操作成功',
+		    		content:'操作成功',
+		    		callBack:function(){
+		    			$('#sub').removeClass('save-btn')
+		    			$('#textfield').val('')
+		    		}
+		    	})
+			})
+		}
+	})
+})

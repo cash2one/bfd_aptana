@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;BRE for Media/css/favicon.ico&apos;" deleteContents="false" description="Delete resource &apos;BRE for Media/css/favicon.ico&apos;" element1="/BRE for Media/css/favicon.ico" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1354516566842"/>
+</session>
